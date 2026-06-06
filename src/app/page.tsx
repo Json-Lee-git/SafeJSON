@@ -230,8 +230,8 @@ export default function Home() {
             Your data never leaves your browser
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
-            The JSON tool that{" "}
-            <span className="text-emerald-400">never sees your data</span>
+            <span className="block">The JSON tool that never</span>
+            <span className="text-emerald-400">sees your data</span>
           </h1>
           <p className="text-lg text-zinc-400 max-w-2xl mx-auto mb-4 text-pretty">
             Format, validate, and debug JSON. Entirely in your browser. No
