@@ -1,0 +1,31 @@
+{
+  "name": "safejson-cli",
+  "version": "0.1.0",
+  "description": "Open SafeJSON — the privacy-first JSON formatter that never sees your data — from your terminal.",
+  "main": "cli.js",
+  "bin": {
+    "safejson": "./cli.js"
+  },
+  "files": ["cli.js", "README.md"],
+  "keywords": [
+    "json",
+    "formatter",
+    "beautifier",
+    "privacy",
+    "client-side",
+    "cli",
+    "safe",
+    "json-formatter",
+    "json-beautifier",
+    "privacy-first"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/s01071233604-tech/safejson"
+  },
+  "homepage": "https://safejson.vercel.app",
+  "engines": {
+    "node": ">=14"
+  }
+}
