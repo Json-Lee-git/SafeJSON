@@ -389,6 +389,7 @@ export default function Home() {
       {/* Features */}
       <section className="border-t border-zinc-800/50 bg-zinc-900/30">
         <div className="max-w-4xl mx-auto px-4 py-20">
+        <h2 className="text-2xl font-bold text-center mb-10">Why developers choose SafeJSON</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
           {[
             {
@@ -486,35 +487,38 @@ export default function Home() {
               client-side, all privacy-first.
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+          <div className="max-w-2xl mx-auto divide-y divide-zinc-800/50">
             {[
               {
                 title: "JSON Diff",
-                desc: "Compare two JSON objects side by side. Added, removed, and changed values highlighted.",
+                desc: "Compare two JSON objects side by side. Added, removed, and changed values highlighted in color.",
                 href: "/diff",
               },
               {
                 title: "JWT Decoder",
-                desc: "Decode JWT tokens instantly. Header, payload, and signature — all in your browser.",
+                desc: "Decode JWT tokens instantly. Header, payload, and signature decoded in your browser.",
                 href: "/jwt",
               },
               {
                 title: "JSONPath",
-                desc: "Query JSON with XPath-like expressions. Extract exactly what you need.",
+                desc: "Query JSON with XPath-like expressions. Extract nested values and filter arrays.",
                 href: "/jsonpath",
               },
             ].map((tool) => (
               <Link
                 key={tool.href}
                 href={tool.href}
-                className="p-5 rounded-xl border border-zinc-800 bg-zinc-900/30 hover:border-zinc-700 transition-colors group"
+                className="flex items-center gap-4 py-4 px-2 hover:bg-white/[0.02] transition-colors group -mx-2 rounded-lg"
               >
-                <h3 className="font-semibold text-sm mb-2 group-hover:text-emerald-400 transition-colors">
-                  {tool.title}
-                </h3>
-                <p className="text-xs text-zinc-500 leading-relaxed">
-                  {tool.desc}
-                </p>
+                <div className="flex-1">
+                  <h3 className="font-semibold text-sm mb-0.5 group-hover:text-emerald-400 transition-colors">
+                    {tool.title}
+                  </h3>
+                  <p className="text-xs text-zinc-500">{tool.desc}</p>
+                </div>
+                <span className="text-zinc-600 group-hover:text-emerald-400 transition-colors text-sm">
+                  →
+                </span>
               </Link>
             ))}
           </div>

@@ -30,7 +30,15 @@ export const metadata: Metadata = {
     description:
       "Format, validate, and debug JSON entirely in your browser. No server uploads. Open source.",
     type: "website",
+    url: "https://safejson.vercel.app",
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "SafeJSON — The JSON tool that never sees your data",
+    description:
+      "Format, validate, and debug JSON entirely in your browser. No server uploads. Open source.",
+  },
+  metadataBase: new URL("https://safejson.vercel.app"),
 };
 
 export default function RootLayout({
