@@ -471,6 +471,64 @@ export default function Home() {
       </section>
       */}
 
+      {/* Pro tools */}
+      <section className="border-t border-zinc-800/50">
+        <div className="max-w-4xl mx-auto px-4 py-16">
+          <div className="text-center mb-10">
+            <span className="text-xs font-medium text-emerald-400/80 uppercase tracking-wider bg-emerald-400/10 px-3 py-1 rounded-full">
+              Pro Tools
+            </span>
+            <h2 className="text-2xl font-bold mt-4 mb-2">
+              More than a formatter
+            </h2>
+            <p className="text-sm text-zinc-500 max-w-md mx-auto">
+              Advanced tools for developers who work with JSON every day. All
+              client-side, all privacy-first.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto">
+            {[
+              {
+                title: "JSON Diff",
+                desc: "Compare two JSON objects side by side. Added, removed, and changed values highlighted.",
+                href: "/diff",
+              },
+              {
+                title: "JWT Decoder",
+                desc: "Decode JWT tokens instantly. Header, payload, and signature — all in your browser.",
+                href: "/jwt",
+              },
+              {
+                title: "JSONPath",
+                desc: "Query JSON with XPath-like expressions. Extract exactly what you need.",
+                href: "/jsonpath",
+              },
+            ].map((tool) => (
+              <Link
+                key={tool.href}
+                href={tool.href}
+                className="p-5 rounded-xl border border-zinc-800 bg-zinc-900/30 hover:border-zinc-700 transition-colors group"
+              >
+                <h3 className="font-semibold text-sm mb-2 group-hover:text-emerald-400 transition-colors">
+                  {tool.title}
+                </h3>
+                <p className="text-xs text-zinc-500 leading-relaxed">
+                  {tool.desc}
+                </p>
+              </Link>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link
+              href="/pricing"
+              className="inline-flex px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl transition-colors text-sm"
+            >
+              Get Pro — $5/month
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Footer */}
       <footer className="border-t border-zinc-800 py-8 text-center text-xs text-zinc-600">
         <p>
