@@ -2,6 +2,10 @@
 
 import { useState, useCallback, useMemo, useEffect } from "react";
 import JsonTreeView, { type JsonValue } from "./components/JsonTreeView";
+import {
+  SoftwareAppSchema,
+  FAQSchema,
+} from "./components/StructuredData";
 import Link from "next/link";
 import {
   ShieldCheck,
@@ -540,6 +544,9 @@ export default function Home() {
           data.
         </p>
       </footer>
+
+      <SoftwareAppSchema />
+      <FAQSchema />
     </div>
   );
 }

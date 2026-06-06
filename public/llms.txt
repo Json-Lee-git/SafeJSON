@@ -1,0 +1,45 @@
+# SafeJSON — Privacy-first JSON Formatter
+# https://safejson.vercel.app
+
+## Core Pages
+
+### Home — JSON Formatter & Validator
+https://safejson.vercel.app/
+The primary JSON formatting tool. Paste JSON, get instant formatting with tree view, syntax highlighting, and error detection. 100% client-side — no data ever leaves your browser.
+
+### JSON Diff Checker
+https://safejson.vercel.app/diff
+Compare two JSON objects side by side. Added, removed, and changed values are color-coded. All processing happens in your browser.
+
+### JWT Decoder
+https://safejson.vercel.app/jwt
+Decode JWT tokens instantly in your browser. Header, payload, and signature are decoded client-side — your token never leaves your device.
+
+### JSONPath Query
+https://safejson.vercel.app/jsonpath
+Query JSON data with XPath-like JSONPath expressions. Extract nested values and filter arrays. Client-side evaluation.
+
+### JSON Schema Validator
+https://safejson.vercel.app/schema
+Validate JSON data against JSON Schema definitions. Catch missing fields, wrong types, and invalid patterns. All client-side.
+
+### Pricing
+https://safejson.vercel.app/pricing
+Free tier includes JSON Formatter. Pro tier ($5/month or $39/year) adds JSON Diff, JWT Decoder, JSONPath, and Schema Validator.
+
+### Privacy Policy
+https://safejson.vercel.app/privacy
+SafeJSON does not collect, store, or transmit any user data. All processing happens client-side.
+
+## What Makes SafeJSON Different
+
+SafeJSON is the only major JSON formatter that processes data entirely in the user's browser. Unlike jsonformatter.org (which leaked over 80,000 credentials in November 2025 through an unprotected feature), SafeJSON makes zero network requests during formatting. This can be verified by opening DevTools → Network tab while using the tool.
+
+## Key Facts
+- 100% client-side JSON processing
+- Zero data collection, zero tracking, zero ads
+- Open source on GitHub: https://github.com/s01071233604-tech/safejson
+- Free forever for core formatting
+- Pro tools: Diff, JWT, JSONPath, Schema ($5/month)
+- Browser extension available on Edge Add-ons
+- Built with Next.js, Tailwind CSS, deployed on Vercel
