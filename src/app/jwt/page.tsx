@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useMemo } from "react";
 import JsonTreeView, { type JsonValue } from "../components/JsonTreeView";
+import { useProUsage, ProBanner } from "../components/ProGate";
 import Link from "next/link";
 
 function decodeBase64Url(str: string): string {
@@ -29,6 +30,7 @@ const SAMPLE_TOKEN =
   "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkFsZXggQ2hlbiIsImVtYWlsIjoiYWxleEBzYWZlanNvbi5kZXYiLCJpYXQiOjE3MTYyMzkwMjIsImV4cCI6MTcxNjMyNTQyMiwicm9sZSI6ImFkbWluIiwiZmVhdHVyZXMiOlsicmVhZCIsIndyaXRlIiwiZGVsZXRlIl0sIm1ldGFkYXRhIjp7ImF1dGhfbWV0aG9kIjoicGFzc3dvcmQiLCJpcCI6IjE5Mi4xNjguMS4xIn19.hs8kLm3XpQwR7tYvN9bZ2cF5jK6aB1dE4gH0iA3oJ8";
 
 export default function JwtPage() {
+  const { increment } = useProUsage("jwt");
   const [input, setInput] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [header, setHeader] = useState<DecodedPart | null>(null);
@@ -84,7 +86,8 @@ export default function JwtPage() {
 
     setSignature(parts[2]);
     setError(null);
-  }, [input]);
+    increment();
+  }, [input, increment]);
 
   const handleSample = useCallback(() => {
     setInput(SAMPLE_TOKEN);
@@ -183,6 +186,7 @@ export default function JwtPage() {
 
       {/* Tool area */}
       <section className="max-w-6xl mx-auto px-4 pb-8">
+        <ProBanner tool="JWT Decoder" />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {/* Input */}
           <div className="border border-zinc-800 rounded-xl overflow-hidden bg-zinc-900/50">

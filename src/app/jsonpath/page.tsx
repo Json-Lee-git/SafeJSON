@@ -2,9 +2,11 @@
 
 import { useState, useCallback } from "react";
 import JsonTreeView, { type JsonValue } from "../components/JsonTreeView";
+import { useProUsage, ProBanner } from "../components/ProGate";
 import Link from "next/link";
 
 export default function JsonPathPage() {
+  const { increment } = useProUsage("jsonpath");
   const [jsonInput, setJsonInput] = useState("");
   const [pathExpr, setPathExpr] = useState("");
   const [results, setResults] = useState<JsonValue[] | null>(null);
@@ -37,6 +39,7 @@ export default function JsonPathPage() {
       const { JSONPath } = await import("jsonpath-plus");
       const result = JSONPath({ path: pathExpr, json: data });
       setResults(result as JsonValue[]);
+      increment();
       if (result.length === 0) {
         setError("No matches found for: " + pathExpr);
       }
@@ -46,7 +49,7 @@ export default function JsonPathPage() {
           (e instanceof Error ? e.message : "")
       );
     }
-  }, [jsonInput, pathExpr]);
+  }, [jsonInput, pathExpr, increment]);
 
   const handleSample = useCallback(() => {
     const sample = {
@@ -126,6 +129,7 @@ export default function JsonPathPage() {
 
       {/* Tool */}
       <section className="max-w-6xl mx-auto px-4 pb-8">
+        <ProBanner tool="JSONPath" />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {/* Left: Input + Path */}
           <div className="space-y-4">

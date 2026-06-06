@@ -3,9 +3,11 @@
 import { useState, useCallback } from "react";
 import JsonDiffView from "../components/JsonDiffView";
 import { type JsonValue } from "../components/JsonTreeView";
+import { useProUsage, ProBanner } from "../components/ProGate";
 import Link from "next/link";
 
 export default function DiffPage() {
+  const { increment } = useProUsage("diff");
   const [leftInput, setLeftInput] = useState("");
   const [rightInput, setRightInput] = useState("");
   const [leftParsed, setLeftParsed] = useState<JsonValue | null>(null);
@@ -14,38 +16,40 @@ export default function DiffPage() {
   const [rightError, setRightError] = useState<string | null>(null);
 
   const handleCompare = useCallback(() => {
-    // Parse left
+    let success = true;
+
     if (!leftInput.trim()) {
       setLeftError("Paste JSON to compare");
       setLeftParsed(null);
+      success = false;
     } else {
       try {
         setLeftParsed(JSON.parse(leftInput));
         setLeftError(null);
       } catch (e) {
-        setLeftError(
-          e instanceof Error ? e.message : "Invalid JSON"
-        );
+        setLeftError(e instanceof Error ? e.message : "Invalid JSON");
         setLeftParsed(null);
+        success = false;
       }
     }
 
-    // Parse right
     if (!rightInput.trim()) {
       setRightError("Paste JSON to compare");
       setRightParsed(null);
+      success = false;
     } else {
       try {
         setRightParsed(JSON.parse(rightInput));
         setRightError(null);
       } catch (e) {
-        setRightError(
-          e instanceof Error ? e.message : "Invalid JSON"
-        );
+        setRightError(e instanceof Error ? e.message : "Invalid JSON");
         setRightParsed(null);
+        success = false;
       }
     }
-  }, [leftInput, rightInput]);
+
+    if (success) increment();
+  }, [leftInput, rightInput, increment]);
 
   const handleSample = useCallback(() => {
     const old = {
@@ -141,6 +145,7 @@ export default function DiffPage() {
 
       {/* Tool area */}
       <section className="max-w-6xl mx-auto px-4 pb-8">
+        <ProBanner tool="JSON Diff" />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
           {/* Left input */}
           <div className="border border-zinc-800 rounded-xl overflow-hidden bg-zinc-900/50">

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import { useProUsage, ProBanner } from "../components/ProGate";
 import Link from "next/link";
 
 type ValidationError = {
@@ -9,6 +10,7 @@ type ValidationError = {
 };
 
 export default function SchemaPage() {
+  const { increment } = useProUsage("schema");
   const [jsonInput, setJsonInput] = useState("");
   const [schemaInput, setSchemaInput] = useState("");
   const [valid, setValid] = useState<boolean | null>(null);
@@ -68,13 +70,14 @@ export default function SchemaPage() {
           }))
         );
       }
+      increment();
     } catch (e) {
       setParseError(
         "Schema compilation error: " +
           (e instanceof Error ? e.message : "")
       );
     }
-  }, [jsonInput, schemaInput]);
+  }, [jsonInput, schemaInput, increment]);
 
   const handleSample = useCallback(() => {
     const data = {
@@ -145,6 +148,7 @@ export default function SchemaPage() {
 
       {/* Tool */}
       <section className="max-w-6xl mx-auto px-4 pb-8">
+        <ProBanner tool="Schema Validator" />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
           {/* JSON Data */}
           <div className="border border-zinc-800 rounded-xl overflow-hidden bg-zinc-900/50">
