@@ -28,6 +28,31 @@ export default function PricingPage() {
           </p>
         </div>
 
+        {/* Why pay — the pain narrative */}
+        <div className="max-w-2xl mx-auto mb-14 p-6 rounded-2xl border border-red-400/10 bg-red-400/[0.03]">
+          <p className="text-sm text-zinc-300 font-semibold mb-3">
+            You paste sensitive data into online tools every day.
+          </p>
+          <p className="text-sm text-zinc-500 leading-relaxed mb-3">
+            In November 2025, the most popular JSON formatter was caught
+            leaking over 80,000 credentials — AWS keys, GitHub tokens, and
+            banking details — through an unprotected feature. Attackers were
+            actively scraping the data within 48 hours.
+          </p>
+          <p className="text-sm text-zinc-500 leading-relaxed mb-3">
+            Around the same time, the most popular JSON Formatter browser
+            extension, with over 2 million users, was sold to a new owner. They
+            closed the source, injected adware, and started harvesting user data.
+          </p>
+          <p className="text-sm text-zinc-400 leading-relaxed">
+            Every time you paste an API response, a JWT token, or a config file
+            into a server-side tool, you are trusting a stranger with your data.
+            SafeJSON Pro gives you the tools you need — Diff, JWT decoder,
+            JSONPath, Schema validator — all 100% client-side. Your data never
+            leaves your browser.
+          </p>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
           {/* Free tier */}
           <div className="p-8 rounded-2xl border border-zinc-800 bg-zinc-900/30">
