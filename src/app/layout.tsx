@@ -39,6 +39,9 @@ export const metadata: Metadata = {
       "Format, validate, and debug JSON entirely in your browser. No server uploads. Open source.",
   },
   metadataBase: new URL("https://safejson.vercel.app"),
+  verification: {
+    google: "r4KEIdIxrxAz55Mc",
+  },
 };
 
 export default function RootLayout({
