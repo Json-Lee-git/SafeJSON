@@ -90,7 +90,7 @@ function computeDiff(
 }
 
 function formatDiffValue(value: DiffValue | undefined): string {
-  if (value === undefined) return "—";
+  if (value === undefined) return "-";
   if (value === null) return "null";
   if (typeof value === "string") return `"${value}"`;
   if (typeof value === "boolean") return value ? "true" : "false";
@@ -122,7 +122,7 @@ function DiffRow({ entry, depth = 0 }: { entry: DiffEntry; depth?: number }) {
         {/* Left value */}
         <span className="w-[44%] shrink-0 pr-2 truncate">
           {entry.type === "added" ? (
-            <span className="text-zinc-700">—</span>
+            <span className="text-zinc-700">-</span>
           ) : (
             <span className={typeColor(entry.type)}>
               {formatDiffValue(entry.left)}
@@ -136,7 +136,7 @@ function DiffRow({ entry, depth = 0 }: { entry: DiffEntry; depth?: number }) {
         {/* Right value */}
         <span className="flex-1 truncate">
           {entry.type === "removed" ? (
-            <span className="text-zinc-700">—</span>
+            <span className="text-zinc-700">-</span>
           ) : (
             <span className={typeColor(entry.type)}>
               {formatDiffValue(entry.right)}

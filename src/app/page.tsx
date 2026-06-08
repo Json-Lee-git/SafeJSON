@@ -16,6 +16,8 @@ import {
   Code,
   Heart,
   Plug,
+  Moon,
+  Sun,
 } from "@phosphor-icons/react";
 import { useJsonWorker } from "./hooks/useJsonWorker";
 
@@ -210,7 +212,11 @@ export default function Home() {
               className="p-2 rounded-lg hover:bg-zinc-800 transition-colors text-zinc-400"
               aria-label="Toggle theme"
             >
-              {theme === "dark" ? "☀" : "☽"}
+              {theme === "dark" ? (
+                <Sun size={16} weight="bold" />
+              ) : (
+                <Moon size={16} weight="bold" />
+              )}
             </button>
           </div>
         </div>
@@ -411,7 +417,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Quick links — high-authority internal linking */}
+      {/* Quick links - high-authority internal linking */}
       <section className="border-t border-zinc-800/50">
         <div className="max-w-4xl mx-auto px-4 py-8">
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
@@ -557,7 +563,7 @@ export default function Home() {
                   <p className="text-xs text-zinc-500 text-pretty">{tool.desc}</p>
                 </div>
                 <span className="text-zinc-600 group-hover:text-emerald-400 transition-colors text-sm">
-                  →
+                  {"->"}
                 </span>
               </Link>
             ))}
@@ -567,7 +573,7 @@ export default function Home() {
               href="/pricing"
               className="inline-flex px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl transition-colors text-sm"
             >
-              Get Pro — $5/month
+              Get Pro - $5/month
             </Link>
           </div>
         </div>

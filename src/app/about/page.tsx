@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About SafeJSON — Privacy-first JSON Tools",
+  title: "About SafeJSON - Privacy-first JSON Tools",
   description:
     "SafeJSON is built by an independent developer who believes developer tools should not require trusting strangers with your data. Learn about the project and its mission.",
   openGraph: {
@@ -40,13 +40,13 @@ export default function AboutPage() {
             SafeJSON exists because developer tools should not require trusting
             strangers with your data. Every time you paste an API response, a
             JWT token, or a configuration file into an online tool, you are
-            making a security decision — whether you realize it or not.
+            making a security decision - whether you realize it or not.
           </p>
           <p className="text-zinc-400 leading-relaxed">
             We believe the safest tools are the ones that never see your data in
             the first place. Every SafeJSON feature runs entirely in your
             browser. No server processes your JSON. No data leaves your device.
-            This is verifiable: open DevTools → Network tab while using SafeJSON
+            This is verifiable: open DevTools -&gt; Network tab while using SafeJSON
             and you will see zero new requests.
           </p>
         </section>
@@ -56,8 +56,8 @@ export default function AboutPage() {
           <h2 className="text-xl font-semibold mb-4">Why SafeJSON was built</h2>
           <p className="text-zinc-400 leading-relaxed mb-3">
             In November 2025, security researchers at watchTowr revealed that
-            jsonformatter.org and codebeautify.org — two of the most popular
-            online JSON tools — had been leaking user data for over five years.
+            jsonformatter.org and codebeautify.org - two of the most popular
+            online JSON tools - had been leaking user data for over five years.
             An unprotected feature exposed 80,000+ code snippets containing AWS
             access keys, GitHub personal access tokens, database passwords, and
             banking PII. Attackers were actively harvesting the data within 48
@@ -65,7 +65,7 @@ export default function AboutPage() {
           </p>
           <p className="text-zinc-400 leading-relaxed mb-3">
             Around the same time, the most popular JSON Formatter Chrome
-            extension — with over 2 million users — was sold to a new owner.
+            extension - with over 2 million users - was sold to a new owner.
             The extension was closed-sourced and injected with tracking scripts,
             checkout popups, and a hardcoded API key for harvesting user
             location data.
@@ -105,7 +105,7 @@ export default function AboutPage() {
           <h2 className="text-xl font-semibold mb-4">Built by an independent developer</h2>
           <p className="text-zinc-400 leading-relaxed mb-3">
             SafeJSON is developed and maintained by a solo developer who builds
-            privacy-first tools. The project is self-funded and independent —
+            privacy-first tools. The project is self-funded and independent -
             no venture capital, no external investors, no corporate parent
             company.
           </p>

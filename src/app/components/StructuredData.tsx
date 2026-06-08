@@ -148,7 +148,10 @@ export function SoftwareAppSchema() {
       priceCurrency: "USD",
     },
     featureList: [
+      "Verifiable privacy via DevTools Network tab",
       "Client-side JSON formatting with zero data transmission",
+      "50MB+ local JSON handling in formatter, beautifier, viewer, and parser workflows",
+      "Web Worker parsing to avoid blocking the main UI thread",
       "Collapsible tree view with syntax highlighting",
       "Error detection with line and column numbers",
       "JSON Diff with color-coded comparison",
@@ -179,7 +182,7 @@ export function FAQSchema() {
         name: "Is SafeJSON safe to use with sensitive data?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. SafeJSON processes all JSON data entirely in your browser. No data is ever transmitted to any server. You can verify this by opening DevTools → Network tab while using SafeJSON — there are zero network requests during formatting.",
+          text: "Yes. SafeJSON processes all JSON data entirely in your browser. No data is ever transmitted to any server. You can verify this by opening DevTools -> Network tab while using SafeJSON - there are zero network requests during formatting.",
         },
       },
       {
@@ -195,7 +198,7 @@ export function FAQSchema() {
         name: "How is SafeJSON different from jsonformatter.org?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "SafeJSON processes everything client-side — your data never leaves your browser. jsonformatter.org processes data on its servers, and in November 2025 security researchers discovered it had leaked over 80,000 user credentials through an unprotected feature. SafeJSON is also open source, ad-free, and has no tracking.",
+          text: "SafeJSON processes everything client-side - your data never leaves your browser. jsonformatter.org processes data on its servers, and in November 2025 security researchers discovered it had leaked over 80,000 user credentials through an unprotected feature. SafeJSON is also open source, ad-free, and has no tracking.",
         },
       },
       {
@@ -208,10 +211,18 @@ export function FAQSchema() {
       },
       {
         "@type": "Question",
+        name: "Can SafeJSON handle large JSON files?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes. SafeJSON is designed to handle 50MB+ JSON files locally in the browser for formatter, beautifier, viewer, and parser workflows. Large JSON is parsed with a Web Worker so the main interface stays responsive.",
+        },
+      },
+      {
+        "@type": "Question",
         name: "What is a privacy-first JSON formatter?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "A privacy-first JSON formatter processes data entirely in the user's browser rather than on a remote server. This means the data never leaves the user's device, eliminating the risk of server-side data leaks. SafeJSON is an example — verify by checking the Network tab in DevTools while using it.",
+          text: "A privacy-first JSON formatter processes data entirely in the user's browser rather than on a remote server. This means the data never leaves the user's device, eliminating the risk of server-side data leaks. SafeJSON is an example - verify by checking the Network tab in DevTools while using it.",
         },
       },
     ],

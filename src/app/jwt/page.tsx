@@ -179,7 +179,7 @@ export default function JwtPage() {
         </h1>
         <p className="text-sm text-zinc-500 max-w-xl mx-auto">
           Decode JWT tokens instantly in your browser. Header, payload, and
-          signature are decoded client-side — your token never leaves your
+          signature are decoded client-side - your token never leaves your
           device.
         </p>
       </section>
@@ -312,7 +312,7 @@ export default function JwtPage() {
           <div className="p-4 rounded-xl border border-emerald-400/10 bg-emerald-400/5">
             <p className="text-xs text-emerald-400 font-medium mb-1">PAYLOAD</p>
             <p className="text-xs text-zinc-500 leading-relaxed">
-              Claims and data. Not encrypted — anyone can decode it.
+              Claims and data. Not encrypted - anyone can decode it.
             </p>
           </div>
           <div className="p-4 rounded-xl border border-zinc-700/50 bg-zinc-900/30">
@@ -333,7 +333,7 @@ export default function JwtPage() {
           </h2>
           <p className="text-sm text-zinc-500 max-w-md mx-auto mb-6">
             JWT tokens contain sensitive data. SafeJSON Pro ensures your tokens
-            never leave your browser — $5/month, cancel anytime.
+            never leave your browser - $5/month, cancel anytime.
           </p>
           <div className="flex items-center justify-center gap-3">
             <Link

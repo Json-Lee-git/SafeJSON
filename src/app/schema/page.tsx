@@ -142,7 +142,7 @@ export default function SchemaPage() {
         </h1>
         <p className="text-sm text-zinc-500 max-w-xl mx-auto">
           Validate JSON data against a JSON Schema. Catch missing fields, wrong
-          types, and invalid patterns — all in your browser.
+          types, and invalid patterns - all in your browser.
         </p>
       </section>
 
@@ -225,7 +225,7 @@ export default function SchemaPage() {
       <section className="max-w-4xl mx-auto px-4 py-12 border-t border-zinc-800/50 text-center">
         <span className="text-xs font-medium text-emerald-400/80 uppercase tracking-wider bg-emerald-400/10 px-3 py-1 rounded-full">Pro Feature</span>
         <h2 className="text-2xl font-bold mt-4 mb-2">Validate anything</h2>
-        <p className="text-sm text-zinc-500 max-w-md mx-auto mb-6">JSON Schema Validator, JSONPath, Diff, and JWT Decoder — $5/month. All client-side.</p>
+        <p className="text-sm text-zinc-500 max-w-md mx-auto mb-6">JSON Schema Validator, JSONPath, Diff, and JWT Decoder - $5/month. All client-side.</p>
         <Link href="/pricing" className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl transition-colors text-sm inline-flex">View Pricing</Link>
       </section>
 

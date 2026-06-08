@@ -3,7 +3,7 @@ import Link from "next/link";
 import { HowToSchema } from "../components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "JSON Formatter Help & FAQ — SafeJSON Support",
+  title: "JSON Formatter Help & FAQ - SafeJSON Support",
   description:
     "Learn how to use SafeJSON safely. How to format JSON, verify privacy, decode JWT tokens, compare JSON, and use JSONPath. Frequently asked questions with step-by-step guides.",
   openGraph: {
@@ -93,7 +93,7 @@ const steps = [
     id: "free",
     steps: [
       "Core JSON formatting, validation, and tree view are free forever with no limits.",
-      "Pro tools — JSON Diff, JWT Decoder, JSONPath Query, and Schema Validator — are available for $5/month or $39/year.",
+      "Pro tools - JSON Diff, JWT Decoder, JSONPath Query, and Schema Validator - are available for $5/month or $39/year.",
       "Pro tools remain 100% client-side. Your data never leaves your browser even with a Pro subscription.",
       "View pricing: https://safejson.vercel.app/pricing.",
     ],

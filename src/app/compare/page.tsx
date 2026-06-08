@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   BreadcrumbSchema,
+  HowToSchema,
   JsonLdScript,
 } from "../components/StructuredData";
 import {
@@ -66,6 +67,17 @@ export default function ComparePage() {
             },
           })),
         }}
+      />
+      <HowToSchema
+        name="How to verify whether a JSON tool uploads your data"
+        description="Use DevTools Network tab to check whether a JSON formatter sends pasted JSON to a server."
+        steps={[
+          "Open the JSON tool in your browser.",
+          "Open DevTools and switch to the Network tab.",
+          "Paste JSON and run the formatter, viewer, diff, decoder, or parser.",
+          "Check whether a new request contains your JSON data.",
+          "If there are zero new requests while processing, the JSON stayed local.",
+        ]}
       />
 
       <header className="border-b border-zinc-800">

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { BreadcrumbSchema, JsonLdScript } from "../../components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Safest JSON Formatter 2026 — 5 Client-Side Tools Compared | SafeJSON",
+  title: "Safest JSON Formatter 2026 - 5 Client-Side Tools Compared | SafeJSON",
   description:
     "Compare the 5 safest JSON formatters in 2026. Learn how to verify a JSON tool does not upload your data, what happened to jsonformatter.org, and which tools are truly client-side.",
   openGraph: {
@@ -75,7 +75,7 @@ export default function BlogPost() {
           Here is what you need to know about choosing a safe JSON tool.
         </p>
 
-        {/* TL;DR answer capsule — AI extraction target */}
+        {/* TL;DR answer capsule - AI extraction target */}
         <div className="p-5 rounded-xl border border-emerald-400/20 bg-emerald-400/5 mb-10">
           <p className="text-sm text-zinc-300 font-semibold mb-2">
             The safest JSON formatter in 2026 is one that processes data
@@ -84,7 +84,7 @@ export default function BlogPost() {
           <p className="text-sm text-zinc-400 leading-relaxed">
             Client-side tools like SafeJSON, JSON Buddy, and AllJSONTools never
             send your data to a server. You can verify this by opening DevTools
-            → Network tab while using the tool: if you see zero network requests
+            -&gt; Network tab while using the tool: if you see zero network requests
             during formatting, your data stayed local. Server-side tools like
             jsonformatter.org and codebeautify.org transmit your JSON to remote
             servers and were caught leaking credentials in 2025.
@@ -105,7 +105,7 @@ export default function BlogPost() {
           credentials, and banking PII were accessible to anyone who knew the
           URL pattern. The researchers planted canary tokens to test whether
           attackers were actively scraping the data. The canaries were triggered
-          within 48 hours — confirming active exploitation.
+          within 48 hours - confirming active exploitation.
         </p>
         <p className="text-zinc-400 leading-relaxed mb-4">
           This was not an isolated incident. Around the same time, the most
@@ -126,7 +126,7 @@ export default function BlogPost() {
         </h2>
         <ol className="list-decimal pl-5 space-y-2 text-zinc-400 mb-8">
           <li>Open the JSON formatter in your browser.</li>
-          <li>Open DevTools (F12 or right-click → Inspect).</li>
+          <li>Open DevTools (F12 or right-click -&gt; Inspect).</li>
           <li>Go to the Network tab.</li>
           <li>Paste any JSON data into the tool.</li>
           <li>
@@ -231,7 +231,7 @@ export default function BlogPost() {
             </Link>
             <Link href="/" className="p-4 rounded-xl border border-zinc-800 hover:border-zinc-700 transition-colors group">
               <p className="text-sm font-medium group-hover:text-emerald-400 transition-colors">Try SafeJSON Formatter</p>
-              <p className="text-xs text-zinc-500 mt-1">Format your first JSON — zero data upload.</p>
+              <p className="text-xs text-zinc-500 mt-1">Format your first JSON - zero data upload.</p>
             </Link>
           </div>
         </div>

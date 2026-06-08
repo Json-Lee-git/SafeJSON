@@ -230,7 +230,7 @@ export default function DiffPage() {
             </span>
             {hasOutput && (
               <span className="text-xs text-zinc-600">
-                All processing client-side — zero network requests
+                All processing client-side - zero network requests
               </span>
             )}
           </div>
@@ -265,7 +265,7 @@ export default function DiffPage() {
             Unlock all Pro tools
           </h2>
           <p className="text-sm text-zinc-500 max-w-md mx-auto mb-6">
-            JSON Diff, JWT Decoder, JSONPath Query, and Schema Validator —
+            JSON Diff, JWT Decoder, JSONPath Query, and Schema Validator -
             $5/month. All client-side. Cancel anytime.
           </p>
           <div className="flex items-center justify-center gap-3">

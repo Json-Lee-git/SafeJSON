@@ -50,7 +50,7 @@ function getCollapsedPreview(value: JsonValue, maxLen: number = 60): string {
   if (value === null) return "null";
   if (typeof value === "string") {
     const escaped = JSON.stringify(value);
-    return escaped.length > maxLen ? escaped.slice(0, maxLen) + "…\"" : escaped;
+    return escaped.length > maxLen ? escaped.slice(0, maxLen) + "...\"" : escaped;
   }
   if (typeof value === "number" || typeof value === "boolean")
     return String(value);

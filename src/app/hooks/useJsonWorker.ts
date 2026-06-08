@@ -47,7 +47,10 @@ self.onmessage = (event) => {
 
 function createWorker() {
   const blob = new Blob([workerSource], { type: "application/javascript" });
-  return new Worker(URL.createObjectURL(blob));
+  const url = URL.createObjectURL(blob);
+  const worker = new Worker(url);
+  URL.revokeObjectURL(url);
+  return worker;
 }
 
 export function formatBytes(bytes: number) {
