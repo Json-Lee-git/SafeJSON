@@ -1,18 +1,60 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BreadcrumbSchema, JsonLdScript } from "../../components/StructuredData";
 
 export const metadata: Metadata = {
   title: "Safest JSON Formatter 2026 — 5 Client-Side Tools Compared | SafeJSON",
   description:
     "Compare the 5 safest JSON formatters in 2026. Learn how to verify a JSON tool does not upload your data, what happened to jsonformatter.org, and which tools are truly client-side.",
+  openGraph: {
+    title: "Safest JSON Formatter 2026",
+    description:
+      "Compare five client-side JSON formatters and learn how to verify that a JSON tool does not upload your data.",
+    url: "/blog/safest-json-formatter",
+    type: "article",
+    publishedTime: "2026-06-08T00:00:00.000Z",
+    modifiedTime: "2026-06-08T00:00:00.000Z",
+  },
   alternates: {
     canonical: "/blog/safest-json-formatter",
   },
 };
 
 export default function BlogPost() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Safest JSON Formatter 2026 - 5 Client-Side Tools Compared",
+    description:
+      "Compare the 5 safest JSON formatters in 2026 and learn how to verify that a JSON formatter does not upload your data.",
+    datePublished: "2026-06-08",
+    dateModified: "2026-06-08",
+    author: {
+      "@type": "Organization",
+      name: "SafeJSON",
+      url: "https://safejson.vercel.app",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "SafeJSON",
+      url: "https://safejson.vercel.app",
+    },
+    mainEntityOfPage: "https://safejson.vercel.app/blog/safest-json-formatter",
+  };
+
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
+      <BreadcrumbSchema
+        items={[
+          { name: "SafeJSON", url: "https://safejson.vercel.app" },
+          {
+            name: "Safest JSON Formatter 2026",
+            url: "https://safejson.vercel.app/blog/safest-json-formatter",
+          },
+        ]}
+      />
+      <JsonLdScript data={articleSchema} />
+
       <header className="border-b border-zinc-800">
         <div className="max-w-3xl mx-auto px-4 h-14 flex items-center">
           <Link href="/" className="text-lg font-bold tracking-tight">

@@ -15,9 +15,13 @@ export function useProUsage(tool: string) {
   const [isDev, setIsDev] = useState(false);
 
   useEffect(() => {
-    const stored = localStorage.getItem(getUsageKey(tool));
-    setCount(stored ? parseInt(stored, 10) : 0);
-    setIsDev(localStorage.getItem(DEV_KEY) === "1");
+    const handle = window.setTimeout(() => {
+      const stored = localStorage.getItem(getUsageKey(tool));
+      setCount(stored ? parseInt(stored, 10) : 0);
+      setIsDev(localStorage.getItem(DEV_KEY) === "1");
+    }, 0);
+
+    return () => window.clearTimeout(handle);
   }, [tool]);
 
   const increment = () => {
@@ -36,14 +40,18 @@ export function ProBanner({ tool }: { tool: string }) {
   const [isDev, setIsDev] = useState(false);
 
   useEffect(() => {
-    setIsDev(localStorage.getItem(DEV_KEY) === "1");
+    const handle = window.setTimeout(() => {
+      setIsDev(localStorage.getItem(DEV_KEY) === "1");
 
-    // Check URL param: any page with ?dev activates developer mode
-    if (window.location.search.includes("dev")) {
-      localStorage.setItem(DEV_KEY, "1");
-      setIsDev(true);
-      setDismissed(true);
-    }
+      // Check URL param: any page with ?dev activates developer mode
+      if (window.location.search.includes("dev")) {
+        localStorage.setItem(DEV_KEY, "1");
+        setIsDev(true);
+        setDismissed(true);
+      }
+    }, 0);
+
+    return () => window.clearTimeout(handle);
   }, []);
 
   if (dismissed || isDev) return null;

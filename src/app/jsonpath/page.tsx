@@ -11,7 +11,6 @@ export default function JsonPathPage() {
   const [pathExpr, setPathExpr] = useState("");
   const [results, setResults] = useState<JsonValue[] | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [parsed, setParsed] = useState<JsonValue | null>(null);
 
   const handleQuery = useCallback(async () => {
     setError(null);
@@ -29,7 +28,6 @@ export default function JsonPathPage() {
     let data: JsonValue;
     try {
       data = JSON.parse(jsonInput);
-      setParsed(data);
     } catch (e) {
       setError("Invalid JSON: " + (e instanceof Error ? e.message : ""));
       return;
@@ -78,7 +76,6 @@ export default function JsonPathPage() {
       },
     };
     setJsonInput(JSON.stringify(sample, null, 2));
-    setParsed(sample);
     setPathExpr("$.store.books[*].title");
     setResults(null);
     setError(null);
@@ -89,7 +86,6 @@ export default function JsonPathPage() {
     setPathExpr("");
     setResults(null);
     setError(null);
-    setParsed(null);
   }, []);
 
   return (

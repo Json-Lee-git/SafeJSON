@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BreadcrumbSchema } from "../../components/StructuredData";
 
 export const metadata: Metadata = {
   title: "SafeJSON vs JSON Formatter Extension — Comparison 2026",
   description:
     "The original JSON Formatter Chrome extension (2M+ users) was sold, closed-sourced, and turned into adware. SafeJSON is open source with zero tracking.",
+  openGraph: {
+    title: "SafeJSON vs JSON Formatter Extension",
+    description:
+      "Compare SafeJSON with post-sale JSON Formatter extensions on open source code, tracking, ads, and local JSON processing.",
+    url: "/vs/jsonformatter-extension",
+  },
   alternates: {
     canonical: "/vs/jsonformatter-extension",
   },
@@ -13,6 +20,15 @@ export const metadata: Metadata = {
 export default function VsExtensionPage() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
+      <BreadcrumbSchema
+        items={[
+          { name: "SafeJSON", url: "https://safejson.vercel.app" },
+          {
+            name: "SafeJSON vs JSON Formatter Extension",
+            url: "https://safejson.vercel.app/vs/jsonformatter-extension",
+          },
+        ]}
+      />
       <header className="border-b border-zinc-800">
         <div className="max-w-4xl mx-auto px-4 h-14 flex items-center">
           <Link href="/" className="text-lg font-bold tracking-tight">

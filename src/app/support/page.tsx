@@ -5,6 +5,12 @@ export const metadata: Metadata = {
   title: "JSON Formatter Help & FAQ — SafeJSON Support",
   description:
     "Learn how to use SafeJSON safely. How to format JSON, verify privacy, decode JWT tokens, compare JSON, and use JSONPath. Frequently asked questions with step-by-step guides.",
+  openGraph: {
+    title: "SafeJSON Help & FAQ",
+    description:
+      "Step-by-step SafeJSON guides for formatting JSON, verifying privacy, decoding JWTs, comparing JSON, and using JSONPath.",
+    url: "/support",
+  },
   alternates: {
     canonical: "/support",
   },

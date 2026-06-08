@@ -26,7 +26,7 @@ document.getElementById("open-tool").addEventListener("click", () => {
         }
       }
     );
-  } catch (_) {
+  } catch {
     // Quiet
   }
 })();

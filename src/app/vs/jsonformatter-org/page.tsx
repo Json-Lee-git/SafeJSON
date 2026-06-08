@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BreadcrumbSchema } from "../../components/StructuredData";
 
 export const metadata: Metadata = {
   title: "SafeJSON vs jsonformatter.org — Comparison 2026",
   description:
     "SafeJSON processes JSON 100% client-side. jsonformatter.org processes server-side and leaked 80,000+ credentials in 2025. Compare features, privacy, and pricing.",
+  openGraph: {
+    title: "SafeJSON vs jsonformatter.org",
+    description:
+      "Compare SafeJSON and jsonformatter.org on client-side processing, privacy, breach history, ads, tracking, and JSON tools.",
+    url: "/vs/jsonformatter-org",
+  },
   alternates: {
     canonical: "/vs/jsonformatter-org",
   },
@@ -13,6 +20,15 @@ export const metadata: Metadata = {
 export default function VsJsonFormatterPage() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
+      <BreadcrumbSchema
+        items={[
+          { name: "SafeJSON", url: "https://safejson.vercel.app" },
+          {
+            name: "SafeJSON vs jsonformatter.org",
+            url: "https://safejson.vercel.app/vs/jsonformatter-org",
+          },
+        ]}
+      />
       <header className="border-b border-zinc-800">
         <div className="max-w-4xl mx-auto px-4 h-14 flex items-center">
           <Link href="/" className="text-lg font-bold tracking-tight">

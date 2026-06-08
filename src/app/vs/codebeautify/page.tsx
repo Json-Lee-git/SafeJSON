@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BreadcrumbSchema } from "../../components/StructuredData";
 
 export const metadata: Metadata = {
   title: "SafeJSON vs codebeautify.org — Comparison 2026",
   description:
     "SafeJSON processes everything client-side. codebeautify.org is server-side and was part of the 2025 credential leak affecting 80,000+ users. Compare features and privacy.",
+  openGraph: {
+    title: "SafeJSON vs codebeautify.org",
+    description:
+      "Compare SafeJSON and codebeautify.org on privacy, client-side processing, breach history, ads, and JSON tools.",
+    url: "/vs/codebeautify",
+  },
   alternates: {
     canonical: "/vs/codebeautify",
   },
@@ -13,6 +20,15 @@ export const metadata: Metadata = {
 export default function VsCodeBeautifyPage() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
+      <BreadcrumbSchema
+        items={[
+          { name: "SafeJSON", url: "https://safejson.vercel.app" },
+          {
+            name: "SafeJSON vs codebeautify.org",
+            url: "https://safejson.vercel.app/vs/codebeautify",
+          },
+        ]}
+      />
       <header className="border-b border-zinc-800">
         <div className="max-w-4xl mx-auto px-4 h-14 flex items-center">
           <Link href="/" className="text-lg font-bold tracking-tight">

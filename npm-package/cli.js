@@ -3,8 +3,6 @@
 // safejson-cli — Open SafeJSON from your terminal
 // https://safejson.vercel.app
 
-const { exec } = require("child_process");
-
 const url = "https://safejson.vercel.app";
 
 // Accept optional JSON input via stdin
@@ -15,12 +13,17 @@ process.stdin.on("data", (chunk) => {
 });
 
 process.stdin.on("end", () => {
+  openSafeJson(input);
+});
+
+async function openSafeJson(stdinInput) {
+  const { exec } = await import("node:child_process");
   const platform = process.platform;
   let command;
 
-  if (input.trim()) {
+  if (stdinInput.trim()) {
     // If JSON is piped in, encode it and append to URL
-    const encoded = encodeURIComponent(input.trim());
+    const encoded = encodeURIComponent(stdinInput.trim());
     const fullUrl = `${url}?json=${encoded}`;
 
     if (platform === "darwin") {
@@ -47,7 +50,7 @@ process.stdin.on("end", () => {
       process.exit(1);
     }
   });
-});
+}
 
 // If no stdin data within 100ms, just open the URL
 setTimeout(() => {

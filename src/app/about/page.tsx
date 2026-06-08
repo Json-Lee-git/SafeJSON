@@ -5,6 +5,12 @@ export const metadata: Metadata = {
   title: "About SafeJSON — Privacy-first JSON Tools",
   description:
     "SafeJSON is built by an independent developer who believes developer tools should not require trusting strangers with your data. Learn about the project and its mission.",
+  openGraph: {
+    title: "About SafeJSON",
+    description:
+      "SafeJSON is a privacy-first JSON toolkit that processes developer data in the browser.",
+    url: "/about",
+  },
   alternates: {
     canonical: "/about",
   },

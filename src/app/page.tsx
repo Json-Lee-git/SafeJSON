@@ -29,20 +29,24 @@ export default function Home() {
 
   // Load JSON from ?json= URL parameter (sent by Chrome extension)
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const jsonParam = params.get("json");
-    if (jsonParam) {
-      try {
-        const decoded = decodeURIComponent(jsonParam);
-        const data = JSON.parse(decoded);
-        setInput(decoded);
-        setParsed(data);
-        setFormattedText(JSON.stringify(data, null, 2));
-        setError(null);
-      } catch (_) {
-        // Invalid JSON in URL, ignore
+    const handle = window.setTimeout(() => {
+      const params = new URLSearchParams(window.location.search);
+      const jsonParam = params.get("json");
+      if (jsonParam) {
+        try {
+          const decoded = decodeURIComponent(jsonParam);
+          const data = JSON.parse(decoded);
+          setInput(decoded);
+          setParsed(data);
+          setFormattedText(JSON.stringify(data, null, 2));
+          setError(null);
+        } catch {
+          // Invalid JSON in URL, ignore
+        }
       }
-    }
+    }, 0);
+
+    return () => window.clearTimeout(handle);
   }, []);
 
   const toggleTheme = useCallback(() => {
@@ -393,6 +397,7 @@ export default function Home() {
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
             <span className="text-zinc-600 text-xs">Explore:</span>
             <Link href="/blog/safest-json-formatter" className="text-zinc-500 hover:text-emerald-400 transition-colors">What is the safest JSON formatter</Link>
+            <Link href="/answers" className="text-zinc-500 hover:text-emerald-400 transition-colors">SafeJSON answers</Link>
             <Link href="/vs/jsonformatter-org" className="text-zinc-500 hover:text-emerald-400 transition-colors">SafeJSON vs jsonformatter.org</Link>
             <Link href="/vs/jsonformatter-extension" className="text-zinc-500 hover:text-emerald-400 transition-colors">Extension comparison</Link>
             <Link href="/pricing" className="text-zinc-500 hover:text-emerald-400 transition-colors">Free vs Pro</Link>
@@ -552,6 +557,7 @@ export default function Home() {
         <div className="flex items-center justify-center gap-4 mb-3">
           <Link href="/about" className="hover:text-zinc-400 transition-colors">About</Link>
           <Link href="/support" className="hover:text-zinc-400 transition-colors">Help & FAQ</Link>
+          <Link href="/answers" className="hover:text-zinc-400 transition-colors">Answers</Link>
           <Link href="/blog/safest-json-formatter" className="hover:text-zinc-400 transition-colors">Blog</Link>
           <Link href="/privacy" className="hover:text-zinc-400 transition-colors">Privacy</Link>
           <Link href="/pricing" className="hover:text-zinc-400 transition-colors">Pricing</Link>

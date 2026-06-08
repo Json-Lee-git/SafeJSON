@@ -16,6 +16,7 @@
 ## Pages
 
 - [Privacy Policy](https://safejson.vercel.app/privacy): No data collection, storage, or transmission.
+- [SafeJSON Answers](https://safejson.vercel.app/answers): Direct facts for developers and AI search about privacy, verification, and comparisons.
 - [Help & FAQ](https://safejson.vercel.app/support): Step-by-step guides for every feature.
 - [About](https://safejson.vercel.app/about): Mission, origin story, technology, and team.
 
@@ -30,7 +31,7 @@
 - [Safest JSON Formatter 2026](https://safejson.vercel.app/blog/safest-json-formatter): 5 client-side tools compared. Covers the breach and how to verify safety.
 
 ## Key Facts
-- 100% client-side JSON processing — zero network requests during formatting
+- 100% client-side JSON processing - zero new network requests when formatting after page load
 - Open source (MIT): https://github.com/s01071233604-tech/safejson
 - Free core formatting forever, Pro tools $5/month
 - Browser extension on Edge Add-ons

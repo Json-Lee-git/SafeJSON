@@ -1,3 +1,73 @@
+type JsonLd = Record<string, unknown>;
+
+export function JsonLdScript({ data }: { data: JsonLd }) {
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(data).replace(/</g, "\\u003c"),
+      }}
+    />
+  );
+}
+
+export function OrganizationSchema() {
+  return (
+    <JsonLdScript
+      data={{
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "SafeJSON",
+        url: "https://safejson.vercel.app",
+        logo: "https://safejson.vercel.app/favicon.ico",
+        sameAs: ["https://github.com/s01071233604-tech/safejson"],
+      }}
+    />
+  );
+}
+
+export function WebSiteSchema() {
+  return (
+    <JsonLdScript
+      data={{
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "SafeJSON",
+        url: "https://safejson.vercel.app",
+        description:
+          "Privacy-first JSON formatter and developer tools that process data entirely in the browser.",
+        inLanguage: "en",
+        publisher: {
+          "@type": "Organization",
+          name: "SafeJSON",
+          url: "https://safejson.vercel.app",
+        },
+      }}
+    />
+  );
+}
+
+export function BreadcrumbSchema({
+  items,
+}: {
+  items: Array<{ name: string; url: string }>;
+}) {
+  return (
+    <JsonLdScript
+      data={{
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        itemListElement: items.map((item, index) => ({
+          "@type": "ListItem",
+          position: index + 1,
+          name: item.name,
+          item: item.url,
+        })),
+      }}
+    />
+  );
+}
+
 export function SoftwareAppSchema() {
   const ld = {
     "@context": "https://schema.org",
@@ -31,14 +101,7 @@ export function SoftwareAppSchema() {
     url: "https://safejson.vercel.app",
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(ld).replace(/</g, "\\u003c"),
-      }}
-    />
-  );
+  return <JsonLdScript data={ld} />;
 }
 
 export function FAQSchema() {
@@ -89,12 +152,5 @@ export function FAQSchema() {
     ],
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{
-        __html: JSON.stringify(ld).replace(/</g, "\\u003c"),
-      }}
-    />
-  );
+  return <JsonLdScript data={ld} />;
 }

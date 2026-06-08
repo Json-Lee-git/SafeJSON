@@ -37,7 +37,7 @@
   let data;
   try {
     data = JSON.parse(rawText.trim());
-  } catch (e) {
+  } catch {
     return; // Not valid JSON, don't touch the page
   }
 

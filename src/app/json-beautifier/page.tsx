@@ -1,25 +1,24 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useMemo } from "react";
 import Link from "next/link";
 
 const SAMPLE = '{"store":{"name":"Acme Books","books":[{"id":1,"title":"The Pragmatic Programmer","price":49.99,"inStock":true},{"id":2,"title":"Clean Code","price":39.99,"inStock":true}]}}';
 
 export default function JsonBeautifierPage() {
   const [input, setInput] = useState("");
-  const [output, setOutput] = useState("");
-  const [error, setError] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
 
-  // Auto-beautify on input change
-  useEffect(() => {
-    if (!input.trim()) { setOutput(""); setError(null); return; }
+  const { output, error } = useMemo(() => {
+    if (!input.trim()) return { output: "", error: null };
+
     try {
-      setOutput(JSON.stringify(JSON.parse(input), null, 2));
-      setError(null);
+      return { output: JSON.stringify(JSON.parse(input), null, 2), error: null };
     } catch (e) {
-      setError(e instanceof Error ? e.message : "Invalid JSON");
-      setOutput("");
+      return {
+        output: "",
+        error: e instanceof Error ? e.message : "Invalid JSON",
+      };
     }
   }, [input]);
 
