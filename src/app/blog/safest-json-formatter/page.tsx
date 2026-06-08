@@ -2,9 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "What Is the Safest JSON Formatter in 2026? 5 Tools Compared",
+  title: "Safest JSON Formatter 2026 — 5 Client-Side Tools Compared | SafeJSON",
   description:
     "Compare the 5 safest JSON formatters in 2026. Learn how to verify a JSON tool does not upload your data, what happened to jsonformatter.org, and which tools are truly client-side.",
+  alternates: {
+    canonical: "/blog/safest-json-formatter",
+  },
 };
 
 export default function BlogPost() {

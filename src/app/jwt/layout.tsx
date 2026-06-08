@@ -8,6 +8,10 @@ export const metadata: Metadata = {
     title: "JWT Decoder — SafeJSON",
     description:
       "Decode JWT tokens in your browser. Header, payload, and signature — no data upload.",
+    url: "/jwt",
+  },
+  alternates: {
+    canonical: "/jwt",
   },
 };
 

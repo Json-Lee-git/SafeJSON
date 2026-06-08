@@ -8,6 +8,10 @@ export const metadata: Metadata = {
     title: "JSONPath Query — SafeJSON",
     description:
       "Query JSON data with JSONPath expressions. Client-side evaluation, no data upload.",
+    url: "/jsonpath",
+  },
+  alternates: {
+    canonical: "/jsonpath",
   },
 };
 

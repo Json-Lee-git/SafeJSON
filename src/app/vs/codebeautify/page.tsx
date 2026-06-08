@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "SafeJSON vs codebeautify.org — Comparison 2026",
   description:
     "SafeJSON processes everything client-side. codebeautify.org is server-side and was part of the 2025 credential leak affecting 80,000+ users. Compare features and privacy.",
+  alternates: {
+    canonical: "/vs/codebeautify",
+  },
 };
 
 export default function VsCodeBeautifyPage() {

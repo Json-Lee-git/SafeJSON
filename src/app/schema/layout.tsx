@@ -9,6 +9,10 @@ export const metadata: Metadata = {
     title: "JSON Schema Validator — SafeJSON",
     description:
       "Validate JSON against JSON Schema. All processing happens in your browser.",
+    url: "/schema",
+  },
+  alternates: {
+    canonical: "/schema",
   },
 };
 

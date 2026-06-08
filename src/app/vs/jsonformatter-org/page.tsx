@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "SafeJSON vs jsonformatter.org — Comparison 2026",
   description:
     "SafeJSON processes JSON 100% client-side. jsonformatter.org processes server-side and leaked 80,000+ credentials in 2025. Compare features, privacy, and pricing.",
+  alternates: {
+    canonical: "/vs/jsonformatter-org",
+  },
 };
 
 export default function VsJsonFormatterPage() {
@@ -96,7 +99,7 @@ export default function VsJsonFormatterPage() {
             JavaScript. There is no server to leak from because there is no
             server processing your data. You can verify this claim: open
             DevTools, go to the Network tab, and paste any JSON into SafeJSON.
-            You will see zero network requests.
+            You will see zero new network requests.
           </p>
           <p className="text-zinc-400 leading-relaxed">
             SafeJSON is also open source under the MIT license. Every line of

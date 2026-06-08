@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "JSON Formatter Help & FAQ — SafeJSON Support",
   description:
     "Learn how to use SafeJSON safely. How to format JSON, verify privacy, decode JWT tokens, compare JSON, and use JSONPath. Frequently asked questions with step-by-step guides.",
+  alternates: {
+    canonical: "/support",
+  },
 };
 
 const steps = [
@@ -121,6 +124,19 @@ const steps = [
 ];
 
 export default function SupportPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: steps.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.steps.join(" "),
+      },
+    })),
+  };
+
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
       <header className="border-b border-zinc-800">
@@ -196,6 +212,12 @@ export default function SupportPage() {
       </main>
 
       {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqSchema).replace(/</g, "\\u003c"),
+        }}
+      />
     </div>
   );
 }

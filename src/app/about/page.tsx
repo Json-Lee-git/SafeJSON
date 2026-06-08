@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "About SafeJSON — Privacy-first JSON Tools",
   description:
     "SafeJSON is built by an independent developer who believes developer tools should not require trusting strangers with your data. Learn about the project and its mission.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {
@@ -38,7 +41,7 @@ export default function AboutPage() {
             the first place. Every SafeJSON feature runs entirely in your
             browser. No server processes your JSON. No data leaves your device.
             This is verifiable: open DevTools → Network tab while using SafeJSON
-            and you will see zero requests.
+            and you will see zero new requests.
           </p>
         </section>
 

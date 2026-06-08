@@ -8,6 +8,10 @@ export const metadata: Metadata = {
     title: "JSON Diff Checker — SafeJSON",
     description:
       "Compare two JSON objects side by side. All processing happens in your browser.",
+    url: "/diff",
+  },
+  alternates: {
+    canonical: "/diff",
   },
 };
 

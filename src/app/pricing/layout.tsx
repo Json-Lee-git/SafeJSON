@@ -8,6 +8,10 @@ export const metadata: Metadata = {
     title: "SafeJSON Pro Pricing",
     description:
       "Get JSON Diff, JWT Decoder, JSONPath, and Schema Validator for $5/month.",
+    url: "/pricing",
+  },
+  alternates: {
+    canonical: "/pricing",
   },
 };
 

@@ -6,8 +6,7 @@ export function SoftwareAppSchema() {
     applicationCategory: "DeveloperApplication",
     description:
       "Privacy-first JSON formatter that runs 100% in your browser. No data ever leaves your device. Zero network requests during formatting.",
-    operatingSystem: "Web",
-    browserRequirements: "Requires JavaScript",
+    operatingSystem: "All",
     offers: {
       "@type": "Offer",
       price: "0",
@@ -35,7 +34,9 @@ export function SoftwareAppSchema() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(ld).replace(/</g, "\\u003c"),
+      }}
     />
   );
 }
@@ -91,7 +92,9 @@ export function FAQSchema() {
   return (
     <script
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(ld) }}
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(ld).replace(/</g, "\\u003c"),
+      }}
     />
   );
 }

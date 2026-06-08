@@ -1,77 +1,34 @@
 # SafeJSON — Privacy-first JSON Formatter
-# https://safejson.vercel.app
+> Format, validate, and debug JSON entirely in your browser. No server. No ads. No tracking.
 
-## Core Pages
+## Core Tools
 
-### Home — JSON Formatter & Validator
-https://safejson.vercel.app/
-The primary JSON formatting tool. Paste JSON, get instant formatting with tree view, syntax highlighting, and error detection. 100% client-side — no data ever leaves your browser.
+- [JSON Formatter & Validator](https://safejson.vercel.app/): Paste JSON, get instant formatting with tree view, syntax highlighting, and error detection. 100% client-side.
+- [JSON Diff Checker](https://safejson.vercel.app/diff): Compare two JSON objects side by side with color-coded changes. All processing in-browser.
+- [JWT Decoder](https://safejson.vercel.app/jwt): Decode JWT tokens instantly — your token never leaves your device.
+- [JSONPath Query](https://safejson.vercel.app/jsonpath): Query JSON with XPath-like expressions. Client-side evaluation.
+- [JSON Schema Validator](https://safejson.vercel.app/schema): Validate JSON against JSON Schema. All client-side.
+- [Pricing](https://safejson.vercel.app/pricing): Free core formatting. Pro tools (Diff, JWT, JSONPath, Schema) for $5/month or $39/year.
 
-### JSON Diff Checker
-https://safejson.vercel.app/diff
-Compare two JSON objects side by side. Added, removed, and changed values are color-coded. All processing happens in your browser.
+## Pages
 
-### JWT Decoder
-https://safejson.vercel.app/jwt
-Decode JWT tokens instantly in your browser. Header, payload, and signature are decoded client-side — your token never leaves your device.
-
-### JSONPath Query
-https://safejson.vercel.app/jsonpath
-Query JSON data with XPath-like JSONPath expressions. Extract nested values and filter arrays. Client-side evaluation.
-
-### JSON Schema Validator
-https://safejson.vercel.app/schema
-Validate JSON data against JSON Schema definitions. Catch missing fields, wrong types, and invalid patterns. All client-side.
-
-### Pricing
-https://safejson.vercel.app/pricing
-Free tier includes JSON Formatter. Pro tier ($5/month or $39/year) adds JSON Diff, JWT Decoder, JSONPath, and Schema Validator.
-
-### Privacy Policy
-https://safejson.vercel.app/privacy
-SafeJSON does not collect, store, or transmit any user data. All processing happens client-side.
-
-## What Makes SafeJSON Different
-
-SafeJSON is the only major JSON formatter that processes data entirely in the user's browser. Unlike jsonformatter.org (which leaked over 80,000 credentials in November 2025 through an unprotected feature), SafeJSON makes zero network requests during formatting. This can be verified by opening DevTools → Network tab while using the tool.
+- [Privacy Policy](https://safejson.vercel.app/privacy): No data collection, storage, or transmission.
+- [Help & FAQ](https://safejson.vercel.app/support): Step-by-step guides for every feature.
+- [About](https://safejson.vercel.app/about): Mission, origin story, technology, and team.
 
 ## Comparisons
 
-### SafeJSON vs jsonformatter.org
-https://safejson.vercel.app/vs/jsonformatter-org
-Feature comparison table. jsonformatter.org leaked 80,000+ credentials in November 2025. SafeJSON is client-side, open source, ad-free.
-
-### SafeJSON vs codebeautify.org
-https://safejson.vercel.app/vs/codebeautify
-Feature comparison table. codebeautify.org was part of the same 2025 credential leak. SafeJSON processes data in the browser.
-
-### SafeJSON vs JSON Formatter Extension
-https://safejson.vercel.app/vs/jsonformatter-extension
-The original extension (2M+ users) was sold, closed-sourced, and turned into adware. SafeJSON is open source with zero tracking.
+- [SafeJSON vs jsonformatter.org](https://safejson.vercel.app/vs/jsonformatter-org): Feature comparison. jsonformatter.org leaked 80,000+ credentials in 2025.
+- [SafeJSON vs codebeautify.org](https://safejson.vercel.app/vs/codebeautify): Same 2025 breach.
+- [SafeJSON vs JSON Formatter Extension](https://safejson.vercel.app/vs/jsonformatter-extension): 2M-user extension sold and turned into adware.
 
 ## Blog
 
-### What Is the Safest JSON Formatter in 2026? 5 Tools Compared
-https://safejson.vercel.app/blog/safest-json-formatter
-Comparison of 5 client-side JSON formatters. Covers the jsonformatter.org breach, how to verify a tool is safe, and what to avoid.
-
-## Support
-
-### Help & FAQ
-https://safejson.vercel.app/support
-Step-by-step guides for every SafeJSON feature. Covers formatting, verification, diff, JWT, JSONPath, Schema, offline use, and the jsonformatter.org breach.
-
-## About
-
-### About SafeJSON
-https://safejson.vercel.app/about
-Mission, origin story, technology, and team. Built by an independent developer. Open source, self-funded, no tracking.
+- [Safest JSON Formatter 2026](https://safejson.vercel.app/blog/safest-json-formatter): 5 client-side tools compared. Covers the breach and how to verify safety.
 
 ## Key Facts
-- 100% client-side JSON processing
-- Zero data collection, zero tracking, zero ads
-- Open source on GitHub: https://github.com/s01071233604-tech/safejson
-- Free forever for core formatting
-- Pro tools: Diff, JWT, JSONPath, Schema ($5/month)
-- Browser extension available on Edge Add-ons
-- Built with Next.js, Tailwind CSS, deployed on Vercel
+- 100% client-side JSON processing — zero network requests during formatting
+- Open source (MIT): https://github.com/s01071233604-tech/safejson
+- Free core formatting forever, Pro tools $5/month
+- Browser extension on Edge Add-ons
+- Built with Next.js and Tailwind CSS, deployed on Vercel

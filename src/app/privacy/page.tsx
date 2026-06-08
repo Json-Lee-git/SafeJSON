@@ -1,19 +1,21 @@
+import Link from "next/link";
+
 export default function PrivacyPage() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
       <header className="border-b border-zinc-800">
         <div className="max-w-3xl mx-auto px-4 h-14 flex items-center">
-          <a href="/" className="text-lg font-bold tracking-tight">
+          <Link href="/" className="text-lg font-bold tracking-tight">
             <span className="text-emerald-400">{`{`}</span>
             SafeJSON
             <span className="text-emerald-400">{`}`}</span>
-          </a>
+          </Link>
         </div>
       </header>
       <main className="max-w-3xl mx-auto px-4 py-16">
         <h1 className="text-3xl font-bold mb-8">Privacy Policy</h1>
         <p className="text-sm text-zinc-500 mb-8">
-          Last updated: June 3, 2026
+          Last updated: June 8, 2026
         </p>
 
         <section className="mb-8">
@@ -41,7 +43,7 @@ export default function PrivacyPage() {
             </li>
             <li>
               <strong>clipboardWrite</strong>: Used only when you explicitly
-              click the "Copy" button to copy formatted JSON to your clipboard.
+              click the &quot;Copy&quot; button to copy formatted JSON to your clipboard.
             </li>
             <li>
               <strong>Content script on all URLs</strong>: The extension reads
@@ -54,11 +56,10 @@ export default function PrivacyPage() {
         <section className="mb-8">
           <h2 className="text-lg font-semibold mb-3">Third Parties</h2>
           <p className="text-zinc-400 leading-relaxed">
-            SafeJSON uses Google Analytics to measure anonymous page views
-            (through a privacy-safe implementation with IP anonymization). No
-            personal data or JSON content is ever sent to third parties. We do
-            not use advertising networks, tracking scripts, or data brokers.
-            There are no marketing cookies.
+            SafeJSON does not use third-party analytics, advertising networks,
+            tracking scripts, data brokers, or marketing cookies. No personal
+            data, JSON content, page content, or tool usage data is sent to
+            third parties.
           </p>
         </section>
 

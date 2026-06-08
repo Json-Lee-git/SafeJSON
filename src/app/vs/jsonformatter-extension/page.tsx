@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "SafeJSON vs JSON Formatter Extension — Comparison 2026",
   description:
     "The original JSON Formatter Chrome extension (2M+ users) was sold, closed-sourced, and turned into adware. SafeJSON is open source with zero tracking.",
+  alternates: {
+    canonical: "/vs/jsonformatter-extension",
+  },
 };
 
 export default function VsExtensionPage() {

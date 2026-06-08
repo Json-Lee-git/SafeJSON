@@ -243,7 +243,7 @@ export default function Home() {
             80,000 credentials, including AWS keys, GitHub tokens, and bank
             details. SafeJSON runs 100% client-side.{" "}
             <span className="text-zinc-500">
-              Open DevTools → Network tab → you{"'"}ll see zero requests.
+              Format with DevTools → Network open → you{"'"}ll see zero new requests.
             </span>
           </p>
         </div>
@@ -409,7 +409,7 @@ export default function Home() {
             {
               Icon: ShieldCheck,
               title: "Privacy First",
-              desc: "All processing happens in your browser. Your JSON is never uploaded to any server. Open DevTools and verify, zero network requests.",
+              desc: "All processing happens in your browser. Your JSON is never uploaded to any server. Open DevTools while formatting and verify zero new requests.",
             },
             {
               Icon: Lightning,

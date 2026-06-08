@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -31,7 +30,7 @@ export const metadata: Metadata = {
     description:
       "Format, validate, and debug JSON entirely in your browser. No server uploads. Open source.",
     type: "website",
-    url: "https://safejson.vercel.app",
+    url: "/",
   },
   twitter: {
     card: "summary_large_image",
@@ -40,6 +39,9 @@ export const metadata: Metadata = {
       "Format, validate, and debug JSON entirely in your browser. No server uploads. Open source.",
   },
   metadataBase: new URL("https://safejson.vercel.app"),
+  alternates: {
+    canonical: "/",
+  },
   verification: {
     google: "r4KEIdIxrxAz55Mc",
   },
@@ -57,7 +59,6 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         {children}
-        <GoogleAnalytics gaId="G-QTRHE1MP9Y" />
       </body>
     </html>
   );
