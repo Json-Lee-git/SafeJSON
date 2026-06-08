@@ -39,7 +39,7 @@ export function ProBanner({ tool }: { tool: string }) {
     setIsDev(localStorage.getItem(DEV_KEY) === "1");
 
     const handler = (e: KeyboardEvent) => {
-      if (e.ctrlKey && e.shiftKey && e.key === "D") {
+      if (e.ctrlKey && e.shiftKey && e.key === ".") {
         e.preventDefault();
         const next = localStorage.getItem(DEV_KEY) !== "1";
         localStorage.setItem(DEV_KEY, next ? "1" : "0");
