@@ -153,6 +153,7 @@ export default function DiffPage() {
               <span className="text-xs font-medium text-red-400/70 uppercase tracking-wider">
                 Old (Left)
               </span>
+              <button onClick={handleSample} className="text-xs text-zinc-500 hover:text-zinc-300 transition-colors">Sample</button>
             </div>
             <textarea
               value={leftInput}
