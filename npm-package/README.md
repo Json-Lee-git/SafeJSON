@@ -7,7 +7,7 @@ SafeJSON processes all data entirely in your browser. Unlike server-side tools s
 ## Install
 
 ```bash
-npm install -g safejson-cli
+npm install -g safejson-formatter
 ```
 
 ## Usage

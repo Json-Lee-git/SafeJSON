@@ -1,5 +1,5 @@
 {
-  "name": "safejson-cli",
+  "name": "safejson-formatter",
   "version": "0.1.0",
   "description": "Open SafeJSON — the privacy-first JSON formatter that never sees your data — from your terminal.",
   "main": "cli.js",

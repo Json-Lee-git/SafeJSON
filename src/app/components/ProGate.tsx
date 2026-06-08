@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 
 const FREE_LIMIT = 5;
+const DEV_KEY = "safejson_dev";
 
 function getUsageKey(tool: string): string {
   return `safejson_usage_${tool}`;
@@ -11,10 +12,12 @@ function getUsageKey(tool: string): string {
 
 export function useProUsage(tool: string) {
   const [count, setCount] = useState(0);
+  const [isDev, setIsDev] = useState(false);
 
   useEffect(() => {
     const stored = localStorage.getItem(getUsageKey(tool));
     setCount(stored ? parseInt(stored, 10) : 0);
+    setIsDev(localStorage.getItem(DEV_KEY) === "1");
   }, [tool]);
 
   const increment = () => {
@@ -23,15 +26,32 @@ export function useProUsage(tool: string) {
     setCount(next);
   };
 
-  const isOverLimit = count >= FREE_LIMIT;
+  const isOverLimit = !isDev && count >= FREE_LIMIT;
 
-  return { count, increment, isOverLimit, limit: FREE_LIMIT };
+  return { count, increment, isOverLimit, limit: FREE_LIMIT, isDev };
 }
 
 export function ProBanner({ tool }: { tool: string }) {
   const [dismissed, setDismissed] = useState(false);
+  const [isDev, setIsDev] = useState(false);
 
-  if (dismissed) return null;
+  useEffect(() => {
+    setIsDev(localStorage.getItem(DEV_KEY) === "1");
+
+    const handler = (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.shiftKey && e.key === "D") {
+        e.preventDefault();
+        const next = localStorage.getItem(DEV_KEY) !== "1";
+        localStorage.setItem(DEV_KEY, next ? "1" : "0");
+        setIsDev(next);
+        if (next) setDismissed(true);
+      }
+    };
+    window.addEventListener("keydown", handler);
+    return () => window.removeEventListener("keydown", handler);
+  }, []);
+
+  if (dismissed || isDev) return null;
 
   return (
     <div className="flex items-center justify-between px-4 py-2.5 bg-emerald-400/5 border border-emerald-400/10 rounded-lg">
