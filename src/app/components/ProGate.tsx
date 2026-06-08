@@ -38,17 +38,12 @@ export function ProBanner({ tool }: { tool: string }) {
   useEffect(() => {
     setIsDev(localStorage.getItem(DEV_KEY) === "1");
 
-    const handler = (e: KeyboardEvent) => {
-      if (e.ctrlKey && e.shiftKey && e.key === ".") {
-        e.preventDefault();
-        const next = localStorage.getItem(DEV_KEY) !== "1";
-        localStorage.setItem(DEV_KEY, next ? "1" : "0");
-        setIsDev(next);
-        if (next) setDismissed(true);
-      }
-    };
-    window.addEventListener("keydown", handler);
-    return () => window.removeEventListener("keydown", handler);
+    // Check URL param: any page with ?dev activates developer mode
+    if (window.location.search.includes("dev")) {
+      localStorage.setItem(DEV_KEY, "1");
+      setIsDev(true);
+      setDismissed(true);
+    }
   }, []);
 
   if (dismissed || isDev) return null;
