@@ -8,6 +8,7 @@ import {
 } from "./components/StructuredData";
 import LocalProcessingNote from "./components/LocalProcessingNote";
 import NetworkRequestIndicator from "./components/NetworkRequestIndicator";
+import Footer from "./components/Footer";
 import Link from "next/link";
 import {
   ShieldCheck,
@@ -580,22 +581,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-zinc-800 py-8 text-center text-xs text-zinc-600">
-        <div className="flex items-center justify-center gap-4 mb-3">
-          <Link href="/about" className="hover:text-zinc-400 transition-colors">About</Link>
-          <Link href="/support" className="hover:text-zinc-400 transition-colors">Help & FAQ</Link>
-          <Link href="/answers" className="hover:text-zinc-400 transition-colors">Answers</Link>
-          <Link href="/compare" className="hover:text-zinc-400 transition-colors">Compare</Link>
-          <Link href="/blog/safest-json-formatter" className="hover:text-zinc-400 transition-colors">Blog</Link>
-          <Link href="/privacy" className="hover:text-zinc-400 transition-colors">Privacy</Link>
-          <Link href="/pricing" className="hover:text-zinc-400 transition-colors">Pricing</Link>
-        </div>
-        <p>
-          SafeJSON. All processing happens in your browser. We never see your
-          data.
-        </p>
-      </footer>
+      <Footer />
 
       <SoftwareAppSchema />
       <FAQSchema />

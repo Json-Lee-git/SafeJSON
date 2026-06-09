@@ -1,279 +1,202 @@
 # SafeJSON V2 — Product Requirements Document
 
-> 基于真实用户调研、Reddit 评论区分析、竞品分析和 Semrush 数据的完整需求文档。
-> 交给 Codex 或其他 AI 编码工具执行。
+> 基于 Google March 2026 Core Update、EEAT 专家分析、Semrush 数据、Reddit 真实用户调研和竞品分析。
+> 交给 Codex 或其他 AI 编码工具执行。日期：2026-06-09。
 
 ---
 
-## 核心战略洞察
+## 零、Google 2026 算法环境（必读背景）
 
-### SafeJSON 真正的差异化
+### March 2026 Core Update（社区称 "Coral"）
 
-**不是"隐私"，是"可验证的隐私"。** 用户不应该相信 SafeJSON——用户应该自己验证 SafeJSON。
+3 月 27 日 - 4 月 8 日，Semrush Sensor 峰值 9.5/10（历史最高波动）。
 
-验证方法：打开 DevTools → Network 标签 → 贴 JSON → 看到零个新请求。
+**三大打击目标：**
+1. **规模 AI 内容滥用** — 无人工审核的大批量 AI 页面。损失 60-80% 流量
+2. **模板化对比/列表页** — "Best X in Y"、"X vs Y" 重排 SERP 内容但不加原创数据。损失 29-49%
+3. **虚假作者身份** — 合成头像、虚构名字、无法外部验证的凭证
 
-所有竞品要么做不到（jsonformatter.org 服务器处理），要么能做到但不说（Firefox 原生），要么说了但用户不知道（各种小工具）。**SafeJSON 应该把"你自己验证"变成产品最显眼的交互。**
+**SafeJSON 的优势：** 80K 凭证泄露是真实第三方可验证事件。我们的对比页有独特数据源，不会被清洗。强 EEAT 信号网站平均 +36% 流量。
 
-### 为什么竞品不会复制
+**SafeJSON 的风险：** 缺少 Person Schema（无 sameAs 验证）、内链骨架松散、没有支柱页。
 
-jsonformatter.org 年收入 $7-10 万靠广告。全客户端处理 = 零广告曝光 = 收入清零。**不是不能做，是商业模式锁死了。**
+### EEAT 执法核心变化
 
-Firefox/Chrome 原生不需要你做——它们已经是客户端。但只有查看功能，没有 Diff、JWT、JSONPath、Schema。
+Google 现在交叉验证作者身份。Person Schema + sameAs 链接（LinkedIn/GitHub）是必需项。About 页面必须有真实姓名、真实照片（非 AI 生成）、可外部验证的凭证。缺失这些 = 直接降权。
+
+### 支柱-集群模型
+
+一个支柱页总结主题，多个集群子页深入细节。每个子页向后链接到支柱页，支柱页向前链接到每个子页。集群页之间横向互链。实施后有机流量 +20-30%。
+
+### 内容发布节奏
+
+Google 算法评估"主动维护"信号。稳定发布 > 一次性爆发。最少每月 2 次有意义的更新。
 
 ---
 
-## 一、首页改造：让隐私"可验证"
+## 一、支柱页 `/compare`（P0 — 最高优先级）
 
-### 1.1 在工具区旁边加实时网络请求指示器
+### 为什么需要
+16 个页面没有逻辑父节点。Google 看到的是分散的工具，不是"一个产品"。
 
-**位置：** 输出面板的右上角，工具栏旁边
+### 页面设计
+一个总览页，包含：
+1. **一句话声明：** "SafeJSON is a privacy-first JSON toolkit. Every tool runs entirely in your browser. Prove it: open DevTools, zero network requests."
+2. **工具分类表：**
+   - Free formatting tools: Formatter, Beautifier, Viewer, Parser
+   - Pro tools: Diff, JWT, JSONPath, Schema
+   - Each with one-line description + link
+3. **竞品对比矩阵**（markdown 表格）：SafeJSON vs jsonformatter.org vs jsonviewer.stack.hu vs Firefox Native vs VS Code
+4. **"How to verify" 教程**：DevTools → Network → paste JSON → zero requests
+5. **CTA：** → Pricing
 
-**设计：**
-```
-┌─────────────────────────────────────────────┐
-│  🟢 0 network requests    [How to verify?]  │
-└─────────────────────────────────────────────┘
-```
+### 技术实现
+- `/compare` 路由
+- 独立 SEO metadata："JSON Formatter Comparison 2026 — SafeJSON vs jsonformatter.org, jsonviewer, Firefox"
+- Product Schema + BreadcrumbList Schema
+- Footer 同全局结构
 
-**逻辑：**
-- 页面加载后自动显示 `🟢 0 network requests`
-- 点击 "How to verify?" 弹出简短教程："Open DevTools → Network tab → paste JSON → see zero requests"
-- 如果未来真有人通过 `fetch()` 发了请求（比如 GA 的 pageview），计数器实时显示
+---
 
-### 1.2 Hero 文案调整
+## 二、EEAT 基础设施（P0）
 
-**当前：**
-> The JSON tool that never sees your data
+### 2.1 About 页面升级
+
+**当前状态：** 有 /about 页面，有真实叙事。但缺 Person Schema、sameAs 链接、真实照片。
 
 **改为：**
-> The JSON tool that never sees your data. Prove it yourself.
+- Person Schema with sameAs: GitHub + LinkedIn
+- Real photo (not AI-generated)
+- Real name
+- `knowsAbout: ["JSON", "Web Security", "Privacy", "Developer Tools"]`
 
-副标题加一句：
-> Open DevTools → Network. You'll see zero requests. That's the whole point.
+### 2.2 全局 Person Schema
 
-### 1.3 隐私验证卡片升级
+在根 layout.tsx 或 About 页面注入 Person Schema。sameAs 优先级：GitHub > LinkedIn。
 
-把 Features 区域的 "Privacy First" 卡片改成：
+### 2.3 博客文章作者署名
 
-**标题：** Verify, don't trust
-**描述：** We don't ask you to trust us. Open DevTools → Network tab → paste any JSON. Zero requests. Your data never left your browser. Every SafeJSON feature — formatter, diff, JWT decoder — works the same way.
-
----
-
-## 二、大文件支持（Reddit 评论区验证的真需求）
-
-### 2.1 痛点来源
-
-Reddit 真实用户评论：
-> "VS Code slows to a crawl with a 10MB JSON log file. I just need a web tool to quickly compare."
-
-这是 SafeJSON 的超车机会——**VS Code 和 Firefox 原生在处理大文件时会卡，网页工具又会上传数据。SafeJSON 两边的问题都解决了。**
-
-### 2.2 实现方案
-
-**首页 Formatter 和所有工具页：**
-- 在输入框上方加一行提示：`Handles files up to 50MB locally — no upload, no slowdown`
-- 用 Web Worker 在后台线程解析 JSON，避免阻塞 UI
-- 大文件（>1MB）时显示进度条："Parsing 12MB JSON file..."
-
-### 2.3 营销文案
-
-在 Hero 下方加一行：
-> **Handles 50MB+ JSON files that crash VS Code. All in your browser. No upload.**
+每篇博客文章显示真实作者名 + 一句话简介，非 Organization 署名。
 
 ---
 
-## 三、定价页叙事升级
+## 三、Footer 结构化为支柱页映射（P0）
 
-### 3.1 "为什么付钱"区块重写
+### 为什么
+Footer 是 Google 爬每个页面都会读的站点范围信号。平铺链接 = 无结构信号。分组排列 = 告诉 Google 站点架构。
 
-当前是红色警报框，讲两次泄露事件。保留但微调结构：
+### 设计
 
-**标题：** You paste sensitive data into online tools every day. Here's why that matters.
+**当前（平铺）：**
+```
+About | Help | Blog | Privacy | Pricing
+```
 
-**三个短段：**
-1. jsonformatter.org leaked 80K credentials (Nov 2025)
-2. JSON Formatter extension sold & turned into adware (2M users)
-3. Every time you paste JSON into a server-side tool, your data makes a round trip through infrastructure you don't control
+**改为（分组）：**
+```
+Free Tools: Formatter | Beautifier | Viewer | Parser
+Pro Tools: Diff | JWT | JSONPath | Schema
+Compare: vs jsonformatter | vs codebeautify | vs extension
+About | Help | Blog | Privacy | Pricing
+```
 
-**结尾：** SafeJSON Pro gives you Diff, JWT, JSONPath, Schema — all 100% client-side. Your data never leaves your browser. Prove it: open DevTools while using any Pro tool.
-
-### 3.2 加"信任证明"区块
-
-在定价卡下方加：
-
-**标题：** Why developers trust SafeJSON
-
-三列小卡片：
-- **Open Source (MIT)** — Audit every line on GitHub. No obfuscated tracking scripts.
-- **Verifiable** — Open DevTools → Network. Zero requests. You don't have to trust us.
-- **Independent** — Solo developer, self-funded. No VC pressure to monetize data.
+所有页面统一使用这个 footer 结构。
 
 ---
 
-## 四、竞品对比页（SEO + GEO 核心页）
+## 四、内链审计与双向链接（P1）
 
-### 4.1 新建 `/compare` 页面
+### 4.1 规则
 
-这是一个总览对比页，用表格展示 SafeJSON vs 全部主要竞品。
+1. 每个 Pro 工具页 ←链接回→ 首页和 /compare
+2. 每个 VS 页 ←链接回→ /compare
+3. 对比页之间互相链接（"See also" 区域）
+4. 博客页链向相关工具页
+5. 无孤立页面——每个页面至少被 2 个其他页面链接
 
-**页面标题：** JSON Formatter Comparison 2026 — SafeJSON vs jsonformatter.org, jsonviewer, Firefox
+### 4.2 锚文本要求
 
-**对比矩阵（表格形式）：**
-
-| Feature | SafeJSON | jsonformatter.org | jsonviewer.stack.hu | Firefox Native | VS Code |
-|---------|----------|-------------------|---------------------|----------------|---------|
-| Client-side | Yes | No (server) | No (no claim) | Yes | Yes |
-| Verifiable (Network tab) | Yes | No | No | Yes | Yes |
-| Data breach history | None | 80K leaked | None | None | None |
-| Open source | MIT | No | No | Yes | Yes |
-| JSON Diff | Yes (Pro) | No | No | No | No |
-| JWT Decoder | Yes (Pro) | No | No | No | No |
-| JSONPath | Yes (Pro) | No | No | No | No |
-| Schema Validator | Yes (Pro) | No | No | No | No |
-| Ads | None | Yes | None | None | None |
-| Large file handling | 50MB+ | Limited | Limited | Limited | ~10MB |
-| Price | Free / $5 Pro | Free (ads) | Free | Free | Free |
-
-**页面结构：**
-1. 顶部 TL;DR：一句话总结 + 对比表
-2. "Why SafeJSON is different" 段落
-3. "The jsonformatter.org incident" 段落
-4. "How to verify any JSON tool yourself" 教程
-5. CTA → Pricing
-
-### 4.2 已有竞品页优化
-
-对 `/vs/jsonformatter-org`、`/vs/codebeautify`、`/vs/jsonformatter-extension` 三个子页面：
-- 统一格式：对比表 + 事件描述 + 验证教程 + CTA
-- 每个页面加 BreadcrumbList Schema
-- 每个页面底部加 "Related comparisons" 链接区
+不用 "click here" 或 "learn more"。用描述性锚文本：
+- "JSON Diff Checker"
+- "SafeJSON vs jsonformatter.org"
+- "How to verify your JSON tool is safe"
 
 ---
 
-## 五、定价页 Pro 功能更新
+## 五、博客内容策略（P1）
 
-### 5.1 更新 Pro 功能列表
+### 5.1 当前问题
 
-当前 Pro 列表：
-- Everything in Free
-- JSON Diff Checker
-- JWT Decoder
-- JSONPath Query (coming soon)
-- Schema Validator (coming soon)
-- Priority support
+博客只有一篇 "5 safest JSON formatters"——属于被 3 月 Core Update 重点清洗的 "Best N" 列表格式。
 
-**改为：**
-- Everything in Free
-- JSON Diff Checker
-- JWT Decoder
-- JSONPath Query
-- Schema Validator
-- Large file support (50MB+)
-- Priority support
+### 5.2 修复方案
 
----
+将博客从列表式改为教程式：
+**新标题：** "How to Verify Your JSON Formatter Is Safe — And What to Use Instead"
+**新结构：** 问题 → 验证方法 → 工具对比（作为验证结果，不是作为推荐排名）
 
-## 六、SEO 优化（Semrush 数据驱动）
+### 5.3 内容日历
 
-### 6.1 关键词-页面映射
-
-基于 Semrush 关键词研究，确保以下关键词被对应页面承接：
-
-| 关键词 | 目标页面 | 月搜索量 | KD |
-|--------|---------|---------|-----|
-| json formatter | / | 90.5K | 54 |
-| json beautifier | /json-beautifier | 18.1K | — |
-| json viewer | /json-viewer | 22.2K | — |
-| json diff online | /diff | 880 | 低 |
-| json parser | /json-parser | — | — |
-| safest json formatter | /blog/safest-json-formatter | — | — |
-| jsonformatter alternative | /vs/jsonformatter-org | — | 低 |
-
-### 6.2 每个页面的 SEO 标题优化
-
-确保每个页面 title 包含目标关键词，格式：`[关键词] — [副标题] | SafeJSON`
+| 频率 | 内容类型 | 示例 |
+|------|---------|------|
+| 每月 2 篇 | 一手经验博客 | "I built a JSON tool after a data breach—here's what I learned about client-side processing" |
+| 每季度 | 竞品页面刷新 | 更新对比表中的数据 |
+| 每次功能更新 | 简短发布说明 | 新功能、架构决策 |
 
 ---
 
-## 七、Reddit 推广策略（基于真实评论区）
+## 六、定价页叙事（已有，保持）
 
-### 7.1 核心话术（评论用）
+当前定价页已包含：
+- "Why pay" 区块（80K 凭证泄露 + 扩展被卖 + 服务器端风险）
+- "Why developers trust SafeJSON" 三卡片
+- Free vs Pro 对比表
+- Lemon Squeezy 支付链接
 
-**场景：有人在问 JSON 工具推荐**
-
-> Here's what I use:
-> 1. `jq` for CLI — fastest for quick terminal work
-> 2. Firefox built-in viewer — zero setup, works offline
-> 3. SafeJSON (safejson.dev) when I need tree view + I'm pasting sensitive data. Check the Network tab — zero requests. No server involved.
->
-> Key thing I check with ANY online tool: open DevTools → Network tab while using it. If there's a request, your data left your browser.
-
-### 7.2 核心话术（发帖用）
-
-**r/SideProject 发帖标题：**
-
-> I built a JSON formatter that you don't have to trust. Open DevTools, see zero network requests. Prove it yourself.
-
-### 7.3 禁止话术
-
-- ❌ "Check out my tool"
-- ❌ "Would love your feedback" 出现在前 3 句
-- ❌ "Free and open source" 作为开场
-- ❌ "The best JSON formatter"
-- ❌ AI 风格的夸张词（revolutionary, cutting-edge, seamless）
-
-**正确语气：** 用 "I built X because I was frustrated by Y" 讲个人故事，不是营销文案。
+**保持不变。** 但加一个 Product Schema（JSON-LD）。
 
 ---
 
-## 八、GEO 完善（AI 搜索引擎优化）
+## 七、首页优化（P2）
 
-### 8.1 待建设的 GEO 资产
+### 7.1 Hero 文案
+当前："The JSON tool that never sees your data"
+改为："The JSON tool that never sees your data. Prove it yourself."
 
-| 资产 | 状态 | 优先级 |
-|------|------|--------|
-| FAQ Schema（首页已有） | ✅ | — |
-| SoftwareApp Schema（首页已有）| ✅ | — |
-| Organization Schema | ✅ Codex 刚加的 | — |
-| Article Schema（博客页） | ✅ Codex 刚加的 | — |
-| BreadcrumbList Schema | ✅ Codex 刚加的 | — |
-| HowTo Schema（/support 页面） | ❌ 还没加 | 高 |
-| Product Schema（定价页） | ❌ 还没加 | 高 |
+副标题加："Open DevTools → Network. Zero requests. That's the whole point."
 
-### 8.2 llms.txt 持续更新
+### 7.2 网络请求指示器
+输出面板上方实时显示 "0 network requests" + "How to verify?" 链接。
 
-每当新增页面，必须同步更新 `public/llms.txt`。这是 AI 爬虫认识网站结构的第一入口。
+### 7.3 "Privacy First" 卡片
+标题改为 "Verify, don't trust"
+描述加入："Open DevTools → Network → paste JSON. Zero requests. Every SafeJSON tool works this way."
 
 ---
 
-## 九、产品原则（所有 AI 编码时必须遵守）
+## 八、持续进化机制
 
-1. **可验证 > 可信任。** 任何功能都应该让用户能在 DevTools 里自行验证。
-2. **零服务器是一切的前提。** 永远不引入后端处理用户数据。
-3. **速度是体验。** 本地处理意味着零延迟——这是优势，不要加 loading spinner 假装在等待服务器。
-4. **开源是信任的基石。** 所有代码在 GitHub 公开。
-5. **不做广告是商业模式的承诺。** 收入只来自 Pro 订阅，不卖数据，不挂广告。
+| 频率 | 动作 |
+|------|------|
+| 每月 | 重新扫描 SEO 专家社区最新分析（Search Engine Journal、Marie Haynes、Lily Ray） |
+| 每季度 | 对比 SafeJSON 和竞品的 Search Console 数据 |
+| 每次 Google 核心更新 | 48 小时内出影响评估 + 应对方案 |
+| 持续 | 每月 2 篇博客，每季度刷新竞品页 |
 
 ---
 
-## 十、执行优先级
+## 九、执行优先级
 
 | 优先级 | 任务 | 预计工时 |
 |--------|------|---------|
-| P0 | 首页加网络请求指示器 | 1h |
-| P0 | Hero 文案改为 "Prove it yourself" | 30min |
-| P0 | 定价页叙事重写 + 信任证明区块 | 1h |
-| P1 | 建 `/compare` 竞品总对比页 | 1h |
-| P1 | 定价页 Pro 功能更新 | 15min |
-| P1 | 三个竞品子页面格式统一 + Schema | 1h |
-| P1 | /support 页面加 HowTo Schema | 30min |
-| P1 | 定价页加 Product Schema | 30min |
-| P2 | 大文件支持（Web Worker） | 3h |
-| P2 | "Privacy First" 卡片改为 "Verify, don't trust" | 30min |
+| **P0** | **建 `/compare` 支柱页** | 1h |
+| **P0** | **Footer 结构化分组** | 30min |
+| **P0** | **About 页加 Person Schema + sameAs** | 30min |
+| **P0** | **博客改作者署名 + 格式从列表改教程** | 30min |
+| P1 | 内链双向审计 + 锚文本优化 | 1h |
+| P1 | 博客内容日历 + 下一篇博客 | 1h |
+| P2 | Hero 文案 + 网络请求指示器 | 1h |
 
 ---
 
-*最后更新：2026-06-08*
-*本文件是 SafeJSON 的产品需求文档，所有 AI 编码工具应以此为准。*
+*最后更新：2026-06-09。基于 March 2026 Core Update 专家分析。*
