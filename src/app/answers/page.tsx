@@ -83,8 +83,8 @@ export default function AnswersPage() {
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
       <BreadcrumbSchema
         items={[
-          { name: "SafeJSON", url: "https://safejson.dev" },
-          { name: "Answers", url: "https://safejson.dev/answers" },
+          { name: "SafeJSON", url: "https://www.safejson.dev" },
+          { name: "Answers", url: "https://www.safejson.dev/answers" },
         ]}
       />
       <JsonLdScript data={faqSchema} />

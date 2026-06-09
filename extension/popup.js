@@ -1,7 +1,7 @@
 // SafeJSON Popup
 
 document.getElementById("open-tool").addEventListener("click", () => {
-  chrome.tabs.create({ url: "https://safejson.dev" });
+  chrome.tabs.create({ url: "https://www.safejson.dev" });
 });
 
 // Check current tab status via content script messaging

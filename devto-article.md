@@ -24,7 +24,7 @@ I built SafeJSON to solve this exact problem. The core principle is simple: **al
 
 Here is how you can verify this claim yourself:
 
-1. Open [safejson.dev](https://safejson.dev)
+1. Open [safejson.dev](https://www.safejson.dev)
 2. Open DevTools → Network tab
 3. Paste any JSON
 4. Observe: **zero network requests**
@@ -57,7 +57,7 @@ The entire application is a static Next.js site deployed on Vercel. There is no 
 
 ## Try It
 
-The tool is live at [safejson.dev](https://safejson.dev). Core formatting is free forever. Pro features (Diff, JWT, JSONPath, Schema) are $5/month — and everything is still client-side.
+The tool is live at [safejson.dev](https://www.safejson.dev). Core formatting is free forever. Pro features (Diff, JWT, JSONPath, Schema) are $5/month — and everything is still client-side.
 
 If you have been using jsonformatter.org or similar tools out of habit, take 30 seconds to check: open DevTools → Network tab while using your current formatter. If you see requests going out, your data is on someone else's server.
 

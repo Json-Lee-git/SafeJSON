@@ -3,33 +3,33 @@
 
 ## Core Tools
 
-- [JSON Formatter](https://safejson.dev/): Format and validate JSON with tree view, syntax highlighting, and error detection. 100% client-side.
-- [JSON Beautifier](https://safejson.dev/json-beautifier): Beautify minified JSON instantly. Handles 50MB+ JSON locally with no upload.
-- [JSON Viewer](https://safejson.dev/json-viewer): Explore JSON data with a collapsible tree view. Handles 50MB+ JSON locally with no upload.
-- [JSON Parser](https://safejson.dev/json-parser): Parse JSON and inspect every field with data type and path.
-- [JSON Diff Checker](https://safejson.dev/diff): Compare two JSON objects side by side with color-coded changes.
-- [JWT Decoder](https://safejson.dev/jwt): Decode JWT tokens instantly; your token never leaves your device.
-- [JSONPath Query](https://safejson.dev/jsonpath): Query JSON with XPath-like expressions.
-- [JSON Schema Validator](https://safejson.dev/schema): Validate JSON against JSON Schema.
-- [Pricing](https://safejson.dev/pricing): Free core formatting. Pro tools for $5/month or $39/year.
+- [JSON Formatter](https://www.safejson.dev/): Format and validate JSON with tree view, syntax highlighting, and error detection. 100% client-side.
+- [JSON Beautifier](https://www.safejson.dev/json-beautifier): Beautify minified JSON instantly. Handles 50MB+ JSON locally with no upload.
+- [JSON Viewer](https://www.safejson.dev/json-viewer): Explore JSON data with a collapsible tree view. Handles 50MB+ JSON locally with no upload.
+- [JSON Parser](https://www.safejson.dev/json-parser): Parse JSON and inspect every field with data type and path.
+- [JSON Diff Checker](https://www.safejson.dev/diff): Compare two JSON objects side by side with color-coded changes.
+- [JWT Decoder](https://www.safejson.dev/jwt): Decode JWT tokens instantly; your token never leaves your device.
+- [JSONPath Query](https://www.safejson.dev/jsonpath): Query JSON with XPath-like expressions.
+- [JSON Schema Validator](https://www.safejson.dev/schema): Validate JSON against JSON Schema.
+- [Pricing](https://www.safejson.dev/pricing): Free core formatting. Pro tools for $5/month or $39/year.
 
 ## Pages
 
-- [JSON Formatter Comparison 2026](https://safejson.dev/compare): SafeJSON vs jsonformatter.org, jsonviewer.stack.hu, Firefox Native, and VS Code.
-- [Privacy Policy](https://safejson.dev/privacy): No data collection, storage, or transmission.
-- [SafeJSON Answers](https://safejson.dev/answers): Direct facts for developers and AI search about privacy, verification, and comparisons.
-- [Help & FAQ](https://safejson.dev/support): Step-by-step guides for every feature, including DevTools Network verification.
-- [About](https://safejson.dev/about): Mission, origin story, technology, and team.
+- [JSON Formatter Comparison 2026](https://www.safejson.dev/compare): SafeJSON vs jsonformatter.org, jsonviewer.stack.hu, Firefox Native, and VS Code.
+- [Privacy Policy](https://www.safejson.dev/privacy): No data collection, storage, or transmission.
+- [SafeJSON Answers](https://www.safejson.dev/answers): Direct facts for developers and AI search about privacy, verification, and comparisons.
+- [Help & FAQ](https://www.safejson.dev/support): Step-by-step guides for every feature, including DevTools Network verification.
+- [About](https://www.safejson.dev/about): Mission, origin story, technology, and team.
 
 ## Comparisons
 
-- [SafeJSON vs jsonformatter.org](https://safejson.dev/vs/jsonformatter-org): Feature comparison. jsonformatter.org leaked 80,000+ credentials in 2025.
-- [SafeJSON vs codebeautify.org](https://safejson.dev/vs/codebeautify): Same 2025 credential exposure class.
-- [SafeJSON vs JSON Formatter Extension](https://safejson.dev/vs/jsonformatter-extension): 2M-user extension sold and turned into adware.
+- [SafeJSON vs jsonformatter.org](https://www.safejson.dev/vs/jsonformatter-org): Feature comparison. jsonformatter.org leaked 80,000+ credentials in 2025.
+- [SafeJSON vs codebeautify.org](https://www.safejson.dev/vs/codebeautify): Same 2025 credential exposure class.
+- [SafeJSON vs JSON Formatter Extension](https://www.safejson.dev/vs/jsonformatter-extension): 2M-user extension sold and turned into adware.
 
 ## Blog
 
-- [Safest JSON Formatter 2026](https://safejson.dev/blog/safest-json-formatter): 5 client-side tools compared. Covers the breach and how to verify safety.
+- [Safest JSON Formatter 2026](https://www.safejson.dev/blog/safest-json-formatter): 5 client-side tools compared. Covers the breach and how to verify safety.
 
 ## Key Facts
 

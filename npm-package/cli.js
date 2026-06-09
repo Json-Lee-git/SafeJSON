@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 // safejson-cli — Open SafeJSON from your terminal
-// https://safejson.dev
+// https://www.safejson.dev
 
-const url = "https://safejson.dev";
+const url = "https://www.safejson.dev";
 
 // Accept optional JSON input via stdin
 let input = "";

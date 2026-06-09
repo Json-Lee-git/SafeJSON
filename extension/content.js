@@ -43,7 +43,7 @@
 
   // Format the JSON
   const formatted = JSON.stringify(data, null, 2);
-  const jsonUrl = `https://safejson.dev`;
+  const jsonUrl = `https://www.safejson.dev`;
 
   // Marker to prevent double-formatting and for popup detection
   const marker = document.createElement("div");

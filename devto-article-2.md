@@ -32,7 +32,7 @@ The safest online tools process everything in your browser. Here is how to ident
 - Paste data
 - Zero new requests = your data stayed local
 
-This is the design principle behind [SafeJSON](https://safejson.dev). All formatting, tree view rendering, JWT decoding, and JSON diff comparison happens in JavaScript running in your browser. There is no backend processing user data.
+This is the design principle behind [SafeJSON](https://www.safejson.dev). All formatting, tree view rendering, JWT decoding, and JSON diff comparison happens in JavaScript running in your browser. There is no backend processing user data.
 
 ## The Bottom Line
 

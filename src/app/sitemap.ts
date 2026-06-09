@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://safejson.dev";
+const siteUrl = "https://www.safejson.dev";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();

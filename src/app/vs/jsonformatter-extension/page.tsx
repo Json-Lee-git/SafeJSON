@@ -39,10 +39,10 @@ export default function VsExtensionPage() {
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
       <BreadcrumbSchema
         items={[
-          { name: "SafeJSON", url: "https://safejson.dev" },
+          { name: "SafeJSON", url: "https://www.safejson.dev" },
           {
             name: "SafeJSON vs JSON Formatter Extension",
-            url: "https://safejson.dev/vs/jsonformatter-extension",
+            url: "https://www.safejson.dev/vs/jsonformatter-extension",
           },
         ]}
       />

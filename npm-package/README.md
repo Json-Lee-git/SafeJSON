@@ -1,6 +1,6 @@
 # safejson-cli
 
-Open [SafeJSON](https://safejson.dev) — the privacy-first JSON formatter — from your terminal.
+Open [SafeJSON](https://www.safejson.dev) — the privacy-first JSON formatter — from your terminal.
 
 SafeJSON processes all data entirely in your browser. Unlike server-side tools such as jsonformatter.org (which leaked 80,000+ credentials in November 2025), SafeJSON makes zero network requests during formatting.
 

@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     description:
       "Format, validate, and debug JSON entirely in your browser. Prove it yourself with DevTools Network.",
   },
-  metadataBase: new URL("https://safejson.dev"),
+  metadataBase: new URL("https://www.safejson.dev"),
   alternates: {
     canonical: "/",
   },

@@ -10,7 +10,7 @@ SafeJSON is different: **all processing happens in your browser. Zero network re
 
 ## Features
 
-### Web Tool ([safejson.dev](https://safejson.dev))
+### Web Tool ([safejson.dev](https://www.safejson.dev))
 - Instant JSON formatting with syntax highlighting
 - Collapsible tree view for exploring nested structures
 - Error detection with line and column numbers
@@ -27,7 +27,7 @@ SafeJSON is different: **all processing happens in your browser. Zero network re
 
 ## How to verify the privacy claim
 
-1. Open [safejson.dev](https://safejson.dev)
+1. Open [safejson.dev](https://www.safejson.dev)
 2. Open DevTools → Network tab
 3. Paste any JSON
 4. Observe: **zero network requests**

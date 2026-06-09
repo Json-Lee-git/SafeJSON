@@ -32,24 +32,24 @@ export default function BlogPost() {
     author: {
       "@type": "Organization",
       name: "SafeJSON",
-      url: "https://safejson.dev",
+      url: "https://www.safejson.dev",
     },
     publisher: {
       "@type": "Organization",
       name: "SafeJSON",
-      url: "https://safejson.dev",
+      url: "https://www.safejson.dev",
     },
-    mainEntityOfPage: "https://safejson.dev/blog/safest-json-formatter",
+    mainEntityOfPage: "https://www.safejson.dev/blog/safest-json-formatter",
   };
 
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
       <BreadcrumbSchema
         items={[
-          { name: "SafeJSON", url: "https://safejson.dev" },
+          { name: "SafeJSON", url: "https://www.safejson.dev" },
           {
             name: "Safest JSON Formatter 2026",
-            url: "https://safejson.dev/blog/safest-json-formatter",
+            url: "https://www.safejson.dev/blog/safest-json-formatter",
           },
         ]}
       />

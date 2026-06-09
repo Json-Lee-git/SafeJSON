@@ -22,7 +22,7 @@ const steps = [
     q: "How do I format JSON in SafeJSON?",
     id: "format",
     steps: [
-      "Open https://safejson.dev in your browser.",
+      "Open https://www.safejson.dev in your browser.",
       "Paste your JSON into the left panel (labeled Input).",
       "The formatting happens automatically. You can also press Cmd+Enter (Mac) or Ctrl+Enter (Windows).",
       "Your formatted JSON appears in the right panel. Switch between Tree view and Raw view using the tabs.",
@@ -45,7 +45,7 @@ const steps = [
     q: "How do I compare two JSON objects (Diff)?",
     id: "diff",
     steps: [
-      "Go to https://safejson.dev/diff.",
+      "Go to https://www.safejson.dev/diff.",
       "Paste the old version of your JSON into the left panel (Old).",
       "Paste the new version into the right panel (New).",
       "Click Compare, or press Cmd+Enter.",
@@ -57,7 +57,7 @@ const steps = [
     q: "How do I decode a JWT token?",
     id: "jwt",
     steps: [
-      "Go to https://safejson.dev/jwt.",
+      "Go to https://www.safejson.dev/jwt.",
       "Paste your JWT token into the input field. A JWT token has three parts separated by dots, like: header.payload.signature.",
       "Click Decode.",
       "The decoded header and payload appear in the output panel. Switch between Header and Payload tabs.",
@@ -69,7 +69,7 @@ const steps = [
     q: "How do I query JSON with JSONPath?",
     id: "jsonpath",
     steps: [
-      "Go to https://safejson.dev/jsonpath.",
+      "Go to https://www.safejson.dev/jsonpath.",
       "Paste your JSON data into the upper panel.",
       "Enter a JSONPath expression in the lower input. For example: $.store.books[*].title returns all book titles.",
       "Click Query or press Enter.",
@@ -80,7 +80,7 @@ const steps = [
     q: "How do I validate JSON against a Schema?",
     id: "schema",
     steps: [
-      "Go to https://safejson.dev/schema.",
+      "Go to https://www.safejson.dev/schema.",
       "Paste your JSON data into the left panel.",
       "Paste your JSON Schema into the right panel. A JSON Schema defines the expected structure, required fields, and data types.",
       "Click Validate.",
@@ -95,7 +95,7 @@ const steps = [
       "Core JSON formatting, validation, and tree view are free forever with no limits.",
       "Pro tools - JSON Diff, JWT Decoder, JSONPath Query, and Schema Validator - are available for $5/month or $39/year.",
       "Pro tools remain 100% client-side. Your data never leaves your browser even with a Pro subscription.",
-      "View pricing: https://safejson.dev/pricing.",
+      "View pricing: https://www.safejson.dev/pricing.",
     ],
   },
   {
@@ -107,7 +107,7 @@ const steps = [
       "The data had accumulated over five years. Attackers were confirmed to be actively scraping it within 48 hours of the researchers planting canary tokens.",
       "The root cause was server-side processing: user data was stored on remote servers without adequate protection.",
       "SafeJSON eliminates this risk entirely by processing all data in your browser. There is no server to leak from.",
-      "Read more: https://safejson.dev/vs/jsonformatter-org.",
+      "Read more: https://www.safejson.dev/vs/jsonformatter-org.",
     ],
   },
   {
