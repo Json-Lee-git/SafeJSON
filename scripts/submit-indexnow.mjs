@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 
 dns.setDefaultResultOrder("ipv4first");
 
-const siteUrl = process.env.SITE_URL || "https://safejson.vercel.app";
+const siteUrl = process.env.SITE_URL || "https://safejson.dev";
 const sitemapUrl = process.env.SITEMAP_URL || `${siteUrl}/sitemap.xml`;
 const sitemapFile = process.env.SITEMAP_FILE;
 const indexNowKey = process.env.INDEXNOW_KEY || "b31ebf96549f4a3f96d254c2136b947a";
