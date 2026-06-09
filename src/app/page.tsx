@@ -242,9 +242,11 @@ export default function Home() {
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
             <span className="block">The JSON tool</span>
-            {" "}
             <span className="text-emerald-400">
-              that never sees your data. Prove it yourself.
+              that never sees your data.
+            </span>
+            <span className="block text-white">
+              Prove it yourself.
             </span>
           </h1>
           <p className="text-lg text-zinc-400 max-w-2xl mx-auto mb-4 text-pretty">
