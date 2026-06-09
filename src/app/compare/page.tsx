@@ -14,7 +14,7 @@ import {
 export const metadata: Metadata = {
   title: "JSON Formatter Comparison 2026 | SafeJSON",
   description:
-    "Compare SafeJSON with jsonformatter.org, jsonviewer.stack.hu, Firefox Native, and VS Code on privacy, client-side processing, data breach history, ads, JSON Diff, JWT, JSONPath, Schema, and large file support.",
+    "Compare SafeJSON with jsonformatter.org, JSON Viewer, Firefox, and VS Code on privacy, local processing, ads, breach history, and advanced JSON tools.",
   openGraph: {
     title: "JSON Formatter Comparison 2026 - SafeJSON",
     description:

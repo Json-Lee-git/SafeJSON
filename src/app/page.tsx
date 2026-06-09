@@ -241,6 +241,7 @@ export default function Home() {
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
             <span className="block">The JSON tool</span>
+            {" "}
             <span className="text-emerald-400">
               that never sees your data. Prove it yourself.
             </span>

@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About SafeJSON - Privacy-first JSON Tools",
   description:
-    "SafeJSON is built by an independent developer who believes developer tools should not require trusting strangers with your data. Learn about the project and its mission.",
+    "SafeJSON is an independent, privacy-first JSON toolkit. Learn why every feature runs in your browser and how to verify zero uploads.",
   openGraph: {
     title: "About SafeJSON",
     description:

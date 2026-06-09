@@ -5,7 +5,7 @@ import { HowToSchema } from "../components/StructuredData";
 export const metadata: Metadata = {
   title: "JSON Formatter Help & FAQ - SafeJSON Support",
   description:
-    "Learn how to use SafeJSON safely. How to format JSON, verify privacy, decode JWT tokens, compare JSON, and use JSONPath. Frequently asked questions with step-by-step guides.",
+    "Learn how to format JSON, verify privacy, decode JWTs, compare JSON, use JSONPath, and validate schemas in SafeJSON.",
   openGraph: {
     title: "SafeJSON Help & FAQ",
     description:

@@ -3,9 +3,9 @@ import Link from "next/link";
 import { BreadcrumbSchema, JsonLdScript } from "../../components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Safest JSON Formatter 2026 - 5 Client-Side Tools Compared | SafeJSON",
+  title: "Safest JSON Formatter 2026 - 5 Client-Side Tools | SafeJSON",
   description:
-    "Compare the 5 safest JSON formatters in 2026. Learn how to verify a JSON tool does not upload your data, what happened to jsonformatter.org, and which tools are truly client-side.",
+    "Compare five safe JSON formatters in 2026 and learn how to verify local processing, avoid server-side tools, and protect credentials.",
   openGraph: {
     title: "Safest JSON Formatter 2026",
     description:

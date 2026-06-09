@@ -10,7 +10,7 @@ import {
 export const metadata: Metadata = {
   title: "SafeJSON vs jsonformatter.org - JSON Formatter Alternative 2026",
   description:
-    "Compare SafeJSON and jsonformatter.org on client-side processing, verifiable privacy, breach history, ads, JSON Diff, JWT Decoder, JSONPath, Schema Validator, and pricing.",
+    "Compare SafeJSON and jsonformatter.org on local processing, verifiable privacy, breach history, ads, JSON Diff, JWT, JSONPath, Schema, and pricing.",
   openGraph: {
     title: "SafeJSON vs jsonformatter.org",
     description:

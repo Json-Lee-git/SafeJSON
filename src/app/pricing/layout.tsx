@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Pricing - SafeJSON Pro | Client-side JSON Tools for Developers",
   description:
-    "Simple, privacy-first pricing. Core JSON formatting is free forever. Pro tools include JSON Diff, JWT Decoder, JSONPath, Schema Validator, and 50MB+ local file support.",
+    "Core JSON formatting is free. Pro adds JSON Diff, JWT Decoder, JSONPath, Schema Validator, and 50MB+ local file support. All client-side.",
   openGraph: {
     title: "SafeJSON Pro Pricing",
     description:

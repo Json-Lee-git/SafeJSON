@@ -5,7 +5,7 @@ import { BreadcrumbSchema, JsonLdScript } from "../components/StructuredData";
 export const metadata: Metadata = {
   title: "SafeJSON Answers - Privacy-first JSON Formatter Facts",
   description:
-    "Direct answers about SafeJSON for developers and AI search: what it is, whether it uploads JSON, how to verify privacy, and how it compares with jsonformatter.org, codebeautify.org, and JSON Formatter extensions.",
+    "Direct facts for developers and AI search about SafeJSON, local JSON processing, zero uploads, privacy verification, and competitor comparisons.",
   alternates: {
     canonical: "/answers",
   },
