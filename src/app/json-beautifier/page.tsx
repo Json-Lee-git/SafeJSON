@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 import Link from "next/link";
 import LocalProcessingNote from "../components/LocalProcessingNote";
 import { useJsonWorker } from "../hooks/useJsonWorker";
+import Footer from "../components/Footer";
 
 const SAMPLE = '{"store":{"name":"Acme Books","books":[{"id":1,"title":"The Pragmatic Programmer","price":49.99,"inStock":true},{"id":2,"title":"Clean Code","price":39.99,"inStock":true}]}}';
 
@@ -101,15 +102,7 @@ export default function JsonBeautifierPage() {
         </div>
       </section>
 
-      <footer className="border-t border-zinc-800 py-8 text-center text-xs text-zinc-600">
-        <div className="flex items-center justify-center gap-4 mb-3">
-          <Link href="/about" className="hover:text-zinc-400 transition-colors">About</Link>
-          <Link href="/support" className="hover:text-zinc-400 transition-colors">Help</Link>
-          <Link href="/privacy" className="hover:text-zinc-400 transition-colors">Privacy</Link>
-          <Link href="/pricing" className="hover:text-zinc-400 transition-colors">Pricing</Link>
-        </div>
-        <p>SafeJSON. All processing happens in your browser. We never see your data.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

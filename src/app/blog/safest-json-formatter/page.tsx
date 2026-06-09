@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BreadcrumbSchema, JsonLdScript } from "../../components/StructuredData";
+import Footer from "../../components/Footer";
 
 export const metadata: Metadata = {
   title: "Safest JSON Formatter 2026 - 5 Client-Side Tools | SafeJSON",

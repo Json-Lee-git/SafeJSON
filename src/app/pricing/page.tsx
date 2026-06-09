@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BreadcrumbSchema, ProductSchema } from "../components/StructuredData";
+import Footer from "../components/Footer";
 
 export default function PricingPage() {
   return (

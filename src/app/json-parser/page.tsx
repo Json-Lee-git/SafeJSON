@@ -5,6 +5,7 @@ import JsonTreeView, { type JsonValue } from "../components/JsonTreeView";
 import Link from "next/link";
 import LocalProcessingNote from "../components/LocalProcessingNote";
 import { useJsonWorker } from "../hooks/useJsonWorker";
+import Footer from "../components/Footer";
 
 const SAMPLE = '{"user":{"id":"usr_01","name":"Alex","email":"alex@example.com","active":true,"score":42,"meta":null},"items":[{"sku":"A1","qty":3,"price":9.99},{"sku":"B2","qty":1,"price":24.99}]}';
 
@@ -130,15 +131,7 @@ export default function JsonParserPage() {
         </div>
       </section>
 
-      <footer className="border-t border-zinc-800 py-8 text-center text-xs text-zinc-600">
-        <div className="flex items-center justify-center gap-4 mb-3">
-          <Link href="/about" className="hover:text-zinc-400 transition-colors">About</Link>
-          <Link href="/support" className="hover:text-zinc-400 transition-colors">Help</Link>
-          <Link href="/privacy" className="hover:text-zinc-400 transition-colors">Privacy</Link>
-          <Link href="/pricing" className="hover:text-zinc-400 transition-colors">Pricing</Link>
-        </div>
-        <p>SafeJSON. All processing happens in your browser. We never see your data.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

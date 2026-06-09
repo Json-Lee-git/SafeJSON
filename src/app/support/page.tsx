@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { HowToSchema } from "../components/StructuredData";
+import Footer from "../components/Footer";
 
 export const metadata: Metadata = {
   title: "JSON Formatter Help & FAQ - SafeJSON Support",
