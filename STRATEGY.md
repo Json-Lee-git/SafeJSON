@@ -39,8 +39,27 @@ SafeJSON = 可验证的隐私 JSON 工具箱。不是"trust us"，是"prove it y
 - Codex 改完必须 `npm run build` 通过 + `npx vercel --prod --yes` 部署
 - 最新需求文档: SAFEJSON-V2-SPEC.md
 
-## 下一步优先级
-1. 发 Product Hunt (等 Edge 审核通过)
-2. 买自定义域名 (safejson.dev)
-3. Reddit 恢复——纯浏览+极短评论，不提产品
-4. Semrush 持续监控关键词排名
+## 当前进度 (2026-06-09)
+### 已完成
+- 域名迁移 safejson.vercel.app → safejson.dev
+- March 2026 Core Update 深度研究 (Google 3月核心更新 = 社区称 Coral)
+- SPEC V2 重写: 支柱-集群架构, EEAT Person Schema, Footer 结构化
+- Footer 结构化分组 (Free Tools / Pro Tools / Compare / Pages)
+- /compare 支柱页 (FAQPage+HowTo+Breadcrumb Schema)
+- Codex 并行执行: NetworkRequestIndicator, LocalProcessingNote, Web Workers, 子页面Footer, BingSiteAuth, 多处 Schema
+
+### 关键发现
+- "Coral Update" 是社区外号，正式名为 March 2026 Core Update (3/27-4/8)
+- 真正打击的是: 规模AI内容(60-80%流量损失), 无差异化对比页(29-49%), 虚假作者身份
+- SafeJSON 优势: 80K凭证泄露=真实第三方可验证事件, 对比页不会被清洗
+- 强 EEAT 信号网站 平均+36%流量
+- Footer 是站点范围SEO信号, 需要结构化分组(不是平铺)
+- Google 交叉验证作者身份: Person Schema + sameAs (LinkedIn/GitHub) 必需
+- About 页面必须有真实姓名+照片(非AI生成)+可外部验证凭证
+
+### 下一个会话继续
+1. About 页 Person Schema + sameAs (LinkedIn/GitHub)
+2. 博客作者署名改为真实姓名 (非 Organization)
+3. 内链双向审计: 支柱页↔子页, 对比页互链, 锚文本优化
+4. 博客内容日历: 每月2篇, 每季度刷新竞品页
+5. 其余页面接入共享 Footer 组件
