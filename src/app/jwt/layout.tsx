@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "JWT Decoder - Decode JSON Web Tokens Online | SafeJSON",
+  title: "JWT Decoder — Decode JWT Client-Side, No Token Upload | SafeJSON",
   description:
-    "Decode JWT header, payload, and signature instantly in your browser. Your token never leaves your device.",
+    "Decode JWT header, payload, and signature instantly in your browser. Safe alternative to jwt.io. Your token never leaves your device — 100% client-side.",
   openGraph: {
     title: "JWT Decoder - SafeJSON",
     description:

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 export const metadata: Metadata = {
-  title:"JSON Validator — Validate JSON Online | SafeJSON",
-  description:"Validate JSON with line and column error reporting. Check syntax, find missing commas, fix malformed JSON. 100% client-side, no data upload.",
+  title:"JSON Validator — Validate JSON Online, No Data Upload | SafeJSON",
+  description:"Validate JSON with line and column error reporting. Check syntax, find missing commas, fix malformed JSON. 100% client-side — your data never leaves your browser. No server processing.",
   openGraph:{title:"JSON Validator — SafeJSON",description:"Validate JSON online with exact error locations. Client-side, no data upload.",url:"/json-validator"},
   alternates:{canonical:"/json-validator"},
 };
