@@ -57,11 +57,11 @@ SafeJSON = 可验证的隐私 JSON 工具箱。不是"trust us"，是"prove it y
 - Google 交叉验证作者身份: Person Schema + sameAs (LinkedIn/GitHub) 必需
 - About 页面必须有真实姓名+照片(非AI生成)+可外部验证凭证
 
-### 下一个会话继续 (2026-06-09 session ended)
-P0 全部完成。P1 进行中：
-- ✅ Footer 结构化分组（全部 16 页）
-- ✅ SPEC V2 重写（March 2026 Core Update 研究）
-- ✅ /compare 支柱页（FAQ+HowTo+Breadcrumb Schema）
-- ✅ About 页 Person Schema + sameAs（GitHub）
-- ✅ 博客作者改为 Person + sameAs
-- 待做: 内链双向审计, 博客内容日历, 博客从列表式改为教程式
+### 下一个会话继续 (2026-06-10 session ended)
+- ✅ 博客 2 篇：safest-json-formatter + is-it-safe-to-paste-json-online
+- ✅ www 重定向消除
+- ✅ GA 追踪恢复
+- ✅ SoftwareApp Schema 错误消除
+- ✅ 隐私关键词注入 /diff, /jwt, /json-validator
+- ✅ 新建 /vs/jsonlint, /vs/jwt-io
+- 待做：发 dev.to 文章 2 篇, Product Hunt 发帖, 提交 AlternativeTo/SaaSHub 外链
