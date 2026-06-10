@@ -27,7 +27,7 @@ export default function AboutPage() {
             "@context": "https://schema.org",
             "@type": "Person",
             name: "SafeJSON Developer",
-            url: "https://www.safejson.dev/about",
+            url: "https://safejson.dev/about",
             sameAs: ["https://github.com/s01071233604"],
             knowsAbout: ["JSON", "Web Security", "Privacy", "Developer Tools", "Client-Side Processing"],
             description: "Solo developer building privacy-first developer tools.",

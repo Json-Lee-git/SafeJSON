@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-const canonicalHost = "www.safejson.dev";
+const canonicalHost = "safejson.dev";
 const redirectHosts = new Set(["safejson.vercel.app"]);
 
 export function proxy(request: NextRequest) {

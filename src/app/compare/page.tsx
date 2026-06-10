@@ -47,10 +47,10 @@ export default function ComparePage() {
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
       <BreadcrumbSchema
         items={[
-          { name: "SafeJSON", url: "https://www.safejson.dev" },
+          { name: "SafeJSON", url: "https://safejson.dev" },
           {
             name: "JSON Formatter Comparison",
-            url: "https://www.safejson.dev/compare",
+            url: "https://safejson.dev/compare",
           },
         ]}
       />
