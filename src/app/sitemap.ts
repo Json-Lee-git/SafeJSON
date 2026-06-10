@@ -15,6 +15,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/answers`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/compare`, lastModified, changeFrequency: "monthly", priority: 0.85 },
     { url: `${siteUrl}/blog/safest-json-formatter`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/blog/is-it-safe-to-paste-json-online`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/vs/jsonformatter-org`, lastModified, changeFrequency: "monthly", priority: 0.7 },
     { url: `${siteUrl}/vs/jsonformatter-extension`, lastModified, changeFrequency: "monthly", priority: 0.7 },
     { url: `${siteUrl}/vs/codebeautify`, lastModified, changeFrequency: "monthly", priority: 0.6 },
