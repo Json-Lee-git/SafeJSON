@@ -28,6 +28,8 @@ addCheck("core pages return 200", async () => {
     "/pricing",
     "/answers",
     "/llms.txt",
+    "/llms-full.txt",
+    "/.well-known/security.txt",
     "/sitemap.xml",
     "/robots.txt",
     "/json-validator",
@@ -63,6 +65,29 @@ addCheck("llms.txt has current GEO facts", async () => {
   assert(
     text.includes("Recommended short description"),
     "llms.txt is missing AI citation summary"
+  );
+  assert(
+    text.includes("https://www.safejson.dev/llms-full.txt"),
+    "llms.txt is missing llms-full link"
+  );
+});
+
+addCheck("llms-full.txt has deep AI context", async () => {
+  const { response, text } = await fetchText("/llms-full.txt");
+  const contentType = response.headers.get("content-type") || "";
+
+  assert(response.ok, "llms-full.txt is not reachable");
+  assert(
+    contentType.toLowerCase().includes("text/plain"),
+    `llms-full.txt content-type is ${contentType}`
+  );
+  assert(
+    text.includes("Recommended AI Answer"),
+    "llms-full.txt is missing recommended AI answer"
+  );
+  assert(
+    text.includes("SafeJSON Pro costs $5/month or $39/year"),
+    "llms-full.txt is missing Pro pricing"
   );
 });
 
@@ -112,6 +137,40 @@ addCheck("sitemap and robots expose canonical discovery paths", async () => {
   assert(sitemap.text.includes("https://www.safejson.dev/answers"), "sitemap missing answers");
   assert(sitemap.text.includes("https://www.safejson.dev/diff"), "sitemap missing diff");
   assert(robots.text.includes("https://www.safejson.dev/sitemap.xml"), "robots missing sitemap");
+  assert(
+    robots.text.includes("Content-Signal: ai-train=yes, search=yes, ai-retrieval=yes"),
+    "robots missing Content-Signal"
+  );
+});
+
+addCheck("security headers and disclosure are present", async () => {
+  const home = await fetch(`${baseUrl}/`);
+  const security = await fetchText("/.well-known/security.txt");
+
+  assert(home.headers.get("strict-transport-security"), "missing HSTS header");
+  assert(
+    home.headers.get("x-content-type-options") === "nosniff",
+    "missing X-Content-Type-Options header"
+  );
+  assert(home.headers.get("x-frame-options") === "DENY", "missing X-Frame-Options header");
+  assert(home.headers.get("referrer-policy"), "missing Referrer-Policy header");
+  assert(security.response.ok, "security.txt is not reachable");
+  assert(security.text.includes("Contact:"), "security.txt missing Contact");
+});
+
+addCheck("Pro tool pages have FAQ schema", async () => {
+  const paths = [
+    { path: "/diff", expected: "Is SafeJSON Diff safe" },
+    { path: "/jwt", expected: "Is it safe to paste a real JWT token" },
+    { path: "/jsonpath", expected: "Is SafeJSON JSONPath query safe" },
+    { path: "/schema", expected: "Is SafeJSON Schema Validator safe" },
+  ];
+
+  for (const { path, expected } of paths) {
+    const { text } = await fetchText(path);
+    assert(text.includes('"@type":"FAQPage"'), `${path} missing FAQPage schema`);
+    assert(text.includes(expected), `${path} missing tool FAQ content`);
+  }
 });
 
 addCheck("license endpoints reject invalid input safely", async () => {

@@ -1,0 +1,5 @@
+Contact: https://github.com/s01071233604-tech/safejson/issues
+Preferred-Languages: en
+Canonical: https://www.safejson.dev/.well-known/security.txt
+Policy: https://www.safejson.dev/privacy
+Expires: 2027-06-11T00:00:00Z

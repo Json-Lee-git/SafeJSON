@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "../../components/Footer";
+import { BreadcrumbSchema } from "../../components/StructuredData";
+import { RelatedComparisons } from "../../components/ComparisonContent";
 
 export const metadata: Metadata = {
   title: "SafeJSON vs jwt.io — JWT Decoder Comparison | SafeJSON",
@@ -11,6 +13,7 @@ export const metadata: Metadata = {
 export default function VsJwtIoPage() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
+      <BreadcrumbSchema items={[{ name: "SafeJSON", url: "https://www.safejson.dev" },{ name: "vs jwt.io", url: "https://www.safejson.dev/vs/jwt-io" }]} />
       <header className="border-b border-zinc-800">
         <div className="max-w-4xl mx-auto px-4 h-14 flex items-center"><Link href="/" className="text-lg font-bold tracking-tight"><span className="text-emerald-400">{`{`}</span>SafeJSON<span className="text-emerald-400">{`}`}</span></Link></div>
       </header>
@@ -26,7 +29,8 @@ export default function VsJwtIoPage() {
           </table>
         </div>
         <p className="text-sm text-zinc-500 mb-4">jwt.io is a great learning and debugging tool. But if you are working with production authentication tokens or security-sensitive JWTs, a client-side decoder like SafeJSON ensures your tokens never leave your browser.</p>
-        <div className="text-center"><Link href="/jwt" className="inline-flex px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl transition-colors text-sm">Try SafeJSON JWT Decoder</Link></div>
+        <RelatedComparisons current="/vs/jwt-io" />
+        <div className="text-center mt-8"><Link href="/jwt" className="inline-flex px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl transition-colors text-sm">Try SafeJSON JWT Decoder</Link></div>
       </main>
       <Footer />
     </div>

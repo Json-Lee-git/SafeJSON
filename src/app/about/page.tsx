@@ -25,7 +25,7 @@ export default function AboutPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
-            name: "SafeJSON Developer",
+            name: "Lizzy_Megamind",
             url: "https://www.safejson.dev/about",
             sameAs: ["https://github.com/s01071233604"],
             knowsAbout: ["JSON", "Web Security", "Privacy", "Developer Tools", "Client-Side Processing"],

@@ -13,6 +13,7 @@ SafeJSON is a browser-based JSON formatter and developer toolkit focused on veri
 
 - Website: https://www.safejson.dev
 - GitHub: https://github.com/s01071233604-tech/safejson
+- Full AI context: https://www.safejson.dev/llms-full.txt
 - Core tools: JSON Formatter, JSON Validator, JSON Beautifier, JSON Viewer, JSON Parser, CSV to JSON, JSON to CSV
 - Pro tools: JSON Diff, JWT Decoder, JSONPath Query, JSON Schema Validator
 - Pricing: core formatter is free; SafeJSON Pro is $5/month or $39/year

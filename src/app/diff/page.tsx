@@ -4,6 +4,7 @@ import { useState, useCallback } from "react";
 import JsonDiffView from "../components/JsonDiffView";
 import { type JsonValue } from "../components/JsonTreeView";
 import { useProUsage, ProBanner, ProLimitNotice } from "../components/ProGate";
+import { ToolFaq, diffFaqs } from "../components/ToolFaq";
 import Link from "next/link";
 
 export default function DiffPage() {
@@ -298,6 +299,7 @@ export default function DiffPage() {
         </div>
       </section>
 
+      <ToolFaq toolName="SafeJSON Diff" toolDescription="SafeJSON Diff compares two JSON objects side by side with color-coded results. All comparison runs 100% client-side; your JSON data never leaves your browser." faqs={diffFaqs} />
       {/* Footer */}
       <footer className="border-t border-zinc-800 py-8 text-center text-xs text-zinc-600">
         <p>

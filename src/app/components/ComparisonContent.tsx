@@ -90,6 +90,8 @@ export function RelatedComparisons({ current }: { current?: string }) {
       href: "/vs/jsonformatter-extension",
       label: "SafeJSON vs JSON Formatter Extension",
     },
+    { href: "/vs/jsonlint", label: "SafeJSON vs JSONLint" },
+    { href: "/vs/jwt-io", label: "SafeJSON vs jwt.io" },
   ].filter((link) => link.href !== current);
 
   return (

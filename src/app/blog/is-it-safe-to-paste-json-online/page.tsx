@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "../../components/Footer";
+import { BreadcrumbSchema, JsonLdScript } from "../../components/StructuredData";
 
 export const metadata: Metadata = {
   title: "Is It Safe to Paste JSON Online? What You Need to Know in 2026",
@@ -9,8 +10,36 @@ export const metadata: Metadata = {
 };
 
 export default function BlogPost() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Is It Safe to Paste JSON Online? What You Need to Know in 2026",
+    description: "Most online JSON tools send data to a server. Learn the 30-second Network tab test and how to choose a client-side JSON formatter.",
+    datePublished: "2026-06-09",
+    dateModified: "2026-06-09",
+    author: {
+      "@type": "Person",
+      name: "Lizzy_Megamind",
+      url: "https://github.com/s01071233604",
+      sameAs: ["https://github.com/s01071233604"],
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "SafeJSON",
+      url: "https://www.safejson.dev",
+    },
+    mainEntityOfPage: "https://www.safejson.dev/blog/is-it-safe-to-paste-json-online",
+  };
+
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
+      <BreadcrumbSchema
+        items={[
+          { name: "SafeJSON", url: "https://www.safejson.dev" },
+          { name: "Is It Safe to Paste JSON Online", url: "https://www.safejson.dev/blog/is-it-safe-to-paste-json-online" },
+        ]}
+      />
+      <JsonLdScript data={articleSchema} />
       <header className="border-b border-zinc-800">
         <div className="max-w-3xl mx-auto px-4 h-14 flex items-center">
           <Link href="/" className="text-lg font-bold tracking-tight"><span className="text-emerald-400">{`{`}</span>SafeJSON<span className="text-emerald-400">{`}`}</span></Link>

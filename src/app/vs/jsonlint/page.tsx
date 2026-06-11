@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "../../components/Footer";
+import { BreadcrumbSchema } from "../../components/StructuredData";
+import { RelatedComparisons } from "../../components/ComparisonContent";
 
 export const metadata: Metadata = {
   title: "SafeJSON vs JSONLint — JSON Validator Comparison | SafeJSON",
@@ -11,6 +13,7 @@ export const metadata: Metadata = {
 export default function VsJsonLintPage() {
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
+      <BreadcrumbSchema items={[{ name: "SafeJSON", url: "https://www.safejson.dev" },{ name: "vs JSONLint", url: "https://www.safejson.dev/vs/jsonlint" }]} />
       <header className="border-b border-zinc-800">
         <div className="max-w-4xl mx-auto px-4 h-14 flex items-center"><Link href="/" className="text-lg font-bold tracking-tight"><span className="text-emerald-400">{`{`}</span>SafeJSON<span className="text-emerald-400">{`}`}</span></Link></div>
       </header>
@@ -26,7 +29,8 @@ export default function VsJsonLintPage() {
           </table>
         </div>
         <p className="text-sm text-zinc-500 mb-4">JSONLint is a useful tool, but it processes JSON server-side. If you paste sensitive data — API keys, tokens, customer PII — it leaves your browser. SafeJSON keeps everything local.</p>
-        <div className="text-center"><Link href="/" className="inline-flex px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl transition-colors text-sm">Try SafeJSON</Link></div>
+        <RelatedComparisons current="/vs/jsonlint" />
+        <div className="text-center mt-8"><Link href="/" className="inline-flex px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl transition-colors text-sm">Try SafeJSON</Link></div>
       </main>
       <Footer />
     </div>

@@ -2,6 +2,7 @@
 
 import { useState, useCallback } from "react";
 import { useProUsage, ProBanner, ProLimitNotice } from "../components/ProGate";
+import { ToolFaq, schemaFaqs } from "../components/ToolFaq";
 import Link from "next/link";
 
 type ValidationError = {
@@ -243,6 +244,7 @@ export default function SchemaPage() {
         <Link href="/pricing" className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl transition-colors text-sm inline-flex">View Pricing</Link>
       </section>
 
+      <ToolFaq toolName="SafeJSON Schema Validator" toolDescription="SafeJSON Schema Validator validates JSON against JSON Schema locally in your browser. It supports draft-04 through 2020-12. Your JSON and schema never leave your device." faqs={schemaFaqs} />
       {/* Footer */}
       <footer className="border-t border-zinc-800 py-8 text-center text-xs text-zinc-600">
         <p>SafeJSON. All processing happens in your browser. We never see your data.</p>

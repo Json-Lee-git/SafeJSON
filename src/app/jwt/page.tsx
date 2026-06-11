@@ -3,6 +3,7 @@
 import { useState, useCallback, useMemo } from "react";
 import JsonTreeView, { type JsonValue } from "../components/JsonTreeView";
 import { useProUsage, ProBanner, ProLimitNotice } from "../components/ProGate";
+import { ToolFaq, jwtFaqs } from "../components/ToolFaq";
 import Link from "next/link";
 
 function decodeBase64Url(str: string): string {
@@ -367,6 +368,7 @@ export default function JwtPage() {
         </div>
       </section>
 
+      <ToolFaq toolName="SafeJSON JWT Decoder" toolDescription="SafeJSON JWT Decoder decodes JWT tokens entirely in your browser; the token never leaves your device. Header, payload, and signature are decoded locally with zero network requests." faqs={jwtFaqs} />
       {/* Footer */}
       <footer className="border-t border-zinc-800 py-8 text-center text-xs text-zinc-600">
         <p>

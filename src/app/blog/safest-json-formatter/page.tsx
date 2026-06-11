@@ -31,7 +31,7 @@ export default function BlogPost() {
     dateModified: "2026-06-08",
     author: {
       "@type": "Person",
-      name: "SafeJSON Developer",
+      name: "Lizzy_Megamind",
       url: "https://github.com/s01071233604",
       sameAs: ["https://github.com/s01071233604"],
     },
