@@ -6,7 +6,22 @@ import Link from "next/link";
 const FREE_LIMIT = 5;
 const DEV_KEY = "safejson_dev";
 const PRO_KEY = "safejson_pro_unlocked";
-const PRO_REF_KEY = "safejson_pro_reference";
+const LICENSE_KEY = "safejson_pro_license_key";
+const INSTANCE_ID_KEY = "safejson_pro_instance_id";
+const INSTANCE_NAME_KEY = "safejson_pro_instance_name";
+const LICENSE_STATUS_KEY = "safejson_pro_license_status";
+const LICENSE_LAST_VALIDATED_KEY = "safejson_pro_last_validated";
+const VALIDATION_TTL_MS = 12 * 60 * 60 * 1000;
+
+export type ProLicenseResult = {
+  ok: boolean;
+  error?: string;
+  instanceName?: string;
+  activationUsage?: number | null;
+  activationLimit?: number | null;
+  variantName?: string;
+  expiresAt?: string | null;
+};
 
 function getUsageKey(tool: string): string {
   return `safejson_usage_${tool}`;
@@ -21,10 +36,159 @@ function readUsage(tool: string): number {
 
 function readUnlocked(): boolean {
   if (typeof window === "undefined") return false;
-  return (
-    window.localStorage.getItem(PRO_KEY) === "1" ||
-    window.localStorage.getItem(DEV_KEY) === "1"
+
+  if (window.localStorage.getItem(DEV_KEY) === "1") {
+    return true;
+  }
+
+  if (window.localStorage.getItem(PRO_KEY) !== "1") {
+    return false;
+  }
+
+  if (
+    !window.localStorage.getItem(LICENSE_KEY) ||
+    !window.localStorage.getItem(INSTANCE_ID_KEY)
+  ) {
+    return false;
+  }
+
+  if (window.localStorage.getItem(LICENSE_STATUS_KEY) !== "active") {
+    return false;
+  }
+
+  const lastValidated = parseInt(
+    window.localStorage.getItem(LICENSE_LAST_VALIDATED_KEY) || "0",
+    10
   );
+
+  return Date.now() - lastValidated < VALIDATION_TTL_MS;
+}
+
+function makeInstanceName() {
+  if (typeof window === "undefined") {
+    return "SafeJSON Browser";
+  }
+
+  const stored = window.localStorage.getItem(INSTANCE_NAME_KEY);
+  if (stored) return stored;
+
+  const suffix =
+    typeof window.crypto?.randomUUID === "function"
+      ? window.crypto.randomUUID().slice(0, 8)
+      : Math.random().toString(36).slice(2, 10);
+  const platform = window.navigator.platform || "Browser";
+  const name = `SafeJSON ${platform} ${suffix}`;
+  window.localStorage.setItem(INSTANCE_NAME_KEY, name);
+  return name;
+}
+
+function storeLicense(
+  licenseKey: string,
+  result: {
+    licenseStatus?: string;
+    instance?: { id?: string; name?: string } | null;
+    validatedAt?: string;
+  }
+) {
+  window.localStorage.setItem(PRO_KEY, "1");
+  window.localStorage.setItem(LICENSE_KEY, licenseKey);
+  window.localStorage.setItem(
+    LICENSE_STATUS_KEY,
+    result.licenseStatus || "active"
+  );
+  window.localStorage.setItem(
+    LICENSE_LAST_VALIDATED_KEY,
+    String(result.validatedAt ? Date.parse(result.validatedAt) : Date.now())
+  );
+
+  if (result.instance?.id) {
+    window.localStorage.setItem(INSTANCE_ID_KEY, result.instance.id);
+  }
+
+  if (result.instance?.name) {
+    window.localStorage.setItem(INSTANCE_NAME_KEY, result.instance.name);
+  }
+}
+
+function lockStoredLicense() {
+  window.localStorage.removeItem(PRO_KEY);
+  window.localStorage.setItem(LICENSE_STATUS_KEY, "inactive");
+  window.localStorage.removeItem(LICENSE_LAST_VALIDATED_KEY);
+}
+
+async function readJson(response: Response) {
+  return response.json().catch(() => ({}));
+}
+
+export async function activateProLicense(
+  licenseKey: string
+): Promise<ProLicenseResult> {
+  const normalized = licenseKey.trim();
+
+  if (normalized.length < 8) {
+    return { ok: false, error: "Enter a valid Lemon Squeezy license key." };
+  }
+
+  const response = await fetch("/api/lemonsqueezy/license/activate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      licenseKey: normalized,
+      instanceName: makeInstanceName(),
+    }),
+  });
+
+  const data = await readJson(response);
+
+  if (!response.ok || !data.valid) {
+    lockStoredLicense();
+    return {
+      ok: false,
+      error:
+        typeof data.error === "string"
+          ? data.error
+          : "This license could not be activated.",
+    };
+  }
+
+  storeLicense(normalized, data);
+
+  return {
+    ok: true,
+    instanceName: data.instance?.name,
+    activationUsage: data.activationUsage,
+    activationLimit: data.activationLimit,
+    variantName: data.variant?.name,
+    expiresAt: data.expiresAt,
+  };
+}
+
+export async function validateStoredProLicense(): Promise<boolean> {
+  if (typeof window === "undefined") return false;
+
+  const licenseKey = window.localStorage.getItem(LICENSE_KEY);
+  const instanceId = window.localStorage.getItem(INSTANCE_ID_KEY);
+
+  if (!licenseKey || !instanceId) {
+    lockStoredLicense();
+    return false;
+  }
+
+  const response = await fetch("/api/lemonsqueezy/license/validate", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ licenseKey, instanceId }),
+  });
+
+  const data = await readJson(response);
+
+  if (!response.ok || !data.valid) {
+    lockStoredLicense();
+    return false;
+  }
+
+  storeLicense(licenseKey, data);
+  return true;
 }
 
 export function useProUsage(tool: string) {
@@ -32,12 +196,24 @@ export function useProUsage(tool: string) {
   const [isUnlocked, setIsUnlocked] = useState(false);
 
   useEffect(() => {
+    let active = true;
     const handle = window.setTimeout(() => {
       setCount(readUsage(tool));
       setIsUnlocked(readUnlocked());
+
+      validateStoredProLicense()
+        .then((valid) => {
+          if (active) setIsUnlocked(valid || readUnlocked());
+        })
+        .catch(() => {
+          if (active) setIsUnlocked(readUnlocked());
+        });
     }, 0);
 
-    return () => window.clearTimeout(handle);
+    return () => {
+      active = false;
+      window.clearTimeout(handle);
+    };
   }, [tool]);
 
   const increment = () => {
@@ -168,14 +344,4 @@ export function ProLimitNotice({
       </div>
     </div>
   );
-}
-
-export function unlockPro(reference: string) {
-  const normalized = reference.trim();
-  if (normalized.length < 4) {
-    return false;
-  }
-  window.localStorage.setItem(PRO_KEY, "1");
-  window.localStorage.setItem(PRO_REF_KEY, normalized);
-  return true;
 }

@@ -2,30 +2,59 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { unlockPro } from "../components/ProGate";
+import {
+  activateProLicense,
+  validateStoredProLicense,
+  type ProLicenseResult,
+} from "../components/ProGate";
 
 export default function UnlockPage() {
-  const [reference, setReference] = useState("");
+  const [licenseKey, setLicenseKey] = useState("");
   const [unlocked, setUnlocked] = useState(false);
+  const [paidReturn, setPaidReturn] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [result, setResult] = useState<ProLicenseResult | null>(null);
 
   useEffect(() => {
+    let active = true;
     const handle = window.setTimeout(() => {
       const params = new URLSearchParams(window.location.search);
       if (params.get("paid") === "1") {
-        setReference(params.get("ref") || "");
+        setPaidReturn(true);
       }
+
+      validateStoredProLicense()
+        .then((valid) => {
+          if (active && valid) setUnlocked(true);
+        })
+        .catch(() => {});
     }, 0);
 
-    return () => window.clearTimeout(handle);
+    return () => {
+      active = false;
+      window.clearTimeout(handle);
+    };
   }, []);
 
-  function handleUnlock() {
+  async function handleUnlock() {
     setError("");
-    if (!unlockPro(reference)) {
-      setError("Enter the order email or license key from your purchase.");
+    setResult(null);
+    setLoading(true);
+
+    const activation = await activateProLicense(licenseKey).catch(() => ({
+      ok: false,
+      error: "Could not reach the license server. Try again in a moment.",
+    }));
+
+    setLoading(false);
+
+    if (!activation.ok) {
+      setError(activation.error || "This license could not be activated.");
       return;
     }
+
+    setResult(activation);
     setUnlocked(true);
   }
 
@@ -53,22 +82,43 @@ export default function UnlockPage() {
             Unlock Pro in this browser
           </h1>
           <p className="mt-4 text-sm leading-relaxed text-zinc-400">
-            Enter the email or license key from your Lemon Squeezy purchase.
-            SafeJSON stores the unlock locally in this browser so Pro tools stay
-            100% client-side.
+            Enter the license key from your Lemon Squeezy purchase. SafeJSON
+            activates this browser as one device, then stores the unlock locally
+            so Pro tools stay client-side.
           </p>
         </div>
 
         <div className="mt-8 rounded-xl border border-zinc-800 bg-zinc-900/40 p-5">
+          {paidReturn && !unlocked && (
+            <div className="mb-5 rounded-lg border border-emerald-400/20 bg-emerald-400/[0.05] px-4 py-3">
+              <p className="text-sm font-semibold text-emerald-300">
+                Payment complete.
+              </p>
+              <p className="mt-1 text-xs leading-relaxed text-zinc-500">
+                Lemon Squeezy will send your license key by email. Paste it
+                below to activate this browser.
+              </p>
+            </div>
+          )}
+
           {unlocked ? (
             <div>
               <p className="text-sm font-semibold text-emerald-300">
-                Pro is unlocked in this browser.
+                SafeJSON Pro is active in this browser.
               </p>
               <p className="mt-2 text-sm text-zinc-500">
                 You can now use Diff, JWT, JSONPath, and Schema without the free
                 run limit.
               </p>
+              {result && (
+                <p className="mt-3 text-xs text-zinc-600">
+                  Activated as {result.instanceName || "this browser"}
+                  {result.activationUsage && result.activationLimit
+                    ? ` (${result.activationUsage}/${result.activationLimit} devices used)`
+                    : ""}
+                  .
+                </p>
+              )}
               <div className="mt-5 flex flex-wrap gap-3">
                 <Link
                   href="/diff"
@@ -90,26 +140,27 @@ export default function UnlockPage() {
                 htmlFor="purchase-reference"
                 className="text-sm font-medium text-zinc-300"
               >
-                Order email or license key
+                Lemon Squeezy license key
               </label>
               <input
                 id="purchase-reference"
-                value={reference}
-                onChange={(event) => setReference(event.target.value)}
-                placeholder="you@example.com or LS-..."
+                value={licenseKey}
+                onChange={(event) => setLicenseKey(event.target.value)}
+                placeholder="Paste your license key"
                 className="mt-2 w-full rounded-lg border border-zinc-700 bg-zinc-950 px-3 py-2 text-sm text-zinc-200 placeholder:text-zinc-600 focus:border-emerald-400 focus:outline-none"
               />
               {error && <p className="mt-2 text-xs text-red-300">{error}</p>}
               <button
                 onClick={handleUnlock}
-                className="mt-4 rounded-lg bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-black hover:bg-emerald-400"
+                disabled={loading}
+                className="mt-4 rounded-lg bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-black hover:bg-emerald-400 disabled:cursor-not-allowed disabled:opacity-60"
               >
-                Unlock Pro
+                {loading ? "Activating..." : "Activate Pro"}
               </button>
               <p className="mt-4 text-xs leading-relaxed text-zinc-600">
-                Early access note: account sync and automated license checks are
-                not required for local processing. If you switch browsers,
-                unlock again with the same purchase reference.
+                Each license can be activated on up to 2 devices. If you switch
+                browsers, paste the same license key again to activate the new
+                browser.
               </p>
             </div>
           )}
