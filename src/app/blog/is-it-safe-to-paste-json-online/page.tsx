@@ -4,7 +4,7 @@ import Footer from "../../components/Footer";
 
 export const metadata: Metadata = {
   title: "Is It Safe to Paste JSON Online? What You Need to Know in 2026",
-  description: "Most online JSON tools send your data to a server. In 2025, jsonformatter.org leaked 80,000 credentials. Learn how to verify whether a JSON formatter is safe and which tools are truly client-side.",
+  description: "Most online JSON tools send data to a server. Learn the 30-second Network tab test and how to choose a client-side JSON formatter.",
   alternates: { canonical: "/blog/is-it-safe-to-paste-json-online" },
 };
 

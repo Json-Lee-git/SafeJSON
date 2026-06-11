@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "JSON Diff & Object Comparison — Compare JSON Online, No Server Upload | SafeJSON",
+  title: "JSON Diff Checker - Compare JSON Online | SafeJSON",
   description:
-    "Compare two JSON objects side by side with color-coded differences. Free client-side JSON diff tool — your data never leaves your browser. No server upload.",
+    "Compare two JSON objects side by side with color-coded differences. Free client-side JSON diff tool with no server upload.",
   openGraph: {
     title: "JSON Diff Checker - SafeJSON",
     description:
