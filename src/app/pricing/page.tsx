@@ -7,8 +7,8 @@ export default function PricingPage() {
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
       <BreadcrumbSchema
         items={[
-          { name: "SafeJSON", url: "https://safejson.dev" },
-          { name: "Pricing", url: "https://safejson.dev/pricing" },
+          { name: "SafeJSON", url: "https://www.safejson.dev" },
+          { name: "Pricing", url: "https://www.safejson.dev/pricing" },
         ]}
       />
       <header className="border-b border-zinc-800">

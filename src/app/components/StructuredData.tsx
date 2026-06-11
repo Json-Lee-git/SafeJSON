@@ -18,8 +18,8 @@ export function OrganizationSchema() {
         "@context": "https://schema.org",
         "@type": "Organization",
         name: "SafeJSON",
-        url: "https://safejson.dev",
-        logo: "https://safejson.dev/favicon.ico",
+        url: "https://www.safejson.dev",
+        logo: "https://www.safejson.dev/favicon.ico",
         sameAs: ["https://github.com/s01071233604-tech/safejson"],
       }}
     />
@@ -33,14 +33,14 @@ export function WebSiteSchema() {
         "@context": "https://schema.org",
         "@type": "WebSite",
         name: "SafeJSON",
-        url: "https://safejson.dev",
+        url: "https://www.safejson.dev",
         description:
           "Privacy-first JSON formatter and developer tools that process data entirely in the browser.",
         inLanguage: "en",
         publisher: {
           "@type": "Organization",
           name: "SafeJSON",
-          url: "https://safejson.dev",
+          url: "https://www.safejson.dev",
         },
       }}
     />
@@ -82,7 +82,7 @@ export function ProductSchema() {
           name: "SafeJSON",
         },
         category: "DeveloperApplication",
-        url: "https://safejson.dev/pricing",
+        url: "https://www.safejson.dev/pricing",
         offers: [
           {
             "@type": "Offer",
@@ -90,7 +90,7 @@ export function ProductSchema() {
             price: "5",
             priceCurrency: "USD",
             availability: "https://schema.org/InStock",
-            url: "https://safejson.dev/pricing",
+            url: "https://www.safejson.dev/pricing",
           },
           {
             "@type": "Offer",
@@ -98,7 +98,7 @@ export function ProductSchema() {
             price: "39",
             priceCurrency: "USD",
             availability: "https://schema.org/InStock",
-            url: "https://safejson.dev/pricing",
+            url: "https://www.safejson.dev/pricing",
           },
         ],
       }}
@@ -139,7 +139,7 @@ export function SoftwareAppSchema() {
     "@type": "SoftwareApplication",
     name: "SafeJSON",
     applicationCategory: "DeveloperApplication",
-    image: "https://safejson.dev/favicon.ico",
+    image: "https://www.safejson.dev/favicon.ico",
     description:
       "Privacy-first JSON formatter that runs 100% in your browser. No data ever leaves your device. Zero network requests during formatting.",
     operatingSystem: "All",
@@ -164,10 +164,10 @@ export function SoftwareAppSchema() {
     author: {
       "@type": "Organization",
       name: "SafeJSON",
-      url: "https://safejson.dev",
+      url: "https://www.safejson.dev",
       sameAs: ["https://github.com/s01071233604-tech/safejson"],
     },
-    url: "https://safejson.dev",
+    url: "https://www.safejson.dev",
   };
 
   return <JsonLdScript data={ld} />;

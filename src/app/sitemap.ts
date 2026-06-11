@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-const siteUrl = "https://safejson.dev";
+const siteUrl = "https://www.safejson.dev";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
@@ -24,6 +24,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/json-viewer`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/json-beautifier`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/json-parser`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/json-validator`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/csv-to-json`, lastModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${siteUrl}/json-to-csv`, lastModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${siteUrl}/vs/jsonlint`, lastModified, changeFrequency: "monthly", priority: 0.65 },
+    { url: `${siteUrl}/vs/jwt-io`, lastModified, changeFrequency: "monthly", priority: 0.65 },
     { url: `${siteUrl}/privacy`, lastModified, changeFrequency: "yearly", priority: 0.3 },
   ];
 }

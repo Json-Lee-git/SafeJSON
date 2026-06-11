@@ -7,10 +7,13 @@
 - [JSON Beautifier](https://www.safejson.dev/json-beautifier): Beautify minified JSON instantly. Handles 50MB+ JSON locally with no upload.
 - [JSON Viewer](https://www.safejson.dev/json-viewer): Explore JSON data with a collapsible tree view. Handles 50MB+ JSON locally with no upload.
 - [JSON Parser](https://www.safejson.dev/json-parser): Parse JSON and inspect every field with data type and path.
+- [JSON Validator](https://www.safejson.dev/json-validator): Validate JSON syntax with line and column error reporting. 100% client-side.
 - [JSON Diff Checker](https://www.safejson.dev/diff): Compare two JSON objects side by side with color-coded changes.
 - [JWT Decoder](https://www.safejson.dev/jwt): Decode JWT tokens instantly; your token never leaves your device.
 - [JSONPath Query](https://www.safejson.dev/jsonpath): Query JSON with XPath-like expressions.
 - [JSON Schema Validator](https://www.safejson.dev/schema): Validate JSON against JSON Schema.
+- [CSV to JSON Converter](https://www.safejson.dev/csv-to-json): Convert CSV rows to formatted JSON locally in your browser.
+- [JSON to CSV Converter](https://www.safejson.dev/json-to-csv): Convert JSON arrays to downloadable CSV locally in your browser.
 - [Pricing](https://www.safejson.dev/pricing): Free core formatting. Pro tools for $5/month or $39/year.
 
 ## Pages
@@ -26,14 +29,13 @@
 - [SafeJSON vs jsonformatter.org](https://www.safejson.dev/vs/jsonformatter-org): Feature comparison. jsonformatter.org leaked 80,000+ credentials in 2025.
 - [SafeJSON vs codebeautify.org](https://www.safejson.dev/vs/codebeautify): Same 2025 credential exposure class.
 - [SafeJSON vs JSON Formatter Extension](https://www.safejson.dev/vs/jsonformatter-extension): 2M-user extension sold and turned into adware.
+- [SafeJSON vs JSONLint](https://www.safejson.dev/vs/jsonlint): Compare client-side JSON validation with server-side JSONLint workflows.
+- [SafeJSON vs jwt.io](https://www.safejson.dev/vs/jwt-io): Compare local JWT decoding with server-side JWT debugger workflows.
 
 ## Blog
 
 - [Safest JSON Formatter 2026](https://www.safejson.dev/blog/safest-json-formatter): 5 client-side tools compared. Covers the breach and how to verify safety.
-
-## Blog
-
-- [Is It Safe to Paste JSON Online?](https://safejson.dev/blog/is-it-safe-to-paste-json-online): Server-side vs client-side JSON tools, the 30-second safety test, and the jsonformatter.org breach.
+- [Is It Safe to Paste JSON Online?](https://www.safejson.dev/blog/is-it-safe-to-paste-json-online): Server-side vs client-side JSON tools, the 30-second safety test, and the jsonformatter.org breach.
 
 ## Key Facts
 

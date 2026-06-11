@@ -24,11 +24,11 @@ export default function BlogPost() {
         {/* Answer capsule */}
         <div className="p-5 rounded-xl border border-emerald-400/20 bg-emerald-400/5 mb-10">
           <p className="text-sm text-zinc-300 font-semibold mb-2">It depends on the tool you use.</p>
-          <p className="text-sm text-zinc-400 leading-relaxed">If the tool processes JSON in your browser (client-side), your data never leaves your device — it is safe. If the tool sends your JSON to a remote server for processing, your data is on someone else's infrastructure and can be intercepted, logged, or leaked. Most popular online JSON tools are server-side.</p>
+          <p className="text-sm text-zinc-400 leading-relaxed">If the tool processes JSON in your browser (client-side), your data never leaves your device — it is safe. If the tool sends your JSON to a remote server for processing, your data is on someone else&apos;s infrastructure and can be intercepted, logged, or leaked. Most popular online JSON tools are server-side.</p>
         </div>
 
         <h2 className="text-xl font-semibold mb-4">The jsonformatter.org data leak changed everything</h2>
-        <p className="text-zinc-400 leading-relaxed mb-4">In November 2025, security researchers at watchTowr discovered that jsonformatter.org and codebeautify.org — two of the most popular online JSON tools — had been silently exposing user-submitted data for over five years. An unprotected "Recent Links" feature made over 80,000 submitted code snippets publicly accessible without any authentication.</p>
+        <p className="text-zinc-400 leading-relaxed mb-4">In November 2025, security researchers at watchTowr discovered that jsonformatter.org and codebeautify.org — two of the most popular online JSON tools — had been silently exposing user-submitted data for over five years. An unprotected &quot;Recent Links&quot; feature made over 80,000 submitted code snippets publicly accessible without any authentication.</p>
         <p className="text-zinc-400 leading-relaxed mb-4">The exposed data included AWS access keys, GitHub personal access tokens, database passwords, Active Directory credentials, and banking personally identifiable information. The researchers planted canary tokens to test whether attackers were actively scraping the data. The canaries were triggered within 48 hours — confirming active exploitation.</p>
         <p className="text-zinc-400 leading-relaxed mb-8">The root cause was simple: server-side processing. User data was stored on remote servers. A feature designed to share snippets became a public data dump. The same failure mode exists in any tool that processes your JSON on a server.</p>
 
@@ -73,7 +73,7 @@ export default function BlogPost() {
         </ul>
 
         <h2 className="text-xl font-semibold mb-4">The bottom line</h2>
-        <p className="text-zinc-400 leading-relaxed mb-8">You would not paste your AWS root credentials into a stranger's terminal. But every time you use a server-side online JSON tool, you are essentially doing the same thing. The fix takes 30 seconds: open DevTools, look at the Network tab, and see for yourself. If there are requests going out, find a tool that does not need to send your data anywhere.</p>
+        <p className="text-zinc-400 leading-relaxed mb-8">You would not paste your AWS root credentials into a stranger&apos;s terminal. But every time you use a server-side online JSON tool, you are essentially doing the same thing. The fix takes 30 seconds: open DevTools, look at the Network tab, and see for yourself. If there are requests going out, find a tool that does not need to send your data anywhere.</p>
 
         <div className="text-center pt-8 border-t border-zinc-800/50">
           <Link href="/" className="inline-flex px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl transition-colors text-sm">Try SafeJSON — Zero Network Requests</Link>
