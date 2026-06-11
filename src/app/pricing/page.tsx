@@ -31,7 +31,7 @@ export default function PricingPage() {
           </h1>
           <p className="text-zinc-500 max-w-lg mx-auto">
             Core JSON formatting is free forever. Advanced tools for developers
-            who debug JSON every day.
+            who debug JSON every day. Try each Pro tool 5 times free.
           </p>
         </div>
 
@@ -154,6 +154,16 @@ export default function PricingPage() {
             <p className="text-xs text-zinc-600 text-center mt-3">
               Cancel anytime. No questions asked. Payment handled securely by
               Lemon Squeezy.
+            </p>
+            <p className="text-xs text-zinc-500 text-center mt-3">
+              Already purchased?{" "}
+              <Link
+                href="/unlock"
+                className="text-emerald-400 hover:text-emerald-300"
+              >
+                Unlock Pro in this browser
+              </Link>
+              .
             </p>
           </div>
         </div>

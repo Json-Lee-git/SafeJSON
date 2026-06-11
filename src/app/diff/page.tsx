@@ -3,11 +3,12 @@
 import { useState, useCallback } from "react";
 import JsonDiffView from "../components/JsonDiffView";
 import { type JsonValue } from "../components/JsonTreeView";
-import { useProUsage, ProBanner } from "../components/ProGate";
+import { useProUsage, ProBanner, ProLimitNotice } from "../components/ProGate";
 import Link from "next/link";
 
 export default function DiffPage() {
-  const { increment } = useProUsage("diff");
+  const { increment, isOverLimit, remaining, limit, isUnlocked } =
+    useProUsage("diff");
   const [leftInput, setLeftInput] = useState("");
   const [rightInput, setRightInput] = useState("");
   const [leftParsed, setLeftParsed] = useState<JsonValue | null>(null);
@@ -16,6 +17,12 @@ export default function DiffPage() {
   const [rightError, setRightError] = useState<string | null>(null);
 
   const handleCompare = useCallback(() => {
+    if (isOverLimit) {
+      setLeftError("Free JSON Diff runs used up. Upgrade to Pro to continue.");
+      setRightError(null);
+      return;
+    }
+
     let success = true;
 
     if (!leftInput.trim()) {
@@ -49,7 +56,7 @@ export default function DiffPage() {
     }
 
     if (success) increment();
-  }, [leftInput, rightInput, increment]);
+  }, [leftInput, rightInput, increment, isOverLimit]);
 
   const handleSample = useCallback(() => {
     const old = {
@@ -143,6 +150,12 @@ export default function DiffPage() {
       {/* Tool area */}
       <section className="max-w-6xl mx-auto px-4 pb-8">
         <ProBanner tool="JSON Diff" />
+        <ProLimitNotice
+          tool="JSON Diff"
+          remaining={remaining}
+          limit={limit}
+          isUnlocked={isUnlocked}
+        />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
           {/* Left input */}
           <div className="border border-zinc-800 rounded-xl overflow-hidden bg-zinc-900/50">

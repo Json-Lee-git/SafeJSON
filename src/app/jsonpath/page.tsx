@@ -2,11 +2,12 @@
 
 import { useState, useCallback } from "react";
 import JsonTreeView, { type JsonValue } from "../components/JsonTreeView";
-import { useProUsage, ProBanner } from "../components/ProGate";
+import { useProUsage, ProBanner, ProLimitNotice } from "../components/ProGate";
 import Link from "next/link";
 
 export default function JsonPathPage() {
-  const { increment } = useProUsage("jsonpath");
+  const { increment, isOverLimit, remaining, limit, isUnlocked } =
+    useProUsage("jsonpath");
   const [jsonInput, setJsonInput] = useState("");
   const [pathExpr, setPathExpr] = useState("");
   const [results, setResults] = useState<JsonValue[] | null>(null);
@@ -15,6 +16,11 @@ export default function JsonPathPage() {
   const handleQuery = useCallback(async () => {
     setError(null);
     setResults(null);
+
+    if (isOverLimit) {
+      setError("Free JSONPath runs used up. Upgrade to Pro to continue.");
+      return;
+    }
 
     if (!jsonInput.trim()) {
       setError("Paste JSON data");
@@ -47,7 +53,7 @@ export default function JsonPathPage() {
           (e instanceof Error ? e.message : "")
       );
     }
-  }, [jsonInput, pathExpr, increment]);
+  }, [jsonInput, pathExpr, increment, isOverLimit]);
 
   const handleSample = useCallback(() => {
     const sample = {
@@ -126,6 +132,12 @@ export default function JsonPathPage() {
       {/* Tool */}
       <section className="max-w-6xl mx-auto px-4 pb-8">
         <ProBanner tool="JSONPath" />
+        <ProLimitNotice
+          tool="JSONPath"
+          remaining={remaining}
+          limit={limit}
+          isUnlocked={isUnlocked}
+        />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
           {/* Left: Input + Path */}
           <div className="space-y-4">

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
-import { useProUsage, ProBanner } from "../components/ProGate";
+import { useProUsage, ProBanner, ProLimitNotice } from "../components/ProGate";
 import Link from "next/link";
 
 type ValidationError = {
@@ -10,7 +10,8 @@ type ValidationError = {
 };
 
 export default function SchemaPage() {
-  const { increment } = useProUsage("schema");
+  const { increment, isOverLimit, remaining, limit, isUnlocked } =
+    useProUsage("schema");
   const [jsonInput, setJsonInput] = useState("");
   const [schemaInput, setSchemaInput] = useState("");
   const [valid, setValid] = useState<boolean | null>(null);
@@ -21,6 +22,13 @@ export default function SchemaPage() {
     setParseError(null);
     setValid(null);
     setErrors([]);
+
+    if (isOverLimit) {
+      setParseError(
+        "Free Schema Validator runs used up. Upgrade to Pro to continue."
+      );
+      return;
+    }
 
     if (!jsonInput.trim()) {
       setParseError("Paste JSON data to validate");
@@ -77,7 +85,7 @@ export default function SchemaPage() {
           (e instanceof Error ? e.message : "")
       );
     }
-  }, [jsonInput, schemaInput, increment]);
+  }, [jsonInput, schemaInput, increment, isOverLimit]);
 
   const handleSample = useCallback(() => {
     const data = {
@@ -149,6 +157,12 @@ export default function SchemaPage() {
       {/* Tool */}
       <section className="max-w-6xl mx-auto px-4 pb-8">
         <ProBanner tool="Schema Validator" />
+        <ProLimitNotice
+          tool="Schema Validator"
+          remaining={remaining}
+          limit={limit}
+          isUnlocked={isUnlocked}
+        />
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 mb-4">
           {/* JSON Data */}
           <div className="border border-zinc-800 rounded-xl overflow-hidden bg-zinc-900/50">
