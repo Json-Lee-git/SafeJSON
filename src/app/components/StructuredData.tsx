@@ -141,7 +141,7 @@ export function SoftwareAppSchema() {
     applicationCategory: "DeveloperApplication",
     image: "https://www.safejson.dev/favicon.ico",
     description:
-      "Privacy-first JSON formatter that runs 100% in your browser. No data ever leaves your device. Zero network requests during formatting.",
+      "Privacy-first JSON formatter that runs 100% in your browser. Pasted JSON is processed locally and is not uploaded during formatting.",
     operatingSystem: "All",
     offers: {
       "@type": "Offer",
@@ -150,7 +150,7 @@ export function SoftwareAppSchema() {
     },
     featureList: [
       "Verifiable privacy via DevTools Network tab",
-      "Client-side JSON formatting with zero data transmission",
+      "Client-side JSON formatting without pasted-content upload",
       "50MB+ local JSON handling in formatter, beautifier, viewer, and parser workflows",
       "Web Worker parsing to avoid blocking the main UI thread",
       "Collapsible tree view with syntax highlighting",
@@ -183,7 +183,7 @@ export function FAQSchema() {
         name: "Is SafeJSON safe to use with sensitive data?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. SafeJSON processes all JSON data entirely in your browser. No data is ever transmitted to any server. You can verify this by opening DevTools -> Network tab while using SafeJSON - there are zero network requests during formatting.",
+          text: "Yes. SafeJSON processes pasted JSON entirely in your browser. The JSON content is not transmitted to a SafeJSON server. You can verify this by opening DevTools -> Network tab while using SafeJSON and checking that no request contains your pasted content.",
         },
       },
       {

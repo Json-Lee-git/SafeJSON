@@ -55,7 +55,7 @@ export function ToolFaq({
 export const diffFaqs: FaqItem[] = [
   {
     q: "Is SafeJSON Diff safe for comparing sensitive JSON data?",
-    a: "Yes. SafeJSON Diff runs entirely in your browser. Both JSON inputs are compared locally; no data is ever transmitted to any server. You can verify this by opening DevTools Network tab while running a diff comparison. You will see zero new network requests.",
+    a: "Yes. SafeJSON Diff runs entirely in your browser. Both JSON inputs are compared locally; the pasted content is not transmitted to a SafeJSON server. You can verify this by opening DevTools Network tab while running a diff comparison and checking that no request contains your JSON.",
   },
   {
     q: "How does JSON Diff work?",
@@ -78,14 +78,14 @@ export const jwtFaqs: FaqItem[] = [
   },
   {
     q: "What JWT claims can I see?",
-    a: "The decoder displays all standard and custom claims from the JWT payload, including sub, iss, aud, exp, iat, nbf, and any custom claims. The header shows the algorithm (alg) and token type (typ). All decoding happens locally with zero network requests.",
+    a: "The decoder displays all standard and custom claims from the JWT payload, including sub, iss, aud, exp, iat, nbf, and any custom claims. The header shows the algorithm (alg) and token type (typ). All decoding happens locally without uploading the token.",
   },
 ];
 
 export const jsonpathFaqs: FaqItem[] = [
   {
     q: "Is SafeJSON JSONPath query safe for sensitive data?",
-    a: "Yes. All JSONPath queries are evaluated entirely in your browser. The JSON data and query expressions never leave your device. You can verify this by opening DevTools Network tab; there will be zero network requests during query evaluation.",
+    a: "Yes. All JSONPath queries are evaluated entirely in your browser. The JSON data and query expressions are not uploaded. You can verify this by opening DevTools Network tab and checking that no request contains your JSON or query.",
   },
   {
     q: "What JSONPath expressions are supported?",
@@ -108,6 +108,6 @@ export const schemaFaqs: FaqItem[] = [
   },
   {
     q: "How does the Schema Validator report errors?",
-    a: "SafeJSON reports validation errors with the exact JSON path where the error occurred, the specific constraint that failed, and the violating value. All validation runs locally with zero network requests.",
+    a: "SafeJSON reports validation errors with the exact JSON path where the error occurred, the specific constraint that failed, and the violating value. All validation runs locally without uploading your JSON or schema.",
   },
 ];

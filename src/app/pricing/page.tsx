@@ -4,6 +4,7 @@ import {
   JsonLdScript,
   ProductSchema,
 } from "../components/StructuredData";
+import TrackedAnchor from "../components/TrackedAnchor";
 
 export default function PricingPage() {
   const pricingFaqSchema = {
@@ -171,22 +172,26 @@ export default function PricingPage() {
               ))}
             </ul>
             <div className="space-y-2">
-              <a
+              <TrackedAnchor
                 href="https://jsonlee.lemonsqueezy.com/checkout/buy/6a37f7c4-32a2-4390-8545-99864d388725"
                 target="_blank"
                 rel="noopener noreferrer"
+                eventName="checkout_click"
+                eventParams={{ plan: "monthly", price_usd: 5 }}
                 className="block w-full text-center py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-black font-semibold text-sm transition-colors"
               >
                 Get Pro Monthly - $5
-              </a>
-              <a
+              </TrackedAnchor>
+              <TrackedAnchor
                 href="https://jsonlee.lemonsqueezy.com/checkout/buy/924b3488-c62c-4628-ad09-7ed793b081d9"
                 target="_blank"
                 rel="noopener noreferrer"
+                eventName="checkout_click"
+                eventParams={{ plan: "yearly", price_usd: 39 }}
                 className="block w-full text-center py-3 rounded-xl border border-zinc-700 hover:border-zinc-500 text-zinc-300 font-medium text-sm transition-colors"
               >
                 Get Pro Yearly - $39
-              </a>
+              </TrackedAnchor>
             </div>
             <p className="text-xs text-zinc-600 text-center mt-3">
               Cancel anytime. No questions asked. Payment handled securely by
@@ -221,7 +226,7 @@ export default function PricingPage() {
               },
               {
                 title: "Verifiable",
-                desc: "Open DevTools -> Network. Zero requests. You do not have to trust us.",
+                desc: "Open DevTools -> Network. Check that pasted content is not uploaded. You do not have to trust us.",
               },
               {
                 title: "Independent",

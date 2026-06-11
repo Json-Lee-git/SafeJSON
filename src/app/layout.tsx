@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "SafeJSON - JSON Formatter You Can Verify",
   description:
-    "Format, validate, and debug JSON entirely in your browser. Open DevTools -> Network and verify zero new requests while your data is processed locally.",
+    "Format, validate, and debug JSON entirely in your browser. Open DevTools -> Network and verify pasted JSON is not uploaded.",
   keywords: [
     "JSON formatter",
     "JSON validator",

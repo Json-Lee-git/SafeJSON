@@ -7,6 +7,7 @@ import {
   validateStoredProLicense,
   type ProLicenseResult,
 } from "../components/ProGate";
+import { trackEvent } from "../components/analytics";
 
 export default function UnlockPage() {
   const [licenseKey, setLicenseKey] = useState("");
@@ -22,6 +23,7 @@ export default function UnlockPage() {
       const params = new URLSearchParams(window.location.search);
       if (params.get("paid") === "1") {
         setPaidReturn(true);
+        trackEvent("checkout_return", { paid: true });
       }
 
       validateStoredProLicense()
@@ -42,7 +44,7 @@ export default function UnlockPage() {
     setResult(null);
     setLoading(true);
 
-    const activation = await activateProLicense(licenseKey).catch(() => ({
+    const activation = await activateProLicense(licenseKey).catch((): ProLicenseResult => ({
       ok: false,
       error: "Could not reach the license server. Try again in a moment.",
     }));
@@ -51,11 +53,19 @@ export default function UnlockPage() {
 
     if (!activation.ok) {
       setError(activation.error || "This license could not be activated.");
+      trackEvent("license_activation_failed", {
+        reason: activation.error ? "api_error" : "unknown",
+      });
       return;
     }
 
     setResult(activation);
     setUnlocked(true);
+    trackEvent("license_activation_success", {
+      activation_usage: activation.activationUsage ?? 0,
+      activation_limit: activation.activationLimit ?? 0,
+      variant: activation.variantName || "unknown",
+    });
   }
 
   return (

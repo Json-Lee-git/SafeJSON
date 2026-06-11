@@ -21,10 +21,10 @@ export default function PrivacyPage() {
         <section className="mb-8">
           <h2 className="text-lg font-semibold mb-3">Data Collection</h2>
           <p className="text-zinc-400 leading-relaxed">
-            SafeJSON does not collect, store, transmit, or process any user
-            data on any server. All JSON formatting, validation, and processing
-            happens entirely in your browser using client-side JavaScript. No
-            data ever leaves your device.
+            SafeJSON does not collect, store, transmit, or process your pasted
+            JSON, JWT tokens, JSONPath queries, or JSON Schema content on any
+            server. Formatting, validation, diffing, decoding, and querying run
+            in your browser using client-side JavaScript.
           </p>
         </section>
 
@@ -55,11 +55,17 @@ export default function PrivacyPage() {
 
         <section className="mb-8">
           <h2 className="text-lg font-semibold mb-3">Third Parties</h2>
+          <p className="text-zinc-400 leading-relaxed mb-3">
+            SafeJSON uses Google Analytics for aggregate product analytics, such
+            as page views and non-sensitive events like checkout clicks, Pro
+            limit reached, and tool success. These events help us understand
+            whether the product is useful enough to support.
+          </p>
           <p className="text-zinc-400 leading-relaxed">
-            SafeJSON does not use third-party analytics, advertising networks,
-            tracking scripts, data brokers, or marketing cookies. No personal
-            data, JSON content, page content, or tool usage data is sent to
-            third parties.
+            SafeJSON does not send pasted JSON, JWT tokens, schemas, query
+            expressions, formatted output, license keys, page content, or
+            clipboard content to analytics providers. SafeJSON does not use
+            advertising networks, data brokers, or marketing cookies.
           </p>
         </section>
 

@@ -19,6 +19,7 @@ Codex can run:
 
 ```bash
 npm run growth:check
+npm run growth:playwright
 npm run lint
 npm run build
 ```
@@ -56,6 +57,7 @@ Codex can do:
 - Prepare final copy for directories, GitHub, DEV.to, Indie Hackers, Hacker News, and Product Hunt.
 - Update GitHub README and repo metadata.
 - Submit low-risk forms only when the platform is open, logged in, and does not require human community judgment.
+- Update `growth/SUBMISSION-TRACKER.md` with owner, status, proof URL, and next action after each submission.
 
 User should do:
 
@@ -118,11 +120,12 @@ For each growth iteration:
 1. Inspect git state and do not touch unrelated untracked files.
 2. Review production pages before changing content.
 3. Make the smallest useful change to one loop.
-4. Run `npm run growth:check`, `npm run lint`, and `npm run build`.
+4. Run `npm run growth:check`, the Playwright production check, `npm run lint`, and `npm run build`.
 5. Commit with a clear message.
 6. Push to GitHub and verify Vercel production.
 7. Submit IndexNow after deploy when indexable pages changed.
-8. Report what changed, what was verified, and what needs user action.
+8. Update `growth/SUBMISSION-TRACKER.md` when external distribution status changed.
+9. Report what changed, what was verified, and what needs user action.
 
 ## User Escalation Triggers
 

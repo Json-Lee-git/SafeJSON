@@ -3,12 +3,13 @@
 import { useEffect, useRef, useState } from "react";
 
 export default function NetworkRequestIndicator() {
-  const [requestCount, setRequestCount] = useState(0);
+  const [uploadCount, setUploadCount] = useState(0);
   const [open, setOpen] = useState(false);
   const activeRef = useRef(false);
 
   useEffect(() => {
     const originalFetch = window.fetch;
+    const originalOpen = XMLHttpRequest.prototype.open;
     const originalSend = XMLHttpRequest.prototype.send;
     let activationTimer: number | undefined;
 
@@ -18,7 +19,10 @@ export default function NetworkRequestIndicator() {
       }, 1000);
     };
 
-    const shouldCountFetch = (resource: RequestInfo | URL) => {
+    const shouldCountUpload = (
+      method: string | undefined,
+      resource: RequestInfo | URL | string | undefined
+    ) => {
       if (!activeRef.current) return false;
 
       const rawUrl =
@@ -26,10 +30,18 @@ export default function NetworkRequestIndicator() {
           ? resource
           : resource instanceof URL
             ? resource.href
-            : resource.url;
+            : resource?.url;
+
+      const normalizedMethod = method?.toUpperCase() || "GET";
+      if (normalizedMethod === "GET" || normalizedMethod === "HEAD") {
+        return false;
+      }
 
       try {
-        const url = new URL(rawUrl, window.location.href);
+        const url = new URL(rawUrl || window.location.href, window.location.href);
+        if (url.hostname.includes("google-analytics.com")) return false;
+        if (url.hostname.includes("googletagmanager.com")) return false;
+
         if (url.origin === window.location.origin) {
           if (url.pathname.startsWith("/_next/")) return false;
           if (url.searchParams.has("_rsc")) return false;
@@ -43,17 +55,37 @@ export default function NetworkRequestIndicator() {
     };
 
     window.fetch = (...args) => {
-      if (shouldCountFetch(args[0])) {
-        setRequestCount((count) => count + 1);
+      const resource = args[0];
+      const init = args[1];
+      const method =
+        init?.method ||
+        (resource instanceof Request ? resource.method : undefined);
+
+      if (shouldCountUpload(method, resource)) {
+        setUploadCount((count) => count + 1);
       }
       return originalFetch(...args);
     };
 
+    XMLHttpRequest.prototype.open = function patchedOpen(
+      this: XMLHttpRequest & { __safejsonMethod?: string; __safejsonUrl?: string },
+      method: string,
+      url: string | URL,
+      async?: boolean,
+      username?: string | null,
+      password?: string | null
+    ) {
+      this.__safejsonMethod = method;
+      this.__safejsonUrl = String(url);
+      return originalOpen.call(this, method, url, async ?? true, username, password);
+    };
+
     XMLHttpRequest.prototype.send = function patchedSend(
+      this: XMLHttpRequest & { __safejsonMethod?: string; __safejsonUrl?: string },
       body?: Document | XMLHttpRequestBodyInit | null
     ) {
-      if (activeRef.current) {
-        setRequestCount((count) => count + 1);
+      if (shouldCountUpload(this.__safejsonMethod, this.__safejsonUrl)) {
+        setUploadCount((count) => count + 1);
       }
       return originalSend.call(this, body);
     };
@@ -68,11 +100,12 @@ export default function NetworkRequestIndicator() {
       if (activationTimer) window.clearTimeout(activationTimer);
       window.removeEventListener("load", activate);
       window.fetch = originalFetch;
+      XMLHttpRequest.prototype.open = originalOpen;
       XMLHttpRequest.prototype.send = originalSend;
     };
   }, []);
 
-  const safe = requestCount === 0;
+  const safe = uploadCount === 0;
 
   return (
     <>
@@ -89,7 +122,7 @@ export default function NetworkRequestIndicator() {
               safe ? "bg-emerald-400" : "bg-amber-300"
             }`}
           />
-          {requestCount} network requests
+          {uploadCount} data upload requests
         </div>
         <button
           type="button"
@@ -118,8 +151,8 @@ export default function NetworkRequestIndicator() {
                 </h2>
                 <p className="mt-2 text-sm leading-relaxed text-zinc-500">
                   Open DevTools -&gt; Network tab -&gt; paste JSON -&gt; format
-                  or view it. You should see zero new requests while your JSON is
-                  processed.
+                  or view it. You should not see any request containing your
+                  pasted JSON while it is processed.
                 </p>
               </div>
               <button
@@ -134,7 +167,7 @@ export default function NetworkRequestIndicator() {
             <div className="mt-4 rounded-lg border border-zinc-800 bg-zinc-900/50 p-3 text-xs leading-relaxed text-zinc-500">
               For an even stronger test, switch DevTools Network to Offline
               after this page loads. SafeJSON keeps formatting locally because
-              your data never leaves the browser.
+              pasted JSON is not uploaded.
             </div>
           </div>
         </div>

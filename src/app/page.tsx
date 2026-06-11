@@ -7,6 +7,7 @@ import LocalProcessingNote from "./components/LocalProcessingNote";
 import NetworkRequestIndicator from "./components/NetworkRequestIndicator";
 import Footer from "./components/Footer";
 import Link from "next/link";
+import { inputSizeBucket, trackEvent } from "./components/analytics";
 import {
   ShieldCheck,
   Lightning,
@@ -57,6 +58,14 @@ export default function Home() {
     return () => window.clearTimeout(handle);
   }, []);
 
+  // Auto-fill sample JSON on first visit so visitors see formatted output immediately
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("json")) return; // don't override ?json= from extension
+    handleSample();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   const toggleTheme = useCallback(() => {
     const next = theme === "dark" ? "light" : "dark";
     setTheme(next);
@@ -71,6 +80,10 @@ export default function Home() {
       resetJsonWorker();
       return;
     }
+    trackEvent("tool_run", {
+      tool: "formatter",
+      input_size_bucket: inputSizeBucket(input),
+    });
     setError(null);
     setParsed(null);
     setFormattedText("");
@@ -92,12 +105,14 @@ export default function Home() {
   const handleCopy = useCallback(async () => {
     if (!currentFormattedText) return;
     await navigator.clipboard.writeText(currentFormattedText);
+    trackEvent("tool_output_copy", { tool: "formatter" });
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   }, [currentFormattedText]);
 
   const handleDownload = useCallback(() => {
     if (!currentFormattedText) return;
+    trackEvent("tool_output_download", { tool: "formatter" });
     const blob = new Blob([currentFormattedText], { type: "application/json" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -136,7 +151,17 @@ export default function Home() {
     setFormattedText(text);
     setError(null);
     resetJsonWorker();
+    trackEvent("tool_sample_loaded", { tool: "formatter" });
   }, [resetJsonWorker]);
+
+  useEffect(() => {
+    if (!jsonWorker.result) return;
+
+    trackEvent("tool_success", {
+      tool: "formatter",
+      input_size_bucket: inputSizeBucket(input),
+    });
+  }, [input, jsonWorker.result]);
 
   // Syntax-highlighted raw text output
   const highlightedRaw = useMemo(() => {
@@ -249,7 +274,7 @@ export default function Home() {
           <p className="text-lg text-zinc-400 max-w-2xl mx-auto mb-4 text-pretty">
             <span className="block">Format, validate, and debug JSON. Entirely in your browser.</span>
             <span>
-              Open DevTools -&gt; Network. You&apos;ll see zero requests.
+              Open DevTools -&gt; Network. You won&apos;t see pasted content uploaded.
               That&apos;s the whole point.
             </span>
           </p>
@@ -262,7 +287,7 @@ export default function Home() {
             80,000 credentials, including AWS keys, GitHub tokens, and bank
             details. SafeJSON runs 100% client-side.{" "}
             <span className="text-zinc-500">
-              Open DevTools -&gt; Network, format once -&gt; zero new requests.
+              Open DevTools -&gt; Network, format once -&gt; no JSON upload.
             </span>
           </p>
         </div>
@@ -442,7 +467,7 @@ export default function Home() {
             {
               Icon: ShieldCheck,
               title: "Verify, don't trust",
-              desc: "We don't ask you to trust us. Open DevTools -> Network tab -> paste any JSON. Zero requests. Your data never left your browser. Formatter, diff, JWT decoder, and JSONPath work the same way.",
+              desc: "We don't ask you to trust us. Open DevTools -> Network tab -> paste any JSON. No pasted-content upload request. Formatter, diff, JWT decoder, and JSONPath work the same way.",
             },
             {
               Icon: Lightning,

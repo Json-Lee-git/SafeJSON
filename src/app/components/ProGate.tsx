@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import { trackEvent } from "./analytics";
 
 const FREE_LIMIT = 5;
 const DEV_KEY = "safejson_dev";
@@ -220,6 +221,18 @@ export function useProUsage(tool: string) {
     const next = Math.max(count, readUsage(tool)) + 1;
     window.localStorage.setItem(getUsageKey(tool), String(next));
     setCount(next);
+    trackEvent("tool_run", {
+      tool,
+      pro_unlocked: isUnlocked,
+      free_usage_count: next,
+    });
+
+    if (!isUnlocked && next === FREE_LIMIT) {
+      trackEvent("pro_limit_reached", {
+        tool,
+        free_limit: FREE_LIMIT,
+      });
+    }
   };
 
   const canUse = isUnlocked || count < FREE_LIMIT;
@@ -271,18 +284,25 @@ export function ProBanner({ tool }: { tool: string }) {
       <div className="flex items-center gap-2 shrink-0">
         <Link
           href="/pricing"
+          onClick={() =>
+            trackEvent("pro_banner_pricing_click", { tool })
+          }
           className="text-xs font-medium text-emerald-400 hover:text-emerald-300 transition-colors"
         >
           Get Pro - $5/mo
         </Link>
         <Link
           href="/unlock"
+          onClick={() => trackEvent("pro_banner_unlock_click", { tool })}
           className="text-xs font-medium text-zinc-500 hover:text-zinc-300 transition-colors"
         >
           Unlock
         </Link>
         <button
-          onClick={() => setDismissed(true)}
+          onClick={() => {
+            setDismissed(true);
+            trackEvent("pro_banner_dismiss", { tool });
+          }}
           className="text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
         >
           Dismiss
@@ -331,12 +351,14 @@ export function ProLimitNotice({
       <div className="mt-3 flex flex-wrap items-center gap-3">
         <Link
           href="/pricing"
+          onClick={() => trackEvent("pro_limit_pricing_click", { tool })}
           className="rounded-lg bg-emerald-500 px-4 py-2 text-xs font-semibold text-black hover:bg-emerald-400"
         >
           Get Pro
         </Link>
         <Link
           href="/unlock"
+          onClick={() => trackEvent("pro_limit_unlock_click", { tool })}
           className="text-xs font-medium text-zinc-400 hover:text-zinc-200"
         >
           Already paid? Unlock this browser
