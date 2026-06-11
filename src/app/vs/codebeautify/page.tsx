@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BreadcrumbSchema } from "../../components/StructuredData";
-import Footer from "../../components/Footer";
 import {
   ComparisonTable,
   RelatedComparisons,

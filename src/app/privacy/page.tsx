@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Footer from "../components/Footer";
 
 export default function PrivacyPage() {
   return (
