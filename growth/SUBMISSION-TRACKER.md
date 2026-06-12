@@ -53,7 +53,7 @@ The user should complete tasks when the platform depends on founder identity, ac
 | 2026-06-11 | Edge Add-ons | Submitted, under review | _pending_ | Extension submitted to Edge Add-ons store |
 | 2026-06-12 | Google Search Console sitemap | Success | `/sitemap.xml` in GSC | Submitted sitemap discovered 24 pages; status successful |
 | 2026-06-12 | Bing Webmaster sitemap | Success | `https://www.safejson.dev/sitemap.xml` | Known sitemaps: 1; errors: 0; warnings: 0; total URLs discovered: 24 |
-| 2026-06-12 | Brand Authority Re-Scan | 24/100 (+2) | GEO-BRAND-MENTIONS.md | Decisions: GitHub discoverability=DONE, LinkedIn sameAs=WAIT, Wikidata=NO, Show HN=DEFER |
+| 2026-06-12 | Brand Authority Re-Scan | 24/100 (+2) | GEO-BRAND-MENTIONS.md | Decisions: GitHub README=DONE, GitHub repo settings=PENDING USER, LinkedIn sameAs=WAIT, Wikidata=NO, Show HN=DEFER |
 | 2026-06-12 | GitHub repo discoverability | README improved; description/topics pending user | Repo page | README rewritten with keyword-rich intro; user must set description + topics via repo Settings |
 | 2026-06-12 | GitHub Discussion | Created | https://github.com/s01071233604-tech/safejson/discussions/1 | General feedback thread: "a JSON formatter that lets you verify no pasted-content upload" |
 | 2026-06-12 | DEV.to | 3 posts live; 1 comment replied | DEV.to dashboard screenshot | Founder replied to the "CSP as trust signal" comment; monitor for further discussion |
