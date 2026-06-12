@@ -24,7 +24,7 @@ The user should complete tasks when the platform depends on founder identity, ac
 | Platform | Owner | Current Status | Risk | Copy Source | Proof Needed | Next Action |
 | --- | --- | --- | --- | --- | --- | --- |
 | GitHub README | Codex | Done | Low | Repo copy | Repo URL | Keep README aligned with pricing and privacy claims |
-| GitHub Discussion or Issue | User only | Blocked — gh CLI unavailable; user must verify Discussions is enabled and create thread manually | Medium | `OUTREACH-WAVE-001.md` GitHub draft | Discussion/issue URL | 1. Check repo Settings > Features > Discussions is ON. 2. Copy-paste from OUTREACH-WAVE-001.md |
+| GitHub Discussion or Issue | User | Done 2026-06-12 | Medium | `OUTREACH-WAVE-001.md` GitHub draft | https://github.com/s01071233604-tech/safejson/discussions/1 | Monitor for developer feedback; reply thoughtfully |
 | SaaSHub | User | Public candidate URL provided | Low | `OUTREACH-WAVE-001.md` SaaSHub copy | https://www.saashub.com/safejson-alternatives | Verify in browser after Cloudflare challenge; monitor listing status |
 | Indie Hackers | User | Proof URL provided | Medium | `OUTREACH-WAVE-001.md` Indie Hackers copy | https://www.indiehackers.com/product/safejson-2 | Monitor for comments/referrals |
 | AlternativeTo | User | Blocked — account must be 7 days old (~June 18) | Low | `OUTREACH-WAVE-001.md` AlternativeTo copy | Listing URL or pending screenshot | Submit on/after June 18 |
@@ -52,6 +52,7 @@ The user should complete tasks when the platform depends on founder identity, ac
 | 2026-06-11 | Edge Add-ons | Submitted, under review | _pending_ | Extension submitted to Edge Add-ons store |
 | 2026-06-12 | Google Search Console sitemap | Success | `/sitemap.xml` in GSC | Submitted sitemap discovered 24 pages; status successful |
 | 2026-06-12 | Bing Webmaster sitemap | Success | `https://www.safejson.dev/sitemap.xml` | Known sitemaps: 1; errors: 0; warnings: 0; total URLs discovered: 24 |
+| 2026-06-12 | GitHub Discussion | Created | https://github.com/s01071233604-tech/safejson/discussions/1 | General feedback thread: "a JSON formatter that lets you verify no pasted-content upload" |
 | 2026-06-12 | DEV.to | 3 posts live; 1 comment replied | DEV.to dashboard screenshot | Founder replied to the "CSP as trust signal" comment; monitor for further discussion |
 | 2026-06-12 | Content-Security-Policy | Deployed | `npm run growth:check` — CSP check | CSP header live on production; 10 directives including frame-ancestors 'none', connect-src restricted to GA only |
 | 2026-06-12 | IndexNow | Submitted | `npm run indexnow` | Submitted 24 sitemap URLs; IndexNow returned 200 OK |
@@ -71,7 +72,7 @@ The user should complete tasks when the platform depends on founder identity, ac
 
 1. ~~Verify SaaSHub and Indie Hackers claimed submissions~~ ✓ Proof URLs recorded.
 2. ~~Reply to the DEV.to comment~~ ✓ Founder replied 2026-06-12.
-3. **Create GitHub Discussion feedback thread** — User must: check repo Settings > Features > Discussions is ON, then copy-paste from `OUTREACH-WAVE-001.md`.
+3. ~~Create GitHub Discussion feedback thread~~ ✓ https://github.com/s01071233604-tech/safejson/discussions/1
 4. Complete LinkedIn company page registration; add to schema sameAs.
 5. Publish LinkedIn founder post (draft in `OUTREACH-WAVE-001.md`).
 6. Prepare Product Hunt full launch draft (do not launch until profile and visuals are ready).

@@ -182,13 +182,7 @@ Feedback I am especially looking for:
 
 ### 4. GitHub Discussion
 
-**Status (2026-06-12):** Blocked — `gh` CLI not available in this environment; cannot check if Discussions is enabled or create the thread programmatically. **User must do this step manually.**
-
-**Before creating:** Check repo Settings > Features > Discussions is ON.
-1. Go to https://github.com/s01071233604-tech/safejson/settings
-2. Scroll to "Features" section
-3. Ensure "Discussions" is checked
-4. If it was off, enabling it will create a Discussions tab immediately
+**Status (2026-06-12):** Done — created by user.
 
 **Repo:** https://github.com/s01071233604-tech/safejson
 
@@ -229,7 +223,7 @@ Website: https://www.safejson.dev
 Source: https://github.com/s01071233604-tech/safejson
 ```
 
-**Proof link:** `[ ]`
+**Proof link:** https://github.com/s01071233604-tech/safejson/discussions/1
 
 ---
 
@@ -370,7 +364,7 @@ Would love feedback from other dev tool builders on the privacy positioning.
 - [x] Indie Hackers: listing URL recorded in tracker
 - [x] DEV.to: 3 posts published; 1 comment replied by founder 2026-06-12
 - [x] CSP trust signal: deployed 2026-06-12 (10 directives, verified via growth:check)
-- [ ] **GitHub Discussion: BLOCKED — User must enable Discussions then copy-paste from above**
+- [x] GitHub Discussion: created https://github.com/s01071233604-tech/safejson/discussions/1
 - [ ] LinkedIn: publish founder post, add proof URL
 - [ ] LinkedIn company page: complete registration, add to schema
 - [ ] AlternativeTo: submit on/after June 18, add proof URL
