@@ -31,7 +31,7 @@ The user should complete tasks when the platform depends on founder identity, ac
 | Betalist | User | Blocked — site inaccessible from user's region | Low | `OUTREACH-WAVE-001.md` Betalist copy | Listing URL or pending screenshot | Retry with alternative network or skip |
 | Toolify.ai | User | Skipped — paid submission required | Low | N/A | N/A | Skip unless free tier becomes available |
 | TAAFT | User | Skipped — paid submission required | Low | N/A | N/A | Skip unless free tier becomes available |
-| DEV.to | User, or Codex if already logged in | Draft ready | Medium | `OUTREACH-WAVE-001.md` DEV.to draft | Article URL | Publish article; add canonical link if needed |
+| DEV.to | User | 3 posts live; at least 1 comment | Medium | `OUTREACH-WAVE-001.md` DEV.to draft | Public article URLs | Add exact article URLs to proof log when available; reply to comments thoughtfully |
 | Hacker News | User only | Draft ready | High | `OUTREACH-WAVE-001.md` Show HN draft | HN thread URL | Post manually from a real account; do not repost if it fails |
 | Product Hunt | User only | Public candidate URL provided; launch not confirmed | High | `OUTREACH-WAVE-001.md` Product Hunt draft | https://www.producthunt.com/products/safejson-privacy?launch=safejson-privacy | Keep as draft unless launch page is publicly visible and ready |
 | Reddit | User only | Banned from r/webdev; recovery window ends ~June 25 | High | `OUTREACH-WAVE-001.md` Reddit recovery draft | Thread/comment URLs | Wait until June 25; post short casual SideProject note |
@@ -51,7 +51,8 @@ The user should complete tasks when the platform depends on founder identity, ac
 | 2026-06-11 | Product Hunt | Public candidate URL provided | https://www.producthunt.com/products/safejson-privacy?launch=safejson-privacy | URL shape is public; CLI fetch is blocked by Cloudflare, verify in browser before launch |
 | 2026-06-11 | Edge Add-ons | Submitted, under review | _pending_ | Extension submitted to Edge Add-ons store |
 | 2026-06-12 | Google Search Console sitemap | Success | `/sitemap.xml` in GSC | Submitted sitemap discovered 24 pages; status successful |
-| 2026-06-12 | Bing Webmaster sitemap | Processing | `https://www.safejson.dev/sitemap.xml` | Known sitemaps: 1; errors: 0; warnings: 0; total URLs discovered: 24 |
+| 2026-06-12 | Bing Webmaster sitemap | Success | `https://www.safejson.dev/sitemap.xml` | Known sitemaps: 1; errors: 0; warnings: 0; total URLs discovered: 24 |
+| 2026-06-12 | DEV.to | 3 posts live | DEV.to dashboard screenshot | Total comments: 1; total views under 500; replace with public article URLs when available |
 | 2026-06-12 | IndexNow | Submitted | `npm run indexnow` | Submitted 24 sitemap URLs; IndexNow returned 200 OK |
 
 ## Weekly Execution Checklist
@@ -68,7 +69,7 @@ The user should complete tasks when the platform depends on founder identity, ac
 ## This Week's Priority Order
 
 1. Verify SaaSHub and Indie Hackers claimed submissions — add proof URLs to tracker.
-2. Publish DEV.to article (draft ready in `OUTREACH-WAVE-001.md`).
+2. Reply to the DEV.to comment and add exact public article URLs to this tracker.
 3. Create GitHub Discussion feedback thread.
 4. Complete LinkedIn company page registration; add to schema sameAs.
 5. Publish LinkedIn founder post (draft in `OUTREACH-WAVE-001.md`).
