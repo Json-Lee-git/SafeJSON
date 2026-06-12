@@ -158,6 +158,28 @@ addCheck("security headers and disclosure are present", async () => {
   assert(security.text.includes("Contact:"), "security.txt missing Contact");
 });
 
+addCheck("content-security-policy is present", async () => {
+  const home = await fetch(`${baseUrl}/`);
+  const csp = home.headers.get("content-security-policy");
+
+  assert(csp, "missing Content-Security-Policy header");
+  assert(csp.includes("default-src"), "CSP missing default-src");
+  assert(csp.includes("script-src"), "CSP missing script-src");
+  assert(csp.includes("connect-src"), "CSP missing connect-src");
+  assert(csp.includes("frame-ancestors"), "CSP missing frame-ancestors");
+
+  // connect-src must not be wide-open
+  const connectSrc = csp.match(/connect-src\s+([^;]+)/i);
+  assert(connectSrc, "CSP has no connect-src directive");
+  const connectValue = connectSrc[1].trim();
+  assert(connectValue !== "*", "CSP connect-src must not be '*'");
+  assert(!connectValue.includes("'none'") || connectValue === "'none'", "CSP connect-src is 'none' — GA tracking will be blocked");
+  assert(
+    connectValue.includes("google-analytics.com") || connectValue.includes("'self'"),
+    "CSP connect-src should include google-analytics.com or 'self'"
+  );
+});
+
 addCheck("Pro tool pages have FAQ schema", async () => {
   const paths = [
     { path: "/diff", expected: "Is SafeJSON Diff safe" },
