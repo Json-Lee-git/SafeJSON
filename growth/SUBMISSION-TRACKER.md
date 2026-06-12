@@ -44,6 +44,9 @@ The user should complete tasks when the platform depends on founder identity, ac
 | Date | Platform | Status | Proof Link | Notes |
 | --- | --- | --- | --- | --- |
 | 2026-06-11 | Production SEO/GEO health | Passed | https://www.safejson.dev | Site-side quick wins are live; external citations are the next bottleneck |
+| 2026-06-12 | Google Search Console sitemap | Success | `/sitemap.xml` in GSC | Submitted sitemap discovered 24 pages; status successful |
+| 2026-06-12 | Bing Webmaster sitemap | Processing | `https://www.safejson.dev/sitemap.xml` | Known sitemaps: 1; errors: 0; warnings: 0; total URLs discovered: 24 |
+| 2026-06-12 | IndexNow | Submitted | `npm run indexnow` | Submitted 24 sitemap URLs; IndexNow returned 200 OK |
 
 ## Weekly Execution Checklist
 
