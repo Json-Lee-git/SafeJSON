@@ -295,6 +295,11 @@ export default function Home() {
               Open DevTools -&gt; Network, format once -&gt; no JSON upload.
             </span>
           </p>
+          <p className="text-xs text-zinc-600 max-w-xl mx-auto mt-3 text-center">
+            <Link href="/support" className="hover:text-emerald-400 transition-colors">
+              How to verify this yourself →
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -568,22 +573,22 @@ export default function Home() {
             {[
               {
                 title: "JSON Diff",
-                desc: "Compare two JSON objects side by side. Added, removed, and changed values highlighted in color.",
+                desc: "Compare two JSON objects side by side. Added, removed, and changed values highlighted in color. All comparison runs locally — your JSON is not uploaded.",
                 href: "/diff",
               },
               {
                 title: "JWT Decoder",
-                desc: "Decode JWT tokens instantly. Header, payload, and signature decoded in your browser.",
+                desc: "Decode JWT tokens instantly. Header, payload, and signature decoded in your browser. Your token stays local — safe for production JWTs.",
                 href: "/jwt",
               },
               {
                 title: "JSONPath",
-                desc: "Query JSON with XPath-like expressions. Extract nested values and filter arrays.",
+                desc: "Query JSON with XPath-like expressions. Extract nested values and filter arrays. All queries run client-side — your data stays in your browser.",
                 href: "/jsonpath",
               },
               {
                 title: "Schema Validator",
-                desc: "Validate JSON against JSON Schema locally. Catch missing fields, wrong types, and malformed payloads.",
+                desc: "Validate JSON against JSON Schema locally. Catch missing fields, wrong types, and malformed payloads. Your API responses and schemas are not uploaded.",
                 href: "/schema",
               },
             ].map((tool) => (

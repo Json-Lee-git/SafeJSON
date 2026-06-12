@@ -97,10 +97,18 @@ export default function BlogPost() {
         </h2>
 
         <p className="text-zinc-400 leading-relaxed mb-4">
-          In November 2025, security researchers at watchTowr discovered that
-          jsonformatter.org and codebeautify.org had been storing and publicly
-          exposing user-submitted data through an unprotected Recent Links
-          feature. Over 80,000 code snippets containing AWS access keys, GitHub
+          In November 2025, security researchers at{" "}
+          <a
+            href="https://labs.watchtowr.com/stop-putting-your-passwords-into-random-websites-yes-seriously-you-are-the-problem/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-emerald-400 hover:text-emerald-300 underline"
+          >
+            watchTowr
+          </a>{" "}
+          discovered that jsonformatter.org and codebeautify.org had been
+          storing and publicly exposing user-submitted data through an
+          unprotected Recent Links feature. Over 80,000 code snippets containing AWS access keys, GitHub
           personal access tokens, database passwords, Active Directory
           credentials, and banking PII were accessible to anyone who knew the
           URL pattern. The researchers planted canary tokens to test whether

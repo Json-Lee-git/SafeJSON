@@ -34,7 +34,7 @@ The user should complete tasks when the platform depends on founder identity, ac
 | TAAFT | User | Skipped — paid submission required | Low | N/A | N/A | Skip unless free tier becomes available |
 | DEV.to | User | 3 posts live; 1 comment replied by founder | Medium | `OUTREACH-WAVE-001.md` DEV.to draft | Public article URLs | Monitor for further comments; add exact article URLs when available |
 | Hacker News | User only | Draft ready | High | `OUTREACH-WAVE-001.md` Show HN draft | HN thread URL | Post manually from a real account; do not repost if it fails |
-| Product Hunt | User only | Public candidate URL provided; launch not confirmed | High | `OUTREACH-WAVE-001.md` Product Hunt draft | https://www.producthunt.com/products/safejson-privacy?launch=safejson-privacy | Keep as draft unless launch page is publicly visible and ready |
+| Product Hunt | User only | Public launch page live; copy cleanup needed | High | Product Hunt live listing | https://www.producthunt.com/products/safejson-privacy?launch=safejson-privacy | If editable, replace old URL/copy with current safejson.dev and precise privacy claims |
 | Reddit | User only | Banned from r/webdev; recovery window ends ~June 25 | High | `OUTREACH-WAVE-001.md` Reddit recovery draft | Thread/comment URLs | Wait until June 25; post short casual SideProject note |
 | LinkedIn founder profile | User only | Not started | Medium | `OUTREACH-WAVE-001.md` LinkedIn draft | Post URL | Publish founder-side launch note |
 | LinkedIn company page | User only | In progress (registration started 2026-06-11) | Medium | Product description | Company page URL | Complete registration; add to Person + Organization schema sameAs |
@@ -49,7 +49,7 @@ The user should complete tasks when the platform depends on founder identity, ac
 | 2026-06-11 | Production SEO/GEO health | Passed | https://www.safejson.dev | Site-side quick wins are live; external citations are the next bottleneck |
 | 2026-06-11 | SaaSHub | Public candidate URL provided | https://www.saashub.com/safejson-alternatives | URL shape is public; CLI fetch is blocked by Cloudflare, verify in browser |
 | 2026-06-11 | Indie Hackers | Proof URL provided | https://www.indiehackers.com/product/safejson-2 | Product page URL provided by user |
-| 2026-06-11 | Product Hunt | Public candidate URL provided | https://www.producthunt.com/products/safejson-privacy?launch=safejson-privacy | URL shape is public; CLI fetch is blocked by Cloudflare, verify in browser before launch |
+| 2026-06-11 | Product Hunt | Public launch page live | https://www.producthunt.com/products/safejson-privacy?launch=safejson-privacy | Verified 2026-06-12: Product Hunt page shows launched; cleanup needed for old URL and broad privacy wording if listing is editable |
 | 2026-06-11 | Edge Add-ons | Submitted, under review | _pending_ | Extension submitted to Edge Add-ons store |
 | 2026-06-12 | Google Search Console sitemap | Success | `/sitemap.xml` in GSC | Submitted sitemap discovered 24 pages; status successful |
 | 2026-06-12 | Bing Webmaster sitemap | Success | `https://www.safejson.dev/sitemap.xml` | Known sitemaps: 1; errors: 0; warnings: 0; total URLs discovered: 24 |
@@ -78,7 +78,7 @@ The user should complete tasks when the platform depends on founder identity, ac
 3. ~~Create GitHub Discussion feedback thread~~ ✓ https://github.com/s01071233604-tech/safejson/discussions/1
 4. Complete LinkedIn company page registration; add to schema sameAs.
 5. Publish LinkedIn founder post (draft in `OUTREACH-WAVE-001.md`).
-6. Prepare Product Hunt full launch draft (do not launch until profile and visuals are ready).
+6. Clean up Product Hunt live listing if editable: use `https://www.safejson.dev`, remove broad `no tracking` / `zero requests` claims, add screenshots/video when ready.
 7. Submit AlternativeTo on/after June 18 (account age requirement).
 8. Prepare Reddit recovery post for June 25 (draft in `OUTREACH-WAVE-001.md`).
 
