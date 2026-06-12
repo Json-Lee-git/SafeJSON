@@ -74,7 +74,7 @@ export function VerificationTutorial() {
         <li>Paste JSON and run the formatter, viewer, diff, decoder, or parser.</li>
         <li>
           If a new request contains your data, the tool uploaded it. SafeJSON
-          shows zero new requests while processing JSON.
+          does not upload pasted JSON while processing it.
         </li>
       </ol>
     </section>

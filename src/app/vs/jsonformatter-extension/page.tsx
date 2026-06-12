@@ -10,7 +10,7 @@ import {
 export const metadata: Metadata = {
   title: "SafeJSON vs JSON Formatter Extension - Open Source Alternative",
   description:
-    "Compare SafeJSON with JSON Formatter Extension after the 2M-user adware incident: open source code, no tracking, no ads, and local JSON processing.",
+    "Compare SafeJSON with JSON Formatter Extension after the 2M-user adware incident: open source code, no pasted-content analytics, no ads, and local JSON processing.",
   openGraph: {
     title: "SafeJSON vs JSON Formatter Extension",
     description:

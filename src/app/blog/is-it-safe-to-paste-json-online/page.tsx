@@ -67,7 +67,7 @@ export default function BlogPost() {
           <li>Open DevTools (F12 or right-click → Inspect) and go to the Network tab.</li>
           <li>Paste any JSON data into the tool.</li>
           <li>If you see new XHR or fetch requests appear — your data has left your browser and is on a remote server.</li>
-          <li>If there are zero new requests during formatting, validation, or any other operation, the tool is processing everything client-side — your data stayed local.</li>
+          <li>If no request contains your pasted JSON during formatting, validation, or any other operation, the tool is processing everything client-side - your data stayed local.</li>
         </ol>
 
         <h2 className="text-xl font-semibold mb-4">Server-side vs client-side JSON tools</h2>
@@ -75,7 +75,7 @@ export default function BlogPost() {
           <table className="w-full text-sm">
             <thead><tr className="border-b border-zinc-800"><th className="text-left py-3 pr-4 text-zinc-400 font-medium"></th><th className="text-left py-3 pr-4 text-red-400 font-medium">Server-side</th><th className="text-left py-3 text-emerald-400 font-medium">Client-side</th></tr></thead>
             <tbody className="divide-y divide-zinc-800/50">
-              {[["Where data is processed","Remote server","Your browser"],["Data leaves your device","Yes","No"],["Risk of server breach","Yes — server is a target","No — no server to breach"],["Network tab shows","XHR/fetch requests","Zero new requests"],["Examples","jsonformatter.org, codebeautify.org, jwt.io","SafeJSON, Firefox built-in viewer, jq (CLI)"]].map(([label, server, client],i)=><tr key={i} className="hover:bg-white/[0.02]"><td className="py-3 pr-4 text-zinc-300 font-medium">{label}</td><td className="py-3 pr-4 text-red-400/80">{server}</td><td className="py-3 text-emerald-400/80">{client}</td></tr>)}
+              {[["Where data is processed","Remote server","Your browser"],["Data leaves your device","Yes","No"],["Risk of server breach","Yes — server is a target","No — no server to breach"],["Network tab shows","XHR/fetch requests containing data","No requests containing pasted JSON"],["Examples","jsonformatter.org, codebeautify.org, jwt.io","SafeJSON, Firefox built-in viewer, jq (CLI)"]].map(([label, server, client],i)=><tr key={i} className="hover:bg-white/[0.02]"><td className="py-3 pr-4 text-zinc-300 font-medium">{label}</td><td className="py-3 pr-4 text-red-400/80">{server}</td><td className="py-3 text-emerald-400/80">{client}</td></tr>)}
             </tbody>
           </table>
         </div>
@@ -105,7 +105,7 @@ export default function BlogPost() {
         <p className="text-zinc-400 leading-relaxed mb-8">You would not paste your AWS root credentials into a stranger&apos;s terminal. But every time you use a server-side online JSON tool, you are essentially doing the same thing. The fix takes 30 seconds: open DevTools, look at the Network tab, and see for yourself. If there are requests going out, find a tool that does not need to send your data anywhere.</p>
 
         <div className="text-center pt-8 border-t border-zinc-800/50">
-          <Link href="/" className="inline-flex px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl transition-colors text-sm">Try SafeJSON — Zero Network Requests</Link>
+          <Link href="/" className="inline-flex px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl transition-colors text-sm">Try SafeJSON - No JSON Upload</Link>
         </div>
       </article>
       <Footer />

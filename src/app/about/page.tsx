@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "About SafeJSON - Privacy-first JSON Tools",
   description:
-    "SafeJSON is an independent, privacy-first JSON toolkit. Learn why every feature runs in your browser and how to verify zero uploads.",
+    "SafeJSON is an independent, privacy-first JSON toolkit. Learn why every feature runs in your browser and how to verify pasted content is not uploaded.",
   openGraph: {
     title: "About SafeJSON",
     description:
@@ -59,9 +59,9 @@ export default function AboutPage() {
           <p className="text-zinc-400 leading-relaxed">
             We believe the safest tools are the ones that never see your data in
             the first place. Every SafeJSON feature runs entirely in your
-            browser. No server processes your JSON. No data leaves your device.
+            browser. No SafeJSON server processes your JSON.
             This is verifiable: open DevTools -&gt; Network tab while using SafeJSON
-            and you will see zero new requests.
+            and check that no request contains your pasted content.
           </p>
         </section>
 

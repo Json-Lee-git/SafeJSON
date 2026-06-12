@@ -227,7 +227,7 @@ export default function JsonPathPage() {
         <Link href="/pricing" className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl transition-colors text-sm inline-flex">View Pricing</Link>
       </section>
 
-      <ToolFaq toolName="SafeJSON JSONPath Query" toolDescription="SafeJSON JSONPath evaluates XPath-like queries against JSON data entirely in your browser. All query expressions and JSON data stay local with zero network requests." faqs={jsonpathFaqs} />
+      <ToolFaq toolName="SafeJSON JSONPath Query" toolDescription="SafeJSON JSONPath evaluates XPath-like queries against JSON data entirely in your browser. Query expressions and JSON data are not uploaded." faqs={jsonpathFaqs} />
       {/* Footer */}
       <footer className="border-t border-zinc-800 py-8 text-center text-xs text-zinc-600">
         <p>SafeJSON. All processing happens in your browser. We never see your data.</p>

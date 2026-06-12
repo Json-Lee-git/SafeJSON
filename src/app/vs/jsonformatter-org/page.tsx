@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 const rows = [
   ["Feature", "SafeJSON", "jsonformatter.org"],
   ["Processing", "Client-side. Your data never leaves your browser.", "Server-side. Data is transmitted to remote infrastructure."],
-  ["Verifiable privacy", "Yes. Open DevTools -> Network and see zero new requests.", "No. The tool depends on server-side processing."],
+  ["Verifiable privacy", "Yes. Open DevTools -> Network and check that no request contains pasted JSON.", "No. The tool depends on server-side processing."],
   ["Data breach history", "None. No server-side JSON storage pipeline.", "80K+ credentials exposed in November 2025."],
   ["Open source", "Yes. MIT license on GitHub.", "No. Closed source."],
   ["Ads", "None.", "Yes. Ad-supported."],
@@ -71,8 +71,8 @@ export default function VsJsonFormatterPage() {
         </h1>
         <p className="text-lg text-zinc-400 mb-8">
           SafeJSON is a jsonformatter.org alternative built around verifiable
-          privacy. Open DevTools -&gt; Network, paste JSON, and see zero new
-          requests while your data is processed locally.
+          privacy. Open DevTools -&gt; Network, paste JSON, and check that no
+          request contains your data while it is processed locally.
         </p>
 
         <section className="mb-12">
@@ -105,8 +105,8 @@ export default function VsJsonFormatterPage() {
           <p className="text-sm leading-relaxed text-zinc-400">
             SafeJSON processes JSON with client-side JavaScript. There is no
             server-side JSON formatter endpoint receiving your data, no ads, and
-            no tracking scripts. You can verify the privacy claim yourself
-            instead of trusting marketing copy.
+            no analytics event that includes pasted JSON. You can verify the
+            privacy claim yourself instead of trusting marketing copy.
           </p>
         </section>
 

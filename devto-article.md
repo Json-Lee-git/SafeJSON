@@ -20,14 +20,14 @@ None of this data should leave your machine. But with server-side tools, it does
 
 ## How SafeJSON Is Different
 
-I built SafeJSON to solve this exact problem. The core principle is simple: **all processing happens in your browser. Zero network requests.**
+I built SafeJSON to solve this exact problem. The core principle is simple: **all processing happens in your browser. No pasted JSON is uploaded.**
 
 Here is how you can verify this claim yourself:
 
 1. Open [safejson.dev](https://www.safejson.dev)
 2. Open DevTools → Network tab
 3. Paste any JSON
-4. Observe: **zero network requests**
+4. Observe: **no request contains your pasted JSON**
 
 Every line of formatting, validation, and tree view rendering runs in client-side JavaScript. Your data never leaves your device. There is no server to leak from because there is no server.
 

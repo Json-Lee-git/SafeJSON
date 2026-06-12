@@ -72,7 +72,7 @@ The project is open source:
 
 https://github.com/s01071233604-tech/safejson
 
-I am trying to keep the product simple: free core formatter, paid advanced tools, no ads, no tracking, and no server-side JSON processing.
+I am trying to keep the product simple: free core formatter, paid advanced tools, no ads, no pasted-content analytics, and no server-side JSON processing.
 
 Feedback I am especially looking for:
 
@@ -114,7 +114,7 @@ Pro ($5/month or $39/year):
 
 The payment and license flow is now live through Lemon Squeezy. Each license activates up to 2 devices.
 
-I am using this as a small, focused experiment in developer-tool monetization: no ads, no tracking, no uploading user JSON.
+I am using this as a small, focused experiment in developer-tool monetization: no ads, no pasted-content analytics, no uploading user JSON.
 
 Would love feedback on the positioning and pricing.
 ```

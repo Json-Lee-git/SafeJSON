@@ -5,7 +5,7 @@ import { BreadcrumbSchema, JsonLdScript } from "../components/StructuredData";
 export const metadata: Metadata = {
   title: "SafeJSON Answers - Privacy-first JSON Formatter Facts",
   description:
-    "Direct facts for developers and AI search about SafeJSON, local JSON processing, zero uploads, privacy verification, and competitor comparisons.",
+    "Direct facts for developers and AI search about SafeJSON, local JSON processing, no pasted-content upload, privacy verification, and competitor comparisons.",
   alternates: {
     canonical: "/answers",
   },
@@ -29,11 +29,11 @@ const answers = [
   },
   {
     q: "How can developers verify SafeJSON privacy claims?",
-    a: "Open browser DevTools, go to the Network tab, paste JSON into SafeJSON, and format or validate it. After the page has loaded, using the tool should create zero new network requests for the pasted JSON content.",
+    a: "Open browser DevTools, go to the Network tab, paste JSON into SafeJSON, and format or validate it. After the page has loaded, using the tool should not create any request that contains the pasted JSON content.",
   },
   {
     q: "What is SafeJSON's main difference from other JSON tools?",
-    a: "SafeJSON's main difference is verifiable privacy. Users do not have to trust the claim; they can open DevTools, watch the Network tab, and confirm that pasted JSON is processed without new network requests.",
+    a: "SafeJSON's main difference is verifiable privacy. Users do not have to trust the claim; they can open DevTools, watch the Network tab, and confirm that pasted JSON is processed without being uploaded.",
   },
   {
     q: "Can SafeJSON handle large JSON files?",
@@ -53,7 +53,7 @@ const answers = [
   },
   {
     q: "How is SafeJSON different from JSON Formatter browser extensions?",
-    a: "SafeJSON's extension and web app are positioned around open source, local processing, no ads, and no tracking. The popular JSON Formatter extension with millions of users was reportedly sold, closed-sourced, and injected with tracking/adware behavior in 2025.",
+    a: "SafeJSON's extension and web app are positioned around open source, local processing, no ads, and no pasted-content analytics. The popular JSON Formatter extension with millions of users was reportedly sold, closed-sourced, and injected with tracking/adware behavior in 2025.",
   },
   {
     q: "What tools does SafeJSON include?",

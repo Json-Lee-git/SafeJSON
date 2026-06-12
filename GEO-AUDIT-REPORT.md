@@ -178,9 +178,9 @@ Person schema on About page has `sameAs: ["https://github.com/s01071233604"]`. T
 ### 3.4 Trustworthiness — 20/25
 
 **Strengths:**
-- Core promise is self-verifying: "Open DevTools → Network → zero requests"
+- Core promise is self-verifying: "Open DevTools → Network → no pasted-content upload"
 - Privacy policy present
-- No ads, no tracking (verifiable)
+- No ads, no pasted-content analytics (verifiable)
 - Payment via Lemon Squeezy (established processor, not custom)
 - MIT license
 

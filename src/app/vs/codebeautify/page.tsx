@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 const rows = [
   ["Feature", "SafeJSON", "codebeautify.org"],
   ["Processing", "Client-side. No data transmission during JSON work.", "Server-side workflow."],
-  ["Verifiable privacy", "Yes. Check DevTools -> Network.", "No clear zero-request verification path."],
+  ["Verifiable privacy", "Yes. Check DevTools -> Network.", "No clear no-upload verification path."],
   ["Data breach history", "None.", "Part of the November 2025 80K+ credential exposure."],
   ["Open source", "Yes. MIT license.", "No."],
   ["Ads", "None.", "Heavy ad placements."],

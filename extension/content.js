@@ -203,7 +203,7 @@
   footer.innerHTML =
     '<p>Formatted by <a href="' +
     jsonUrl +
-    '" target="_blank">SafeJSON</a>. All processing happens in your browser. Zero network requests.</p>';
+    '" target="_blank">SafeJSON</a>. All processing happens in your browser. No JSON upload.</p>';
   document.body.appendChild(footer);
 
   // State

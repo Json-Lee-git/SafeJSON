@@ -37,7 +37,7 @@ const steps = [
       "Open DevTools: press F12, or right-click anywhere and select Inspect.",
       "Go to the Network tab in DevTools.",
       "Paste any JSON data into SafeJSON.",
-      "Observe the Network tab: there are zero new network requests. This confirms all processing happens locally in your browser.",
+      "Observe the Network tab: no request should contain your pasted JSON. This confirms SafeJSON is not uploading the content you paste.",
       "For an even stronger test, switch to the Network tab's Offline mode before pasting. SafeJSON still works perfectly.",
     ],
   },
@@ -233,7 +233,7 @@ export default function SupportPage() {
           "Open DevTools with F12 or Inspect.",
           "Switch to the Network tab.",
           "Paste JSON into SafeJSON and run the formatter or another tool.",
-          "Confirm there are zero new network requests while your JSON is processed.",
+          "Confirm no request contains your pasted JSON while it is processed.",
         ]}
       />
     </div>

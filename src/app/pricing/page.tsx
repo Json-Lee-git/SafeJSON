@@ -222,7 +222,7 @@ export default function PricingPage() {
             {[
               {
                 title: "Open Source (MIT)",
-                desc: "Audit every line on GitHub. No obfuscated tracking scripts.",
+                desc: "Audit every line on GitHub. No obfuscated data-collection scripts.",
               },
               {
                 title: "Verifiable",

@@ -85,8 +85,7 @@ export default function BlogPost() {
           <p className="text-sm text-zinc-400 leading-relaxed">
             Client-side tools like SafeJSON, JSON Buddy, and AllJSONTools never
             send your data to a server. You can verify this by opening DevTools
-            -&gt; Network tab while using the tool: if you see zero network requests
-            during formatting, your data stayed local. Server-side tools like
+            -&gt; Network tab while using the tool: if no request contains your pasted JSON during formatting, your data stayed local. Server-side tools like
             jsonformatter.org and codebeautify.org transmit your JSON to remote
             servers and were caught leaking credentials in 2025.
           </p>
@@ -179,8 +178,7 @@ export default function BlogPost() {
 
         <p className="text-zinc-400 leading-relaxed mb-8">
           Each of these tools passes the network tab test: paste JSON into them
-          and DevTools shows zero new requests. Your data never leaves your
-          device.
+          and DevTools shows no requests containing pasted JSON. Your data stayed local.
         </p>
 
         {/* Section 4: Choosing */}

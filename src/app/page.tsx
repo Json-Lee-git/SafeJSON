@@ -482,7 +482,7 @@ export default function Home() {
             {
               Icon: Code,
               title: "Open Source",
-              desc: "The entire codebase is on GitHub. You can audit every line. No obfuscated tracking scripts. No surprises.",
+              desc: "The entire codebase is on GitHub. You can audit every line. No obfuscated data-collection scripts. No surprises.",
             },
             {
               Icon: Heart,
@@ -492,7 +492,7 @@ export default function Home() {
             {
               Icon: Plug,
               title: "Browser Extension",
-              desc: "Auto-detect and format JSON responses on any URL. Available on Edge Add-ons. No tracking, no data collection.",
+              desc: "Auto-detect and format JSON responses on any URL. Available on Edge Add-ons. No pasted-content analytics, no data collection.",
             },
           ].map(({ Icon, title, desc }) => (
             <div

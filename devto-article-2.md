@@ -30,7 +30,7 @@ The safest online tools process everything in your browser. Here is how to ident
 
 - Open DevTools → Network tab
 - Paste data
-- Zero new requests = your data stayed local
+- No request contains your pasted JSON = your data stayed local
 
 This is the design principle behind [SafeJSON](https://www.safejson.dev). All formatting, tree view rendering, JWT decoding, and JSON diff comparison happens in JavaScript running in your browser. There is no backend processing user data.
 

@@ -199,7 +199,7 @@ export function FAQSchema() {
         name: "How is SafeJSON different from jsonformatter.org?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "SafeJSON processes everything client-side - your data never leaves your browser. jsonformatter.org processes data on its servers, and in November 2025 security researchers discovered it had leaked over 80,000 user credentials through an unprotected feature. SafeJSON is also open source, ad-free, and has no tracking.",
+          text: "SafeJSON processes pasted JSON client-side, so the content is not uploaded to a SafeJSON server. jsonformatter.org processes data on its servers, and in November 2025 security researchers discovered it had leaked over 80,000 user credentials through an unprotected feature. SafeJSON is also open source, ad-free, and does not send pasted JSON to analytics.",
         },
       },
       {

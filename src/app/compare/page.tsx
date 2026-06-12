@@ -30,11 +30,11 @@ export const metadata: Metadata = {
 const faq = [
   {
     q: "What is the safest JSON formatter in 2026?",
-    a: "The safest JSON formatter is one you can verify. SafeJSON processes JSON locally in your browser and shows zero new network requests while formatting, viewing, parsing, diffing, decoding JWTs, querying JSONPath, or validating schemas.",
+    a: "The safest JSON formatter is one you can verify. SafeJSON processes JSON locally in your browser, and you can check that no request contains pasted JSON while formatting, viewing, parsing, diffing, decoding JWTs, querying JSONPath, or validating schemas.",
   },
   {
     q: "How can I tell if a JSON tool uploads my data?",
-    a: "Open DevTools, go to the Network tab, paste JSON, and run the tool. If a new request contains your data, the tool uploaded it. SafeJSON is designed so JSON processing creates zero new requests.",
+    a: "Open DevTools, go to the Network tab, paste JSON, and run the tool. If a new request contains your data, the tool uploaded it. SafeJSON is designed so JSON processing does not upload pasted content.",
   },
   {
     q: "Why compare SafeJSON with jsonformatter.org?",
@@ -76,7 +76,7 @@ export default function ComparePage() {
           "Open DevTools and switch to the Network tab.",
           "Paste JSON and run the formatter, viewer, diff, decoder, or parser.",
           "Check whether a new request contains your JSON data.",
-          "If there are zero new requests while processing, the JSON stayed local.",
+          "If no request contains your pasted JSON while processing, the JSON stayed local.",
         ]}
       />
 
@@ -105,8 +105,9 @@ export default function ComparePage() {
           </h1>
           <p className="mt-4 max-w-3xl text-lg leading-relaxed text-zinc-400">
             SafeJSON is built around verifiable privacy: open DevTools -&gt;
-            Network, paste JSON, and see zero new requests. Compare that with
-            server-side JSON tools, browser-native viewers, and editor workflows.
+            Network, paste JSON, and check that no request contains your data.
+            Compare that with server-side JSON tools, browser-native viewers,
+            and editor workflows.
           </p>
         </section>
 

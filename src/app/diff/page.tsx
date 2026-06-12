@@ -244,7 +244,7 @@ export default function DiffPage() {
             </span>
             {hasOutput && (
               <span className="text-xs text-zinc-600">
-                All processing client-side - zero network requests
+                All processing client-side - no JSON upload
               </span>
             )}
           </div>
