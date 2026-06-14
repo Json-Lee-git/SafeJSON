@@ -95,7 +95,7 @@ const TreeNode = memo(function TreeNode({
           <>
             <button
               onClick={handleCopyPath}
-              className="text-purple-400 dark:text-purple-300 hover:underline cursor-pointer"
+              className="min-h-10 min-w-10 rounded px-2 text-left text-purple-300 hover:bg-white/5 hover:text-purple-200 sm:min-h-0 sm:min-w-0 sm:px-0 sm:hover:bg-transparent sm:hover:underline cursor-pointer"
               title={`Copy path: ${path}`}
             >
               {keyName}
@@ -105,7 +105,7 @@ const TreeNode = memo(function TreeNode({
         )}
         <button
           onClick={handleCopyValue}
-          className={`${getTypeColor(type)} cursor-pointer hover:opacity-80`}
+          className={`${getTypeColor(type)} min-h-10 min-w-10 rounded px-2 text-left sm:min-h-0 sm:min-w-0 sm:px-0 cursor-pointer hover:opacity-80`}
           title="Click to copy"
         >
           {formatValue(value)}
@@ -135,7 +135,7 @@ const TreeNode = memo(function TreeNode({
           <>
             <button
               onClick={handleCopyPath}
-              className="text-purple-400 dark:text-purple-300 hover:underline cursor-pointer"
+              className="min-h-10 min-w-10 rounded px-2 text-left text-purple-300 hover:bg-white/5 hover:text-purple-200 sm:min-h-0 sm:min-w-0 sm:px-0 sm:hover:bg-transparent sm:hover:underline cursor-pointer"
               title={`Copy path: ${path}`}
             >
               {keyName}
@@ -145,7 +145,8 @@ const TreeNode = memo(function TreeNode({
         )}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="text-gray-500 dark:text-gray-400 hover:text-gray-300 cursor-pointer select-none w-4 text-center"
+          className="min-h-10 min-w-10 rounded text-center text-gray-400 hover:bg-white/5 hover:text-gray-200 sm:min-h-0 sm:min-w-0 sm:w-4 sm:hover:bg-transparent cursor-pointer select-none"
+          aria-label={isOpen ? "Collapse JSON node" : "Expand JSON node"}
         >
           {isOpen ? "▾" : "▸"}
         </button>

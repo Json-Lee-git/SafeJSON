@@ -127,7 +127,7 @@ export default function NetworkRequestIndicator() {
         <button
           type="button"
           onClick={() => setOpen(true)}
-          className="text-xs text-zinc-500 transition-colors hover:text-zinc-300"
+          className="min-h-10 rounded px-2 text-xs text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-zinc-200"
         >
           How to verify?
         </button>
@@ -149,7 +149,7 @@ export default function NetworkRequestIndicator() {
                 >
                   Verify SafeJSON yourself
                 </h2>
-                <p className="mt-2 text-sm leading-relaxed text-zinc-500">
+                <p className="mt-2 text-sm leading-relaxed text-zinc-400">
                   Open DevTools -&gt; Network tab -&gt; paste JSON -&gt; format
                   or view it. You should not see any request containing your
                   pasted JSON while it is processed.
@@ -158,13 +158,13 @@ export default function NetworkRequestIndicator() {
               <button
                 type="button"
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-2 py-1 text-sm text-zinc-500 transition-colors hover:bg-zinc-900 hover:text-zinc-300"
+                className="min-h-10 min-w-10 rounded-lg px-2 py-1 text-sm text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-zinc-200"
                 aria-label="Close verification guide"
               >
                 x
               </button>
             </div>
-            <div className="mt-4 rounded-lg border border-zinc-800 bg-zinc-900/50 p-3 text-xs leading-relaxed text-zinc-500">
+            <div className="mt-4 rounded-lg border border-zinc-800 bg-zinc-900/50 p-3 text-xs leading-relaxed text-zinc-400">
               For an even stronger test, switch DevTools Network to Offline
               after this page loads. SafeJSON keeps formatting locally because
               pasted JSON is not uploaded.

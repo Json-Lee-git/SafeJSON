@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import { GoogleAnalytics } from "@next/third-parties/google";
+import LazyGoogleAnalytics from "./components/LazyGoogleAnalytics";
 import { OrganizationSchema, WebSiteSchema } from "./components/StructuredData";
 import "./globals.css";
 
@@ -67,10 +67,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://jsonlee.lemonsqueezy.com" />
       </head>
       <body className="min-h-full flex flex-col">
+        <LazyGoogleAnalytics gaId="G-QTRHE1MP9Y" />
         <OrganizationSchema />
         <WebSiteSchema />
         {children}
-        <GoogleAnalytics gaId="G-QTRHE1MP9Y" />
       </body>
     </html>
   );

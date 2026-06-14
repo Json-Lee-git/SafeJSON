@@ -1,8 +1,13 @@
 "use client";
 
-import { sendGAEvent } from "@next/third-parties/google";
-
 type AnalyticsParams = Record<string, string | number | boolean | undefined>;
+
+declare global {
+  interface Window {
+    dataLayer?: unknown[];
+    gtag?: (...args: unknown[]) => void;
+  }
+}
 
 const UTM_KEYS = [
   "utm_source",
@@ -11,6 +16,15 @@ const UTM_KEYS = [
   "utm_content",
   "utm_term",
 ] as const;
+
+function ensureGtagQueue() {
+  window.dataLayer = window.dataLayer || [];
+  window.gtag =
+    window.gtag ||
+    ((...args: unknown[]) => {
+      window.dataLayer?.push(args);
+    });
+}
 
 export function inputSizeBucket(text: string): string {
   const bytes = new TextEncoder().encode(text).length;
@@ -41,7 +55,8 @@ export function trackEvent(
     referrerHost = undefined;
   }
 
-  sendGAEvent("event", name, {
+  ensureGtagQueue();
+  window.gtag?.("event", name, {
     app: "safejson",
     event_version: 1,
     page_path: window.location.pathname,

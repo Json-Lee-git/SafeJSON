@@ -212,18 +212,18 @@ export default function Home() {
               <span className="text-emerald-400">{`}`}</span>
             </span>
             <nav className="flex items-center gap-1">
-              <span className="text-xs px-2 py-1 rounded bg-emerald-400/10 text-emerald-400 font-medium">
+              <span className="inline-flex min-h-10 items-center rounded bg-emerald-400/10 px-3 text-xs font-medium text-emerald-300">
                 Formatter
               </span>
               <Link
                 href="/diff"
-                className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded transition-colors"
+                className="inline-flex min-h-10 items-center rounded px-3 text-xs text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-zinc-200"
               >
                 Diff
               </Link>
-              <Link href="/jwt" className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded transition-colors">JWT</Link>
-              <Link href="/jsonpath" className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded transition-colors">JSONPath</Link>
-              <Link href="/schema" className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded transition-colors">Schema</Link>
+              <Link href="/jwt" className="inline-flex min-h-10 items-center rounded px-3 text-xs text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-zinc-200">JWT</Link>
+              <Link href="/jsonpath" className="inline-flex min-h-10 items-center rounded px-3 text-xs text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-zinc-200">JSONPath</Link>
+              <Link href="/schema" className="inline-flex min-h-10 items-center rounded px-3 text-xs text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-zinc-200">Schema</Link>
             </nav>
           </div>
           <div className="flex items-center gap-4">
@@ -231,13 +231,13 @@ export default function Home() {
               href="https://github.com/Json-Lee-git/SafeJSON"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors"
+              className="inline-flex min-h-10 items-center rounded px-2 text-sm text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-zinc-200"
             >
               GitHub
             </a>
             <button
               onClick={toggleTheme}
-              className="p-2 rounded-lg hover:bg-zinc-800 transition-colors text-zinc-400"
+              className="min-h-10 min-w-10 rounded-lg p-2 text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-zinc-200"
               aria-label="Toggle theme"
             >
               {theme === "dark" ? (
@@ -284,20 +284,20 @@ export default function Home() {
               That&apos;s the whole point.
             </span>
           </p>
-          <p className="text-sm font-medium text-zinc-500 max-w-2xl mx-auto mb-4 text-pretty">
+          <p className="text-sm font-medium text-zinc-400 max-w-2xl mx-auto mb-4 text-pretty">
             Handles 50MB+ JSON files that crash VS Code. All in your browser.
             No upload.
           </p>
-          <p className="text-sm text-zinc-600 max-w-xl mx-auto text-pretty">
+          <p className="text-sm text-zinc-400 max-w-xl mx-auto text-pretty">
             In November 2025, popular online JSON tools were caught leaking over
             80,000 credentials, including AWS keys, GitHub tokens, and bank
             details. SafeJSON runs 100% client-side.{" "}
-            <span className="text-zinc-500">
+            <span className="text-zinc-300">
               Open DevTools -&gt; Network, format once -&gt; no JSON upload.
             </span>
           </p>
-          <p className="text-xs text-zinc-600 max-w-xl mx-auto mt-3 text-center">
-            <Link href="/support" className="hover:text-emerald-400 transition-colors">
+          <p className="text-xs text-zinc-400 max-w-xl mx-auto mt-3 text-center">
+            <Link href="/support" className="inline-flex min-h-10 items-center rounded px-2 transition-colors hover:text-emerald-300">
               How to verify this yourself →
             </Link>
           </p>
@@ -310,19 +310,19 @@ export default function Home() {
           {/* Input panel */}
           <div className="border border-zinc-800 rounded-xl overflow-hidden bg-zinc-900/50">
             <div className="flex items-center justify-between px-4 py-2 border-b border-zinc-800">
-              <span className="text-xs font-medium text-zinc-500 uppercase tracking-wider">
+              <span className="text-xs font-medium text-zinc-400 uppercase tracking-wider">
                 Input
               </span>
               <div className="flex items-center gap-2">
                 <button
                   onClick={handleSample}
-                  className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded hover:bg-zinc-800 transition-colors"
+                  className="min-h-10 rounded px-3 text-xs text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-zinc-200"
                 >
                   Sample
                 </button>
                 <button
                   onClick={handleClear}
-                  className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded hover:bg-zinc-800 transition-colors"
+                  className="min-h-10 rounded px-3 text-xs text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-zinc-200"
                 >
                   Clear
                 </button>
@@ -360,7 +360,7 @@ export default function Home() {
                   className={`text-xs px-3 py-1 rounded transition-colors ${
                     tab === "tree"
                       ? "bg-zinc-800 text-zinc-200"
-                      : "text-zinc-500 hover:text-zinc-300"
+                      : "text-zinc-400 hover:text-zinc-200"
                   }`}
                 >
                   Tree
@@ -370,7 +370,7 @@ export default function Home() {
                   className={`text-xs px-3 py-1 rounded transition-colors ${
                     tab === "raw"
                       ? "bg-zinc-800 text-zinc-200"
-                      : "text-zinc-500 hover:text-zinc-300"
+                      : "text-zinc-400 hover:text-zinc-200"
                   }`}
                 >
                   Raw
@@ -381,13 +381,13 @@ export default function Home() {
                   <>
                     <button
                       onClick={handleCopy}
-                      className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded hover:bg-zinc-800 transition-colors"
+                      className="min-h-10 rounded px-3 text-xs text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-zinc-200"
                     >
                       {copied ? "Copied!" : "Copy"}
                     </button>
                     <button
                       onClick={handleDownload}
-                      className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded hover:bg-zinc-800 transition-colors"
+                      className="min-h-10 rounded px-3 text-xs text-zinc-400 transition-colors hover:bg-zinc-800 hover:text-zinc-200"
                     >
                       Download
                     </button>
@@ -399,7 +399,7 @@ export default function Home() {
 
             <div className="flex-1 h-[420px] overflow-auto">
               {jsonWorker.processing ? (
-                <div className="flex h-full items-center justify-center text-sm text-zinc-500">
+                <div className="flex h-full items-center justify-center text-sm text-zinc-400">
                   <div className="text-center">
                     <p className="mb-3 text-3xl font-mono text-zinc-800">{`{ }`}</p>
                     <p>Parsing locally in your browser...</p>
@@ -458,13 +458,13 @@ export default function Home() {
       <section className="border-t border-zinc-800/50">
         <div className="max-w-4xl mx-auto px-4 py-8">
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
-            <span className="text-zinc-600 text-xs">Explore:</span>
-            <Link href="/blog/safest-json-formatter" className="text-zinc-500 hover:text-emerald-400 transition-colors">What is the safest JSON formatter</Link>
-            <Link href="/answers" className="text-zinc-500 hover:text-emerald-400 transition-colors">SafeJSON answers</Link>
-            <Link href="/compare" className="text-zinc-500 hover:text-emerald-400 transition-colors">JSON formatter comparison</Link>
-            <Link href="/vs/jsonformatter-org" className="text-zinc-500 hover:text-emerald-400 transition-colors">SafeJSON vs jsonformatter.org</Link>
-            <Link href="/vs/jsonformatter-extension" className="text-zinc-500 hover:text-emerald-400 transition-colors">Extension comparison</Link>
-            <Link href="/pricing" className="text-zinc-500 hover:text-emerald-400 transition-colors">Free vs Pro</Link>
+            <span className="text-zinc-400 text-xs">Explore:</span>
+            <Link href="/blog/safest-json-formatter" className="inline-flex min-h-10 items-center rounded px-2 text-zinc-400 transition-colors hover:text-emerald-300">What is the safest JSON formatter</Link>
+            <Link href="/answers" className="inline-flex min-h-10 items-center rounded px-2 text-zinc-400 transition-colors hover:text-emerald-300">SafeJSON answers</Link>
+            <Link href="/compare" className="inline-flex min-h-10 items-center rounded px-2 text-zinc-400 transition-colors hover:text-emerald-300">JSON formatter comparison</Link>
+            <Link href="/vs/jsonformatter-org" className="inline-flex min-h-10 items-center rounded px-2 text-zinc-400 transition-colors hover:text-emerald-300">SafeJSON vs jsonformatter.org</Link>
+            <Link href="/vs/jsonformatter-extension" className="inline-flex min-h-10 items-center rounded px-2 text-zinc-400 transition-colors hover:text-emerald-300">Extension comparison</Link>
+            <Link href="/pricing" className="inline-flex min-h-10 items-center rounded px-2 text-zinc-400 transition-colors hover:text-emerald-300">Free vs Pro</Link>
           </div>
         </div>
       </section>
@@ -516,7 +516,7 @@ export default function Home() {
                 className="text-emerald-400 mb-3"
               />
               <h3 className="font-semibold text-sm mb-2">{title}</h3>
-              <p className="text-xs text-zinc-500 leading-relaxed text-pretty">{desc}</p>
+              <p className="text-xs text-zinc-400 leading-relaxed text-pretty">{desc}</p>
             </div>
           ))}
         </div>
@@ -565,7 +565,7 @@ export default function Home() {
             <h2 className="text-2xl font-bold mt-4 mb-2">
               More than a formatter
             </h2>
-            <p className="text-sm text-zinc-500 max-w-md mx-auto">
+            <p className="text-sm text-zinc-400 max-w-md mx-auto">
               Advanced tools for developers who work with JSON every day. All
               client-side, all privacy-first.
             </p>
@@ -602,7 +602,7 @@ export default function Home() {
                   <h3 className="font-semibold text-sm mb-0.5 group-hover:text-emerald-400 transition-colors">
                     {tool.title}
                   </h3>
-                  <p className="text-xs text-zinc-500 text-pretty">{tool.desc}</p>
+                  <p className="text-xs text-zinc-400 text-pretty">{tool.desc}</p>
                 </div>
                 <span className="text-zinc-600 group-hover:text-emerald-400 transition-colors text-sm">
                   {"->"}
