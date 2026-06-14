@@ -250,7 +250,8 @@ export default function Home() {
         </div>
       </header>
 
-      {/* Hero */}
+      <main>
+        {/* Hero */}
       <section className="relative max-w-4xl mx-auto px-4 pt-20 pb-12 text-center overflow-hidden">
         {/* Decorative JSON braces background */}
         <div
@@ -619,6 +620,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      </main>
 
       <Footer />
 
