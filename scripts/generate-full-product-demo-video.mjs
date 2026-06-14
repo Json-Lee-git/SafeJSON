@@ -14,6 +14,7 @@ const voiceoverTextFile = path.join(tempDir, "voiceover.txt");
 const neuralMp3File = path.join(tempDir, "voiceover-neural.mp3");
 const ffmpegPath =
   "C:\\Users\\cacar\\AppData\\Local\\Microsoft\\WinGet\\Packages\\Gyan.FFmpeg_Microsoft.Winget.Source_8wekyb3d8bbwe\\ffmpeg-8.1.1-full_build\\bin\\ffmpeg.exe";
+const ffprobePath = ffmpegPath.replace("ffmpeg.exe", "ffprobe.exe");
 
 const voiceover = `
 SafeJSON is a privacy-first JSON toolkit for developers.
@@ -43,6 +44,37 @@ function run(command, args) {
       else reject(new Error(`${command} exited with ${code}`));
     });
   });
+}
+
+function runCapture(command, args) {
+  return new Promise((resolve, reject) => {
+    const child = spawn(command, args, { windowsHide: true });
+    let stdout = "";
+    let stderr = "";
+    child.stdout.on("data", (chunk) => {
+      stdout += chunk;
+    });
+    child.stderr.on("data", (chunk) => {
+      stderr += chunk;
+    });
+    child.on("exit", (code) => {
+      if (code === 0) resolve(stdout.trim());
+      else reject(new Error(`${command} exited with ${code}: ${stderr}`));
+    });
+  });
+}
+
+async function mediaDurationSeconds(file) {
+  const value = await runCapture(ffprobePath, [
+    "-v",
+    "error",
+    "-show_entries",
+    "format=duration",
+    "-of",
+    "default=nw=1:nk=1",
+    file,
+  ]);
+  return Number(value);
 }
 
 async function makeVoiceover() {

@@ -31,9 +31,9 @@ export default function BlogPost() {
     dateModified: "2026-06-08",
     author: {
       "@type": "Person",
-      name: "Lizzy_Megamind",
-      url: "https://github.com/s01071233604",
-      sameAs: ["https://github.com/s01071233604"],
+      name: "JSON-Lee",
+      url: "https://www.safejson.dev/about",
+      sameAs: ["https://github.com/s01071233604", "https://dev.to/_6a9b7b682ef6dfb20e506"],
     },
     publisher: {
       "@type": "Organization",

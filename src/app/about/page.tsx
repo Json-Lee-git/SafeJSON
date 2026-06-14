@@ -25,11 +25,11 @@ export default function AboutPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
-            name: "Lizzy_Megamind",
+            name: "JSON-Lee",
             url: "https://www.safejson.dev/about",
-            sameAs: ["https://github.com/s01071233604"],
+            sameAs: ["https://github.com/s01071233604", "https://dev.to/_6a9b7b682ef6dfb20e506"],
             knowsAbout: ["JSON", "Web Security", "Privacy", "Developer Tools", "Client-Side Processing"],
-            description: "Solo developer building privacy-first developer tools.",
+            description: "Solo developer building privacy-first developer tools. Creator of SafeJSON.",
           }).replace(/</g, "\\u003c"),
         }}
       />
