@@ -27,7 +27,7 @@ export default function AboutPage() {
             "@type": "Person",
             name: "JSON-Lee",
             url: "https://www.safejson.dev/about",
-            sameAs: ["https://github.com/s01071233604", "https://dev.to/_6a9b7b682ef6dfb20e506"],
+            sameAs: ["https://github.com/Json-lee-gitle", "https://dev.to/_6a9b7b682ef6dfb20e506"],
             knowsAbout: ["JSON", "Web Security", "Privacy", "Developer Tools", "Client-Side Processing"],
             description: "Solo developer building privacy-first developer tools. Creator of SafeJSON.",
           }).replace(/</g, "\\u003c"),
@@ -104,7 +104,7 @@ export default function AboutPage() {
             The entire codebase is open source under the MIT license and
             available on{" "}
             <a
-              href="https://github.com/s01071233604-tech/safejson"
+              href="https://github.com/Json-lee-gitle-tech/safejson"
               className="text-emerald-400 hover:underline"
             >
               GitHub
@@ -138,7 +138,7 @@ export default function AboutPage() {
           <p className="text-zinc-400 leading-relaxed">
             For questions, feedback, or bug reports, open an issue on{" "}
             <a
-              href="https://github.com/s01071233604-tech/safejson"
+              href="https://github.com/Json-lee-gitle-tech/safejson"
               className="text-emerald-400 hover:underline"
             >
               GitHub

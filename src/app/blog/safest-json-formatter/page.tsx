@@ -33,7 +33,7 @@ export default function BlogPost() {
       "@type": "Person",
       name: "JSON-Lee",
       url: "https://www.safejson.dev/about",
-      sameAs: ["https://github.com/s01071233604", "https://dev.to/_6a9b7b682ef6dfb20e506"],
+      sameAs: ["https://github.com/Json-lee-gitle", "https://dev.to/_6a9b7b682ef6dfb20e506"],
     },
     publisher: {
       "@type": "Organization",
