@@ -1,114 +1,114 @@
-# SafeJSON — Client-Side JSON Formatter, Validator, Diff, JWT Decoder, JSONPath, and Schema Validator
+# SafeJSON — Privacy-First JSON Toolkit for Developers
 
-SafeJSON is a privacy-first JSON formatter and developer toolkit. Every tool —
-JSON formatter, JSON validator, JSON beautifier, JSON viewer, JSON parser,
-JSON diff checker, JWT decoder, JSONPath query, and JSON Schema validator —
-processes pasted JSON entirely in your browser. No pasted-content upload. Verify
-in DevTools.
+SafeJSON is a privacy-first JSON toolkit for developers who need to format,
+diff, decode, query, and validate sensitive JSON without uploading pasted
+content. Every tool runs in your browser. You can verify it yourself with
+DevTools.
 
-Website: https://www.safejson.dev
+**Website:** [safejson.dev](https://www.safejson.dev)
+
+---
+
+## DevTools verification
+
+You do not have to trust the claim. You can verify it:
+
+1. Open [safejson.dev](https://www.safejson.dev)
+2. Open DevTools (F12) → Network tab
+3. Paste any JSON and run the formatter, diff, JWT decoder, JSONPath, or Schema
+4. Confirm: **no request contains your pasted content**
+
+---
+
+## Feature matrix
+
+| Feature | What it does | Client-side privacy | Free / Pro |
+|---------|-------------|---------------------|------------|
+| JSON Formatter | Instant syntax-highlighted formatting with collapsible tree view | All pasted JSON processed locally | Free |
+| JSON Validator | Error detection with line and column numbers | Pasted JSON not uploaded | Free |
+| JSON Beautifier | Configurable indentation (2, 3, or 4 spaces) | Pasted JSON not uploaded | Free |
+| JSON Tree Viewer | Collapsible nodes for navigating large objects | Pasted JSON not uploaded | Free |
+| JSON Parser | Inspect JSON structure, types, and nesting depth | Pasted JSON not uploaded | Free |
+| CSV to JSON / JSON to CSV | Convert between JSON and CSV formats | Pasted data not uploaded | Free |
+| JSON Diff | Compare two JSON objects with color-coded results (added/removed/changed) | Both JSON inputs compared locally | Pro |
+| JWT Decoder | Decode JWT header, payload, and signature | Token never leaves your browser | Pro |
+| JSONPath Query | Evaluate JSONPath expressions against JSON data | All queries evaluated client-side | Pro |
+| JSON Schema Validator | Validate JSON against draft-04 through 2020-12 schemas (powered by Ajv) | Schemas and JSON not uploaded | Pro |
+| Browser Extension | Auto-detect and format raw JSON responses on any URL | All formatting local | Free |
+
+---
 
 ## Why SafeJSON exists
 
-Developers paste sensitive JSON into online tools every day: API responses,
-JWTs, credentials, config files, logs, webhooks, and production payloads.
+Online JSON tools often process pasted data on a server. Developers paste
+API responses, JWTs, credentials, config files, logs, and production payloads
+into these tools every day — often without checking where that data goes.
 
-SafeJSON is built around a simple promise: your JSON should not leave your
-browser. No request contains pasted content. No pasted-content analytics.
+In November 2025, popular JSON formatting sites were found to have leaked
+over 80,000 credentials through server-side processing.
 
-You do not have to trust that promise. You can verify it:
+SafeJSON is designed so users can verify pasted-content privacy themselves.
+Open DevTools → Network, paste JSON, and confirm that no request contains
+your pasted content. That is the whole point.
 
-1. Open https://www.safejson.dev
-2. Open DevTools
-3. Open the Network tab
-4. Paste JSON and use the formatter, diff, JWT decoder, JSONPath, or Schema
-5. Confirm that pasted JSON is processed without data-upload requests
+---
 
-## Tools
+## Pricing
 
-### Free tools
+**Core tools remain free forever.** Formatter, validator, beautifier, viewer,
+parser, and CSV conversion.
 
-- JSON Formatter
-- JSON Validator
-- JSON Beautifier
-- JSON Viewer
-- JSON Parser
-- CSV to JSON
-- JSON to CSV
+**Pro is $5/month or $39/year.** Unlocks JSON Diff, JWT Decoder, JSONPath
+Query, and JSON Schema Validator. One license activates up to 2 devices.
 
-### Pro tools
+Payment and license delivery handled by Lemon Squeezy.
 
-- JSON Diff Checker
-- JWT Decoder
-- JSONPath Query
-- JSON Schema Validator
+[View pricing →](https://www.safejson.dev/pricing)
 
-SafeJSON Pro is $5/month or $39/year. One license activates up to 2 devices.
-Payment and license delivery are handled by Lemon Squeezy.
-
-Pricing: https://www.safejson.dev/pricing
-
-## Large JSON support
-
-SafeJSON is designed for 50MB+ JSON files in formatter, beautifier, viewer, and
-parser workflows. Large JSON is parsed with a Web Worker so the UI stays
-responsive.
-
-## Key pages
-
-- JSON Formatter: https://www.safejson.dev/
-- JSON Validator: https://www.safejson.dev/json-validator
-- JSON Beautifier: https://www.safejson.dev/json-beautifier
-- JSON Viewer: https://www.safejson.dev/json-viewer
-- JSON Parser: https://www.safejson.dev/json-parser
-- JSON Diff: https://www.safejson.dev/diff
-- JWT Decoder: https://www.safejson.dev/jwt
-- JSONPath Query: https://www.safejson.dev/jsonpath
-- JSON Schema Validator: https://www.safejson.dev/schema
-- SafeJSON Answers: https://www.safejson.dev/answers
-- SafeJSON vs jsonformatter.org: https://www.safejson.dev/vs/jsonformatter-org
-
-## Comparison
-
-| Feature | SafeJSON | Server-side JSON tools |
-| --- | --- | --- |
-| Client-side JSON processing | Yes | Usually no |
-| Pasted JSON leaves your browser | No | Often yes |
-| Verifiable with DevTools Network | Yes | Usually no |
-| Open source | Yes | Usually no |
-| Ads | No | Often yes |
-| JSON Diff | Yes | Varies |
-| JWT Decoder | Yes | Varies |
-| JSONPath | Yes | Varies |
-| Schema Validator | Yes | Varies |
+---
 
 ## Browser extension
 
-SafeJSON also includes a browser extension for formatting raw JSON responses.
+Auto-detects and formats raw JSON responses on any URL.
 
-- Edge Add-ons: [SafeJSON on Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/fjknnlcmogdhhnehcillihjhdgencgeh)
-- Chrome Web Store: coming soon
+- **Edge Add-ons:** [Live on Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/fjknnlcmogdhhnehcillihjhdgencgeh)
+- **Chrome Web Store:** pending review
 
-Manual install:
+Manual install from source:
 
-1. Clone this repository
-2. Open `chrome://extensions` or `edge://extensions`
-3. Enable developer mode
-4. Click "Load unpacked"
-5. Select the `extension/` folder
+```bash
+git clone https://github.com/Json-Lee-git/SafeJSON
+# Open chrome://extensions or edge://extensions
+# Enable Developer Mode → Load unpacked → select extension/ folder
+```
 
-## Video
+---
 
-[How to Verify Any JSON Formatter Is Safe — YouTube](https://www.youtube.com/watch?v=Jlks9EU9I3Q)
+## Large JSON support
+
+SafeJSON handles 50MB+ JSON files in formatter, beautifier, viewer, and
+parser workflows. Large JSON is parsed with a Web Worker so the UI stays
+responsive during processing — all locally, no upload.
+
+---
 
 ## Tech stack
 
-- Next.js 16
-- React 19
-- Tailwind CSS
-- Phosphor Icons
-- Vercel
-- Lemon Squeezy License API
+Next.js 16 · React 19 · Tailwind CSS · Phosphor Icons · Vercel (static prerendering) · Lemon Squeezy License API
+
+---
+
+## Links
+
+- **Website:** [safejson.dev](https://www.safejson.dev)
+- **Product Hunt:** [SafeJSON on Product Hunt](https://www.producthunt.com/products/safejson-privacy?launch=safejson-privacy)
+- **SaaSHub:** [SafeJSON on SaaSHub](https://www.saashub.com/safejson-alternatives)
+- **Indie Hackers:** [SafeJSON on Indie Hackers](https://www.indiehackers.com/product/safejson-2)
+- **Edge Add-ons:** [SafeJSON on Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/fjknnlcmogdhhnehcillihjhdgencgeh)
+- **YouTube:** [How to Verify Any JSON Formatter Is Safe](https://www.youtube.com/watch?v=Jlks9EU9I3Q)
+- **GitHub Discussions:** [Join the discussion](https://github.com/Json-Lee-git/SafeJSON/discussions)
+
+---
 
 ## Development
 
@@ -116,6 +116,8 @@ Manual install:
 npm install
 npm run dev
 ```
+
+---
 
 ## License
 

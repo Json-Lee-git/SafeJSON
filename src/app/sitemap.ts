@@ -30,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/json-to-csv`, lastModified, changeFrequency: "monthly", priority: 0.7 },
     { url: `${siteUrl}/vs/jsonlint`, lastModified, changeFrequency: "monthly", priority: 0.65 },
     { url: `${siteUrl}/vs/jwt-io`, lastModified, changeFrequency: "monthly", priority: 0.65 },
+    { url: `${siteUrl}/vs/jsoncrack`, lastModified, changeFrequency: "monthly", priority: 0.65 },
     { url: `${siteUrl}/privacy`, lastModified, changeFrequency: "yearly", priority: 0.3 },
   ];
 }

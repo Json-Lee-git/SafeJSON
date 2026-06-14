@@ -92,6 +92,7 @@ export function RelatedComparisons({ current }: { current?: string }) {
     },
     { href: "/vs/jsonlint", label: "SafeJSON vs JSONLint" },
     { href: "/vs/jwt-io", label: "SafeJSON vs jwt.io" },
+    { href: "/vs/jsoncrack", label: "SafeJSON vs JSON Crack" },
   ].filter((link) => link.href !== current);
 
   return (
