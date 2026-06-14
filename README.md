@@ -31,7 +31,7 @@ You do not have to trust the claim. You can verify it:
 | JSON Parser | Inspect JSON structure, types, and nesting depth | Pasted JSON not uploaded | Free |
 | CSV to JSON / JSON to CSV | Convert between JSON and CSV formats | Pasted data not uploaded | Free |
 | JSON Diff | Compare two JSON objects with color-coded results (added/removed/changed) | Both JSON inputs compared locally | Pro |
-| JWT Decoder | Decode JWT header, payload, and signature | Token never leaves your browser | Pro |
+| JWT Decoder | Decode JWT header, payload, and signature | No request contains the token while decoding | Pro |
 | JSONPath Query | Evaluate JSONPath expressions against JSON data | All queries evaluated client-side | Pro |
 | JSON Schema Validator | Validate JSON against draft-04 through 2020-12 schemas (powered by Ajv) | Schemas and JSON not uploaded | Pro |
 | Browser Extension | Auto-detect and format raw JSON responses on any URL | All formatting local | Free |
@@ -88,7 +88,7 @@ git clone https://github.com/Json-Lee-git/SafeJSON
 
 SafeJSON handles 50MB+ JSON files in formatter, beautifier, viewer, and
 parser workflows. Large JSON is parsed with a Web Worker so the UI stays
-responsive during processing — all locally, no upload.
+responsive during processing, with no pasted-content upload.
 
 ---
 

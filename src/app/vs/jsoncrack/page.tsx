@@ -49,7 +49,7 @@ const rows = [
   [
     "JWT Decoder",
     "Not available.",
-    "Yes (Pro). Decode tokens locally — your JWT never leaves your browser.",
+    "Yes (Pro). Decode tokens locally. No request contains the token while decoding.",
   ],
   [
     "JSONPath Query",
@@ -206,8 +206,8 @@ export default function VsJsonCrackPage() {
               SafeJSON is designed for large local JSON. Formatter,
               beautifier, viewer, and parser workflows handle 50MB+ files
               using a Web Worker so the interface stays responsive. JSON
-              Diff, JWT Decoder, JSONPath, and Schema Validator all run
-              locally — no pasted-content upload, regardless of file size.
+              Diff, JWT Decoder, JSONPath, and Schema Validator also run
+              locally, with no pasted-content upload during processing.
             </p>
           </div>
         </section>

@@ -33,9 +33,9 @@ Upload via Settings → Social preview:
 
 | Asset | Status | Format |
 |-------|--------|--------|
-| DevTools Network verification — paste JSON, zero upload requests | Not created | GIF / screenshot |
+| DevTools Network verification — paste JSON, no request contains pasted content | Not created | GIF / screenshot |
 | 50MB+ local file processing demo | Not created | Screenshot |
-| JWT decoder — paste token, no network request | Not created | Screenshot |
+| JWT decoder — paste token, no request contains the token | Not created | Screenshot |
 | JSON Diff — two objects compared locally | Not created | Screenshot |
 | Browser extension — auto-format on any URL | Not created | Screenshot |
 

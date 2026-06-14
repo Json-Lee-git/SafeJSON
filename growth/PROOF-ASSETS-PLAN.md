@@ -22,7 +22,7 @@
 | Format | GIF or screenshot (formatter + Web Worker indicator) |
 | Where to use | README, /client-side-json-formatter, /vs/jsoncrack |
 | Risk | 50MB+ must be tested with real large JSON before publishing the claim as a proof asset. If not yet stress-tested, use "Designed for large local JSON workflows" instead of "Handles 50MB+". |
-| Verification required | Test with a real 50MB JSON file; confirm no browser crash and no network request. |
+| Verification required | Test with a real 50MB JSON file; confirm no browser crash and no request contains pasted content. |
 | Owner | User (test + screen recording) |
 
 ## 3. JWT decoder no-upload proof
