@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/schema`, lastModified, changeFrequency: "monthly", priority: 0.7 },
     { url: `${siteUrl}/pricing`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${siteUrl}/answers`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/client-side-json-formatter`, lastModified, changeFrequency: "monthly", priority: 0.85 },
     { url: `${siteUrl}/compare`, lastModified, changeFrequency: "monthly", priority: 0.85 },
     { url: `${siteUrl}/blog/safest-json-formatter`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/blog/is-it-safe-to-paste-json-online`, lastModified, changeFrequency: "monthly", priority: 0.8 },
