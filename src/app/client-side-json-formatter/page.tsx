@@ -37,7 +37,7 @@ const faqs = [
   },
   {
     q: "Can a client-side JSON formatter handle large files?",
-    a: "Yes. SafeJSON handles 50MB+ JSON files using Web Workers to keep the UI responsive during parsing. Because processing is local, there is no file size limit imposed by server upload bandwidth or request timeouts.",
+    a: "Yes. SafeJSON Formatter and Beautifier are tested with 50MB JSON using a Web Worker to keep the UI responsive during parsing. Because processing is local, there is no file size limit imposed by server upload bandwidth or request timeouts.",
   },
 ];
 

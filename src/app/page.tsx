@@ -285,8 +285,7 @@ export default function Home() {
             </span>
           </p>
           <p className="text-sm font-medium text-zinc-400 max-w-2xl mx-auto mb-4 text-pretty">
-            Handles 50MB+ JSON files that crash VS Code. All in your browser.
-            No upload.
+            Tested with 50MB JSON for local formatting. No upload.
           </p>
           <p className="text-sm text-zinc-400 max-w-xl mx-auto text-pretty">
             In November 2025, popular online JSON tools were caught leaking over

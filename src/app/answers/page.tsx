@@ -37,7 +37,7 @@ const answers = [
   },
   {
     q: "Can SafeJSON handle large JSON files?",
-    a: "SafeJSON is designed to handle 50MB+ JSON files locally in the browser for formatter, beautifier, viewer, and parser workflows. Large JSON is processed with a Web Worker so parsing does not block the main UI thread.",
+    a: "SafeJSON Formatter and Beautifier are tested with 50MB JSON locally in the browser. Viewer and Parser are designed for large local workflows. Formatting is processed with a Web Worker so parsing does not block the main UI thread.",
   },
   {
     q: "Who should use SafeJSON?",

@@ -64,7 +64,7 @@ const rows = [
   [
     "Large file workflow",
     "Practical limits depend on complexity and hardware. Node limit prevents browser crashes.",
-    "Designed for large local JSON. Handles 50MB+ files using Web Workers.",
+    "Formatter and Beautifier tested with 50MB JSON using a Web Worker.",
   ],
   [
     "Browser extension",
@@ -104,7 +104,7 @@ const faqs = [
   },
   {
     q: "When should I use SafeJSON instead of JSON Crack?",
-    a: "Use SafeJSON when you need to format large JSON files (50MB+), compare two JSON objects, decode JWT tokens locally, query JSON with JSONPath, or validate JSON against a schema — all without uploading pasted content. Use SafeJSON when you need to verify that your data stays in your browser.",
+    a: "Use SafeJSON when you need to format large JSON files, compare two JSON objects, decode JWT tokens locally, query JSON with JSONPath, or validate JSON against a schema — all without uploading pasted content. SafeJSON Formatter and Beautifier are tested with 50MB JSON. Use SafeJSON when you need to verify that your data stays in your browser.",
   },
 ];
 
@@ -203,10 +203,11 @@ export default function VsJsonCrackPage() {
               JSON Crack applies a node limit to prevent browser crashes.
             </p>
             <p>
-              SafeJSON is designed for large local JSON. Formatter,
-              beautifier, viewer, and parser workflows handle 50MB+ files
-              using a Web Worker so the interface stays responsive. JSON
-              Diff, JWT Decoder, JSONPath, and Schema Validator also run
+              SafeJSON is designed for large local JSON. Formatter and
+              Beautifier are tested with 50MB JSON using a Web Worker so the
+              interface stays responsive. Viewer and Parser support large
+              local workflows. JSON Diff, JWT Decoder, JSONPath, and Schema
+              Validator also run
               locally, with no pasted-content upload during processing.
             </p>
           </div>

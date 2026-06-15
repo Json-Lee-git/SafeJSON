@@ -159,7 +159,7 @@ export default function PricingPage() {
                 "JWT Decoder",
                 "JSONPath Query",
                 "Schema Validator",
-                "Large file support (50MB+)",
+                "Large local JSON workflow support",
                 "Priority support",
               ].map((feature) => (
                 <li

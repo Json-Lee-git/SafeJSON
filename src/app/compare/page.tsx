@@ -127,8 +127,9 @@ export default function ComparePage() {
               JSONPath querying, and schema validation run in the browser.
             </p>
             <p className="mt-3 text-sm leading-relaxed text-zinc-400">
-              That also changes large file workflows: SafeJSON handles 50MB+
-              JSON locally, so sensitive logs do not need to leave your machine.
+              That also changes large file workflows: SafeJSON Formatter and
+              Beautifier are tested with 50MB JSON locally, so sensitive logs
+              do not need to leave your machine.
             </p>
           </div>
 

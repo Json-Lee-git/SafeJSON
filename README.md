@@ -86,8 +86,9 @@ git clone https://github.com/Json-Lee-git/SafeJSON
 
 ## Large JSON support
 
-SafeJSON handles 50MB+ JSON files in formatter, beautifier, viewer, and
-parser workflows. Large JSON is parsed with a Web Worker so the UI stays
+SafeJSON Formatter and Beautifier are tested with 50MB JSON. Viewer and
+Parser support large local workflows. Large JSON is parsed with a Web
+Worker so the UI stays
 responsive during processing, with no pasted-content upload.
 
 ---

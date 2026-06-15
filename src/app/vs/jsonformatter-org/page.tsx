@@ -33,7 +33,7 @@ const rows = [
   ["JWT Decoder", "Yes (Pro).", "No."],
   ["JSONPath", "Yes (Pro).", "No."],
   ["Schema Validator", "Yes (Pro).", "No."],
-  ["Large files", "50MB+ local handling.", "Limited by upload and server workflow."],
+  ["Large files", "Large local handling (Formatter tested with 50MB).", "Limited by upload and server workflow."],
   ["Price", "Free core tools, $5/month Pro.", "Free with ads."],
 ];
 

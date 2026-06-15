@@ -154,8 +154,8 @@ export function SoftwareAppSchema() {
     featureList: [
       "Verifiable privacy via DevTools Network tab",
       "Client-side JSON formatting without pasted-content upload",
-      "50MB+ local JSON handling in formatter, beautifier, viewer, and parser workflows",
-      "Web Worker parsing to avoid blocking the main UI thread",
+      "Large local JSON handling in formatter and beautifier workflows",
+      "Web Worker parsing in formatter and beautifier to avoid blocking the main UI thread",
       "Collapsible tree view with syntax highlighting",
       "Error detection with line and column numbers",
       "JSON Diff with color-coded comparison",
@@ -218,7 +218,7 @@ export function FAQSchema() {
         name: "Can SafeJSON handle large JSON files?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. SafeJSON is designed to handle 50MB+ JSON files locally in the browser for formatter, beautifier, viewer, and parser workflows. Large JSON is parsed with a Web Worker so the main interface stays responsive.",
+          text: "Yes. SafeJSON Formatter and Beautifier are tested with 50MB JSON locally in the browser. Viewer and Parser are designed for large local JSON workflows. Formatting is processed with a Web Worker so the main interface stays responsive.",
         },
       },
       {

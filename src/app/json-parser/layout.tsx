@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "JSON Parser - Parse and Analyze JSON Structure Online | SafeJSON",
   description:
-    "Parse JSON and inspect every field with data type and path. Handles 50MB+ JSON locally in your browser with no upload.",
+    "Parse JSON and inspect every field with data type and path. Designed for large local JSON workflows with no upload.",
   openGraph: {
     title: "JSON Parser - SafeJSON",
     description:

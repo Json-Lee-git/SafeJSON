@@ -11,7 +11,7 @@ export const comparisonRows = [
   ["JSONPath", "Yes (Pro)", "No", "No", "No", "No"],
   ["Schema Validator", "Yes (Pro)", "No", "No", "No", "No"],
   ["Ads", "None", "Yes", "None", "None", "None"],
-  ["Large file handling", "50MB+", "Limited", "Limited", "Limited", "~10MB"],
+  ["Large file handling", "50MB (Formatter)", "Limited", "Limited", "Limited", "~10MB"],
   ["Price", "Free / $5 Pro", "Free (ads)", "Free", "Free", "Free"],
 ];
 
