@@ -1,0 +1,39 @@
+{
+  "generatedAt": "2026-06-14T17:41:27.720Z",
+  "origin": "https://www.safejson.dev",
+  "assets": {
+    "socialPreview": {
+      "file": "github-social-preview.png",
+      "purpose": "GitHub repo social preview (1280x640)"
+    },
+    "formatter": {
+      "file": "devtools-network-verification.png",
+      "path": "https://www.safejson.dev/",
+      "requestCount": 1,
+      "containsPastedContent": false,
+      "purpose": "DevTools Network verification — no pasted-content upload"
+    },
+    "diff": {
+      "file": "json-diff-no-upload-proof.png",
+      "path": "https://www.safejson.dev/json-diff",
+      "requestCount": 1,
+      "containsPastedContent": false,
+      "purpose": "JSON Diff no-upload verification"
+    },
+    "jwt": {
+      "file": "jwt-decoder-no-upload-proof.png",
+      "path": "https://www.safejson.dev/jwt-decoder",
+      "requestCount": 1,
+      "containsPastedContent": false,
+      "purpose": "JWT Decoder no-upload verification"
+    },
+    "large": {
+      "file": "large-file-local-processing-proof.png",
+      "path": "https://www.safejson.dev/",
+      "requestCount": 1,
+      "containsPastedContent": false,
+      "purpose": "Large file local processing (deferred — regenerating as tool-specific proof)",
+      "status": "deferred"
+    }
+  }
+}
