@@ -70,8 +70,9 @@ export default function PricingPage() {
             <span className="text-emerald-400">privacy-first</span> pricing
           </h1>
           <p className="text-zinc-500 max-w-lg mx-auto">
-            Core JSON formatting is free forever. Advanced tools for developers
-            who debug JSON every day. Try each Pro tool 5 times free.
+            Core JSON formatting is free forever. Pro tools are built for sensitive
+            JSON workflows — diff, decode, query, and validate without uploading
+            pasted content. Try each Pro tool 5 times free.
           </p>
         </div>
 
@@ -160,7 +161,6 @@ export default function PricingPage() {
                 "JSONPath Query",
                 "Schema Validator",
                 "Large local JSON workflow support",
-                "Priority support",
               ].map((feature) => (
                 <li
                   key={feature}
