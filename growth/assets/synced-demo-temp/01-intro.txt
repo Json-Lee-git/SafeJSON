@@ -1,1 +1,0 @@
-SafeJSON is a privacy-first JSON toolkit for developers. It keeps pasted content local in your browser.

@@ -1,1 +1,0 @@
-When you need a spreadsheet-friendly format, convert JSON to CSV, or CSV back to JSON, in the browser.

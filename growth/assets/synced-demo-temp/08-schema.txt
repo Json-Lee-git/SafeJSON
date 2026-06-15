@@ -1,1 +1,0 @@
-Schema Validator checks API responses against JSON Schema and catches missing fields or wrong types.

@@ -1,1 +1,0 @@
-You do not have to trust the privacy claim. Open DevTools, watch Network, and verify no request contains pasted content.

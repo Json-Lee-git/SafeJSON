@@ -1,1 +1,0 @@
-SafeJSON Pro starts with JSON Diff: compare two payloads and see changed values clearly.
