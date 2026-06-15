@@ -56,6 +56,7 @@ const nextConfig: NextConfig = {
             value:
               "default-src 'self'; " +
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com; " +
+              "worker-src 'self' blob:; " +
               "connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://region1.google-analytics.com https://stats.g.doubleclick.net; " +
               "img-src 'self' data: https:; " +
               "style-src 'self' 'unsafe-inline'; " +

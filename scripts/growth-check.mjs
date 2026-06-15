@@ -176,6 +176,17 @@ addCheck("content-security-policy is present", async () => {
   assert(csp.includes("script-src"), "CSP missing script-src");
   assert(csp.includes("connect-src"), "CSP missing connect-src");
   assert(csp.includes("frame-ancestors"), "CSP missing frame-ancestors");
+  assert(csp.includes("worker-src") && csp.includes("blob:"), "CSP missing worker-src blob: — Web Worker will be blocked");
+
+  // worker-src must allow blob for Web Workers
+  const workerSrc = csp.match(/worker-src\s+([^;]+)/i);
+  assert(workerSrc, "CSP has no worker-src directive");
+  assert(workerSrc[1].includes("blob:"), "CSP worker-src missing blob: — Web Worker creation via Blob URL will be blocked");
+
+  // script-src must NOT include blob: (workers only, not scripts)
+  const scriptSrc = csp.match(/script-src\s+([^;]+)/i);
+  assert(scriptSrc, "CSP has no script-src directive");
+  assert(!scriptSrc[1].includes("blob:"), "CSP script-src must not include blob: — blob scripts weaken script security");
 
   // connect-src must not be wide-open
   const connectSrc = csp.match(/connect-src\s+([^;]+)/i);
