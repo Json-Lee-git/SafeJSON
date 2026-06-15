@@ -297,8 +297,8 @@ export default function Home() {
             </span>
           </p>
           <p className="text-xs text-zinc-400 max-w-xl mx-auto mt-3 text-center">
-            <Link href="/support" className="inline-flex min-h-10 items-center rounded px-2 transition-colors hover:text-emerald-300">
-              How to verify this yourself →
+            <Link href="/privacy/verify-local-processing" className="inline-flex min-h-10 items-center rounded px-2 transition-colors hover:text-emerald-300">
+              How to verify local processing
             </Link>
           </p>
         </div>
