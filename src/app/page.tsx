@@ -216,14 +216,14 @@ export default function Home() {
                 Formatter
               </span>
               <Link
-                href="/diff"
+                href="/json-diff"
                 className="inline-flex min-h-10 items-center rounded px-3 text-xs text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-zinc-200"
               >
                 Diff
               </Link>
-              <Link href="/jwt" className="inline-flex min-h-10 items-center rounded px-3 text-xs text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-zinc-200">JWT</Link>
-              <Link href="/jsonpath" className="inline-flex min-h-10 items-center rounded px-3 text-xs text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-zinc-200">JSONPath</Link>
-              <Link href="/schema" className="inline-flex min-h-10 items-center rounded px-3 text-xs text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-zinc-200">Schema</Link>
+              <Link href="/jwt-decoder" className="inline-flex min-h-10 items-center rounded px-3 text-xs text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-zinc-200">JWT</Link>
+              <Link href="/jsonpath-query" className="inline-flex min-h-10 items-center rounded px-3 text-xs text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-zinc-200">JSONPath</Link>
+              <Link href="/json-schema-validator" className="inline-flex min-h-10 items-center rounded px-3 text-xs text-zinc-400 transition-colors hover:bg-zinc-900 hover:text-zinc-200">Schema</Link>
             </nav>
           </div>
           <div className="flex items-center gap-4">
@@ -575,22 +575,22 @@ export default function Home() {
               {
                 title: "JSON Diff",
                 desc: "Compare two JSON objects side by side. Added, removed, and changed values highlighted in color. All comparison runs locally — your JSON is not uploaded.",
-                href: "/diff",
+                href: "/json-diff",
               },
               {
                 title: "JWT Decoder",
                 desc: "Decode JWT tokens instantly. Header, payload, and signature decoded in your browser. Your token stays local — safe for production JWTs.",
-                href: "/jwt",
+                href: "/jwt-decoder",
               },
               {
                 title: "JSONPath",
                 desc: "Query JSON with XPath-like expressions. Extract nested values and filter arrays. All queries run client-side — your data stays in your browser.",
-                href: "/jsonpath",
+                href: "/jsonpath-query",
               },
               {
                 title: "Schema Validator",
                 desc: "Validate JSON against JSON Schema locally. Catch missing fields, wrong types, and malformed payloads. Your API responses and schemas are not uploaded.",
-                href: "/schema",
+                href: "/json-schema-validator",
               },
             ].map((tool) => (
               <Link

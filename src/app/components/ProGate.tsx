@@ -13,6 +13,7 @@ const INSTANCE_NAME_KEY = "safejson_pro_instance_name";
 const LICENSE_STATUS_KEY = "safejson_pro_license_status";
 const LICENSE_LAST_VALIDATED_KEY = "safejson_pro_last_validated";
 const VALIDATION_TTL_MS = 12 * 60 * 60 * 1000;
+const DEV_UNLOCK_ENABLED = process.env.NODE_ENV === "development";
 
 export type ProLicenseResult = {
   ok: boolean;
@@ -38,7 +39,7 @@ function readUsage(tool: string): number {
 function readUnlocked(): boolean {
   if (typeof window === "undefined") return false;
 
-  if (window.localStorage.getItem(DEV_KEY) === "1") {
+  if (DEV_UNLOCK_ENABLED && window.localStorage.getItem(DEV_KEY) === "1") {
     return true;
   }
 
@@ -266,8 +267,11 @@ export function ProBanner({ tool }: { tool: string }) {
     const handle = window.setTimeout(() => {
       setIsUnlocked(readUnlocked());
 
-      // Check URL param: any page with ?dev activates developer mode
-      if (window.location.search.includes("dev")) {
+      // Developer-only escape hatch for local testing. Never unlocks production.
+      if (
+        DEV_UNLOCK_ENABLED &&
+        new URLSearchParams(window.location.search).has("dev")
+      ) {
         window.localStorage.setItem(DEV_KEY, "1");
         setIsUnlocked(true);
         setDismissed(true);

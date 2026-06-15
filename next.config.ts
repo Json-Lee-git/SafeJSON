@@ -1,6 +1,35 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  async redirects() {
+    return [
+      {
+        source: "/diff",
+        destination: "/json-diff",
+        permanent: true,
+      },
+      {
+        source: "/jwt",
+        destination: "/jwt-decoder",
+        permanent: true,
+      },
+      {
+        source: "/schema",
+        destination: "/json-schema-validator",
+        permanent: true,
+      },
+      {
+        source: "/jsonpath",
+        destination: "/jsonpath-query",
+        permanent: true,
+      },
+      {
+        source: "/json-schema",
+        destination: "/json-schema-validator",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

@@ -30,7 +30,7 @@ export default function VsJwtIoPage() {
         </div>
         <p className="text-sm text-zinc-500 mb-4">jwt.io is a great learning and debugging tool. But if you are working with production authentication tokens or security-sensitive JWTs, a client-side decoder like SafeJSON ensures your tokens never leave your browser.</p>
         <RelatedComparisons current="/vs/jwt-io" />
-        <div className="text-center mt-8"><Link href="/jwt" className="inline-flex px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl transition-colors text-sm">Try SafeJSON JWT Decoder</Link></div>
+        <div className="text-center mt-8"><Link href="/jwt-decoder" className="inline-flex px-6 py-3 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl transition-colors text-sm">Try SafeJSON JWT Decoder</Link></div>
       </main>
       <Footer />
     </div>

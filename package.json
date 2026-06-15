@@ -9,6 +9,7 @@
     "lint": "eslint",
     "growth:check": "node scripts/growth-check.mjs",
     "growth:playwright": "node scripts/production-playwright-check.mjs",
+    "privacy:sentinel": "node scripts/privacy-sentinel-check.mjs",
     "indexnow": "node scripts/submit-indexnow.mjs"
   },
   "dependencies": {

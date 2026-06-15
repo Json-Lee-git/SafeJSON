@@ -50,8 +50,8 @@ export default function JsonBeautifierPage() {
           <Link href="/" className="text-lg font-bold tracking-tight"><span className="text-emerald-400">{`{`}</span>SafeJSON<span className="text-emerald-400">{`}`}</span></Link>
           <nav className="flex items-center gap-1">
             <Link href="/" className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded transition-colors">Formatter</Link>
-            <Link href="/diff" className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded transition-colors">Diff</Link>
-            <Link href="/jwt" className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded transition-colors">JWT</Link>
+            <Link href="/json-diff" className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded transition-colors">Diff</Link>
+            <Link href="/jwt-decoder" className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded transition-colors">JWT</Link>
             <Link href="/json-viewer" className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded transition-colors">Viewer</Link>
             <span className="text-xs px-2 py-1 rounded bg-emerald-400/10 text-emerald-400 font-medium">Beautifier</span>
           </nav>

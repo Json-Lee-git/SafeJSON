@@ -7,10 +7,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     { url: siteUrl, lastModified, changeFrequency: "weekly", priority: 1 },
-    { url: `${siteUrl}/diff`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/jwt`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/jsonpath`, lastModified, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${siteUrl}/schema`, lastModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${siteUrl}/json-diff`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/jwt-decoder`, lastModified, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${siteUrl}/jsonpath-query`, lastModified, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${siteUrl}/json-schema-validator`, lastModified, changeFrequency: "monthly", priority: 0.7 },
     { url: `${siteUrl}/pricing`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${siteUrl}/answers`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/client-side-json-formatter`, lastModified, changeFrequency: "monthly", priority: 0.85 },
@@ -32,5 +32,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/vs/jwt-io`, lastModified, changeFrequency: "monthly", priority: 0.65 },
     { url: `${siteUrl}/vs/jsoncrack`, lastModified, changeFrequency: "monthly", priority: 0.65 },
     { url: `${siteUrl}/privacy`, lastModified, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${siteUrl}/privacy/verify-local-processing`, lastModified, changeFrequency: "yearly", priority: 0.7 },
   ];
 }

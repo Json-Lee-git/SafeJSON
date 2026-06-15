@@ -1,2 +1,3 @@
-import { redirect } from "next/navigation";
-export default function JsonPathQueryPage() { redirect("/jsonpath"); }
+import JsonPathPage from "../jsonpath/page";
+
+export default JsonPathPage;

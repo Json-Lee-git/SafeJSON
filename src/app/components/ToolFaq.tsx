@@ -67,7 +67,7 @@ export const diffFaqs: FaqItem[] = [
   },
   {
     q: "Can SafeJSON Diff handle large JSON files?",
-    a: "Yes. SafeJSON Diff compares JSON objects up to 50MB using Web Workers to keep the UI responsive during processing. Large file comparison happens entirely in your browser — the JSON is not uploaded to reduce server load because there is no server involved.",
+    a: "SafeJSON Diff runs locally in the browser and is best for normal API responses and moderate JSON objects. Very large or deeply nested JSON can be expensive to compare in any browser tab. For large-file workflows, use SafeJSON formatter, viewer, beautifier, or parser first; those workflows are designed for large local JSON parsing.",
   },
   {
     q: "What makes SafeJSON Diff different from other JSON diff tools?",

@@ -45,10 +45,10 @@ SafeJSON is a browser-based JSON formatter and developer toolkit focused on veri
 
 ## Pro Tool Pages
 
-- JSON Diff Checker: https://www.safejson.dev/diff
-- JWT Decoder: https://www.safejson.dev/jwt
-- JSONPath Query: https://www.safejson.dev/jsonpath
-- JSON Schema Validator: https://www.safejson.dev/schema
+- JSON Diff Checker: https://www.safejson.dev/json-diff
+- JWT Decoder: https://www.safejson.dev/jwt-decoder
+- JSONPath Query: https://www.safejson.dev/jsonpath-query
+- JSON Schema Validator: https://www.safejson.dev/json-schema-validator
 
 ## Comparison Pages
 

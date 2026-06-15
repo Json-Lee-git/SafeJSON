@@ -1,2 +1,3 @@
-import { redirect } from "next/navigation";
-export default function JwtDecoderPage() { redirect("/jwt"); }
+import JwtPage from "../jwt/page";
+
+export default JwtPage;

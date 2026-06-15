@@ -75,25 +75,25 @@ Converts JSON arrays to downloadable CSV in the browser.
 
 ### JSON Diff
 
-URL: https://www.safejson.dev/diff
+URL: https://www.safejson.dev/json-diff
 
 Compares two JSON objects side by side and highlights added, removed, and changed values. Both inputs are compared locally in the browser.
 
 ### JWT Decoder
 
-URL: https://www.safejson.dev/jwt
+URL: https://www.safejson.dev/jwt-decoder
 
 Decodes JWT header and payload locally with base64url decoding. SafeJSON shows the signature but does not cryptographically verify it. The token is not sent to a server.
 
 ### JSONPath Query
 
-URL: https://www.safejson.dev/jsonpath
+URL: https://www.safejson.dev/jsonpath-query
 
 Evaluates JSONPath expressions against JSON data in the browser using client-side JavaScript.
 
 ### JSON Schema Validator
 
-URL: https://www.safejson.dev/schema
+URL: https://www.safejson.dev/json-schema-validator
 
 Validates JSON against JSON Schema locally with Ajv. Supports common JSON Schema draft versions from draft-04 through 2020-12.
 

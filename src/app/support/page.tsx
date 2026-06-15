@@ -45,7 +45,7 @@ const steps = [
     q: "How do I compare two JSON objects (Diff)?",
     id: "diff",
     steps: [
-      "Go to https://www.safejson.dev/diff.",
+      "Go to https://www.safejson.dev/json-diff.",
       "Paste the old version of your JSON into the left panel (Old).",
       "Paste the new version into the right panel (New).",
       "Click Compare, or press Cmd+Enter.",
@@ -57,7 +57,7 @@ const steps = [
     q: "How do I decode a JWT token?",
     id: "jwt",
     steps: [
-      "Go to https://www.safejson.dev/jwt.",
+      "Go to https://www.safejson.dev/jwt-decoder.",
       "Paste your JWT token into the input field. A JWT token has three parts separated by dots, like: header.payload.signature.",
       "Click Decode.",
       "The decoded header and payload appear in the output panel. Switch between Header and Payload tabs.",
@@ -69,7 +69,7 @@ const steps = [
     q: "How do I query JSON with JSONPath?",
     id: "jsonpath",
     steps: [
-      "Go to https://www.safejson.dev/jsonpath.",
+      "Go to https://www.safejson.dev/jsonpath-query.",
       "Paste your JSON data into the upper panel.",
       "Enter a JSONPath expression in the lower input. For example: $.store.books[*].title returns all book titles.",
       "Click Query or press Enter.",
@@ -80,7 +80,7 @@ const steps = [
     q: "How do I validate JSON against a Schema?",
     id: "schema",
     steps: [
-      "Go to https://www.safejson.dev/schema.",
+      "Go to https://www.safejson.dev/json-schema-validator.",
       "Paste your JSON data into the left panel.",
       "Paste your JSON Schema into the right panel. A JSON Schema defines the expected structure, required fields, and data types.",
       "Click Validate.",

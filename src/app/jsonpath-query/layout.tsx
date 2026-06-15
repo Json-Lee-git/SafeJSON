@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "JSONPath Query - SafeJSON",
     description:
-      "Query JSON data with JSONPath expressions. Client-side evaluation, no data upload.",
+      "Query JSON data with JSONPath expressions. Client-side evaluation with no pasted-content upload.",
     url: "/jsonpath-query",
   },
   alternates: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function JsonPathLayout({
+export default function JsonPathQueryLayout({
   children,
 }: {
   children: React.ReactNode;

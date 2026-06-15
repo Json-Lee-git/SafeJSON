@@ -16,10 +16,10 @@ export default function Footer() {
         </div>
         <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
           <span className="font-medium text-zinc-300">Pro Tools:</span>
-          <Link href="/diff" className={linkClass}>Diff</Link>
-          <Link href="/jwt" className={linkClass}>JWT</Link>
-          <Link href="/jsonpath" className={linkClass}>JSONPath</Link>
-          <Link href="/schema" className={linkClass}>Schema</Link>
+          <Link href="/json-diff" className={linkClass}>Diff</Link>
+          <Link href="/jwt-decoder" className={linkClass}>JWT</Link>
+          <Link href="/jsonpath-query" className={linkClass}>JSONPath</Link>
+          <Link href="/json-schema-validator" className={linkClass}>Schema</Link>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
           <span className="font-medium text-zinc-300">Compare:</span>

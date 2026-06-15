@@ -33,10 +33,11 @@ addCheck("core pages return 200", async () => {
     "/sitemap.xml",
     "/robots.txt",
     "/json-validator",
-    "/diff",
-    "/jwt",
-    "/jsonpath",
-    "/schema",
+    "/json-diff",
+    "/jwt-decoder",
+    "/jsonpath-query",
+    "/json-schema-validator",
+    "/privacy/verify-local-processing",
   ];
 
   for (const path of paths) {
@@ -135,7 +136,15 @@ addCheck("sitemap and robots expose canonical discovery paths", async () => {
 
   assert(sitemap.text.includes("https://www.safejson.dev/pricing"), "sitemap missing pricing");
   assert(sitemap.text.includes("https://www.safejson.dev/answers"), "sitemap missing answers");
-  assert(sitemap.text.includes("https://www.safejson.dev/diff"), "sitemap missing diff");
+  assert(sitemap.text.includes("https://www.safejson.dev/json-diff"), "sitemap missing json-diff");
+  assert(sitemap.text.includes("https://www.safejson.dev/jwt-decoder"), "sitemap missing jwt-decoder");
+  assert(sitemap.text.includes("https://www.safejson.dev/jsonpath-query"), "sitemap missing jsonpath-query");
+  assert(sitemap.text.includes("https://www.safejson.dev/json-schema-validator"), "sitemap missing json-schema-validator");
+  assert(sitemap.text.includes("https://www.safejson.dev/privacy/verify-local-processing"), "sitemap missing local processing verification page");
+  assert(!sitemap.text.includes("https://www.safejson.dev/diff<"), "sitemap should not expose short diff URL");
+  assert(!sitemap.text.includes("https://www.safejson.dev/jwt<"), "sitemap should not expose short jwt URL");
+  assert(!sitemap.text.includes("https://www.safejson.dev/jsonpath<"), "sitemap should not expose short jsonpath URL");
+  assert(!sitemap.text.includes("https://www.safejson.dev/schema<"), "sitemap should not expose short schema URL");
   assert(robots.text.includes("https://www.safejson.dev/sitemap.xml"), "robots missing sitemap");
   assert(
     robots.text.includes("Content-Signal: ai-train=yes, search=yes, ai-retrieval=yes"),
@@ -182,10 +191,10 @@ addCheck("content-security-policy is present", async () => {
 
 addCheck("Pro tool pages have FAQ schema", async () => {
   const paths = [
-    { path: "/diff", expected: "Is SafeJSON Diff safe" },
-    { path: "/jwt", expected: "Is it safe to paste a real JWT token" },
-    { path: "/jsonpath", expected: "Is SafeJSON JSONPath query safe" },
-    { path: "/schema", expected: "Is SafeJSON Schema Validator safe" },
+    { path: "/json-diff", expected: "Is SafeJSON Diff safe" },
+    { path: "/jwt-decoder", expected: "Is it safe to paste a real JWT token" },
+    { path: "/jsonpath-query", expected: "Is SafeJSON JSONPath query safe" },
+    { path: "/json-schema-validator", expected: "Is SafeJSON Schema Validator safe" },
   ];
 
   for (const { path, expected } of paths) {

@@ -135,9 +135,9 @@ export default function SchemaPage() {
             </Link>
             <nav className="flex items-center gap-1">
               <Link href="/" className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded transition-colors">Formatter</Link>
-              <Link href="/diff" className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded transition-colors">Diff</Link>
-              <Link href="/jwt" className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded transition-colors">JWT</Link>
-              <Link href="/jsonpath" className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded transition-colors">JSONPath</Link>
+              <Link href="/json-diff" className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded transition-colors">Diff</Link>
+              <Link href="/jwt-decoder" className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded transition-colors">JWT</Link>
+              <Link href="/jsonpath-query" className="text-xs text-zinc-500 hover:text-zinc-300 px-2 py-1 rounded transition-colors">JSONPath</Link>
               <span className="text-xs px-2 py-1 rounded bg-emerald-400/10 text-emerald-400 font-medium">Schema</span>
             </nav>
           </div>
