@@ -71,6 +71,7 @@ Payment and license delivery handled by Lemon Squeezy.
 
 Auto-detects and formats raw JSON responses on any URL.
 
+- **Extension permissions:** [How the extension works](https://www.safejson.dev/extension/permissions)
 - **Edge Add-ons:** [Live on Microsoft Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/fjknnlcmogdhhnehcillihjhdgencgeh)
 - **Chrome Web Store:** pending review
 

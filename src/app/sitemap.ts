@@ -32,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/vs/jwt-io`, lastModified, changeFrequency: "monthly", priority: 0.65 },
     { url: `${siteUrl}/vs/jsoncrack`, lastModified, changeFrequency: "monthly", priority: 0.65 },
     { url: `${siteUrl}/privacy`, lastModified, changeFrequency: "yearly", priority: 0.3 },
+    { url: `${siteUrl}/extension/permissions`, lastModified, changeFrequency: "monthly", priority: 0.7 },
     { url: `${siteUrl}/privacy/verify-local-processing`, lastModified, changeFrequency: "yearly", priority: 0.7 },
   ];
 }
