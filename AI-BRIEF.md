@@ -146,3 +146,42 @@ paying customers.
 - Don't write copy that sounds like corporate marketing
 - Don't use "zero network requests" or "no tracking"
 - Don't propose features that require a backend server
+
+---
+
+## Output optimization
+
+These constraints are derived from community benchmarks showing structured
+output beats free-form reasoning for DeepSeek V4 code and content tasks.
+
+### Structured output format
+
+Every response must follow this structure:
+
+[ONE LINE — what you did or the answer]
+
+[The actual work: code, content, or detailed answer — in one block]
+
+[ONE LINE — verification: what you checked, whether it passed]
+
+Do not open with "I'll" or "Let me." Open with the result. Do not add
+explanations, alternatives, or planning commentary outside this structure.
+If the task is trivial, skip the verification line.
+
+### Self-check before declaring done
+
+After every code change or content piece, silently verify:
+- Did I read the file before editing it?
+- Does my edit use correct privacy wording?
+- Did I run the relevant check (lint / build / growth:check)?
+
+If you skipped a check, say so. Do not pretend you ran it.
+
+### Verification pairing
+
+Each file edit must be followed by its matching verification:
+- Edit any `src/` file → run `npm run lint && npm run build`
+- Edit any `growth/` or `public/` doc → run `npm run growth:check`
+- Edit `next.config.ts` → run all three
+
+Unless the user explicitly says skip, always run the check.
