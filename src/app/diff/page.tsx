@@ -71,7 +71,7 @@ export default function DiffPage() {
       name: "SafeJSON Pro",
       version: "1.1.0",
       description: "Privacy-first JSON toolkit",
-      author: "SafeJSON Team",
+      author: "JSON-Lee",
       license: "MIT",
       stats: { users: 250, rating: 4.8, downloads: 1200 },
     };

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "JSON Viewer - Explore and Navigate JSON Online | SafeJSON",
   description:
-    "Explore JSON data with a collapsible tree view. Handles 50MB+ JSON locally in your browser with no upload and verifiable zero-request processing.",
+    "Explore JSON data with a collapsible tree view. Handles 50MB+ JSON locally in your browser with no upload and verifiable local processing with no pasted-content upload.",
   openGraph: {
     title: "JSON Viewer - SafeJSON",
     description:
