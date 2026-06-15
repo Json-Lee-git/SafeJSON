@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${siteUrl}/vs/jsonformatter-extension`, lastModified, changeFrequency: "monthly", priority: 0.7 },
     { url: `${siteUrl}/vs/codebeautify`, lastModified, changeFrequency: "monthly", priority: 0.6 },
     { url: `${siteUrl}/support`, lastModified, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${siteUrl}/security/check-json-formatter-upload`, lastModified, changeFrequency: "monthly", priority: 0.75 },
     { url: `${siteUrl}/about`, lastModified, changeFrequency: "yearly", priority: 0.4 },
     { url: `${siteUrl}/json-viewer`, lastModified, changeFrequency: "monthly", priority: 0.8 },
     { url: `${siteUrl}/json-beautifier`, lastModified, changeFrequency: "monthly", priority: 0.8 },
