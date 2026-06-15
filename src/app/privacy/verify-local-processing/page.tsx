@@ -206,6 +206,16 @@ export default function VerifyLocalProcessingPage() {
           </div>
         </section>
 
+        <p className="mt-6 text-sm text-zinc-500 text-center">
+          <Link
+            href="/security/check-json-formatter-upload"
+            className="text-emerald-400 hover:text-emerald-300 underline"
+          >
+            Learn how to check whether any online JSON formatter uploads pasted
+            content
+          </Link>
+        </p>
+
         <section className="mt-10">
           <h2 className="text-xl font-semibold">FAQ</h2>
           <dl className="mt-5 space-y-5">

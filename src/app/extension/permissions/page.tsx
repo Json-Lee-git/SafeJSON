@@ -174,6 +174,14 @@ export default function ExtensionPermissionsPage() {
               How to verify SafeJSON does not upload your JSON
             </Link>
           </p>
+          <p className="text-sm text-zinc-500 mt-3">
+            <Link
+              href="/security/check-json-formatter-upload"
+              className="text-emerald-400 hover:text-emerald-300 underline"
+            >
+              Use the same DevTools approach to check online JSON tools
+            </Link>
+          </p>
         </section>
 
         <section className="mb-12">

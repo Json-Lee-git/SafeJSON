@@ -159,6 +159,7 @@ npm run privacy:sentinel
 - **Indie Hackers:** [SafeJSON on Indie Hackers](https://www.indiehackers.com/product/safejson-2)
 - **Edge Add-ons:** [SafeJSON on Edge Add-ons](https://microsoftedge.microsoft.com/addons/detail/fjknnlcmogdhhnehcillihjhdgencgeh)
 - **YouTube:** [How to Verify Any JSON Formatter Is Safe](https://www.youtube.com/watch?v=Jlks9EU9I3Q)
+- **Security guide:** [How to check if an online JSON formatter uploads your data](https://www.safejson.dev/security/check-json-formatter-upload)
 - **GitHub Discussions:** [Join the discussion](https://github.com/Json-Lee-git/SafeJSON/discussions)
 - **GitHub Issues:** [Report a bug](https://github.com/Json-Lee-git/SafeJSON/issues)
 
