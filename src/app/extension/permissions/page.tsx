@@ -257,7 +257,6 @@ export default function ExtensionPermissionsPage() {
       <footer className="border-t border-zinc-800 py-8 text-center text-xs text-zinc-600">
         <p>
           SafeJSON. No pasted-content upload for core tools.
-          data.
         </p>
       </footer>
     </div>
