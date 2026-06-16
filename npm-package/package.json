@@ -1,7 +1,7 @@
 {
   "name": "safejson-formatter",
   "version": "0.1.0",
-  "description": "Open SafeJSON — the privacy-first JSON formatter that never sees your data — from your terminal.",
+  "description": "Open SafeJSON — a local-first JSON toolkit with no pasted-content upload for core tools — from your terminal.",
   "main": "cli.js",
   "bin": {
     "safejson": "./cli.js"

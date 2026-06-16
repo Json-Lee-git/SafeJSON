@@ -62,7 +62,7 @@ export default function JsonViewerPage() {
 
       <section className="max-w-4xl mx-auto px-4 pt-12 pb-6 text-center">
         <h1 className="text-3xl font-bold tracking-tight mb-3">JSON <span className="text-emerald-400">Viewer</span></h1>
-        <p className="text-sm text-zinc-500 max-w-xl mx-auto">Explore and navigate JSON data with a collapsible tree view. Paste any JSON to see its structure. 100% client-side - your data never leaves your browser.</p>
+        <p className="text-sm text-zinc-500 max-w-xl mx-auto">Explore and navigate JSON data with a collapsible tree view. Paste any JSON to see its structure. Pasted content processed locally. No pasted-content upload.</p>
       </section>
 
       <section className="max-w-6xl mx-auto px-4 pb-8">

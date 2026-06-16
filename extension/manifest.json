@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "SafeJSON — Privacy-first JSON Formatter",
   "version": "0.1.0",
-  "description": "Format JSON responses in your browser. No tracking. No server uploads. Open source.",
+  "description": "Format JSON responses in your browser. No pasted-content tracking. No server uploads. Open source.",
   "permissions": ["storage", "clipboardWrite"],
   "background": {
     "service_worker": "background.js"

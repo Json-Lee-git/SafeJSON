@@ -75,7 +75,7 @@ export default function JsonParserPage() {
 
       <section className="max-w-4xl mx-auto px-4 pt-12 pb-6 text-center">
         <h1 className="text-3xl font-bold tracking-tight mb-3">JSON <span className="text-emerald-400">Parser</span></h1>
-        <p className="text-sm text-zinc-500 max-w-xl mx-auto">Parse JSON and inspect every field with its data type and path. See the full structure of your JSON at a glance. 100% client-side - your data never leaves your browser.</p>
+        <p className="text-sm text-zinc-500 max-w-xl mx-auto">Parse JSON and inspect every field with its data type and path. See the full structure of your JSON at a glance. Pasted content processed locally. No pasted-content upload.</p>
       </section>
 
       <section className="max-w-6xl mx-auto px-4 pb-8">

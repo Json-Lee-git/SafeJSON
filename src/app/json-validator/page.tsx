@@ -36,7 +36,7 @@ export default function JsonValidatorPage() {
 
       <section className="max-w-4xl mx-auto px-4 pt-12 pb-6 text-center">
         <h1 className="text-3xl font-bold tracking-tight mb-3">JSON <span className="text-emerald-400">Validator</span></h1>
-        <p className="text-sm text-zinc-500 max-w-xl mx-auto">Validate JSON with line and column error reporting. Paste JSON to check syntax, find missing commas, and fix malformed data. 100% client-side — your data never leaves your browser.</p>
+        <p className="text-sm text-zinc-500 max-w-xl mx-auto">Validate JSON with line and column error reporting. Paste JSON to check syntax, find missing commas, and fix malformed data. Pasted content processed locally. No pasted-content upload.</p>
       </section>
 
       <section className="max-w-4xl mx-auto px-4 pb-8">
