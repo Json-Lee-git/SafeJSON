@@ -7,12 +7,16 @@ type TrackedAnchorProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   children: ReactNode;
   eventName: string;
   eventParams?: Record<string, string | number | boolean | undefined>;
+  secondaryEventName?: string;
+  secondaryEventParams?: Record<string, string | number | boolean | undefined>;
 };
 
 export default function TrackedAnchor({
   children,
   eventName,
   eventParams,
+  secondaryEventName,
+  secondaryEventParams,
   onClick,
   ...props
 }: TrackedAnchorProps) {
@@ -21,6 +25,9 @@ export default function TrackedAnchor({
       {...props}
       onClick={(event) => {
         trackEvent(eventName, eventParams);
+        if (secondaryEventName) {
+          trackEvent(secondaryEventName, secondaryEventParams ?? eventParams);
+        }
         onClick?.(event);
       }}
     >

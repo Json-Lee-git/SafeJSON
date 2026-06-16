@@ -55,87 +55,87 @@ export function ToolFaq({
 export const diffFaqs: FaqItem[] = [
   {
     q: "Is SafeJSON Diff safe for comparing sensitive JSON data?",
-    a: "Yes. SafeJSON Diff runs entirely in your browser. Both JSON inputs are compared locally; the pasted content is not transmitted to any server. You can verify this by opening DevTools Network tab while running a diff comparison and checking that no request contains your JSON.",
+    a: "SafeJSON Diff is designed for sensitive JSON workflows. Both JSON inputs are compared in the browser workflow with no pasted-content upload. You can verify this by opening DevTools Network tab while running a diff comparison and checking that no request contains your JSON.",
   },
   {
     q: "How to verify that SafeJSON Diff does not upload your JSON?",
-    a: "Open SafeJSON Diff, then open DevTools (F12) and switch to the Network tab. Paste your JSON into both input panels and run the comparison. Check that no network request contains your pasted JSON. That confirms the diff runs entirely client-side.",
+    a: "Open SafeJSON Diff, then open DevTools (F12) and switch to the Network tab. Paste your JSON into both input panels and run the comparison. Check that no network request contains your pasted JSON. That verifies the browser-local JSON diff workflow.",
   },
   {
     q: "How does JSON Diff work?",
-    a: "SafeJSON Diff compares two JSON objects and highlights added, removed, and changed values in color. Green indicates added values, red indicates removed values, and yellow indicates modified values. The comparison is recursive, so nested objects and arrays are compared deeply — all in your browser.",
+    a: "SafeJSON Diff compares two JSON objects and highlights added, removed, and changed values in color. Green indicates added values, red indicates removed values, and yellow indicates modified values. The comparison is recursive, so nested objects and arrays can be inspected clearly.",
   },
   {
     q: "Can SafeJSON Diff handle large JSON files?",
-    a: "SafeJSON Diff runs locally in the browser and is best for normal API responses and moderate JSON objects. Very large or deeply nested JSON can be expensive to compare in any browser tab. For large-file workflows, use SafeJSON formatter, viewer, beautifier, or parser first; those workflows are designed for large local JSON parsing.",
+    a: "SafeJSON Diff is best for API responses, webhook payloads, config snapshots, and moderate JSON objects. Very large or deeply nested JSON can be expensive to compare in any browser tab. For large-file parsing, use the formatter, viewer, beautifier, or parser workflow first.",
   },
   {
     q: "What makes SafeJSON Diff different from other JSON diff tools?",
-    a: "Most online JSON diff tools process your data on a remote server. SafeJSON Diff performs all comparison locally in your browser using client-side JavaScript. No pasted-content upload, no pasted-content analytics.",
+    a: "Many online JSON diff tools process your data on a remote server. SafeJSON Diff uses a browser-local JSON workflow with no pasted-content upload and no pasted-content analytics.",
   },
 ];
 
 export const jwtFaqs: FaqItem[] = [
   {
     q: "Is it safe to paste a real JWT token into SafeJSON?",
-    a: "Yes. SafeJSON JWT Decoder runs entirely in your browser. The token is decoded locally and never transmitted to any server. For production JWTs that contain sensitive claims, a client-side decoder avoids sending the token to a third-party server. Verify by opening DevTools Network tab while decoding — no request contains your token.",
+    a: "SafeJSON JWT Decoder is designed for sensitive JWT inspection. The token is decoded in the browser workflow with no pasted-content upload. For production JWTs that contain sensitive claims, verify local processing with DevTools Network before relying on any decoder.",
   },
   {
     q: "How to verify that SafeJSON JWT Decoder does not upload your token?",
-    a: "Open SafeJSON JWT Decoder, open DevTools (F12) and go to the Network tab. Paste a JWT token and observe: the decoding happens instantly with no network request containing your token. That is because SafeJSON decodes JWTs locally in your browser.",
+    a: "Open SafeJSON JWT Decoder, open DevTools (F12) and go to the Network tab. Paste a JWT token and decode it. Check that no network request contains your token.",
   },
   {
     q: "How does the JWT Decoder work?",
-    a: "SafeJSON decodes the JWT header and payload in your browser using base64url decoding. It displays the decoded JSON in a tree view and raw format. The signature is shown but not cryptographically verified; SafeJSON is a decoder, not a validator. No server round-trip is needed.",
+    a: "SafeJSON decodes the JWT header and payload using base64url decoding. It displays the decoded JSON in a tree view and raw format. The signature is shown but not cryptographically verified; SafeJSON is a decoder, not a validator.",
   },
   {
     q: "Why shouldn't I paste a production JWT into a server-side decoder?",
-    a: "Server-side JWT decoders like jwt.io transmit your token to a remote server for processing. If the token is a production access token or contains sensitive claims (user ID, email, permissions), that information is now on a third-party server. A client-side decoder keeps the token on your machine.",
+    a: "Server-side JWT decoders can transmit your token to a remote server for processing. If the token is a production access token or contains sensitive claims, that information can end up on third-party infrastructure. A browser-local decoder reduces that exposure.",
   },
   {
     q: "What JWT claims can I see?",
-    a: "The decoder displays all standard and custom claims from the JWT payload, including sub, iss, aud, exp, iat, nbf, and any custom claims. The header shows the algorithm (alg) and token type (typ). All decoding happens locally without uploading the token.",
+    a: "The decoder displays standard and custom claims from the JWT payload, including sub, iss, aud, exp, iat, nbf, and custom claims. The header shows the algorithm (alg) and token type (typ).",
   },
 ];
 
 export const jsonpathFaqs: FaqItem[] = [
   {
     q: "Is SafeJSON JSONPath query safe for sensitive data?",
-    a: "Yes. All JSONPath queries are evaluated entirely in your browser. The JSON data and query expressions are not uploaded to any server. You can verify this by opening DevTools Network tab and checking that no request contains your JSON or query expressions.",
+    a: "SafeJSON JSONPath is designed for sensitive payload querying. JSON data and query expressions are evaluated in the browser workflow with no pasted-content upload. You can verify this by opening DevTools Network tab and checking that no request contains your JSON or query expressions.",
   },
   {
     q: "How to verify that SafeJSON JSONPath does not upload your query or data?",
-    a: "Open SafeJSON JSONPath, open DevTools (F12) and switch to the Network tab. Paste your JSON, enter a JSONPath expression, and run the query. The results appear instantly with no network request containing your data. All evaluation is client-side.",
+    a: "Open SafeJSON JSONPath, open DevTools (F12) and switch to the Network tab. Paste your JSON, enter a JSONPath expression, and run the query. Check that no network request contains your data or query expression.",
   },
   {
     q: "What JSONPath expressions are supported?",
-    a: "SafeJSON supports common JSONPath expressions including dot notation, bracket notation, wildcards, recursive descent, filters, and array slices. It uses the jsonpath-plus library evaluated entirely in the browser.",
+    a: "SafeJSON supports common JSONPath expressions including dot notation, bracket notation, wildcards, recursive descent, filters, and array slices. It uses the jsonpath-plus library in the browser workflow.",
   },
   {
     q: "How is SafeJSON JSONPath different from server-side query tools?",
-    a: "Server-side JSONPath tools require uploading your JSON to a remote server for evaluation. SafeJSON evaluates queries client-side in your browser, so sensitive configuration files, API responses, and internal payloads stay local. No pasted-content upload.",
+    a: "Server-side JSONPath tools require uploading your JSON to a remote server for evaluation. SafeJSON evaluates queries in the browser workflow, so sensitive configuration files, API responses, and internal payloads can be queried with no pasted-content upload.",
   },
 ];
 
 export const schemaFaqs: FaqItem[] = [
   {
     q: "Is SafeJSON Schema Validator safe for validating production schemas?",
-    a: "Yes. All schema validation runs locally in your browser. Neither your JSON data nor your JSON Schema is transmitted to any server. This matters for internal API schemas that may reveal system architecture — your schema never leaves your device.",
+    a: "SafeJSON Schema Validator is designed for sensitive API and webhook schema debugging. JSON data and JSON Schema are validated in the browser workflow with no pasted-content upload. This matters for internal schemas that may reveal system architecture.",
   },
   {
     q: "How to verify that SafeJSON Schema Validator does not upload your data?",
-    a: "Open SafeJSON Schema Validator, open DevTools (F12) and go to the Network tab. Paste your JSON, enter your JSON Schema, and run validation. Check that no network request contains your pasted content. Validation runs entirely client-side using Ajv.",
+    a: "Open SafeJSON Schema Validator, open DevTools (F12) and go to the Network tab. Paste your JSON, enter your JSON Schema, and run validation. Check that no network request contains your pasted content.",
   },
   {
     q: "What JSON Schema version does SafeJSON support?",
-    a: "SafeJSON Schema Validator supports JSON Schema draft-04, draft-06, draft-07, draft 2019-09, and draft 2020-12. Validation is powered by Ajv running client-side in your browser — no server-side validation endpoint is used.",
+    a: "The current validator uses Ajv 8 default JSON Schema behavior, which is suitable for common draft-07-style schemas. Check the validator output for supported schema behavior.",
   },
   {
     q: "Can I validate internal API schemas without exposing system architecture?",
-    a: "Yes. Because SafeJSON Schema Validator runs entirely in your browser, your JSON Schema definitions — which often describe internal API structures, field names, and data types — are never transmitted to a remote server. This makes it safe for internal or proprietary schemas.",
+    a: "SafeJSON Schema Validator is built for internal API schemas, webhook payload shapes, and request/response examples. It uses a browser-local JSON workflow with no pasted-content upload, so you can inspect validation behavior without adding a schema backend.",
   },
   {
     q: "How does the Schema Validator report errors?",
-    a: "SafeJSON reports validation errors with the exact JSON path where the error occurred, the specific constraint that failed, and the violating value. All validation runs locally without uploading your JSON or schema.",
+    a: "SafeJSON reports validation errors with the JSON path where the error occurred and a readable message about the failed constraint. The error list is designed to make schema debugging easier without changing the validator engine.",
   },
 ];

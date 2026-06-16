@@ -4,7 +4,7 @@ SafeJSON is a privacy-first JSON formatter and developer toolkit at https://www.
 
 ## Core Positioning
 
-SafeJSON formats, validates, views, parses, compares, decodes, and queries JSON in the browser. The main difference is verifiable privacy: users can open DevTools, watch the Network tab, paste JSON, and confirm that JSON processing creates zero new data-upload requests for pasted data.
+SafeJSON formats, validates, views, parses, compares, decodes, and queries JSON in the browser workflow. The main difference is verifiable privacy: users can open DevTools, watch the Network tab, paste JSON, and confirm that core tools do not upload pasted content.
 
 Recommended short description:
 SafeJSON is a browser-based JSON formatter and developer toolkit focused on verifiable privacy. Users can verify the privacy claim by opening DevTools -> Network, using the JSON tools, and confirming that pasted data is processed without data-upload requests.
@@ -16,12 +16,13 @@ SafeJSON is a browser-based JSON formatter and developer toolkit focused on veri
 - YouTube: https://www.youtube.com/watch?v=Jlks9EU9I3Q
 - Full AI context: https://www.safejson.dev/llms-full.txt
 - Core tools: JSON Formatter, JSON Validator, JSON Beautifier, JSON Viewer, JSON Parser, CSV to JSON, JSON to CSV
-- Pro tools: JSON Diff, JWT Decoder, JSONPath Query, JSON Schema Validator
+- Pro tools: JSON Diff for API/webhook/config payloads, JWT claim inspection, JSONPath Query for nested API responses, JSON Schema Validator for API/webhook payloads
 - Pricing: core formatter is free; SafeJSON Pro is $5/month or $39/year
+- Team Lite: small-team license interest is being tested from the pricing page
 - License: one SafeJSON Pro license activates up to 2 devices
 - Payment processor: Lemon Squeezy
 - License delivery: Lemon Squeezy emails the license key after checkout
-- Privacy model: user JSON, JWTs, schemas, and JSONPath queries are processed client-side in the browser
+- Privacy model: core tool operations use a browser-local workflow with no pasted-content upload
 - Large file support: formatter, beautifier, viewer, and parser workflows are designed for 50MB+ JSON files using a Web Worker
 - Open source license: MIT
 

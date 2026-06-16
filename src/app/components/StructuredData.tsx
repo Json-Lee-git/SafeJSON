@@ -79,7 +79,7 @@ export function ProductSchema() {
         "@type": "Product",
         name: "SafeJSON Pro",
         description:
-          "Privacy-first JSON developer tools including JSON Diff, JWT Decoder, JSONPath Query, Schema Validator, and large file support. All user data is processed client-side.",
+          "SafeJSON Pro includes JSON Diff, JWT Decoder, JSONPath Query, and Schema Validator for sensitive JSON workflows with no pasted-content upload for core tools.",
         brand: {
           "@type": "Brand",
           name: "SafeJSON",
@@ -144,7 +144,7 @@ export function SoftwareAppSchema() {
     applicationCategory: "DeveloperApplication",
     image: "https://www.safejson.dev/favicon.ico",
     description:
-      "Privacy-first JSON formatter that runs 100% in your browser. Pasted JSON is processed locally and is not uploaded during formatting.",
+      "Privacy-first JSON formatter with a browser-local workflow and no pasted-content upload during formatting.",
     operatingSystem: "All",
     offers: {
       "@type": "Offer",
@@ -226,7 +226,7 @@ export function FAQSchema() {
         name: "What is a privacy-first JSON formatter?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "A privacy-first JSON formatter processes data entirely in the user's browser rather than on a remote server. This means the data never leaves the user's device, eliminating the risk of server-side data leaks. SafeJSON is an example - verify by checking the Network tab in DevTools while using it.",
+          text: "A privacy-first JSON formatter should make the processing boundary verifiable. SafeJSON uses a browser-local workflow for core tools and lets users check the Network tab in DevTools for pasted-content upload.",
         },
       },
     ],

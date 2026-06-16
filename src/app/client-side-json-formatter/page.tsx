@@ -100,10 +100,10 @@ export default function ClientSideFormatterPage() {
             a server.
           </p>
           <p className="text-zinc-400 leading-relaxed mb-3">
-            A client-side JSON formatter eliminates this risk at the
-            architecture level. If your JSON never leaves your browser, there is
-            no server to leak from, no database to scrape, and no shareable URL
-            to guess.
+            A client-side JSON formatter reduces this risk at the architecture
+            level. If pasted JSON is processed in the browser workflow with no
+            pasted-content upload, there is no JSON processing endpoint to leak
+            from, no database to scrape, and no shareable URL to guess.
           </p>
         </section>
 

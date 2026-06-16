@@ -284,8 +284,8 @@ export function ProBanner({ tool }: { tool: string }) {
   if (dismissed || isUnlocked) return null;
 
   return (
-    <div className="flex items-center justify-between px-4 py-2.5 bg-emerald-400/5 border border-emerald-400/10 rounded-lg">
-      <div className="flex items-center gap-3">
+    <div className="flex flex-col gap-3 px-4 py-2.5 bg-emerald-400/5 border border-emerald-400/10 rounded-lg sm:flex-row sm:items-center sm:justify-between">
+      <div className="flex min-w-0 items-center gap-3">
         <span className="text-xs font-medium text-emerald-400 bg-emerald-400/10 px-2 py-0.5 rounded-full shrink-0">
           Pro
         </span>
@@ -293,7 +293,7 @@ export function ProBanner({ tool }: { tool: string }) {
           {tool} is a Pro feature. Free for occasional use, unlimited with Pro.
         </span>
       </div>
-      <div className="flex items-center gap-2 shrink-0">
+      <div className="flex flex-wrap items-center gap-2 shrink-0">
         <Link
           href="/pricing"
           onClick={() =>
@@ -357,8 +357,8 @@ export function ProLimitNotice({
         Free {tool} runs used up
       </p>
       <p className="mt-1 text-xs leading-relaxed text-zinc-400">
-        Upgrade to Pro for unlimited Diff, JWT, JSONPath, and Schema tools. All
-        processing still happens locally in your browser.
+        Upgrade to Pro for Diff, JWT, JSONPath, and Schema workflows with no
+        pasted-content upload for core tools.
       </p>
       <div className="mt-3 flex flex-wrap items-center gap-3">
         <Link

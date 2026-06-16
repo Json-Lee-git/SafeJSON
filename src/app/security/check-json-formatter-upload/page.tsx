@@ -24,7 +24,7 @@ const faqs = [
     a: "No. Some tools process JSON entirely in the browser. Others send your data to a remote server. Neither is inherently unsafe — but you should know which one you are using, especially when pasting sensitive data. The DevTools Network check tells you what category a tool falls into.",
   },
   {
-    q: "Is browser-local processing the same as zero network requests?",
+    q: "Is browser-local processing the same as no network activity?",
     a: "No. A website can load analytics, fonts, or page assets while still processing pasted JSON locally. The relevant question is: does the request contain your pasted content? Analytics requests that carry only page metadata are different from a POST that sends your JSON payload to a server.",
   },
   {

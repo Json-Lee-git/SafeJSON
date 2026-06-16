@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "JSON Diff Checker - Compare JSON Online | SafeJSON",
+  title: "JSON Diff for API Responses and Webhooks | SafeJSON",
   description:
-    "Compare two JSON objects side by side with color-coded differences. Client-side JSON diff with no pasted-content upload.",
+    "Use SafeJSON to compare API responses, webhook payloads, and config diffs in a private JSON diff workflow with no pasted-content upload.",
   openGraph: {
-    title: "JSON Diff Checker - SafeJSON",
+    title: "JSON Diff for API and Webhook Payloads - SafeJSON",
     description:
-      "Compare two JSON objects side by side. All comparison happens in your browser.",
+      "Compare API responses, webhook payloads, and config snapshots with no pasted-content upload for core tools.",
     url: "/json-diff",
   },
   alternates: {
