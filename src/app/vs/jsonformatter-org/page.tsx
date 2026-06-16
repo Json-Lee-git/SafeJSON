@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 const rows = [
   ["Feature", "SafeJSON", "jsonformatter.org"],
-  ["Processing", "Client-side. Your data never leaves your browser.", "Server-side. Data is transmitted to remote infrastructure."],
+  ["Processing", "Client-side. No pasted-content upload.", "Server-side. Data is transmitted to remote infrastructure."],
   ["Verifiable privacy", "Yes. Open DevTools -> Network and check that no request contains pasted JSON.", "No. The tool depends on server-side processing."],
   ["Data breach history", "None. No server-side JSON storage pipeline.", "80K+ credentials exposed in November 2025."],
   ["Open source", "Yes. MIT license on GitHub.", "No. Closed source."],

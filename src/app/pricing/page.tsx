@@ -97,7 +97,7 @@ export default function PricingPage() {
           </p>
           <p className="text-sm text-zinc-400 leading-relaxed">
             SafeJSON Pro gives you Diff, JWT, JSONPath, and Schema - all 100%
-            client-side. Your data never leaves your browser. Prove it: open
+            client-side. No pasted-content upload. Prove it: open
             DevTools while using any Pro tool.
           </p>
         </div>
@@ -150,7 +150,7 @@ export default function PricingPage() {
                 "Error detection (line + column)",
                 "Dark mode",
                 "Copy & Download",
-                "100% client-side privacy",
+                "No pasted-content upload",
               ].map((feature) => (
                 <li
                   key={feature}

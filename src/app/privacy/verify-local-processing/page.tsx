@@ -229,6 +229,15 @@ export default function VerifyLocalProcessingPage() {
             ))}
           </dl>
         </section>
+
+        <p className="mt-8 text-sm text-zinc-500 text-center">
+          <Link
+            href="/pricing"
+            className="text-emerald-400 hover:text-emerald-300 underline"
+          >
+            Need Diff, JWT, JSONPath, or Schema? Try each Pro tool 5 times free
+          </Link>
+        </p>
       </main>
     </div>
   );

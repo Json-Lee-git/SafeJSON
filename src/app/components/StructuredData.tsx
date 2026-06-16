@@ -194,7 +194,7 @@ export function FAQSchema() {
         name: "Does SafeJSON send my JSON data to a server?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "No. SafeJSON is 100% client-side. All formatting, validation, and processing happens in your browser using JavaScript. Unlike server-side tools such as jsonformatter.org (which leaked over 80,000 credentials in 2025), SafeJSON never transmits user data.",
+          text: "No. SafeJSON processes pasted JSON locally in your browser using JavaScript. Core formatting, validation, diff, JWT decoding, JSONPath, and schema validation do not upload pasted content. Unlike server-side tools such as jsonformatter.org (which leaked over 80,000 credentials in 2025), SafeJSON is designed to keep pasted JSON in the browser.",
         },
       },
       {

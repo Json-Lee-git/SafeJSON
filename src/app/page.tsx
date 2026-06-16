@@ -266,7 +266,7 @@ export default function Home() {
         <div className="relative">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-400/10 border border-emerald-400/20 text-emerald-400 text-xs font-medium mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            Your data never leaves your browser
+            Pasted content processed locally
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
             <span className="block">The JSON tool</span>

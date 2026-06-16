@@ -267,13 +267,20 @@ export default function SecurityCheckPage() {
               Read extension permissions
             </Link>
           </p>
+          <p className="text-xs text-zinc-600 mt-3">
+            <Link
+              href="/pricing"
+              className="hover:text-emerald-400 transition-colors"
+            >
+              Need Diff, JWT, JSONPath, or Schema? Try each Pro tool 5 times free
+            </Link>
+          </p>
         </div>
       </main>
 
       <footer className="border-t border-zinc-800 py-8 text-center text-xs text-zinc-600">
         <p>
           SafeJSON. No pasted-content upload for core tools.
-          data.
         </p>
       </footer>
     </div>

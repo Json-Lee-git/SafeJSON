@@ -94,7 +94,7 @@ const steps = [
     steps: [
       "Core JSON formatting, validation, and tree view are free forever with no limits.",
       "Pro tools - JSON Diff, JWT Decoder, JSONPath Query, and Schema Validator - are available for $5/month or $39/year.",
-      "Pro tools remain 100% client-side. Your data never leaves your browser even with a Pro subscription.",
+      "Pro tools process pasted JSON locally with no pasted-content upload — even with a Pro subscription.",
       "View pricing: https://www.safejson.dev/pricing.",
     ],
   },
