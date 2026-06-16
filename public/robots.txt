@@ -1,6 +1,4 @@
 User-Agent: *
 Allow: /
 
-Content-Signal: ai-train=yes, search=yes, ai-retrieval=yes
-
 Sitemap: https://www.safejson.dev/sitemap.xml
