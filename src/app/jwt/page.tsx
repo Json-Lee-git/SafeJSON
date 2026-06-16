@@ -188,9 +188,9 @@ export default function JwtPage() {
           JWT <span className="text-emerald-400">Decoder</span>
         </h1>
         <p className="text-sm text-zinc-500 max-w-xl mx-auto">
-          Decode JWT tokens instantly in your browser. Header, payload, and
-          signature are decoded client-side - your token never leaves your
-          device.
+          Inspect JWT headers and payloads locally. Debug auth claims, check
+          exp/iss/aud, and verify token structure without uploading pasted
+          JWT content. Use 5 free runs before upgrading.
         </p>
       </section>
 
@@ -348,8 +348,9 @@ export default function JwtPage() {
             Keep your tokens safe
           </h2>
           <p className="text-sm text-zinc-500 max-w-md mx-auto mb-6">
-            JWT tokens contain sensitive data. SafeJSON Pro ensures your tokens
-            never leave your browser - $5/month, cancel anytime.
+            JWT tokens contain session data and auth claims. SafeJSON Pro decodes
+            them locally with no pasted-content upload — $5/month, cancel
+            anytime.
           </p>
           <div className="flex items-center justify-center gap-3">
             <Link
@@ -365,6 +366,13 @@ export default function JwtPage() {
               Back to Formatter
             </Link>
           </div>
+          <p className="text-xs text-zinc-600 text-center mt-4">
+            <Link href="/privacy/verify-local-processing" className="hover:text-zinc-400 transition-colors">Verify local processing</Link>
+            {" · "}
+            <Link href="/security/check-json-formatter-upload" className="hover:text-zinc-400 transition-colors">Security guide</Link>
+            {" · "}
+            <Link href="/pricing" className="hover:text-zinc-400 transition-colors">Pricing</Link>
+          </p>
         </div>
       </section>
 

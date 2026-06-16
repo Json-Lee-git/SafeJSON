@@ -150,8 +150,10 @@ export default function SchemaPage() {
           JSON Schema <span className="text-emerald-400">Validator</span>
         </h1>
         <p className="text-sm text-zinc-500 max-w-xl mx-auto">
-          Validate JSON data against a JSON Schema. Catch missing fields, wrong
-          types, and invalid patterns - all in your browser.
+          Validate API contracts, webhook payloads, and request/response examples
+          against JSON Schema. Catch missing fields, wrong types, and invalid
+          patterns locally with no pasted-content upload. Use 5 free runs
+          before upgrading.
         </p>
       </section>
 
@@ -239,9 +241,17 @@ export default function SchemaPage() {
       {/* Pro CTA */}
       <section className="max-w-4xl mx-auto px-4 py-12 border-t border-zinc-800/50 text-center">
         <span className="text-xs font-medium text-emerald-400/80 uppercase tracking-wider bg-emerald-400/10 px-3 py-1 rounded-full">Pro Feature</span>
-        <h2 className="text-2xl font-bold mt-4 mb-2">Validate anything</h2>
-        <p className="text-sm text-zinc-500 max-w-md mx-auto mb-6">JSON Schema Validator, JSONPath, Diff, and JWT Decoder - $5/month. All client-side.</p>
+        <h2 className="text-2xl font-bold mt-4 mb-2">Validate API contracts locally</h2>
+        <p className="text-sm text-zinc-500 max-w-md mx-auto mb-6">JSON Schema Validator, JSONPath, Diff, and JWT Decoder — built for
+        sensitive JSON workflows. $5/month. No pasted-content upload.</p>
         <Link href="/pricing" className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl transition-colors text-sm inline-flex">View Pricing</Link>
+        <p className="text-xs text-zinc-600 text-center mt-4">
+          <Link href="/privacy/verify-local-processing" className="hover:text-zinc-400 transition-colors">Verify local processing</Link>
+          {" · "}
+          <Link href="/security/check-json-formatter-upload" className="hover:text-zinc-400 transition-colors">Security guide</Link>
+          {" · "}
+          <Link href="/pricing" className="hover:text-zinc-400 transition-colors">Pricing</Link>
+        </p>
       </section>
 
       <ToolFaq toolName="SafeJSON Schema Validator" toolDescription="SafeJSON Schema Validator validates JSON against JSON Schema locally in your browser. It supports draft-04 through 2020-12. Your JSON and schema never leave your device." faqs={schemaFaqs} />

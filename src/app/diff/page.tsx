@@ -143,8 +143,10 @@ export default function DiffPage() {
           <span className="text-emerald-400">Checker</span>
         </h1>
         <p className="text-sm text-zinc-500 max-w-xl mx-auto">
-          Compare two JSON objects side by side. Added, removed, and changed
-          values are highlighted. All comparison runs locally. No pasted-content upload.
+          Compare API responses, webhook payloads, and config snapshots side by
+          side. Added, removed, and changed values are highlighted. All
+          comparison runs locally. No pasted-content upload. Use 5 free
+          runs before upgrading.
         </p>
       </section>
 
@@ -279,8 +281,9 @@ export default function DiffPage() {
             Unlock all Pro tools
           </h2>
           <p className="text-sm text-zinc-500 max-w-md mx-auto mb-6">
-            JSON Diff, JWT Decoder, JSONPath Query, and Schema Validator -
-            $5/month. All client-side. Cancel anytime.
+            JSON Diff, JWT Decoder, JSONPath Query, and Schema Validator — built
+            for sensitive JSON workflows. $5/month. No pasted-content upload.
+            Cancel anytime.
           </p>
           <div className="flex items-center justify-center gap-3">
             <Link
@@ -296,6 +299,13 @@ export default function DiffPage() {
               Back to Formatter
             </Link>
           </div>
+          <p className="text-xs text-zinc-600 text-center mt-4">
+            <Link href="/privacy/verify-local-processing" className="hover:text-zinc-400 transition-colors">Verify local processing</Link>
+            {" · "}
+            <Link href="/security/check-json-formatter-upload" className="hover:text-zinc-400 transition-colors">Security guide</Link>
+            {" · "}
+            <Link href="/pricing" className="hover:text-zinc-400 transition-colors">Pricing</Link>
+          </p>
         </div>
       </section>
 

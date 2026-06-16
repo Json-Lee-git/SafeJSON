@@ -125,8 +125,9 @@ export default function JsonPathPage() {
           JSONPath <span className="text-emerald-400">Query</span>
         </h1>
         <p className="text-sm text-zinc-500 max-w-xl mx-auto">
-          Query JSON data with XPath-like expressions. Extract nested values,
-          filter arrays, and slice data - all in your browser.
+          Query nested API responses, logs, and production-like payloads with
+          XPath-like expressions. Extract values and filter arrays locally
+          with no pasted-content upload. Use 5 free runs before upgrading.
         </p>
       </section>
 
@@ -222,9 +223,17 @@ export default function JsonPathPage() {
       {/* Pro CTA */}
       <section className="max-w-4xl mx-auto px-4 py-12 border-t border-zinc-800/50 text-center">
         <span className="text-xs font-medium text-emerald-400/80 uppercase tracking-wider bg-emerald-400/10 px-3 py-1 rounded-full">Pro Feature</span>
-        <h2 className="text-2xl font-bold mt-4 mb-2">Query anything in your JSON</h2>
-        <p className="text-sm text-zinc-500 max-w-md mx-auto mb-6">JSONPath, Diff, JWT Decoder, and Schema Validator - $5/month. All client-side.</p>
+        <h2 className="text-2xl font-bold mt-4 mb-2">Query nested payloads locally</h2>
+        <p className="text-sm text-zinc-500 max-w-md mx-auto mb-6">JSONPath, Diff, JWT Decoder, and Schema Validator — built for
+        sensitive JSON workflows. $5/month. No pasted-content upload.</p>
         <Link href="/pricing" className="px-5 py-2.5 bg-emerald-500 hover:bg-emerald-400 text-black font-semibold rounded-xl transition-colors text-sm inline-flex">View Pricing</Link>
+        <p className="text-xs text-zinc-600 text-center mt-4">
+          <Link href="/privacy/verify-local-processing" className="hover:text-zinc-400 transition-colors">Verify local processing</Link>
+          {" · "}
+          <Link href="/security/check-json-formatter-upload" className="hover:text-zinc-400 transition-colors">Security guide</Link>
+          {" · "}
+          <Link href="/pricing" className="hover:text-zinc-400 transition-colors">Pricing</Link>
+        </p>
       </section>
 
       <ToolFaq toolName="SafeJSON JSONPath Query" toolDescription="SafeJSON JSONPath evaluates XPath-like queries against JSON data entirely in your browser. Query expressions and JSON data are not uploaded." faqs={jsonpathFaqs} />
