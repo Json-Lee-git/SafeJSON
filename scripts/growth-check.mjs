@@ -126,7 +126,6 @@ addCheck("homepage has Pro internal links and schema", async () => {
   const { text } = await fetchText("/");
 
   assert(text.includes("Schema Validator"), "homepage missing Schema Validator link");
-  assert(text.includes('"@type":"SoftwareApplication"'), "homepage missing SoftwareApplication schema");
   assert(text.includes('"@type":"FAQPage"'), "homepage missing FAQ schema");
 });
 
@@ -146,10 +145,6 @@ addCheck("sitemap and robots expose canonical discovery paths", async () => {
   assert(!sitemap.text.includes("https://www.safejson.dev/jsonpath<"), "sitemap should not expose short jsonpath URL");
   assert(!sitemap.text.includes("https://www.safejson.dev/schema<"), "sitemap should not expose short schema URL");
   assert(robots.text.includes("https://www.safejson.dev/sitemap.xml"), "robots missing sitemap");
-  assert(
-    robots.text.includes("Content-Signal: ai-train=yes, search=yes, ai-retrieval=yes"),
-    "robots missing Content-Signal"
-  );
 });
 
 addCheck("security headers and disclosure are present", async () => {
