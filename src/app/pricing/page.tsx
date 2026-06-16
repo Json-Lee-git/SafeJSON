@@ -102,6 +102,38 @@ export default function PricingPage() {
           </p>
         </div>
 
+        <div className="max-w-2xl mx-auto mb-10 text-center">
+          <p className="text-sm text-zinc-300 font-semibold mb-3">
+            Try each Pro tool 5 times before upgrading
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            <Link
+              href="/json-diff"
+              className="text-sm text-emerald-400 hover:text-emerald-300 underline underline-offset-2"
+            >
+              Try JSON Diff free
+            </Link>
+            <Link
+              href="/jwt-decoder"
+              className="text-sm text-emerald-400 hover:text-emerald-300 underline underline-offset-2"
+            >
+              Try JWT Decoder free
+            </Link>
+            <Link
+              href="/jsonpath-query"
+              className="text-sm text-emerald-400 hover:text-emerald-300 underline underline-offset-2"
+            >
+              Try JSONPath Query free
+            </Link>
+            <Link
+              href="/json-schema-validator"
+              className="text-sm text-emerald-400 hover:text-emerald-300 underline underline-offset-2"
+            >
+              Try Schema Validator free
+            </Link>
+          </div>
+        </div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
           <div className="p-8 rounded-2xl border border-zinc-800 bg-zinc-900/30">
             <h2 className="text-lg font-semibold mb-1">Free</h2>
@@ -214,6 +246,32 @@ export default function PricingPage() {
               .
             </p>
           </div>
+        </div>
+
+        <div className="max-w-3xl mx-auto mt-10 text-center">
+          <p className="text-xs text-zinc-500">
+            Before upgrading, you can verify how local processing works:{" "}
+            <Link
+              href="/privacy/verify-local-processing"
+              className="text-emerald-400 hover:text-emerald-300 underline"
+            >
+              verify in DevTools
+            </Link>
+            ,{" "}
+            <Link
+              href="/security/check-json-formatter-upload"
+              className="text-emerald-400 hover:text-emerald-300 underline"
+            >
+              security guide
+            </Link>
+            ,{" "}
+            <Link
+              href="/extension/permissions"
+              className="text-emerald-400 hover:text-emerald-300 underline"
+            >
+              extension permissions
+            </Link>
+          </p>
         </div>
 
         <section className="max-w-3xl mx-auto mt-14">
