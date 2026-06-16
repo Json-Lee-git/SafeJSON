@@ -182,7 +182,7 @@
   toolbar.id = "safejson-toolbar";
   toolbar.innerHTML = `
     <span class="brand"><span>{</span>SafeJSON<span>}</span></span>
-    <span class="badge">No data leaves your browser</span>
+    <span class="badge">Detected JSON formatted locally</span>
     <span class="spacer"></span>
     <button id="sj-toggle" title="Toggle formatted/raw">Raw</button>
     <button id="sj-copy" title="Copy formatted JSON">Copy</button>
@@ -203,7 +203,7 @@
   footer.innerHTML =
     '<p>Formatted by <a href="' +
     jsonUrl +
-    '" target="_blank">SafeJSON</a>. All processing happens in your browser. No JSON upload.</p>';
+    '" target="_blank">SafeJSON</a>. No pasted-content upload.</p>';
   document.body.appendChild(footer);
 
   // State

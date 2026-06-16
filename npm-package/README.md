@@ -23,9 +23,9 @@ curl https://api.example.com/data | safejson
 
 ## Why SafeJSON?
 
-- 100% client-side processing — your data never leaves your browser
+- Browser-local processing for core JSON workflows, with no pasted-content upload
 - No pasted-content upload during formatting (verify via DevTools)
-- No data collection of pasted JSON, no ads
+- No pasted-content analytics for core JSON workflows, no ads
 - Open source (MIT): https://github.com/Json-Lee-git/SafeJSON
 - Free forever for core formatting
 
