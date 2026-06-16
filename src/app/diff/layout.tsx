@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "JSON Diff Checker - SafeJSON",
     description:
-      "Compare two JSON objects side by side. All processing happens in your browser.",
+      "Compare two JSON objects side by side. Core processing runs locally with no pasted-content upload.",
     url: "/json-diff",
   },
   alternates: {

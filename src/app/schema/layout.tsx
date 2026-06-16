@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "JSON Schema Validator - SafeJSON",
     description:
-      "Validate JSON against JSON Schema. All processing happens in your browser.",
+      "Validate JSON against JSON Schema. All validation runs locally with no pasted-content upload.",
     url: "/json-schema-validator",
   },
   alternates: {

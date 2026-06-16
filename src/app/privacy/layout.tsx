@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy - SafeJSON",
   description:
-    "SafeJSON does not collect, store, or transmit any user data. All processing happens in your browser.",
+    "SafeJSON explains browser-local processing for core JSON tools, no pasted-content upload, and DevTools-verifiable privacy.",
   alternates: {
     canonical: "/privacy",
   },

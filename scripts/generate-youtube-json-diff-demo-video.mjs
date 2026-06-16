@@ -29,7 +29,7 @@ const rightSmall = {
 
 const leftLarge = {
   batch: "api-log-export",
-  size: "50MB+",
+  size: "production-like payload sample",
   generatedAt: "2026-06-14T00:00:00Z",
   services: Array.from({ length: 12 }, (_, index) => ({
     id: `service-${index + 1}`,
@@ -133,7 +133,7 @@ const scenes = [
     id: "large-files",
     duration: 15,
     type: "page",
-    title: "Large JSON Files",
+    title: "Comparing API Response Payloads",
     body:
       "Designed for local JSON diff workflows. No upload means no file size limit from server bandwidth.",
     voice:
@@ -184,8 +184,8 @@ const scenes = [
     type: "card",
     title: "SafeJSON",
     subtitle: "github.com/Json-Lee-git/SafeJSON",
-    body: "The JSON tool that never sees your data.",
-    voice: "SafeJSON. The JSON tool that never sees your data.",
+    body: "Verifiable local JSON tools with no pasted-content upload.",
+    voice: "SafeJSON. Verifiable local JSON tools with no pasted-content upload.",
   },
 ];
 

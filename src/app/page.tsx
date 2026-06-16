@@ -271,7 +271,7 @@ export default function Home() {
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
             <span className="block">The JSON tool</span>
             <span className="text-emerald-400">
-              that never sees your data.
+              with no pasted-content upload.
             </span>
             <span className="block text-white">
               Prove it yourself.

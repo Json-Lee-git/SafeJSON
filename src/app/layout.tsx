@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     "client-side JSON formatter",
   ],
   openGraph: {
-    title: "SafeJSON - The JSON tool that never sees your data",
+    title: "SafeJSON - Verifiable JSON Tools with No Pasted-Content Upload",
     description:
       "Format, validate, and debug JSON entirely in your browser. Prove it yourself with DevTools Network.",
     type: "website",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "SafeJSON - The JSON tool that never sees your data",
+    title: "SafeJSON - Verifiable JSON Tools with No Pasted-Content Upload",
     description:
       "Format, validate, and debug JSON entirely in your browser. Prove it yourself with DevTools Network.",
   },

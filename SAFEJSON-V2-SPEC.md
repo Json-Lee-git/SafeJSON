@@ -160,8 +160,7 @@ About | Help | Blog | Privacy | Pricing
 ## 七、首页优化（P2）
 
 ### 7.1 Hero 文案
-当前："The JSON tool that never sees your data"
-改为："The JSON tool that never sees your data. Prove it yourself."
+（已于 2026-06-16 废弃，旧 broad privacy slogan 已替换为 pasted-content-scoped 表达）
 
 副标题加："Open DevTools → Network. Zero requests. That's the whole point."
 
