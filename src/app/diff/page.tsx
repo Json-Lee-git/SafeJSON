@@ -144,7 +144,7 @@ export default function DiffPage() {
         </h1>
         <p className="text-sm text-zinc-500 max-w-xl mx-auto">
           Compare two JSON objects side by side. Added, removed, and changed
-          values are highlighted. All processing happens in your browser.
+          values are highlighted. All comparison runs locally. No pasted-content upload.
         </p>
       </section>
 
@@ -303,7 +303,7 @@ export default function DiffPage() {
       {/* Footer */}
       <footer className="border-t border-zinc-800 py-8 text-center text-xs text-zinc-600">
         <p>
-          SafeJSON. All processing happens in your browser. We never see your
+          SafeJSON. No pasted-content upload for core tools.
           data.
         </p>
       </footer>

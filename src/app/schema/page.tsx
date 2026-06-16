@@ -247,7 +247,7 @@ export default function SchemaPage() {
       <ToolFaq toolName="SafeJSON Schema Validator" toolDescription="SafeJSON Schema Validator validates JSON against JSON Schema locally in your browser. It supports draft-04 through 2020-12. Your JSON and schema never leave your device." faqs={schemaFaqs} />
       {/* Footer */}
       <footer className="border-t border-zinc-800 py-8 text-center text-xs text-zinc-600">
-        <p>SafeJSON. All processing happens in your browser. We never see your data.</p>
+        <p>SafeJSON. No pasted-content upload for core tools.</p>
       </footer>
     </div>
   );

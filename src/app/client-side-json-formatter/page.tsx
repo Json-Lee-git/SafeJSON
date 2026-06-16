@@ -224,7 +224,7 @@ export default function ClientSideFormatterPage() {
 
       <footer className="border-t border-zinc-800 py-8 text-center text-xs text-zinc-600">
         <p>
-          SafeJSON. All processing happens in your browser. We never see your
+          SafeJSON. No pasted-content upload for core tools.
           data.
         </p>
       </footer>

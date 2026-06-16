@@ -39,7 +39,7 @@ export default function Footer() {
           <Link href="https://www.producthunt.com/products/safejson-privacy" className={linkClass}>Product Hunt</Link>
         </div>
       </div>
-      <p className="mt-4">SafeJSON. All processing happens in your browser. We never see your data.</p>
+      <p className="mt-4">SafeJSON. No pasted-content upload for core tools.</p>
     </footer>
   );
 }

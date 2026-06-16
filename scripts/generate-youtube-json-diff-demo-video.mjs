@@ -135,9 +135,9 @@ const scenes = [
     type: "page",
     title: "Large JSON Files",
     body:
-      "Handles 50MB+ JSON files using Web Workers. No upload means no file size limit from server bandwidth.",
+      "Designed for local JSON diff workflows. No upload means no file size limit from server bandwidth.",
     voice:
-      "Handles fifty megabyte plus JSON files using Web Workers. No upload means no file size limit from server bandwidth.",
+      "Designed for local JSON diff workflows. No upload means no file size limit from server bandwidth.",
     action: async (page) => {
       await prepareDiffPage(page);
       await fillDiff(page, leftLarge, rightLarge);

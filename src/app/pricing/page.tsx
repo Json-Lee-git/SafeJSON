@@ -341,7 +341,7 @@ export default function PricingPage() {
 
         <div className="mt-16 text-center">
           <p className="text-xs text-zinc-600 max-w-md mx-auto leading-relaxed">
-            All tools run entirely in your browser. We never see your data.
+            Core tool processing runs in your browser. No pasted-content upload.
             Payment is handled securely by Lemon Squeezy - we never see your
             payment details either.
           </p>

@@ -25,8 +25,8 @@ export const metadata: Metadata = {
 const rows = [
   ["Feature", "SafeJSON", "JSON Formatter Extension (post-sale)"],
   ["Open source", "Yes. MIT license on GitHub.", "Closed after sale."],
-  ["Tracking", "None.", "Injected third-party tracking and ad scripts."],
-  ["Data collection", "None. Local processing.", "User data monetization concerns after ownership change."],
+  ["Tracking", "No pasted-content tracking.", "Injected third-party tracking and ad scripts."],
+  ["Data collection", "No pasted-content analytics.", "User data monetization concerns after ownership change."],
   ["User base at incident", "Newer tool.", "2M+ users affected by adware injection."],
   ["Verifiable privacy", "Yes. Open DevTools -> Network.", "Compromised by injected scripts."],
   ["Web tools", "Formatter, Viewer, Parser, Diff, JWT, JSONPath, Schema.", "Extension-focused viewer."],

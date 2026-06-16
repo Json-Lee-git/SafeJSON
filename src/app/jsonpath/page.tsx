@@ -230,7 +230,7 @@ export default function JsonPathPage() {
       <ToolFaq toolName="SafeJSON JSONPath Query" toolDescription="SafeJSON JSONPath evaluates XPath-like queries against JSON data entirely in your browser. Query expressions and JSON data are not uploaded." faqs={jsonpathFaqs} />
       {/* Footer */}
       <footer className="border-t border-zinc-800 py-8 text-center text-xs text-zinc-600">
-        <p>SafeJSON. All processing happens in your browser. We never see your data.</p>
+        <p>SafeJSON. No pasted-content upload for core tools.</p>
       </footer>
     </div>
   );
