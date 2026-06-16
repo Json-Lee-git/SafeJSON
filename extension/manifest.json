@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "SafeJSON — Privacy-first JSON Formatter",
+  "name": "SafeJSON — Local JSON Formatter",
   "version": "0.1.0",
-  "description": "Format JSON responses in your browser. No pasted-content tracking. No server uploads. Open source.",
+  "description": "Format raw JSON pages in your browser with no page JSON upload.",
   "permissions": ["storage", "clipboardWrite"],
   "background": {
     "service_worker": "background.js"
