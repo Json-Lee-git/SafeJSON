@@ -20,15 +20,15 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "Does the extension upload JSON content?",
-    a: "No. All formatting happens locally in your browser. The extension detects raw JSON responses on the page and formats them using client-side JavaScript. No page content or pasted JSON is uploaded to any server. You can verify this by opening DevTools Network tab while the extension formats a JSON response.",
+    a: "No page JSON is sent through URL parameters. The extension detects raw JSON responses on the page and formats them using browser JavaScript. You can verify this by opening DevTools Network tab while the extension formats a JSON response.",
   },
   {
     q: "Why does the extension need content script / host access?",
-    a: "The host permission allows the extension to detect raw JSON responses on any URL you visit. When it finds JSON, it formats it for readability — entirely in your browser. The extension does not store, transmit, or collect page content. It only reads the current page to check whether the response is JSON.",
+    a: "The host permission allows the extension to detect raw JSON responses on any URL you visit. When it finds JSON, it formats it for readability in the current page. The extension does not send page JSON through URL parameters. It only reads the current page to check whether the response is JSON.",
   },
   {
     q: "How can I verify the extension behavior?",
-    a: "Open DevTools (F12) and go to the Network tab. Visit any URL that returns raw JSON. The extension formats it — and no network request contains your page content or the JSON data. For a stronger test, switch the Network tab to Offline mode before loading the page. The extension still works because all processing is local.",
+    a: "Open DevTools (F12) and go to the Network tab. Visit any URL that returns raw JSON. The extension formats it and does not open SafeJSON with page JSON in the URL. For a stronger test, switch the Network tab to Offline mode before loading the page.",
   },
 ];
 
@@ -65,8 +65,9 @@ export default function ExtensionPermissionsPage() {
         </h1>
         <p className="text-lg text-zinc-400 mb-12">
           The SafeJSON browser extension auto-detects and formats raw JSON
-          responses on any URL. All formatting is local — no pasted content is
-          uploaded. The source code is open and auditable on GitHub.
+          responses on any URL. It formats the response in the current page and
+          does not send page JSON through URL parameters. The source code is
+          open and auditable on GitHub.
         </p>
 
         <section className="mb-12">
@@ -78,13 +79,14 @@ export default function ExtensionPermissionsPage() {
               When you open a URL that returns raw JSON, most browsers show a
               wall of unformatted text. The SafeJSON extension detects JSON
               responses and renders them with syntax highlighting, collapsible
-              tree view, and copy-to-clipboard — all in your browser.
+              tree view, and copy-to-clipboard in the current page.
             </p>
             <p>
-              The extension does not send the JSON to any server. It reads the
-              page content, formats it locally using client-side JavaScript,
-              and replaces the raw text display. When you click the extension
-              icon, it opens the full SafeJSON toolkit in a new tab.
+              The extension does not send page JSON through URL parameters. It
+              reads the page content, formats it with browser JavaScript, and
+              replaces the raw text display. When you click the extension icon,
+              it opens the full SafeJSON toolkit in a new tab without a payload
+              query string.
             </p>
           </div>
         </section>
@@ -101,8 +103,7 @@ export default function ExtensionPermissionsPage() {
               <p className="text-sm text-zinc-500 leading-relaxed">
                 Used only to save local preferences: theme (dark/light mode),
                 tree view collapse state, and Pro license activation status.
-                No data is synced or transmitted. Everything stays in your
-                browser.
+                No JSON content is synced through this permission.
               </p>
             </div>
             <div>
@@ -121,8 +122,8 @@ export default function ExtensionPermissionsPage() {
               </h3>
               <p className="text-sm text-zinc-500 leading-relaxed">
                 The extension reads the current page only to detect and format
-                JSON responses. No page content is stored, transmitted to any
-                server, or collected for analytics. The host permission scope
+                JSON responses. No page content is stored, sent through URL
+                parameters, or collected for analytics. The host permission scope
                 is broad so the extension can format JSON on any URL you visit,
                 but it only activates on pages that return JSON content.
               </p>
@@ -157,8 +158,8 @@ export default function ExtensionPermissionsPage() {
             <li>Open any URL that returns raw JSON</li>
             <li>Open DevTools (F12) → Network tab</li>
             <li>
-              The extension formats the JSON in your browser — check that no
-              new network request contains the page content or JSON data
+              The extension formats the JSON in the current page — check that
+              it does not open SafeJSON with JSON in the URL
             </li>
             <li>
               For a stronger test, switch the Network tab to Offline mode

@@ -17,7 +17,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "SafeJSON - JSON Formatter You Can Verify",
   description:
-    "Format, validate, and debug JSON entirely in your browser. Open DevTools -> Network and verify pasted JSON is not uploaded.",
+    "Format, validate, and debug pasted JSON in browser-local workflows. Open DevTools -> Network and verify pasted JSON is not uploaded during core tool use.",
   keywords: [
     "JSON formatter",
     "JSON validator",
@@ -26,12 +26,12 @@ export const metadata: Metadata = {
     "format JSON online",
     "JSON parser",
     "privacy",
-    "client-side JSON formatter",
+    "browser-local JSON formatter",
   ],
   openGraph: {
     title: "SafeJSON - Verifiable JSON Tools with No Pasted-Content Upload",
     description:
-      "Format, validate, and debug JSON entirely in your browser. Prove it yourself with DevTools Network.",
+      "Format, validate, and debug pasted JSON in browser-local workflows. Verify the pasted-content boundary with DevTools Network.",
     type: "website",
     url: "/",
   },
@@ -39,7 +39,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "SafeJSON - Verifiable JSON Tools with No Pasted-Content Upload",
     description:
-      "Format, validate, and debug JSON entirely in your browser. Prove it yourself with DevTools Network.",
+      "Format, validate, and debug pasted JSON in browser-local workflows. Verify the pasted-content boundary with DevTools Network.",
   },
   metadataBase: new URL("https://www.safejson.dev"),
   alternates: {

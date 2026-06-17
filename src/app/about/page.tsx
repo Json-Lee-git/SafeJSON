@@ -2,13 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "About SafeJSON - Privacy-first JSON Tools",
+  title: "About SafeJSON - Verifiable Browser-Local JSON Tools",
   description:
-    "SafeJSON is an independent, privacy-first JSON toolkit. Learn why every feature runs in your browser and how to verify pasted content is not uploaded.",
+    "SafeJSON is an independent JSON toolkit built around verifiable browser-local workflows. Learn how to verify pasted content is not uploaded during core tool use.",
   openGraph: {
     title: "About SafeJSON",
     description:
-      "SafeJSON is a privacy-first JSON toolkit that processes developer data in the browser.",
+      "SafeJSON is a browser-based JSON toolkit with verifiable browser-local workflows.",
     url: "/about",
   },
   alternates: {
@@ -29,7 +29,7 @@ export default function AboutPage() {
             url: "https://www.safejson.dev/about",
             sameAs: ["https://github.com/Json-lee-gitle", "https://dev.to/_6a9b7b682ef6dfb20e506"],
             knowsAbout: ["JSON", "Web Security", "Privacy", "Developer Tools", "Client-Side Processing"],
-            description: "Solo developer building privacy-first developer tools. Creator of SafeJSON.",
+            description: "Solo developer building verifiable browser-local developer tools. Creator of SafeJSON.",
           }).replace(/</g, "\\u003c"),
         }}
       />
@@ -57,11 +57,11 @@ export default function AboutPage() {
             making a security decision - whether you realize it or not.
           </p>
           <p className="text-zinc-400 leading-relaxed">
-            We believe the safest tools are the ones that never see your data in
-            the first place. Every SafeJSON feature runs entirely in your
-            browser. No SafeJSON server processes your JSON.
-            This is verifiable: open DevTools -&gt; Network tab while using SafeJSON
-            and check that no request contains your pasted content.
+            We believe sensitive developer tools should make their processing
+            boundary verifiable. SafeJSON core workflows run in the browser and
+            are designed so pasted content is not intentionally uploaded.
+            This is verifiable: open DevTools -&gt; Network tab while using
+            SafeJSON and check that no request contains your pasted content.
           </p>
         </section>
 
@@ -85,8 +85,8 @@ export default function AboutPage() {
             location data.
           </p>
           <p className="text-zinc-400 leading-relaxed">
-            SafeJSON was built as a direct response: if all processing happens
-            in the browser, there is nothing for a server to leak.
+            SafeJSON was built as a direct response: keep core JSON workflows
+            browser-local and make the pasted-content boundary easy to verify.
           </p>
         </section>
 
@@ -95,10 +95,11 @@ export default function AboutPage() {
           <h2 className="text-xl font-semibold mb-4">How it works</h2>
           <p className="text-zinc-400 leading-relaxed mb-3">
             SafeJSON is a static web application built with Next.js and Tailwind
-            CSS, deployed on Vercel. There is no backend server processing user
-            data. All JSON formatting, validation, diff comparison, JWT
-            decoding, JSONPath evaluation, and schema validation runs in
-            client-side JavaScript using the browser&apos;s native capabilities.
+            CSS, deployed on Vercel. Core JSON formatting, validation, diff
+            comparison, JWT decoding, JSONPath evaluation, and schema
+            validation run in browser JavaScript for pasted input. Normal site
+            delivery, analytics, billing, and license activation may still use
+            network requests.
           </p>
           <p className="text-zinc-400 leading-relaxed">
             The entire codebase is open source under the MIT license and
@@ -119,7 +120,7 @@ export default function AboutPage() {
           <h2 className="text-xl font-semibold mb-4">Built by an independent developer</h2>
           <p className="text-zinc-400 leading-relaxed mb-3">
             SafeJSON is developed and maintained by a solo developer who builds
-            privacy-first tools. The project is self-funded and independent -
+            verifiable browser-local tools. The project is self-funded and independent -
             no venture capital, no external investors, no corporate parent
             company.
           </p>
@@ -128,7 +129,8 @@ export default function AboutPage() {
             pressure to monetize through data collection, advertising, or
             tracking. The business model is straightforward: core tools are free
             forever, and Pro features are available through a paid subscription
-            that is still 100% client-side.
+            while preserving the no pasted-content upload boundary for core
+            tool inputs.
           </p>
         </section>
 

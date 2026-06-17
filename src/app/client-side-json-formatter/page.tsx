@@ -4,13 +4,13 @@ import { JsonLdScript } from "../components/StructuredData";
 
 export const metadata: Metadata = {
   title:
-    "Client-Side JSON Formatter — Process JSON Locally, No Upload | SafeJSON",
+    "Client-Side JSON Formatter — Verify Local Processing | SafeJSON",
   description:
-    "A client-side JSON formatter processes your data entirely in your browser. No pasted-content upload. Verify with DevTools Network tab. Format, validate, diff, and decode JSON locally.",
+    "A client-side JSON formatter can process pasted JSON in the browser. SafeJSON has no pasted-content upload for core formatting. Verify with DevTools Network tab.",
   openGraph: {
-    title: "Client-Side JSON Formatter — No Upload, Verify in DevTools",
+    title: "Client-Side JSON Formatter — Verify in DevTools",
     description:
-      "Format JSON entirely in your browser. Verify with DevTools Network tab — no request contains your pasted content.",
+      "Format pasted JSON in a browser-local workflow. Verify with DevTools Network tab that no request contains your pasted content.",
     url: "/client-side-json-formatter",
   },
   alternates: {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What is a client-side JSON formatter?",
-    a: "A client-side JSON formatter processes JSON data entirely in your browser using JavaScript. Unlike server-side tools, it does not transmit your pasted JSON to a remote server for formatting. All parsing, validation, and beautification happens locally on your device.",
+    a: "A client-side JSON formatter processes pasted JSON data in browser JavaScript. Unlike server-side tools, it does not transmit pasted JSON to a remote server for formatting.",
   },
   {
     q: "How do I verify a JSON formatter is truly client-side?",
@@ -29,15 +29,15 @@ const faqs = [
   },
   {
     q: "Why should I use a client-side JSON formatter instead of jsonformatter.org?",
-    a: "In November 2025, security researchers discovered that jsonformatter.org — a server-side tool — had leaked over 80,000 user-submitted code snippets including AWS keys, GitHub tokens, and database passwords. A client-side JSON formatter never sends your data to a server, eliminating this category of risk entirely.",
+    a: "In November 2025, security researchers discovered that jsonformatter.org — a server-side tool — had leaked over 80,000 user-submitted code snippets including AWS keys, GitHub tokens, and database passwords. A browser-local formatter avoids the server-side pasted-content processing path behind that category of risk.",
   },
   {
     q: "Does a client-side JSON formatter work offline?",
-    a: "Yes. Because processing happens in your browser, a client-side JSON formatter works even with DevTools in offline mode. This is a strong test: switch to offline mode in the Network tab, then format JSON. If it still works, the tool is truly client-side.",
+    a: "After the page has loaded, browser-local formatting should continue to work with DevTools Offline mode enabled. This is a useful verification test for the formatting workflow.",
   },
   {
     q: "Can a client-side JSON formatter handle large files?",
-    a: "Yes. SafeJSON Formatter and Beautifier are tested with 50MB JSON using a Web Worker to keep the UI responsive during parsing. Because processing is local, there is no file size limit imposed by server upload bandwidth or request timeouts.",
+    a: "SafeJSON Formatter and Beautifier are tested with 50MB JSON using a Web Worker to keep the UI responsive during parsing.",
   },
 ];
 
@@ -73,10 +73,10 @@ export default function ClientSideFormatterPage() {
         </h1>
 
         <p className="text-lg text-zinc-400 leading-relaxed mb-8">
-          A client-side JSON formatter processes your JSON data entirely in your
-          browser. No pasted content is uploaded to a server. You can verify
-          this yourself: open DevTools → Network tab while formatting — no
-          request contains your pasted JSON.
+          A client-side JSON formatter processes pasted JSON data in your
+          browser. SafeJSON core formatting avoids pasted-content upload. You
+          can verify this yourself: open DevTools → Network tab while
+          formatting and check that no request contains your pasted JSON.
         </p>
 
         <section className="mb-12">
@@ -130,8 +130,8 @@ export default function ClientSideFormatterPage() {
             SafeJSON: A Complete Client-Side JSON Toolkit
           </h2>
           <p className="text-zinc-400 leading-relaxed mb-6">
-            SafeJSON is a privacy-first JSON formatter and developer toolkit.
-            Every tool runs entirely in your browser:
+            SafeJSON is a browser-based JSON formatter and developer toolkit
+            with verifiable browser-local workflows:
           </p>
 
           <h3 className="text-lg font-semibold mb-3">Free Tools</h3>
@@ -153,8 +153,9 @@ export default function ClientSideFormatterPage() {
           </ul>
 
           <p className="text-zinc-500 text-sm">
-            All Pro tools are also 100% client-side. Your JSON, JWTs, queries,
-            and schemas are not uploaded.
+            Pro tools keep the same no pasted-content upload boundary for core
+            inputs. Analytics, billing, licensing, and static assets may still
+            use normal network requests.
           </p>
         </section>
 

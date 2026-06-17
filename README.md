@@ -1,9 +1,8 @@
 # SafeJSON — Verifiable Local JSON Toolkit
 
 SafeJSON is a browser-local JSON toolkit for developers who inspect
-sensitive JSON, JWTs, schemas, logs, and API payloads — without uploading
-pasted content. Every tool runs in your browser. You can verify this with
-DevTools.
+sensitive JSON, JWTs, schemas, logs, and API payloads with no pasted-content
+upload during core tool operations. You can verify this with DevTools.
 
 Not just another JSON formatter. A verifiable local JSON toolkit for
 sensitive developer workflows.
@@ -56,8 +55,8 @@ In November 2025, popular JSON formatting sites were found to have leaked
 over 80,000 credentials through server-side processing. Attackers were
 actively harvesting the data within 48 hours of the discovery.
 
-SafeJSON was built so pasted JSON stays in your browser. And you can
-verify that yourself with DevTools.
+SafeJSON was built so core JSON workflows are browser-local and verifiable.
+You can check the pasted-content boundary yourself with DevTools.
 
 ---
 
@@ -78,8 +77,9 @@ parser, and CSV conversion.
 
 **Pro is $5/month or $39/year.** Unlocks JSON Diff, JWT Decoder, JSONPath
 Query, and JSON Schema Validator. Pro tools are built for sensitive JSON
-workflows — diff, decode, query, and validate without uploading pasted
-content. One license activates up to 2 devices. 5 free trials per tool.
+workflows — diff, decode, query, and validate with no pasted-content upload
+for core tool inputs. One license activates up to 2 devices. 5 free trials per
+tool.
 
 Payment and license delivery handled by Lemon Squeezy.
 
@@ -109,8 +109,9 @@ git clone https://github.com/Json-Lee-git/SafeJSON
 ## Large JSON support
 
 Formatter and Beautifier tested with 50MB JSON locally. Viewer and Parser
-support large local workflows. Large JSON is parsed with a Web Worker so
-the UI stays responsive, with no pasted-content upload.
+support large local workflows. Large JSON is parsed with a Web Worker so the
+UI stays responsive in the tested formatter and beautifier workflows, with no
+pasted-content upload.
 
 ---
 

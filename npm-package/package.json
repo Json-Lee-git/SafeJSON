@@ -1,7 +1,7 @@
 {
   "name": "safejson-formatter",
   "version": "0.1.0",
-  "description": "Open SafeJSON — a local-first JSON toolkit with no pasted-content upload for core tools — from your terminal.",
+  "description": "Open SafeJSON — a browser-based JSON toolkit with verifiable browser-local workflows — from your terminal.",
   "main": "cli.js",
   "bin": {
     "safejson": "./cli.js"
@@ -17,7 +17,7 @@
     "safe",
     "json-formatter",
     "json-beautifier",
-    "privacy-first"
+    "verifiable-privacy"
   ],
   "license": "MIT",
   "repository": {

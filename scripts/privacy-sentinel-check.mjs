@@ -1,7 +1,7 @@
 import { chromium } from "playwright";
 
 const origin = process.env.SAFEJSON_ORIGIN || "https://www.safejson.dev";
-const sentinel = "SAFEJSON_TEST_SECRET_AKIA_1234567890_DO_NOT_UPLOAD";
+const sentinel = "SAFEJSON_SENTINEL_SHOULD_NOT_LEAVE_BROWSER_7C";
 
 const canonicalRoutes = [
   ["/diff", "/json-diff"],

@@ -1,13 +1,13 @@
 # SafeJSON
 
-SafeJSON is a privacy-first JSON formatter and developer toolkit at https://www.safejson.dev.
+SafeJSON is a browser-based JSON toolkit with verifiable browser-local workflows for core JSON tasks at https://www.safejson.dev.
 
 ## Core Positioning
 
-SafeJSON formats, validates, views, parses, compares, decodes, and queries JSON in the browser workflow. The main difference is verifiable privacy: users can open DevTools, watch the Network tab, paste JSON, and confirm that core tools do not upload pasted content.
+SafeJSON formats, validates, views, parses, compares, decodes, and queries JSON in browser-local workflows. The main difference is verifiable privacy: users can open DevTools, watch the Network tab, paste JSON, and confirm that core tools do not intentionally upload pasted content.
 
 Recommended short description:
-SafeJSON is a browser-based JSON formatter and developer toolkit focused on verifiable privacy. Users can verify the privacy claim by opening DevTools -> Network, using the JSON tools, and confirming that pasted data is processed without data-upload requests.
+SafeJSON is a browser-based JSON formatter and developer toolkit focused on verifiable browser-local workflows. Users can verify the privacy claim by opening DevTools -> Network, using the JSON tools, and confirming that no request contains pasted JSON, JWTs, schemas, or queries during core tool operations.
 
 ## Product Facts
 
@@ -23,7 +23,7 @@ SafeJSON is a browser-based JSON formatter and developer toolkit focused on veri
 - Payment processor: Lemon Squeezy
 - License delivery: Lemon Squeezy emails the license key after checkout
 - Privacy model: core tool operations use a browser-local workflow with no pasted-content upload
-- Large file support: formatter, beautifier, viewer, and parser workflows are designed for 50MB+ JSON files using a Web Worker
+- Large file support: Formatter and Beautifier are tested with 50MB JSON using a Web Worker; Viewer and Parser are designed for large local workflows
 - Open source license: MIT
 
 ## Key Pages

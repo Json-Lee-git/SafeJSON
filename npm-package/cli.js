@@ -3,7 +3,7 @@
 // safejson-cli — Open SafeJSON from your terminal
 // https://www.safejson.dev
 
-const url = "https://www.safejson.dev";
+const siteUrl = "https://www.safejson.dev";
 
 // Accept optional JSON input via stdin
 let input = "";
@@ -22,31 +22,23 @@ async function openSafeJson(stdinInput) {
   let command;
 
   if (stdinInput.trim()) {
-    // If JSON is piped in, encode it and append to URL
-    const encoded = encodeURIComponent(stdinInput.trim());
-    const fullUrl = `${url}?json=${encoded}`;
+    console.log(
+      "SafeJSON no longer transfers JSON through URLs. Paste your JSON manually to keep the workflow browser-local."
+    );
+  }
 
-    if (platform === "darwin") {
-      command = `open "${fullUrl}"`;
-    } else if (platform === "win32") {
-      command = `start "" "${fullUrl}"`;
-    } else {
-      command = `xdg-open "${fullUrl}"`;
-    }
+  if (platform === "darwin") {
+    command = `open "${siteUrl}"`;
+  } else if (platform === "win32") {
+    command = `start "" "${siteUrl}"`;
   } else {
-    if (platform === "darwin") {
-      command = `open "${url}"`;
-    } else if (platform === "win32") {
-      command = `start "" "${url}"`;
-    } else {
-      command = `xdg-open "${url}"`;
-    }
+    command = `xdg-open "${siteUrl}"`;
   }
 
   exec(command, (err) => {
     if (err) {
       console.error("Failed to open SafeJSON:", err.message);
-      console.log(`Open manually: ${url}`);
+      console.log(`Open manually: ${siteUrl}`);
       process.exit(1);
     }
   });

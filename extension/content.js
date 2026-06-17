@@ -182,11 +182,11 @@
   toolbar.id = "safejson-toolbar";
   toolbar.innerHTML = `
     <span class="brand"><span>{</span>SafeJSON<span>}</span></span>
-    <span class="badge">Detected JSON formatted locally</span>
+    <span id="sj-status" class="badge">Detected JSON formatted locally</span>
     <span class="spacer"></span>
     <button id="sj-toggle" title="Toggle formatted/raw">Raw</button>
     <button id="sj-copy" title="Copy formatted JSON">Copy</button>
-    <button id="sj-open" class="primary" title="Open in full SafeJSON tool">Open in SafeJSON</button>
+    <button id="sj-open" class="primary" title="Copy JSON locally and open SafeJSON">Copy JSON and open SafeJSON</button>
   `;
   document.body.appendChild(toolbar);
 
@@ -209,6 +209,18 @@
   // State
   let isFormatted = true;
   const rawHighlighted = highlightJSON(rawText.trim());
+  const status = document.getElementById("sj-status");
+
+  function setStatus(message, isError) {
+    status.textContent = message;
+    status.style.color = isError ? "#fbbf24" : "var(--accent)";
+    status.style.borderColor = isError
+      ? "rgba(251, 191, 36, 0.25)"
+      : "rgba(52, 211, 153, 0.2)";
+    status.style.background = isError
+      ? "rgba(251, 191, 36, 0.08)"
+      : "rgba(52, 211, 153, 0.08)";
+  }
 
   // Toggle button
   document.getElementById("sj-toggle").addEventListener("click", function () {
@@ -231,12 +243,15 @@
     setTimeout(() => (this.textContent = original), 1500);
   });
 
-  // Open in SafeJSON button
-  document.getElementById("sj-open").addEventListener("click", function () {
-    // Encode the JSON and pass it to SafeJSON via the URL
-    const encoded = encodeURIComponent(rawText.trim());
-    const url = jsonUrl + "?json=" + encoded;
-    window.open(url, "_blank");
+  // Open in SafeJSON button. Do not transfer page JSON through the URL.
+  document.getElementById("sj-open").addEventListener("click", async function () {
+    try {
+      await navigator.clipboard.writeText(rawText.trim());
+      setStatus("Copied locally. Paste into SafeJSON to format.", false);
+    } catch {
+      setStatus("Clipboard blocked. Copy manually, then paste into SafeJSON.", true);
+    }
+    window.open(jsonUrl, "_blank", "noopener");
   });
 
   // Syntax highlighting function

@@ -376,7 +376,7 @@ export default function JwtPage() {
         </div>
       </section>
 
-      <ToolFaq toolName="SafeJSON JWT Decoder" toolDescription="SafeJSON JWT Decoder decodes JWT tokens entirely in your browser; the token is not uploaded. Header, payload, and signature are decoded locally." faqs={jwtFaqs} />
+      <ToolFaq toolName="SafeJSON JWT Decoder" toolDescription="SafeJSON JWT Decoder decodes JWT headers and claims in the browser. Do not paste production secrets unless your policy allows local inspection." faqs={jwtFaqs} />
       {/* Footer */}
       <footer className="border-t border-zinc-800 py-8 text-center text-xs text-zinc-600">
         <p>

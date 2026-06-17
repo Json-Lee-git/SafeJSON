@@ -26,13 +26,13 @@ function getSampleJson() {
   const data = {
     name: "SafeJSON",
     version: "1.0.0",
-    description: "Privacy-first JSON formatter",
+    description: "Verifiable browser-local JSON toolkit",
     features: [
       "Instant formatting",
       "Tree view with collapse",
       "Error detection",
       "Dark mode",
-      "100% client-side",
+      "DevTools verification",
     ],
     author: {
       name: "Dev",
@@ -66,28 +66,6 @@ export default function Home() {
     run: runJsonWorker,
     reset: resetJsonWorker,
   } = useJsonWorker();
-
-  // Load JSON from ?json= URL parameter (sent by Chrome extension)
-  useEffect(() => {
-    const handle = window.setTimeout(() => {
-      const params = new URLSearchParams(window.location.search);
-      const jsonParam = params.get("json");
-      if (jsonParam) {
-        try {
-          const decoded = decodeURIComponent(jsonParam);
-          const data = JSON.parse(decoded);
-          setInput(decoded);
-          setParsed(data);
-          setFormattedText(JSON.stringify(data, null, 2));
-          setError(null);
-        } catch {
-          // Invalid JSON in URL, ignore
-        }
-      }
-    }, 0);
-
-    return () => window.clearTimeout(handle);
-  }, []);
 
   const toggleTheme = useCallback(() => {
     const next = theme === "dark" ? "light" : "dark";
@@ -266,7 +244,7 @@ export default function Home() {
         <div className="relative">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-400/10 border border-emerald-400/20 text-emerald-400 text-xs font-medium mb-6">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
-            Pasted content processed locally
+            Verifiable browser-local workflow
           </div>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight mb-4">
             <span className="block">The JSON tool</span>
@@ -278,21 +256,21 @@ export default function Home() {
             </span>
           </h1>
           <p className="text-lg text-zinc-400 max-w-2xl mx-auto mb-4 text-pretty">
-            <span className="block">Format, validate, and debug JSON. Entirely in your browser.</span>
+            <span className="block">Format, validate, and debug pasted JSON in a browser-local workflow.</span>
             <span>
-              Open DevTools -&gt; Network. You won&apos;t see pasted content uploaded.
+              Open DevTools -&gt; Network. You can verify pasted content is not uploaded during core tool use.
               That&apos;s the whole point.
             </span>
           </p>
           <p className="text-sm font-medium text-zinc-400 max-w-2xl mx-auto mb-4 text-pretty">
-            Tested with 50MB JSON for local formatting. No upload.
+            Formatter and Beautifier are tested with 50MB JSON for local parsing. No pasted-content upload for this workflow.
           </p>
           <p className="text-sm text-zinc-400 max-w-xl mx-auto text-pretty">
             In November 2025, popular online JSON tools were caught leaking over
             80,000 credentials, including AWS keys, GitHub tokens, and bank
-            details. SafeJSON runs 100% client-side.{" "}
+            details. SafeJSON keeps core JSON workflows browser-local and verifiable.{" "}
             <span className="text-zinc-300">
-              Open DevTools -&gt; Network, format once -&gt; no JSON upload.
+              Open DevTools -&gt; Network, format once -&gt; no pasted JSON in request URLs or bodies.
             </span>
           </p>
           <p className="text-xs text-zinc-400 max-w-xl mx-auto mt-3 text-center">
@@ -477,7 +455,7 @@ export default function Home() {
             {
               Icon: ShieldCheck,
               title: "Verify, don't trust",
-              desc: "We don't ask you to trust us. Open DevTools -> Network tab -> paste any JSON. No pasted-content upload request. Formatter, diff, JWT decoder, and JSONPath work the same way.",
+              desc: "We don't ask you to trust us. Open DevTools -> Network tab -> paste any JSON. Core tools avoid pasted-content upload requests for their inputs.",
             },
             {
               Icon: Lightning,
@@ -502,7 +480,7 @@ export default function Home() {
             {
               Icon: Plug,
               title: "Browser Extension",
-              desc: "Auto-detect and format JSON responses on any URL. Available on Edge Add-ons. No pasted-content analytics, no data collection.",
+              desc: "Auto-detect and format JSON responses on any URL. Available on Edge Add-ons. The extension no longer sends page JSON through URL parameters.",
             },
           ].map(({ Icon, title, desc }) => (
             <div
@@ -565,30 +543,30 @@ export default function Home() {
               More than a formatter
             </h2>
             <p className="text-sm text-zinc-400 max-w-md mx-auto">
-              Advanced tools for developers who work with JSON every day. All
-              client-side, all privacy-first.
+              Advanced tools for developers who work with JSON every day. Built
+              around verifiable browser-local workflows.
             </p>
           </div>
           <div className="max-w-2xl mx-auto divide-y divide-zinc-800/50">
             {[
               {
                 title: "JSON Diff",
-                desc: "Compare two JSON objects side by side. Added, removed, and changed values highlighted in color. All comparison runs locally — your JSON is not uploaded.",
+                desc: "Compare API responses, webhook payloads, and config snapshots in a browser-local workflow. No pasted-content upload for diff input.",
                 href: "/json-diff",
               },
               {
                 title: "JWT Decoder",
-                desc: "Decode JWT tokens instantly. Header, payload, and signature decoded in your browser. Your token stays local — safe for production JWTs.",
+                desc: "Decode JWT headers and claims in the browser. Do not paste production secrets unless your policy allows local inspection.",
                 href: "/jwt-decoder",
               },
               {
                 title: "JSONPath",
-                desc: "Query JSON with XPath-like expressions. Extract nested values and filter arrays. All queries run client-side — your data stays in your browser.",
+                desc: "Query nested API responses and logs in a browser-local workflow with XPath-like expressions.",
                 href: "/jsonpath-query",
               },
               {
                 title: "Schema Validator",
-                desc: "Validate JSON against JSON Schema locally. Catch missing fields, wrong types, and malformed payloads. Your API responses and schemas are not uploaded.",
+                desc: "Validate JSON against schemas in the browser. Error paths and messages are generated locally for pasted input.",
                 href: "/json-schema-validator",
               },
             ].map((tool) => (

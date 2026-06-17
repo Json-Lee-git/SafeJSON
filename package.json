@@ -10,6 +10,7 @@
     "growth:check": "node scripts/growth-check.mjs",
     "growth:playwright": "node scripts/production-playwright-check.mjs",
     "privacy:sentinel": "node scripts/privacy-sentinel-check.mjs",
+    "privacy:url-scan": "node scripts/privacy-url-payload-scan.mjs",
     "indexnow": "node scripts/submit-indexnow.mjs"
   },
   "dependencies": {

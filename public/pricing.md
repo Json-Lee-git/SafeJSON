@@ -41,6 +41,7 @@ SafeJSON is testing interest in a small dev team license for teams handling API 
 ## Privacy
 
 - Core tool operations use a browser-local workflow with no pasted-content upload
+- Normal site delivery, analytics, billing, and license checks may still use network requests
 - SafeJSON uses Google Analytics for aggregate product analytics
 - SafeJSON does not send pasted JSON, JWT tokens, schemas, queries, or license keys to analytics
 - Verify: open DevTools Network tab while using any tool

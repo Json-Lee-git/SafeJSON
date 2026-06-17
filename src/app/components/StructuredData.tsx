@@ -38,7 +38,7 @@ export function WebSiteSchema() {
         name: "SafeJSON",
         url: "https://www.safejson.dev",
         description:
-          "Privacy-first JSON formatter and developer tools that process data entirely in the browser.",
+          "Browser-based JSON toolkit with verifiable browser-local workflows for core JSON tasks.",
         inLanguage: "en",
         publisher: {
           "@type": "Organization",
@@ -144,7 +144,7 @@ export function SoftwareAppSchema() {
     applicationCategory: "DeveloperApplication",
     image: "https://www.safejson.dev/favicon.ico",
     description:
-      "Privacy-first JSON formatter with a browser-local workflow and no pasted-content upload during formatting.",
+      "Browser-based JSON toolkit with verifiable browser-local workflows and no intentional pasted-content upload during core formatting.",
     operatingSystem: "All",
     offers: {
       "@type": "Offer",
@@ -153,13 +153,13 @@ export function SoftwareAppSchema() {
     },
     featureList: [
       "Verifiable privacy via DevTools Network tab",
-      "Client-side JSON formatting without pasted-content upload",
+      "Browser-local JSON formatting without pasted-content upload",
       "Large local JSON handling in formatter and beautifier workflows",
       "Web Worker parsing in formatter and beautifier to avoid blocking the main UI thread",
       "Collapsible tree view with syntax highlighting",
       "Error detection with line and column numbers",
       "JSON Diff with color-coded comparison",
-      "JWT decoder that never sends tokens to a server",
+      "JWT header and claim decoding in the browser",
       "JSONPath query evaluator",
       "JSON Schema validator",
       "Dark mode",
@@ -186,7 +186,7 @@ export function FAQSchema() {
         name: "Is SafeJSON safe to use with sensitive data?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "Yes. SafeJSON processes pasted JSON entirely in your browser. The JSON content is not transmitted to a SafeJSON server. You can verify this by opening DevTools -> Network tab while using SafeJSON and checking that no request contains your pasted content.",
+          text: "SafeJSON core tools are designed for browser-local workflows. You can verify this by opening DevTools -> Network tab while using SafeJSON and checking that no request contains your pasted content. Normal site delivery, analytics, billing, and license checks may still use network requests.",
         },
       },
       {
@@ -194,7 +194,7 @@ export function FAQSchema() {
         name: "Does SafeJSON send my JSON data to a server?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "No. SafeJSON processes pasted JSON locally in your browser using JavaScript. Core formatting, validation, diff, JWT decoding, JSONPath, and schema validation do not upload pasted content. Unlike server-side tools such as jsonformatter.org (which leaked over 80,000 credentials in 2025), SafeJSON is designed to keep pasted JSON in the browser.",
+          text: "Core formatting, validation, diff, JWT decoding, JSONPath, and schema validation do not intentionally upload pasted content. Unlike server-side tools such as jsonformatter.org (which leaked over 80,000 credentials in 2025), SafeJSON is designed around verifiable browser-local workflows.",
         },
       },
       {
@@ -202,7 +202,7 @@ export function FAQSchema() {
         name: "How is SafeJSON different from jsonformatter.org?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "SafeJSON processes pasted JSON client-side, so the content is not uploaded to a SafeJSON server. jsonformatter.org processes data on its servers, and in November 2025 security researchers discovered it had leaked over 80,000 user credentials through an unprotected feature. SafeJSON is also open source, ad-free, and does not send pasted JSON to analytics.",
+          text: "SafeJSON core tools use browser-local workflows, so pasted content is not intentionally uploaded for those operations. jsonformatter.org processes data on its servers, and in November 2025 security researchers discovered it had leaked over 80,000 user credentials through an unprotected feature. SafeJSON is also open source, ad-free, and does not send pasted JSON to analytics.",
         },
       },
       {
@@ -223,10 +223,10 @@ export function FAQSchema() {
       },
       {
         "@type": "Question",
-        name: "What is a privacy-first JSON formatter?",
+        name: "What is a verifiable local JSON formatter?",
         acceptedAnswer: {
           "@type": "Answer",
-          text: "A privacy-first JSON formatter should make the processing boundary verifiable. SafeJSON uses a browser-local workflow for core tools and lets users check the Network tab in DevTools for pasted-content upload.",
+          text: "A verifiable local JSON formatter should make the processing boundary testable. SafeJSON uses a browser-local workflow for core tools and lets users check the Network tab in DevTools for pasted-content upload.",
         },
       },
     ],

@@ -4,6 +4,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: "/json-formatter",
+        destination: "/",
+        permanent: true,
+      },
+      {
         source: "/diff",
         destination: "/json-diff",
         permanent: true,

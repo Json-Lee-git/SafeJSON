@@ -96,7 +96,7 @@ const rows = [
 const faqs = [
   {
     q: "Is JSON Crack a SafeJSON competitor?",
-    a: "They are adjacent tools serving different needs. JSON Crack is a visualization tool — it turns JSON into interactive node graphs. SafeJSON is a developer toolkit for formatting, diffing, decoding JWTs, querying JSONPath, and validating schemas, with verifiable client-side privacy. Many developers use both.",
+    a: "They are adjacent tools serving different needs. JSON Crack is a visualization tool — it turns JSON into interactive node graphs. SafeJSON is a developer toolkit for formatting, diffing, decoding JWTs, querying JSONPath, and validating schemas, with verifiable browser-local workflows. Many developers use both.",
   },
   {
     q: "When should I use JSON Crack instead of SafeJSON?",
@@ -104,7 +104,7 @@ const faqs = [
   },
   {
     q: "When should I use SafeJSON instead of JSON Crack?",
-    a: "Use SafeJSON when you need to format large JSON files, compare two JSON objects, decode JWT tokens locally, query JSON with JSONPath, or validate JSON against a schema — all without uploading pasted content. SafeJSON Formatter and Beautifier are tested with 50MB JSON. Use SafeJSON when you need to verify that your data stays in your browser.",
+    a: "Use SafeJSON when you need to format large JSON files, compare two JSON objects, decode JWT headers and claims, query JSON with JSONPath, or validate JSON against a schema with no pasted-content upload for core tool inputs. SafeJSON Formatter and Beautifier are tested with 50MB JSON.",
   },
 ];
 
@@ -181,8 +181,8 @@ export default function VsJsonCrackPage() {
               structure, it focuses on providing a complete toolkit for
               production-like JSON workflows: formatting, diffing, decoding
               JWTs, querying with JSONPath, and validating against schemas —
-              all while keeping pasted content in the browser and verifiable
-              through DevTools.
+              all while keeping the pasted-content boundary verifiable through
+              DevTools.
             </p>
             <p>
               Many developers use both: JSON Crack to explore unfamiliar data

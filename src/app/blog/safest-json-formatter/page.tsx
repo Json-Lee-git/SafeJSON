@@ -79,13 +79,15 @@ export default function BlogPost() {
         {/* TL;DR answer capsule - AI extraction target */}
         <div className="p-5 rounded-xl border border-emerald-400/20 bg-emerald-400/5 mb-10">
           <p className="text-sm text-zinc-300 font-semibold mb-2">
-            The safest JSON formatter in 2026 is one that processes data
-            entirely in your browser.
+            The safest JSON formatter in 2026 is one whose pasted-content
+            boundary you can verify.
           </p>
           <p className="text-sm text-zinc-400 leading-relaxed">
-            Client-side tools like SafeJSON, JSON Buddy, and AllJSONTools never
-            send your data to a server. You can verify this by opening DevTools
-            -&gt; Network tab while using the tool: if no request contains your pasted JSON during formatting, your data stayed local. Server-side tools like
+            Client-side tools like SafeJSON, JSON Buddy, and AllJSONTools keep
+            formatting in the browser workflow. You can verify this by opening
+            DevTools -&gt; Network tab while using the tool: if no request
+            contains your pasted JSON during formatting, the workflow avoided
+            pasted-content upload. Server-side tools like
             jsonformatter.org and codebeautify.org transmit your JSON to remote
             servers and were caught leaking credentials in 2025.
           </p>
@@ -186,7 +188,8 @@ export default function BlogPost() {
 
         <p className="text-zinc-400 leading-relaxed mb-8">
           Each of these tools passes the network tab test: paste JSON into them
-          and DevTools shows no requests containing pasted JSON. Your data stayed local.
+          and DevTools shows no requests containing pasted JSON during
+          formatting.
         </p>
 
         {/* Section 4: Choosing */}
@@ -238,7 +241,7 @@ export default function BlogPost() {
             </Link>
             <Link href="/" className="p-4 rounded-xl border border-zinc-800 hover:border-zinc-700 transition-colors group">
               <p className="text-sm font-medium group-hover:text-emerald-400 transition-colors">Try SafeJSON Formatter</p>
-              <p className="text-xs text-zinc-500 mt-1">Format your first JSON - zero data upload.</p>
+              <p className="text-xs text-zinc-500 mt-1">Format your first JSON with no pasted-content upload.</p>
             </Link>
           </div>
         </div>

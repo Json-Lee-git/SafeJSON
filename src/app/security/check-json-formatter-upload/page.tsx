@@ -33,7 +33,7 @@ const faqs = [
   },
   {
     q: "How can I verify SafeJSON myself?",
-    a: "Open safejson.dev, then open DevTools (F12) and go to the Network tab. Paste any JSON and run the formatter, diff, JWT decoder, JSONPath query, or Schema validator. Confirm that no request contains your pasted content. For a stronger test, switch the Network tab to Offline mode — the tools still work because all processing is local.",
+    a: "Open safejson.dev, then open DevTools (F12) and go to the Network tab. Paste any JSON and run the formatter, diff, JWT decoder, JSONPath query, or Schema validator. Confirm that no request contains your pasted content. For a stronger test, switch the Network tab to Offline mode after the page loads and check the core workflow.",
   },
 ];
 
@@ -206,15 +206,16 @@ export default function SecurityCheckPage() {
           </h2>
           <div className="space-y-3 text-sm text-zinc-400 leading-relaxed">
             <p>
-              SafeJSON processes JSON in your browser. No pasted content is
-              uploaded during formatting, validation, diff comparison, JWT
-              decoding, JSONPath querying, or schema validation.
+              SafeJSON core tools use browser-local workflows. No pasted
+              content is intentionally uploaded during formatting, validation,
+              diff comparison, JWT decoding, JSONPath querying, or schema
+              validation.
             </p>
             <p>
               SafeJSON uses Google Analytics for aggregate product analytics
               — page views and non-sensitive events like checkout clicks.
               Pasted JSON, JWT tokens, schemas, query expressions, formatted
-              output, license keys, and clipboard content are never sent to
+              output, license keys, and clipboard content are not sent to
               analytics.
             </p>
             <p>

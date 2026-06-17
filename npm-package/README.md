@@ -1,8 +1,8 @@
 # safejson-cli
 
-Open [SafeJSON](https://www.safejson.dev) — the privacy-first JSON formatter — from your terminal.
+Open [SafeJSON](https://www.safejson.dev) — a browser-based JSON toolkit with verifiable browser-local workflows — from your terminal.
 
-SafeJSON processes pasted JSON entirely in your browser. Unlike server-side tools such as jsonformatter.org (which leaked 80,000+ credentials in November 2025), SafeJSON does not upload pasted content during formatting.
+SafeJSON core workflows are designed so pasted JSON content is not intentionally uploaded during formatting. You can verify this in DevTools → Network. Opening the website still uses normal network requests for site delivery, analytics, billing, and license checks.
 
 ## Install
 
@@ -21,10 +21,12 @@ cat data.json | safejson
 curl https://api.example.com/data | safejson
 ```
 
+When stdin is provided, the CLI opens SafeJSON without transferring the payload through the URL. Paste the JSON manually into the browser to keep the workflow browser-local.
+
 ## Why SafeJSON?
 
-- Browser-local processing for core JSON workflows, with no pasted-content upload
-- No pasted-content upload during formatting (verify via DevTools)
+- Browser-local processing for core JSON workflows
+- No pasted-content upload during formatting (verify via DevTools → Network)
 - No pasted-content analytics for core JSON workflows, no ads
 - Open source (MIT): https://github.com/Json-Lee-git/SafeJSON
 - Free forever for core formatting
