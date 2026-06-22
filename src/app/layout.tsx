@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
-import LazyGoogleAnalytics from "./components/LazyGoogleAnalytics";
 import { OrganizationSchema, WebSiteSchema } from "./components/StructuredData";
 import "./globals.css";
 
@@ -65,9 +65,18 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="preconnect" href="https://stats.g.doubleclick.net" />
         <link rel="preconnect" href="https://jsonlee.lemonsqueezy.com" />
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18261586928"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'AW-18261586928');`}
+        </Script>
       </head>
       <body className="min-h-full flex flex-col">
-        <LazyGoogleAnalytics gaId="G-18261586928" />
         <OrganizationSchema />
         <WebSiteSchema />
         {children}
