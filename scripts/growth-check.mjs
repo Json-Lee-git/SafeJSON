@@ -151,7 +151,7 @@ addCheck("authority pages have canonical entity facts", async () => {
     "about page is missing canonical GitHub entity URL"
   );
   assert(
-    press.text.includes("mailto:m18575113667_3@163.com"),
+    press.text.includes("mailto:18575113667@163.com"),
     "press page is missing business contact email"
   );
   assert(
