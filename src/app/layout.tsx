@@ -67,7 +67,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://jsonlee.lemonsqueezy.com" />
       </head>
       <body className="min-h-full flex flex-col">
-        <LazyGoogleAnalytics gaId="G-QTRHE1MP9Y" />
+        <LazyGoogleAnalytics gaId="G-18261586928" />
         <OrganizationSchema />
         <WebSiteSchema />
         {children}
