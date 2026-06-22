@@ -31,7 +31,8 @@ export default function Footer() {
           <Link href="/about" className={linkClass}>About</Link>
           <Link href="/press" className={linkClass}>Press</Link>
           <Link href="/support" className={linkClass}>Help</Link>
-          <Link href="/blog/safest-json-formatter" className={linkClass}>Blog</Link>
+          <Link href="/blog" className={linkClass}>Blog</Link>
+          <Link href="/rss.xml" className={linkClass}>RSS</Link>
           <Link href="/privacy" className={linkClass}>Privacy</Link>
           <Link href="/extension/permissions" className={linkClass}>Extension</Link>
           <Link href="/no-upload-json-formatter" className={linkClass}>No-upload formatter</Link>
@@ -42,11 +43,11 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 pt-3 border-t border-zinc-800">
-          <span className="text-zinc-400 text-xs">Business Contact / 业务联系</span>
+          <span className="text-zinc-400 text-xs">Business Contact</span>
           <a href="mailto:18575113667@163.com" className="text-zinc-400 hover:text-zinc-200 transition-colors text-xs underline underline-offset-2 decoration-zinc-600 hover:decoration-zinc-400">
             18575113667@163.com
           </a>
-          <span className="text-zinc-600 text-xs">·</span>
+          <span className="text-zinc-600 text-xs">|</span>
           <a
             href="https://github.com/Json-Lee-git/SafeJSON"
             target="_blank"

@@ -2,44 +2,35 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Footer from "../../components/Footer";
 import { BreadcrumbSchema, JsonLdScript } from "../../components/StructuredData";
+import { absoluteUrl, getBlogArticleSchema, getBlogPost } from "../blog-data";
+
+const post = getBlogPost("is-it-safe-to-paste-json-online");
 
 export const metadata: Metadata = {
-  title: "Is It Safe to Paste JSON Online? What You Need to Know in 2026",
-  description: "Most online JSON tools send data to a server. Learn the 30-second Network tab test and how to choose a client-side JSON formatter.",
-  alternates: { canonical: "/blog/is-it-safe-to-paste-json-online" },
+  title: post.metaTitle,
+  description: post.description,
+  openGraph: {
+    title: post.title,
+    description: post.description,
+    url: post.canonicalPath,
+    type: "article",
+    publishedTime: `${post.publishedAt}T00:00:00.000Z`,
+    modifiedTime: `${post.updatedAt}T00:00:00.000Z`,
+  },
+  alternates: { canonical: post.canonicalPath },
 };
 
 export default function BlogPost() {
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "Is It Safe to Paste JSON Online? What You Need to Know in 2026",
-    description: "Most online JSON tools send data to a server. Learn the 30-second Network tab test and how to choose a client-side JSON formatter.",
-    datePublished: "2026-06-09",
-    dateModified: "2026-06-09",
-    author: {
-      "@type": "Person",
-      name: "JSON-Lee",
-      url: "https://www.safejson.dev/about",
-      sameAs: ["https://github.com/Json-Lee-git/SafeJSON", "https://dev.to/_6a9b7b682ef6dfb20e506"],
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "SafeJSON",
-      url: "https://www.safejson.dev",
-    },
-    mainEntityOfPage: "https://www.safejson.dev/blog/is-it-safe-to-paste-json-online",
-  };
-
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
       <BreadcrumbSchema
         items={[
-          { name: "SafeJSON", url: "https://www.safejson.dev" },
-          { name: "Is It Safe to Paste JSON Online", url: "https://www.safejson.dev/blog/is-it-safe-to-paste-json-online" },
+          { name: "SafeJSON", url: absoluteUrl("/") },
+          { name: "Blog", url: absoluteUrl("/blog") },
+          { name: "Is It Safe to Paste JSON Online", url: absoluteUrl(post.canonicalPath) },
         ]}
       />
-      <JsonLdScript data={articleSchema} />
+      <JsonLdScript data={getBlogArticleSchema(post)} />
       <header className="border-b border-zinc-800">
         <div className="max-w-3xl mx-auto px-4 h-14 flex items-center">
           <Link href="/" className="text-lg font-bold tracking-tight"><span className="text-emerald-400">{`{`}</span>SafeJSON<span className="text-emerald-400">{`}`}</span></Link>
@@ -57,14 +48,14 @@ export default function BlogPost() {
         </div>
 
         <h2 className="text-xl font-semibold mb-4">The jsonformatter.org data leak changed everything</h2>
-        <p className="text-zinc-400 leading-relaxed mb-4">In November 2025, security researchers at <a href="https://labs.watchtowr.com/stop-putting-your-passwords-into-random-websites-yes-seriously-you-are-the-problem/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 underline">watchTowr</a> discovered that jsonformatter.org and codebeautify.org — two of the most popular online JSON tools — had been silently exposing user-submitted data for over five years. An unprotected &quot;Recent Links&quot; feature made over 80,000 submitted code snippets publicly accessible without any authentication.</p>
-        <p className="text-zinc-400 leading-relaxed mb-4">The exposed data included AWS access keys, GitHub personal access tokens, database passwords, Active Directory credentials, and banking personally identifiable information. The researchers planted canary tokens to test whether attackers were actively scraping the data. The canaries were triggered within 48 hours — confirming active exploitation.</p>
+        <p className="text-zinc-400 leading-relaxed mb-4">In November 2025, security researchers at <a href="https://labs.watchtowr.com/stop-putting-your-passwords-into-random-websites-yes-seriously-you-are-the-problem/" target="_blank" rel="noopener noreferrer" className="text-emerald-400 hover:text-emerald-300 underline">watchTowr</a> discovered that jsonformatter.org and codebeautify.org - two of the most popular online JSON tools - had been silently exposing user-submitted data for over five years. An unprotected &quot;Recent Links&quot; feature made over 80,000 submitted code snippets publicly accessible without any authentication.</p>
+        <p className="text-zinc-400 leading-relaxed mb-4">The exposed data included AWS access keys, GitHub personal access tokens, database passwords, Active Directory credentials, and banking personally identifiable information. The researchers planted canary tokens to test whether attackers were actively scraping the data. The canaries were triggered within 48 hours - confirming active exploitation.</p>
         <p className="text-zinc-400 leading-relaxed mb-8">The root cause was simple: server-side processing. User data was stored on remote servers. A feature designed to share snippets became a public data dump. The same failure mode exists in any tool that processes your JSON on a server.</p>
 
         <h2 className="text-xl font-semibold mb-4">How to tell if a JSON tool is safe: the 30-second test</h2>
         <ol className="list-decimal pl-5 space-y-2 text-zinc-400 mb-8">
           <li>Open the JSON tool in your browser.</li>
-          <li>Open DevTools (F12 or right-click → Inspect) and go to the Network tab.</li>
+          <li>Open DevTools (F12 or right-click -&gt; Inspect) and go to the Network tab.</li>
           <li>Paste any JSON data into the tool.</li>
           <li>If you see new XHR or fetch requests appear — your data has left your browser and is on a remote server.</li>
           <li>If no request contains your pasted JSON during formatting or validation, that workflow avoided pasted-content upload.</li>
@@ -75,7 +66,7 @@ export default function BlogPost() {
           <table className="w-full text-sm">
             <thead><tr className="border-b border-zinc-800"><th className="text-left py-3 pr-4 text-zinc-400 font-medium"></th><th className="text-left py-3 pr-4 text-red-400 font-medium">Server-side</th><th className="text-left py-3 text-emerald-400 font-medium">Client-side</th></tr></thead>
             <tbody className="divide-y divide-zinc-800/50">
-              {[["Where data is processed","Remote server","Browser-local workflow"],["Pasted-content upload","Yes","No request containing pasted JSON"],["Risk of server breach","Yes — server is a target","Reduced for pasted tool input"],["Network tab shows","XHR/fetch requests containing data","No requests containing pasted JSON"],["Examples","jsonformatter.org, codebeautify.org, jwt.io","SafeJSON, Firefox built-in viewer, jq (CLI)"]].map(([label, server, client],i)=><tr key={i} className="hover:bg-white/[0.02]"><td className="py-3 pr-4 text-zinc-300 font-medium">{label}</td><td className="py-3 pr-4 text-red-400/80">{server}</td><td className="py-3 text-emerald-400/80">{client}</td></tr>)}
+              {[["Where data is processed","Remote server","Browser-local workflow"],["Pasted-content upload","Yes","No request containing pasted JSON"],["Risk of server breach","Yes - server is a target","Reduced for pasted tool input"],["Network tab shows","XHR/fetch requests containing data","No requests containing pasted JSON"],["Examples","jsonformatter.org, codebeautify.org, jwt.io","SafeJSON, Firefox built-in viewer, jq (CLI)"]].map(([label, server, client],i)=><tr key={i} className="hover:bg-white/[0.02]"><td className="py-3 pr-4 text-zinc-300 font-medium">{label}</td><td className="py-3 pr-4 text-red-400/80">{server}</td><td className="py-3 text-emerald-400/80">{client}</td></tr>)}
             </tbody>
           </table>
         </div>
@@ -95,10 +86,10 @@ export default function BlogPost() {
         <h2 className="text-xl font-semibold mb-4">Which tools are client-side?</h2>
         <p className="text-zinc-400 leading-relaxed mb-4">The safest JSON tools make their pasted-content boundary verifiable. Here are options that pass the Network tab test for core formatting:</p>
         <ul className="list-disc pl-5 space-y-1 text-sm text-zinc-400 mb-8">
-          <li><Link href="/" className="text-emerald-400 hover:underline">SafeJSON</Link> — full JSON toolkit with Diff, JWT decoder, JSONPath, and Schema validator. Open source. Free.</li>
-          <li>Firefox built-in JSON viewer — auto-formats JSON responses with syntax highlighting.</li>
-          <li>jq — command-line JSON processor that runs locally.</li>
-          <li>VS Code built-in formatter — works offline, handles most formatting needs.</li>
+          <li><Link href="/" className="text-emerald-400 hover:underline">SafeJSON</Link> - full JSON toolkit with Diff, JWT decoder, JSONPath, and Schema validator. Open source. Free.</li>
+          <li>Firefox built-in JSON viewer - auto-formats JSON responses with syntax highlighting.</li>
+          <li>jq - command-line JSON processor that runs locally.</li>
+          <li>VS Code built-in formatter - works offline, handles most formatting needs.</li>
         </ul>
 
         <h2 className="text-xl font-semibold mb-4">The bottom line</h2>

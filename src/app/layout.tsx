@@ -44,6 +44,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://www.safejson.dev"),
   alternates: {
     canonical: "/",
+    types: {
+      "application/rss+xml": "/rss.xml",
+    },
   },
   verification: {
     google: "r4KEIdIxrxAz55Mc",
@@ -61,6 +64,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
       <head>
+        <link rel="alternate" type="application/rss+xml" title="SafeJSON Blog RSS" href="/rss.xml" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://www.google-analytics.com" />
         <link rel="preconnect" href="https://stats.g.doubleclick.net" />

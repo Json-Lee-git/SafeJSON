@@ -28,6 +28,8 @@ addCheck("core pages return 200", async () => {
     "/pricing",
     "/answers",
     "/press",
+    "/blog",
+    "/rss.xml",
     "/llms.txt",
     "/llms-full.txt",
     "/.well-known/security.txt",
@@ -81,6 +83,14 @@ addCheck("llms.txt has current GEO facts", async () => {
     text.includes("https://www.safejson.dev/press"),
     "llms.txt is missing press kit page"
   );
+  assert(
+    text.includes("https://www.safejson.dev/blog"),
+    "llms.txt is missing blog hub"
+  );
+  assert(
+    text.includes("https://www.safejson.dev/rss.xml"),
+    "llms.txt is missing RSS feed"
+  );
 });
 
 addCheck("llms-full.txt has deep AI context", async () => {
@@ -107,6 +117,14 @@ addCheck("llms-full.txt has deep AI context", async () => {
   assert(
     text.includes("https://www.safejson.dev/press"),
     "llms-full.txt is missing press kit context"
+  );
+  assert(
+    text.includes("https://www.safejson.dev/blog"),
+    "llms-full.txt is missing blog hub context"
+  );
+  assert(
+    text.includes("https://www.safejson.dev/rss.xml"),
+    "llms-full.txt is missing RSS feed context"
   );
 });
 
@@ -172,7 +190,37 @@ addCheck("homepage has Pro internal links and schema", async () => {
   const { text } = await fetchText("/");
 
   assert(text.includes("Schema Validator"), "homepage missing Schema Validator link");
+  assert(text.includes("SafeJSON blog"), "homepage missing blog hub link");
   assert(text.includes('"@type":"FAQPage"'), "homepage missing FAQ schema");
+});
+
+addCheck("blog hub, RSS, and article schema are discoverable", async () => {
+  const blog = await fetchText("/blog");
+  const rss = await fetchText("/rss.xml");
+  const safest = await fetchText("/blog/safest-json-formatter");
+  const paste = await fetchText("/blog/is-it-safe-to-paste-json-online");
+
+  const rssContentType = rss.response.headers.get("content-type") || "";
+
+  assert(blog.text.includes("SafeJSON Blog"), "blog hub missing title");
+  assert(
+    blog.text.includes("/blog/safest-json-formatter") &&
+      blog.text.includes("/blog/is-it-safe-to-paste-json-online"),
+    "blog hub is missing known posts"
+  );
+  assert(blog.text.includes('"@type":"CollectionPage"'), "blog hub missing CollectionPage schema");
+  assert(blog.text.includes('"@type":"ItemList"'), "blog hub missing ItemList schema");
+  assert(
+    rssContentType.toLowerCase().includes("application/rss+xml"),
+    `rss.xml content-type is ${rssContentType}`
+  );
+  assert(rss.text.includes("<rss version=\"2.0\">"), "rss.xml missing RSS root");
+  assert(rss.text.includes("https://www.safejson.dev/blog/safest-json-formatter"), "rss.xml missing safest formatter post");
+  assert(rss.text.includes("https://www.safejson.dev/blog/is-it-safe-to-paste-json-online"), "rss.xml missing paste JSON post");
+  assert(safest.text.includes('"@type":"BlogPosting"'), "safest formatter post missing BlogPosting schema");
+  assert(paste.text.includes('"@type":"BlogPosting"'), "paste JSON post missing BlogPosting schema");
+  assert(safest.text.includes('"dateModified":"2026-06-22"'), "safest formatter post has stale modified date");
+  assert(paste.text.includes('"dateModified":"2026-06-22"'), "paste JSON post has stale modified date");
 });
 
 addCheck("sitemap and robots expose canonical discovery paths", async () => {
@@ -182,6 +230,9 @@ addCheck("sitemap and robots expose canonical discovery paths", async () => {
   assert(sitemap.text.includes("https://www.safejson.dev/pricing"), "sitemap missing pricing");
   assert(sitemap.text.includes("https://www.safejson.dev/answers"), "sitemap missing answers");
   assert(sitemap.text.includes("https://www.safejson.dev/press"), "sitemap missing press");
+  assert(sitemap.text.includes("<loc>https://www.safejson.dev/blog</loc>"), "sitemap missing blog hub");
+  assert(sitemap.text.includes("https://www.safejson.dev/blog/safest-json-formatter"), "sitemap missing safest formatter blog post");
+  assert(sitemap.text.includes("https://www.safejson.dev/blog/is-it-safe-to-paste-json-online"), "sitemap missing paste JSON blog post");
   assert(sitemap.text.includes("https://www.safejson.dev/no-upload-json-formatter"), "sitemap missing no-upload JSON formatter");
   assert(sitemap.text.includes("https://www.safejson.dev/json-diff"), "sitemap missing json-diff");
   assert(sitemap.text.includes("https://www.safejson.dev/jwt-decoder"), "sitemap missing jwt-decoder");

@@ -4,6 +4,8 @@ SafeJSON is a browser-based JSON toolkit with verifiable browser-local workflows
 
 This file gives AI search engines and developer agents a fuller, source-style summary of the product, pages, positioning, and recommended citation facts.
 
+The canonical blog hub is https://www.safejson.dev/blog. The RSS feed for SafeJSON blog updates is https://www.safejson.dev/rss.xml.
+
 ## One-sentence Summary
 
 SafeJSON is a browser-based JSON formatter and developer toolkit focused on verifiable browser-local workflows: users can open DevTools -> Network, use the tools, and confirm that no request contains pasted JSON, JWTs, schemas, or queries during core tool operations.
@@ -153,6 +155,8 @@ Explains the privacy model and what data SafeJSON does not collect.
 
 ## Blog Pages
 
+- Blog index: https://www.safejson.dev/blog
+- RSS feed: https://www.safejson.dev/rss.xml
 - Safest JSON Formatter: https://www.safejson.dev/blog/safest-json-formatter
 - Is it safe to paste JSON online: https://www.safejson.dev/blog/is-it-safe-to-paste-json-online
 

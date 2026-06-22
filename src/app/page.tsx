@@ -436,7 +436,7 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-4 py-8">
           <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-sm">
             <span className="text-zinc-400 text-xs">Explore:</span>
-            <Link href="/blog/safest-json-formatter" className="inline-flex min-h-10 items-center rounded px-2 text-zinc-400 transition-colors hover:text-emerald-300">What is the safest JSON formatter</Link>
+            <Link href="/blog" className="inline-flex min-h-10 items-center rounded px-2 text-zinc-400 transition-colors hover:text-emerald-300">SafeJSON blog</Link>
             <Link href="/answers" className="inline-flex min-h-10 items-center rounded px-2 text-zinc-400 transition-colors hover:text-emerald-300">SafeJSON answers</Link>
             <Link href="/compare" className="inline-flex min-h-10 items-center rounded px-2 text-zinc-400 transition-colors hover:text-emerald-300">JSON formatter comparison</Link>
             <Link href="/vs/jsonformatter-org" className="inline-flex min-h-10 items-center rounded px-2 text-zinc-400 transition-colors hover:text-emerald-300">SafeJSON vs jsonformatter.org</Link>

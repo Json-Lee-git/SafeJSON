@@ -1,60 +1,38 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Footer from "../../components/Footer";
 import { BreadcrumbSchema, JsonLdScript } from "../../components/StructuredData";
+import { absoluteUrl, getBlogArticleSchema, getBlogPost } from "../blog-data";
+
+const post = getBlogPost("safest-json-formatter");
 
 export const metadata: Metadata = {
-  title: "Safest JSON Formatter 2026 - 5 Client-Side Tools | SafeJSON",
-  description:
-    "Compare five safe JSON formatters in 2026 and learn how to verify local processing, avoid server-side tools, and protect credentials.",
+  title: post.metaTitle,
+  description: post.description,
   openGraph: {
-    title: "Safest JSON Formatter 2026",
-    description:
-      "Compare five client-side JSON formatters and learn how to verify that a JSON tool does not upload your data.",
-    url: "/blog/safest-json-formatter",
+    title: post.title,
+    description: post.description,
+    url: post.canonicalPath,
     type: "article",
-    publishedTime: "2026-06-08T00:00:00.000Z",
-    modifiedTime: "2026-06-08T00:00:00.000Z",
+    publishedTime: `${post.publishedAt}T00:00:00.000Z`,
+    modifiedTime: `${post.updatedAt}T00:00:00.000Z`,
   },
   alternates: {
-    canonical: "/blog/safest-json-formatter",
+    canonical: post.canonicalPath,
   },
 };
 
 export default function BlogPost() {
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: "Safest JSON Formatter 2026 - 5 Client-Side Tools Compared",
-    description:
-      "Compare the 5 safest JSON formatters in 2026 and learn how to verify that a JSON formatter does not upload your data.",
-    datePublished: "2026-06-08",
-    dateModified: "2026-06-08",
-    author: {
-      "@type": "Person",
-      name: "JSON-Lee",
-      url: "https://www.safejson.dev/about",
-      sameAs: ["https://github.com/Json-Lee-git/SafeJSON", "https://dev.to/_6a9b7b682ef6dfb20e506"],
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "SafeJSON",
-      url: "https://www.safejson.dev",
-    },
-    mainEntityOfPage: "https://www.safejson.dev/blog/safest-json-formatter",
-  };
-
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100 font-sans">
       <BreadcrumbSchema
         items={[
-          { name: "SafeJSON", url: "https://www.safejson.dev" },
-          {
-            name: "Safest JSON Formatter 2026",
-            url: "https://www.safejson.dev/blog/safest-json-formatter",
-          },
+          { name: "SafeJSON", url: absoluteUrl("/") },
+          { name: "Blog", url: absoluteUrl("/blog") },
+          { name: "Safest JSON Formatter 2026", url: absoluteUrl(post.canonicalPath) },
         ]}
       />
-      <JsonLdScript data={articleSchema} />
+      <JsonLdScript data={getBlogArticleSchema(post)} />
 
       <header className="border-b border-zinc-800">
         <div className="max-w-3xl mx-auto px-4 h-14 flex items-center">
@@ -255,6 +233,7 @@ export default function BlogPost() {
           </Link>
         </div>
       </article>
+      <Footer />
     </div>
   );
 }
