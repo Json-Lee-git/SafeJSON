@@ -43,8 +43,8 @@ export default function Footer() {
 
         <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 pt-3 border-t border-zinc-800">
           <span className="text-zinc-400 text-xs">Business Contact / 业务联系</span>
-          <a href="mailto:m18575113667_3@163.com" className="text-zinc-400 hover:text-zinc-200 transition-colors text-xs underline underline-offset-2 decoration-zinc-600 hover:decoration-zinc-400">
-            m18575113667_3@163.com
+          <a href="mailto:18575113667@163.com" className="text-zinc-400 hover:text-zinc-200 transition-colors text-xs underline underline-offset-2 decoration-zinc-600 hover:decoration-zinc-400">
+            18575113667@163.com
           </a>
           <span className="text-zinc-600 text-xs">·</span>
           <a
