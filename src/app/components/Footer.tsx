@@ -29,6 +29,7 @@ export default function Footer() {
         </div>
         <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 pt-2">
           <Link href="/about" className={linkClass}>About</Link>
+          <Link href="/press" className={linkClass}>Press</Link>
           <Link href="/support" className={linkClass}>Help</Link>
           <Link href="/blog/safest-json-formatter" className={linkClass}>Blog</Link>
           <Link href="/privacy" className={linkClass}>Privacy</Link>

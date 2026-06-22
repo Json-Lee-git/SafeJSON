@@ -6,6 +6,7 @@ const pagePaths = [
   "/",
   "/pricing",
   "/answers",
+  "/press",
   "/no-upload-json-formatter",
   "/formatter",
   "/json-diff",

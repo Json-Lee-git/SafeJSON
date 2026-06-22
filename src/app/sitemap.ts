@@ -28,6 +28,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/json-schema-validator", "2026-06-16", "monthly", 0.7),
     entry("/pricing", "2026-06-16", "monthly", 0.6),
     entry("/answers", "2026-06-16", "monthly", 0.8),
+    entry("/press", "2026-06-22", "monthly", 0.7),
     entry("/no-upload-json-formatter", "2026-06-22", "monthly", 0.85),
     entry("/client-side-json-formatter", "2026-06-14", "monthly", 0.85),
     entry("/compare", "2026-06-15", "monthly", 0.85),

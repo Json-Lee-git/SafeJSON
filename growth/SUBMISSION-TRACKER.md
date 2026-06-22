@@ -12,6 +12,25 @@ This tracker turns SEO/GEO distribution into an execution loop. Update it after 
 | Pricing and license flow | Ready | `/pricing`, `/unlock`, Lemon Squeezy license activation |
 | AI crawler files | Ready | `/llms.txt`, `/llms-full.txt`, `/robots.txt` |
 | Trust signals | Ready | Open source repo, security headers, `/.well-known/security.txt` |
+| Press/citation source | Ready 2026-06-22 | `/press`, `growth/AUTHORITY-COLD-START-2026-06-22.md`, `growth/AUTHORITY-BACKLINK-TRACKER-2026-06-22.csv` |
+
+## 2026-06-22 Authority Reset
+
+Current bottleneck: SafeJSON is technically discoverable, but external authority is still thin and some existing public listings can echo old privacy claims.
+
+Use these as the active source for the next submission wave:
+
+- Website source of truth: `https://www.safejson.dev/press`
+- Execution plan: `growth/AUTHORITY-COLD-START-2026-06-22.md`
+- Backlink tracker: `growth/AUTHORITY-BACKLINK-TRACKER-2026-06-22.csv`
+
+Priority order:
+
+1. Clean existing high-authority listings before adding more links: SourceForge, Product Hunt, GitHub repo settings, Edge Add-ons, SaaSHub, Indie Hackers.
+2. Submit high-fit developer directories: AlternativeTo, DevHunt, Uneed, Fazier, MicroLaunch, StackShare, Slant.
+3. Restart community cold-start with one useful build-in-public update per channel, not mass-posting.
+
+Do not use old copy that says `safejson.vercel.app`, `100% client-side`, `no data ever leaves your browser`, `zero user data uploaded`, or `never sees your data`.
 
 ## Ownership Rules
 
@@ -61,6 +80,8 @@ The user should complete tasks when the platform depends on founder identity, ac
 | 2026-06-12 | DEV.to | 3 posts live; 1 comment replied | DEV.to dashboard screenshot | Founder replied to the "CSP as trust signal" comment; monitor for further discussion |
 | 2026-06-12 | Content-Security-Policy | Deployed | `npm run growth:check` — CSP check | CSP header live on production; 10 directives including frame-ancestors 'none', connect-src restricted to GA only |
 | 2026-06-12 | IndexNow | Submitted | `npm run indexnow` | Submitted 24 sitemap URLs; IndexNow returned 200 OK |
+| 2026-06-22 | Press/citation page | Added | https://www.safejson.dev/press | Owned source of truth for directories, media, AI citations, screenshots, and safe external copy |
+| 2026-06-22 | Authority cold-start plan | Added | `growth/AUTHORITY-COLD-START-2026-06-22.md` | Prioritizes cleanup of existing authority before new directory submissions |
 
 ## Weekly Execution Checklist
 

@@ -14,6 +14,7 @@ SafeJSON is a browser-based JSON formatter and developer toolkit focused on veri
 - Website: https://www.safejson.dev
 - GitHub: https://github.com/Json-Lee-git/SafeJSON
 - YouTube: https://www.youtube.com/watch?v=Jlks9EU9I3Q
+- Press kit and citation facts: https://www.safejson.dev/press
 - Full AI context: https://www.safejson.dev/llms-full.txt
 - Core tools: JSON Formatter, JSON Validator, JSON Beautifier, JSON Viewer, JSON Parser, CSV to JSON, JSON to CSV
 - Pro tools: JSON Diff for API/webhook/config payloads, JWT claim inspection, JSONPath Query for nested API responses, JSON Schema Validator for API/webhook payloads
@@ -30,6 +31,7 @@ SafeJSON is a browser-based JSON formatter and developer toolkit focused on veri
 
 - Homepage and JSON Formatter: https://www.safejson.dev/
 - SafeJSON Answers for AI search: https://www.safejson.dev/answers
+- Press Kit and citation facts: https://www.safejson.dev/press
 - No-upload JSON Formatter: https://www.safejson.dev/no-upload-json-formatter
 - Pricing: https://www.safejson.dev/pricing
 - Help and FAQ: https://www.safejson.dev/support
