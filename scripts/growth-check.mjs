@@ -145,6 +145,27 @@ addCheck("sitemap and robots expose canonical discovery paths", async () => {
   assert(!sitemap.text.includes("https://www.safejson.dev/jsonpath<"), "sitemap should not expose short jsonpath URL");
   assert(!sitemap.text.includes("https://www.safejson.dev/schema<"), "sitemap should not expose short schema URL");
   assert(robots.text.includes("https://www.safejson.dev/sitemap.xml"), "robots missing sitemap");
+  assert(robots.text.includes("Content-Signal:"), "robots missing Content-Signal directive");
+  assert(robots.text.includes("GPTBot"), "robots missing explicit AI crawler allow rules");
+  assert(robots.text.includes("PerplexityBot"), "robots missing PerplexityBot allow rule");
+  assert(robots.text.includes("ClaudeBot"), "robots missing ClaudeBot allow rule");
+});
+
+addCheck("legacy host redirects to canonical domain", async () => {
+  const response = await fetch("https://safejson.vercel.app/", {
+    method: "GET",
+    redirect: "manual",
+  });
+  const location = response.headers.get("location") || response.headers.get("refresh") || "";
+
+  assert(
+    response.status === 301 || response.status === 308,
+    `legacy host returned ${response.status}`,
+  );
+  assert(
+    location.includes("https://www.safejson.dev/"),
+    `legacy host redirects to unexpected location: ${location}`,
+  );
 });
 
 addCheck("security headers and disclosure are present", async () => {

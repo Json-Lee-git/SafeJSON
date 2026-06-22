@@ -2,38 +2,53 @@ import type { MetadataRoute } from "next";
 
 const siteUrl = "https://www.safejson.dev";
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const lastModified = new Date();
+type SitemapEntry = MetadataRoute.Sitemap[number];
+type ChangeFrequency = NonNullable<SitemapEntry["changeFrequency"]>;
 
+function entry(
+  path: string,
+  lastModified: string,
+  changeFrequency: ChangeFrequency,
+  priority: number,
+): SitemapEntry {
+  return {
+    url: path === "/" ? siteUrl : `${siteUrl}${path}`,
+    lastModified,
+    changeFrequency,
+    priority,
+  };
+}
+
+export default function sitemap(): MetadataRoute.Sitemap {
   return [
-    { url: siteUrl, lastModified, changeFrequency: "weekly", priority: 1 },
-    { url: `${siteUrl}/json-diff`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/jwt-decoder`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/jsonpath-query`, lastModified, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${siteUrl}/json-schema-validator`, lastModified, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${siteUrl}/pricing`, lastModified, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${siteUrl}/answers`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/client-side-json-formatter`, lastModified, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${siteUrl}/compare`, lastModified, changeFrequency: "monthly", priority: 0.85 },
-    { url: `${siteUrl}/blog/safest-json-formatter`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/blog/is-it-safe-to-paste-json-online`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/vs/jsonformatter-org`, lastModified, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${siteUrl}/vs/jsonformatter-extension`, lastModified, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${siteUrl}/vs/codebeautify`, lastModified, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${siteUrl}/support`, lastModified, changeFrequency: "monthly", priority: 0.5 },
-    { url: `${siteUrl}/security/check-json-formatter-upload`, lastModified, changeFrequency: "monthly", priority: 0.75 },
-    { url: `${siteUrl}/about`, lastModified, changeFrequency: "yearly", priority: 0.4 },
-    { url: `${siteUrl}/json-viewer`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/json-beautifier`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/json-parser`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/json-validator`, lastModified, changeFrequency: "monthly", priority: 0.8 },
-    { url: `${siteUrl}/csv-to-json`, lastModified, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${siteUrl}/json-to-csv`, lastModified, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${siteUrl}/vs/jsonlint`, lastModified, changeFrequency: "monthly", priority: 0.65 },
-    { url: `${siteUrl}/vs/jwt-io`, lastModified, changeFrequency: "monthly", priority: 0.65 },
-    { url: `${siteUrl}/vs/jsoncrack`, lastModified, changeFrequency: "monthly", priority: 0.65 },
-    { url: `${siteUrl}/privacy`, lastModified, changeFrequency: "yearly", priority: 0.3 },
-    { url: `${siteUrl}/extension/permissions`, lastModified, changeFrequency: "monthly", priority: 0.7 },
-    { url: `${siteUrl}/privacy/verify-local-processing`, lastModified, changeFrequency: "yearly", priority: 0.7 },
+    entry("/", "2026-06-17", "weekly", 1),
+    entry("/json-diff", "2026-06-16", "monthly", 0.8),
+    entry("/jwt-decoder", "2026-06-16", "monthly", 0.8),
+    entry("/jsonpath-query", "2026-06-16", "monthly", 0.7),
+    entry("/json-schema-validator", "2026-06-16", "monthly", 0.7),
+    entry("/pricing", "2026-06-16", "monthly", 0.6),
+    entry("/answers", "2026-06-16", "monthly", 0.8),
+    entry("/client-side-json-formatter", "2026-06-14", "monthly", 0.85),
+    entry("/compare", "2026-06-15", "monthly", 0.85),
+    entry("/blog/safest-json-formatter", "2026-06-16", "monthly", 0.8),
+    entry("/blog/is-it-safe-to-paste-json-online", "2026-06-16", "monthly", 0.8),
+    entry("/vs/jsonformatter-org", "2026-06-16", "monthly", 0.7),
+    entry("/vs/jsonformatter-extension", "2026-06-16", "monthly", 0.7),
+    entry("/vs/codebeautify", "2026-06-15", "monthly", 0.6),
+    entry("/support", "2026-06-16", "monthly", 0.5),
+    entry("/security/check-json-formatter-upload", "2026-06-16", "monthly", 0.75),
+    entry("/about", "2026-06-16", "yearly", 0.4),
+    entry("/json-viewer", "2026-06-16", "monthly", 0.8),
+    entry("/json-beautifier", "2026-06-16", "monthly", 0.8),
+    entry("/json-parser", "2026-06-16", "monthly", 0.8),
+    entry("/json-validator", "2026-06-16", "monthly", 0.8),
+    entry("/csv-to-json", "2026-06-16", "monthly", 0.7),
+    entry("/json-to-csv", "2026-06-16", "monthly", 0.7),
+    entry("/vs/jsonlint", "2026-06-16", "monthly", 0.65),
+    entry("/vs/jwt-io", "2026-06-16", "monthly", 0.65),
+    entry("/vs/jsoncrack", "2026-06-16", "monthly", 0.65),
+    entry("/privacy", "2026-06-11", "yearly", 0.3),
+    entry("/extension/permissions", "2026-06-16", "monthly", 0.7),
+    entry("/privacy/verify-local-processing", "2026-06-16", "yearly", 0.7),
   ];
 }

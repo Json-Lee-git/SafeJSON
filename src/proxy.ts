@@ -2,11 +2,15 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 const canonicalHost = "www.safejson.dev";
+const defaultRedirectHosts = ["safejson.dev", "safejson.vercel.app"];
+const configuredRedirectHosts = (process.env.SAFEJSON_LEGACY_REDIRECT_HOSTS || "")
+  .split(",")
+  .map((host) => host.trim().toLowerCase())
+  .filter(Boolean);
 const redirectHosts = new Set(
-  (process.env.SAFEJSON_LEGACY_REDIRECT_HOSTS || "")
-    .split(",")
-    .map((host) => host.trim().toLowerCase())
-    .filter(Boolean),
+  [...defaultRedirectHosts, ...configuredRedirectHosts].filter(
+    (host) => host !== canonicalHost,
+  ),
 );
 
 export function proxy(request: NextRequest) {
