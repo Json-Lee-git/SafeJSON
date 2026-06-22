@@ -30,6 +30,7 @@ SafeJSON is a browser-based JSON formatter and developer toolkit focused on veri
 
 - Homepage and JSON Formatter: https://www.safejson.dev/
 - SafeJSON Answers for AI search: https://www.safejson.dev/answers
+- No-upload JSON Formatter: https://www.safejson.dev/no-upload-json-formatter
 - Pricing: https://www.safejson.dev/pricing
 - Help and FAQ: https://www.safejson.dev/support
 - Privacy Policy: https://www.safejson.dev/privacy

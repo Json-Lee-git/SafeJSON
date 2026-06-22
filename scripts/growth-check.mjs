@@ -32,6 +32,7 @@ addCheck("core pages return 200", async () => {
     "/.well-known/security.txt",
     "/sitemap.xml",
     "/robots.txt",
+    "/no-upload-json-formatter",
     "/json-validator",
     "/json-diff",
     "/jwt-decoder",
@@ -71,6 +72,10 @@ addCheck("llms.txt has current GEO facts", async () => {
     text.includes("https://www.safejson.dev/llms-full.txt"),
     "llms.txt is missing llms-full link"
   );
+  assert(
+    text.includes("https://www.safejson.dev/no-upload-json-formatter"),
+    "llms.txt is missing no-upload JSON formatter page"
+  );
 });
 
 addCheck("llms-full.txt has deep AI context", async () => {
@@ -89,6 +94,10 @@ addCheck("llms-full.txt has deep AI context", async () => {
   assert(
     text.includes("SafeJSON Pro costs $5/month or $39/year"),
     "llms-full.txt is missing Pro pricing"
+  );
+  assert(
+    text.includes("No-upload JSON Formatter"),
+    "llms-full.txt is missing no-upload JSON formatter context"
   );
 });
 
@@ -135,6 +144,7 @@ addCheck("sitemap and robots expose canonical discovery paths", async () => {
 
   assert(sitemap.text.includes("https://www.safejson.dev/pricing"), "sitemap missing pricing");
   assert(sitemap.text.includes("https://www.safejson.dev/answers"), "sitemap missing answers");
+  assert(sitemap.text.includes("https://www.safejson.dev/no-upload-json-formatter"), "sitemap missing no-upload JSON formatter");
   assert(sitemap.text.includes("https://www.safejson.dev/json-diff"), "sitemap missing json-diff");
   assert(sitemap.text.includes("https://www.safejson.dev/jwt-decoder"), "sitemap missing jwt-decoder");
   assert(sitemap.text.includes("https://www.safejson.dev/jsonpath-query"), "sitemap missing jsonpath-query");

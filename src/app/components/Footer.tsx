@@ -33,6 +33,7 @@ export default function Footer() {
           <Link href="/blog/safest-json-formatter" className={linkClass}>Blog</Link>
           <Link href="/privacy" className={linkClass}>Privacy</Link>
           <Link href="/extension/permissions" className={linkClass}>Extension</Link>
+          <Link href="/no-upload-json-formatter" className={linkClass}>No-upload formatter</Link>
           <Link href="/privacy/verify-local-processing" className={linkClass}>Verify local processing</Link>
           <Link href="/security/check-json-formatter-upload" className={linkClass}>Security guide</Link>
           <Link href="/pricing" className={linkClass}>Pricing</Link>
