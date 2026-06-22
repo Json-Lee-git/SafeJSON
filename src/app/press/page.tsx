@@ -4,7 +4,7 @@ import Link from "next/link";
 import { JsonLdScript } from "../components/StructuredData";
 
 const siteUrl = "https://www.safejson.dev";
-const pressContactEmail = "m18575113667_3@163.com";
+const pressContactEmail = "18575113667@163.com";
 
 export const metadata: Metadata = {
   title: "SafeJSON Press Kit - Verifiable Browser-Local JSON Tools",
