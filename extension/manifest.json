@@ -1,9 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "SafeJSON — Local JSON Formatter",
-  "version": "0.1.0",
-  "description": "Format raw JSON pages in your browser with no page JSON upload.",
-  "permissions": ["storage", "clipboardWrite"],
+  "name": "SafeJSON - Local JSON Formatter",
+  "version": "0.1.1",
+  "description": "Detect raw JSON responses, format them locally, and open SafeJSON for browser-local workflows.",
+  "permissions": ["clipboardWrite"],
   "background": {
     "service_worker": "background.js"
   },

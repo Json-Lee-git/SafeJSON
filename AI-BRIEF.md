@@ -8,7 +8,7 @@
 ## Who I am
 
 I'm a solo founder building SafeJSON. I go by **JSON-Lee** across platforms
-(GitHub: Json-lee-gitle, DEV.to: same handle). This is a bootstrapped project
+(GitHub: Json-Lee-git/SafeJSON, DEV.to: same handle). This is a bootstrapped project
 — no VC, no team, no budget. I do the product and growth; Claude and Codex
 help with code and content.
 

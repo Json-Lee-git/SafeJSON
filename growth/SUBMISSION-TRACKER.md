@@ -23,12 +23,14 @@ Use these as the active source for the next submission wave:
 - Website source of truth: `https://www.safejson.dev/press`
 - Execution plan: `growth/AUTHORITY-COLD-START-2026-06-22.md`
 - Backlink tracker: `growth/AUTHORITY-BACKLINK-TRACKER-2026-06-22.csv`
+- Community drafts: `growth/COMMUNITY-COLD-START-DRAFTS-2026-06-22.md`
 
 Priority order:
 
 1. Clean existing high-authority listings before adding more links: SourceForge, Product Hunt, GitHub repo settings, Edge Add-ons, SaaSHub, Indie Hackers.
 2. Submit high-fit developer directories: AlternativeTo, DevHunt, Uneed, Fazier, MicroLaunch, StackShare, Slant.
 3. Restart community cold-start with one useful build-in-public update per channel, not mass-posting.
+4. Keep extension, npm, GitHub, and press-page metadata aligned with the same narrow claim: no pasted-content upload for core tools, verifiable in DevTools Network.
 
 Do not use old copy that says `safejson.vercel.app`, `100% client-side`, `no data ever leaves your browser`, `zero user data uploaded`, or `never sees your data`.
 
@@ -82,6 +84,8 @@ The user should complete tasks when the platform depends on founder identity, ac
 | 2026-06-12 | IndexNow | Submitted | `npm run indexnow` | Submitted 24 sitemap URLs; IndexNow returned 200 OK |
 | 2026-06-22 | Press/citation page | Added | https://www.safejson.dev/press | Owned source of truth for directories, media, AI citations, screenshots, and safe external copy |
 | 2026-06-22 | Authority cold-start plan | Added | `growth/AUTHORITY-COLD-START-2026-06-22.md` | Prioritizes cleanup of existing authority before new directory submissions |
+| 2026-06-22 | Community cold-start drafts | Added | `growth/COMMUNITY-COLD-START-DRAFTS-2026-06-22.md` | DEV.to, Indie Hackers, LinkedIn, Reddit, and GitHub Discussion copy prepared around verifiable privacy positioning |
+| 2026-06-22 | Extension and npm metadata cleanup | Prepared | `extension/manifest.json`, `npm-package/` | Aligns store/package copy with browser-local workflow wording and removes stale storage-permission language from site copy |
 
 ## Weekly Execution Checklist
 

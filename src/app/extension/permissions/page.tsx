@@ -3,7 +3,7 @@ import Link from "next/link";
 import { JsonLdScript } from "../../components/StructuredData";
 
 export const metadata: Metadata = {
-  title: "Extension Permissions & Trust – SafeJSON",
+  title: "Extension Permissions & Trust - SafeJSON",
   description:
     "How the SafeJSON browser extension works, what permissions it requests, and how to verify it does not upload pasted content.",
   openGraph: {
@@ -96,16 +96,6 @@ export default function ExtensionPermissionsPage() {
             Permissions explained
           </h2>
           <div className="space-y-6">
-            <div>
-              <h3 className="text-sm font-semibold text-zinc-300 mb-1">
-                storage
-              </h3>
-              <p className="text-sm text-zinc-500 leading-relaxed">
-                Used only to save local preferences: theme (dark/light mode),
-                tree view collapse state, and Pro license activation status.
-                No JSON content is synced through this permission.
-              </p>
-            </div>
             <div>
               <h3 className="text-sm font-semibold text-zinc-300 mb-1">
                 clipboardWrite

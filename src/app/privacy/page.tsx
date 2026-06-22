@@ -15,7 +15,7 @@ export default function PrivacyPage() {
       <main className="max-w-3xl mx-auto px-4 py-16">
         <h1 className="text-3xl font-bold mb-8">Privacy Policy</h1>
         <p className="text-sm text-zinc-500 mb-8">
-          Last updated: June 8, 2026
+          Last updated: June 22, 2026
         </p>
 
         <section className="mb-8">
@@ -30,17 +30,12 @@ export default function PrivacyPage() {
 
         <section className="mb-8">
           <h2 className="text-lg font-semibold mb-3">
-            Chrome Extension Permissions
+            Browser Extension Permissions
           </h2>
           <p className="text-zinc-400 leading-relaxed mb-3">
-            The SafeJSON Chrome extension requests the following permissions:
+            The SafeJSON browser extension requests the following permissions:
           </p>
           <ul className="list-disc pl-5 space-y-2 text-zinc-400">
-            <li>
-              <strong>storage</strong>: Used only to save your theme preference
-              (dark/light mode) locally in your browser. No data is synced or
-              transmitted.
-            </li>
             <li>
               <strong>clipboardWrite</strong>: Used only when you explicitly
               click the &quot;Copy&quot; button to copy formatted JSON to your clipboard.

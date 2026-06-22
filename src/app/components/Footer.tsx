@@ -40,6 +40,22 @@ export default function Footer() {
           <Link href="/pricing" className={linkClass}>Pricing</Link>
           <Link href="https://www.producthunt.com/products/safejson-privacy" className={linkClass}>Product Hunt</Link>
         </div>
+
+        <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 pt-3 border-t border-zinc-800">
+          <span className="text-zinc-400 text-xs">Business Contact / 业务联系</span>
+          <a href="mailto:m18575113667_3@163.com" className="text-zinc-400 hover:text-zinc-200 transition-colors text-xs underline underline-offset-2 decoration-zinc-600 hover:decoration-zinc-400">
+            m18575113667_3@163.com
+          </a>
+          <span className="text-zinc-600 text-xs">·</span>
+          <a
+            href="https://github.com/Json-Lee-git/SafeJSON"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-zinc-400 hover:text-zinc-200 transition-colors text-xs underline underline-offset-2 decoration-zinc-600 hover:decoration-zinc-400"
+          >
+            GitHub
+          </a>
+        </div>
       </div>
       <p className="mt-4">SafeJSON. No pasted-content upload for core tools.</p>
     </footer>

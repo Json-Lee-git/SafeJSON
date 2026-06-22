@@ -4,6 +4,7 @@ import Link from "next/link";
 import { JsonLdScript } from "../components/StructuredData";
 
 const siteUrl = "https://www.safejson.dev";
+const pressContactEmail = "m18575113667_3@163.com";
 
 export const metadata: Metadata = {
   title: "SafeJSON Press Kit - Verifiable Browser-Local JSON Tools",
@@ -111,6 +112,14 @@ export default function PressPage() {
             "https://github.com/Json-Lee-git/SafeJSON",
             "https://www.youtube.com/watch?v=Jlks9EU9I3Q",
             "https://microsoftedge.microsoft.com/addons/detail/fjknnlcmogdhhnehcillihjhdgencgeh",
+          ],
+          contactPoint: [
+            {
+              "@type": "ContactPoint",
+              contactType: "press",
+              email: pressContactEmail,
+              availableLanguage: ["en", "zh"],
+            },
           ],
         }}
       />
@@ -299,12 +308,20 @@ export default function PressPage() {
             <div>
               <h2 className="text-2xl font-semibold mb-4">Contact</h2>
               <p className="text-sm text-zinc-500 leading-relaxed mb-4">
-                SafeJSON is maintained by JSON-Lee. Product questions, bug
-                reports, and citation corrections can be opened on GitHub. For
+                SafeJSON is maintained by JSON-Lee. For media questions,
+                directory listing corrections, or partnership requests, email
+                the business contact below. Product bugs and citation
+                corrections can also be opened on GitHub. For
                 security-sensitive reports, use the published security contact
                 file.
               </p>
               <div className="flex flex-wrap gap-3">
+                <a
+                  href={`mailto:${pressContactEmail}`}
+                  className="inline-flex min-h-10 items-center rounded-lg bg-emerald-500 px-4 text-sm font-semibold text-black hover:bg-emerald-400 transition-colors"
+                >
+                  Email business contact
+                </a>
                 <Link
                   href="https://github.com/Json-Lee-git/SafeJSON/issues"
                   className="inline-flex min-h-10 items-center rounded-lg border border-zinc-700 px-4 text-sm font-semibold text-zinc-200 hover:border-emerald-400 hover:text-emerald-300 transition-colors"

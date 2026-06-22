@@ -140,6 +140,34 @@ addCheck("answers page has GEO-ready Pro facts", async () => {
   assert(text.includes('"@type":"FAQPage"'), "answers page missing FAQ schema");
 });
 
+addCheck("authority pages have canonical entity facts", async () => {
+  const about = await fetchText("/about");
+  const press = await fetchText("/press");
+  const extension = await fetchText("/extension/permissions");
+  const privacy = await fetchText("/privacy");
+
+  assert(
+    about.text.includes("https://github.com/Json-Lee-git/SafeJSON"),
+    "about page is missing canonical GitHub entity URL"
+  );
+  assert(
+    press.text.includes("mailto:m18575113667_3@163.com"),
+    "press page is missing business contact email"
+  );
+  assert(
+    press.text.includes("directory listing corrections"),
+    "press page is missing directory correction contact copy"
+  );
+  assert(
+    extension.text.includes("clipboardWrite"),
+    "extension permissions page missing clipboardWrite explanation"
+  );
+  assert(
+    !extension.text.includes(">storage<") && !privacy.text.includes("<strong>storage</strong>"),
+    "extension trust pages still describe a storage permission"
+  );
+});
+
 addCheck("homepage has Pro internal links and schema", async () => {
   const { text } = await fetchText("/");
 

@@ -1,12 +1,15 @@
 {
   "name": "safejson-formatter",
-  "version": "0.1.0",
-  "description": "Open SafeJSON — a browser-based JSON toolkit with verifiable browser-local workflows — from your terminal.",
+  "version": "0.1.1",
+  "description": "Open SafeJSON, a browser-based JSON toolkit with verifiable browser-local workflows, from your terminal.",
   "main": "cli.js",
   "bin": {
-    "safejson": "./cli.js"
+    "safejson": "cli.js"
   },
-  "files": ["cli.js", "README.md"],
+  "files": [
+    "cli.js",
+    "README.md"
+  ],
   "keywords": [
     "json",
     "formatter",
@@ -22,7 +25,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Json-Lee-git/SafeJSON"
+    "url": "git+https://github.com/Json-Lee-git/SafeJSON.git"
   },
   "homepage": "https://www.safejson.dev",
   "engines": {

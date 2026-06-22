@@ -1,20 +1,46 @@
 #!/usr/bin/env node
 
-// safejson-cli — Open SafeJSON from your terminal
+// safejson-cli - Open SafeJSON from your terminal
 // https://www.safejson.dev
 
 const siteUrl = "https://www.safejson.dev";
 
+const args = process.argv.slice(2);
+
+if (args.includes("--help") || args.includes("-h")) {
+  console.log(`safejson - open SafeJSON from your terminal
+
+Usage:
+  safejson
+  cat data.json | safejson
+
+When stdin is provided, SafeJSON opens without transferring the payload through the URL.
+Paste JSON manually into the browser to keep the workflow browser-local.`);
+  process.exit(0);
+}
+
+if (args.includes("--version") || args.includes("-v")) {
+  console.log("0.1.1");
+  process.exit(0);
+}
+
 // Accept optional JSON input via stdin
 let input = "";
+let opened = false;
 process.stdin.setEncoding("utf8");
 process.stdin.on("data", (chunk) => {
   input += chunk;
 });
 
 process.stdin.on("end", () => {
-  openSafeJson(input);
+  openSafeJsonOnce(input);
 });
+
+function openSafeJsonOnce(stdinInput) {
+  if (opened) return;
+  opened = true;
+  openSafeJson(stdinInput);
+}
 
 async function openSafeJson(stdinInput) {
   const { exec } = await import("node:child_process");
@@ -44,9 +70,9 @@ async function openSafeJson(stdinInput) {
   });
 }
 
-// If no stdin data within 100ms, just open the URL
+// If no stdin data arrives within 100ms, just open the URL.
 setTimeout(() => {
   if (!input) {
-    process.stdin.end();
+    openSafeJsonOnce("");
   }
 }, 100);
